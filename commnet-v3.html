@@ -180,6 +180,12 @@ footer .bot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;p
 @media(max-width:680px){#hero h1 .ln{white-space:normal;display:inline}.nav ul,.nav .btn{display:none}.burger{display:block}.appr,.team,#cta .g,footer .top{grid-template-columns:1fr}.it{flex-basis:calc((100% - 28px)/2)}.dk .kv{grid-template-columns:1fr 1fr}.dk{padding:24px}.nxt{width:48px;height:48px;right:0}.stage{height:420px}.p1,.p3{display:none}#hero .cta{flex-direction:column;align-items:center}}
 @media(prefers-reduced-motion:reduce){*{transition-duration:.001s!important;animation:none!important}.rv{opacity:1;transform:none}#hero h1 .w span{transform:none!important}}
 </style>
+<noscript><style>#loader{display:none!important}.rv{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+:focus-visible{outline:3px solid #22D3EE;outline-offset:4px}
+button,[role="button"],a{touch-action:manipulation}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 <div id="loader"><div class="s"><span></span></div></div>
@@ -360,6 +366,18 @@ document.querySelectorAll('.bars').forEach(b=>ScrollTrigger.create({trigger:b,st
 /* form */
 document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const f=e.target;if(!f.checkValidity()){f.reportValidity();return}[...f.children].forEach(c=>c.id!=='ok'&&(c.style.display='none'));document.getElementById('ok').style.display='block'});
 addEventListener('load',()=>setTimeout(()=>ScrollTrigger.refresh(),300));
+</script>
+<script>
+(()=>{
+  const hideLoader=()=>{const loader=document.getElementById('loader');if(loader){loader.style.display='none';loader.setAttribute('aria-hidden','true')}document.querySelectorAll('.rv').forEach(el=>{el.style.opacity='1';el.style.transform='none'})};
+  setTimeout(hideLoader,5000);
+  document.querySelectorAll('button').forEach(b=>{if(!b.type)b.type='button'});
+  document.querySelectorAll('img').forEach((img,i)=>{img.decoding='async';if(i>1)img.loading='lazy';if(!img.alt)img.alt=''});
+  document.querySelectorAll('input,select,textarea').forEach(field=>{if(!field.getAttribute('aria-label')&&!field.labels?.length){field.setAttribute('aria-label',field.name||field.placeholder||'Form field')}});
+  const menu=document.getElementById('mm'),burger=document.querySelector('.burger');if(menu&&burger){burger.setAttribute('aria-controls','mm');burger.setAttribute('aria-expanded','false');new MutationObserver(()=>burger.setAttribute('aria-expanded',menu.classList.contains('open')?'true':'false')).observe(menu,{attributes:true,attributeFilter:['class']})}
+  const next=document.getElementById('trnx');if(next){next.setAttribute('aria-label','Show next track record item');next.setAttribute('role','button');next.tabIndex=0;next.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();next.click()}})}
+  const ok=document.getElementById('ok');if(ok){ok.setAttribute('role','status');ok.setAttribute('aria-live','polite')}
+})();
 </script>
 </body>
 </html>

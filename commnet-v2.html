@@ -178,6 +178,12 @@ footer .big{font-family:"Inter Tight";font-weight:300;font-size:clamp(3rem,11vw,
 @media(max-width:720px){.bcard,.bcard.w{grid-column:span 6}.nav .links,.nav .contact{display:none}.burger{display:block}.hero .row{flex-direction:column;align-items:flex-start}.hero .sub{flex-direction:column;gap:14px}.hero .pg{flex-direction:row;align-items:center}.manifesto{text-indent:0;text-align:left}.team{grid-template-columns:1fr}.form .g{grid-template-columns:1fr}.stage{min-height:auto}.pcard{flex-basis:240px}#cur{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition-duration:.001s!important;animation:none!important}.rv{opacity:1;transform:none}}
 </style>
+<noscript><style>#loader{display:none!important}.rv{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+:focus-visible{outline:3px solid #22D3EE;outline-offset:4px}
+button,[role="button"],a{touch-action:manipulation}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 <div id="loader"><div class="n"><span id="ldn">0</span><small>%</small></div></div>
@@ -421,6 +427,18 @@ document.querySelectorAll('.cnt').forEach(el=>ScrollTrigger.create({trigger:el,s
 document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const f=e.target;if(!f.checkValidity()){f.reportValidity();return}[...f.children].forEach(c=>c.id!=='ok'&&(c.style.display='none'));const ok=document.getElementById('ok');ok.style.display='block';gsap.from(ok,{opacity:0,y:12,duration:.8,ease:'expo.out'})});
 if(!reduce)gsap.to('#contact .bg img',{yPercent:10,ease:'none',scrollTrigger:{trigger:'#contact',start:'top bottom',end:'bottom top',scrub:true}});
 addEventListener('load',()=>setTimeout(()=>ScrollTrigger.refresh(),300));
+</script>
+<script>
+(()=>{
+  const hideLoader=()=>{const loader=document.getElementById('loader');if(loader){loader.style.display='none';loader.setAttribute('aria-hidden','true')}document.querySelectorAll('.rv').forEach(el=>{el.style.opacity='1';el.style.transform='none'})};
+  setTimeout(hideLoader,5000);
+  document.querySelectorAll('button').forEach(b=>{if(!b.type)b.type='button'});
+  document.querySelectorAll('img').forEach((img,i)=>{img.decoding='async';if(i>1)img.loading='lazy';if(!img.alt)img.alt=''});
+  document.querySelectorAll('input,select,textarea').forEach(field=>{if(!field.getAttribute('aria-label')&&!field.labels?.length){field.setAttribute('aria-label',field.name||field.placeholder||'Form field')}});
+  document.querySelectorAll('#svclist li').forEach(control=>{control.tabIndex=0;control.setAttribute('role','button');control.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();control.click()}})});
+  const menu=document.getElementById('mm');document.querySelectorAll('.burger').forEach(b=>{b.setAttribute('aria-controls','mm');b.setAttribute('aria-expanded','false');if(menu)new MutationObserver(()=>b.setAttribute('aria-expanded',menu.classList.contains('open')?'true':'false')).observe(menu,{attributes:true,attributeFilter:['class']})});
+  const ok=document.getElementById('ok');if(ok){ok.setAttribute('role','status');ok.setAttribute('aria-live','polite')}
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,392 @@
+=== ROUTES ===
+Route: /
+Route: /Datacenter
+Route: /PrivacyPolicy
+Route: /TermsAndConditions
+Route: /Verticles
+Route: /Verticles2
+Route: /Verticles3
+Route: /Verticles4
+Route: /aboutus
+Route: /avsolutions
+Route: /brochure
+Route: /contactus
+Route: /cybersecurityservices
+Route: /enterprise-systems-group
+Route: /informationsecurity
+Route: /infrastructuresystemgroup
+Route: /iotservices
+Route: /ourprojects
+Route: /ourprojects1
+Route: /powersolutions
+Route: /professionalitservices
+Route: /securitysystems
+Route: /softwaredevelopment
+Route: /websitedevelopment
+Route: /why-choose-us
+
+=== PHONE NUMBERS ===
+Phone: 8-176 176
+Phone: 31-128-128-128
+Phone: 2 2 0 0 0 16
+Phone: 2 2 0 0 1-2 0
+Phone: 81 17 5 19 5
+Phone: +971526965307
+Phone: 78 0 1 0 288 160
+Phone: 5 0 0 0 0 20 14
+Phone: 17 0 0 1 1
+Phone: 29 184 184 0 101
+Phone: 7 7 0 010-9
+Phone: 2 2 0 0 1-2-2
+Phone: 6 0 32-14
+Phone: 5 0 0 0 0-20
+Phone: 7-24-24-24
+Phone: +971 4 - 295 5299
+Phone: 6-19 110-41
+Phone: 79 0 0 1-3
+Phone: 2-16 16-16
+Phone: 2 2 0 01-2 2
+Phone: 29 7 12 12 20
+Phone: 84 0 16-7
+Phone: 0 0 640 512
+Phone: 7-64 64-64
+Phone: 9 9 0 11-18 0 9 9 0 0118 0
+Phone: 2 16-16 16
+Phone: 23-2148335792
+Phone: 0 0 496 512
+Phone: 3 32 0 46
+Phone: 2 2 0 0 0-2-2
+Phone: 16-16-16-16
+Phone: 6-160 160
+Phone: 2 2 0 100-4 2 2 0 000 4
+Phone: 03 248-248
+Phone: 97 8 248 8
+Phone: 536870912
+Phone: 2 2 0 0 0-2 0
+Phone: 2 2 0 0 0 2 0
+Phone: 7 103-25 145
+Phone: 7 0 128-57
+Phone: 2 2 0 0 1-2 2
+Phone: 8-176-176-176
+Phone: 2 2 0 00-2 2
+Phone: 4 0 160-71
+Phone: 8 8 0 0 1 16 0
+Phone: 2 2 0 0 1 2-2
+Phone: 0 0 448 512
+Phone: 7 0 224 0 96 57
+Phone: 3285377520
+Phone: 3 3 0 11-6 0 3 3 0 016 0
+Phone: 1736247474504
+Phone: 2-16 16-16 16 7
+Phone: 033 248 248
+Phone: 71 64-64 64
+Phone: 2 2 0 012-2
+Phone: 5 0-48 21
+Phone: 35 0 0 0 0 29
+Phone: 6 6 12 12
+Phone: 2 2 0 0 0 21 16
+Phone: 81 2 2 0 0 1
+Phone: 8 176-176-78
+Phone: 03 248 248 248 248-111
+Phone: 29 0-64-28
+Phone: 4 0-160 71
+Phone: 2 2 0 0 1 2
+Phone: 2 2 0 0 0-2 2
+Phone: 31 0 0 0-25
+Phone: 1 1 0 0 1-1
+Phone: 31 128-128-57
+Phone: 1073741824
+Phone: 122 0 0 0 1
+Phone: 2147483647
+Phone: 1 1 0 0 0 11 14
+Phone: 134217727
+Phone: 2 2 0 0 0 3 8
+Phone: 2 2 0 0 0 2-1
+Phone: 0 0 24 24
+Phone: 2 2 0 0 0 2 2
+Phone: 3432918353
+Phone: 2 2 0 00-2-2
+Phone: +3864292196
+Phone: 4294967295
+Phone: 2 2 0 0 0 1 1
+Phone: 6 32 0 103
+Phone: 2 2 0 0 1 22 16
+Phone: 2 2 0 0 0-2
+Phone: 0 0 320 512
+Phone: 505 256 34
+Phone: 7 0 32-14
+Phone: 1 1 0 0 1 1-1
+Phone: 7282349738669039617
+Phone: 033 248-248 248
+Phone: 29 184-184 184
+Phone: 6 9 6 6 6-6
+Phone: 69 0-184-82
+Phone: 144 144 0 1 1 144-144 143
+Phone: 35 0 0 0 0-29
+Phone: 03 8 0 119
+Phone: 042 0 005
+Phone: 5 0 48-21
+Phone: 2 2 0 0 1-2
+Phone: 1 1 0 011-1
+Phone: 4283543511
+Phone: 343 2 3 2 3
+Phone: 3 3 0 003-3
+Phone: 3 128-128
+Phone: 122 0 0 0-1
+Phone: 29-184 184-184 101
+Phone: 2 16-16 16-16-7
+Phone: 0722 0 0 0 0 0 1 0
+Phone: 2 2 0 0 1 2 0
+Phone: 1 1 0 0 0 13 10
+Phone: 3 32 32 32
+Phone: 32 56-32 136-47
+Phone: 16 16 0 0 0 6 6
+Phone: 3 3 0 0 0 3 3
+Phone: 2 0-176 78
+Phone: 5 32 0 53
+Phone: 1 1 0 0 1 1 1
+Phone: 4294901760
+Phone: 1 1 0 011 1
+Phone: 0 0 576 512
+Phone: 536870913
+Phone: 93 64 288 64
+Phone: 71 64 64-28
+Phone: 4 7-25 11
+Phone: 2 2 0 0 1-1 1
+Phone: 3 128 128 128
+Phone: 1-9345259
+Phone: 7 64 0 74
+Phone: 0 6 8 10 8 10
+Phone: 9 3 0 0 0 21 12
+Phone: 4 4 0 0 0-4 4
+Phone: 85 0 0 1-66
+Phone: 7 24 24 24
+Phone: 122 0 0 0
+Phone: 268435456
+Phone: 07 448 288 448
+Phone: 4 12 12 12
+Phone: 033 8 256 8
+Phone: 5 240 360 240 360
+Phone: 5 48 48 48
+Phone: 5-48-48-48
+Phone: 69 0 184 82
+Phone: 0 0 20 20
+Phone: 1 1 0 011
+Phone: +971 4-295 5299
+Phone: 998 0 01-2
+Phone: 69 0-128 57
+Phone: 7288553275979624449
+Phone: +971 4 295 5299
+Phone: 32-136 32-56
+Phone: 2 2 0 0 1 4
+Phone: 123 0 0 0
+Phone: 16 64 0 71
+Phone: 3 0 24-10
+Phone: 967 8 256 119
+Phone: 5 4 18 4 13
+Phone: 0722 0 0 0
+Phone: 33 32 32 32
+Phone: 2 16 16-7
+Phone: 3 3 0 003 3
+Phone: 5 5 0 0 1 10 0
+Phone: 31-128 128
+Phone: 2950163797
+Phone: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Phone: 2 2 0 0 0-1-1
+Phone: 8 176 176 176 176-78
+Phone: 18 16 4-4-4-4
+Phone: 5 0 0 1-6-6 19
+Phone: 4 4 0 0 1-4 4
+Phone: 7 64-64 64
+Phone: 1073741823
+Phone: 31 128 128 128 128-57
+Phone: 29-184-184 0-101
+Phone: 7 7 0 119
+Phone: 84 0 0 0 2
+Phone: 997 0 0 0 127
+Phone: 201326677
+Phone: 0 0 512 512
+Phone: 93 0 0 1-144 144
+Phone: +91 7558164222
+Phone: 895 3 2-1
+Phone: 13 2 3 14 12 14 11 22 21 10 12 10 13 2
+Phone: 7282347829472227329
+Phone: 9 292 0 350
+Phone: 4278190080
+Phone: 3 0-24 10
+Phone: 7-56-64-56
+Phone: 9 12 2 2 4-4
+Phone: 2 2 0 0 0-1
+Phone: 6 160-160
+Phone: 3301882366
+Phone: 3 0-64 20
+Phone: 18 6 6 18
+Phone: 2 2 0 0 0 2 1
+Phone: 2 2 0 0 1 2 2
+Phone: 461845907
+Phone: 343 2-3 2
+Phone: 1 1 0 0 1
+Phone: 2 2 0 0 0 2-2
+Phone: 2 2 0 0 0
+Phone: 4 4 0 0 0-4-4
+Phone: 4 4 0 0 1-4-4
+Phone: 3981806797
+Phone: 4 4 0 0 0-3-3
+Phone: 2 2 0 0 1-1-1
+Phone: 79 0 0 1-8
+Phone: 134217728
+Phone: 2 2 0 0 0 2
+Phone: 9 3 0 0 0 21 19
+Phone: 2 2 0 0 1 2 1
+Phone: 716 21 3 14
+Phone: 6 8-4 4 4 4
+Phone: 2 2 0 0 1 1 1
+Phone: 71-64 64-64 64 28
+Phone: 8 8 0 1111
+Phone: 444984403
+Phone: 123 0 0 0 1
+Phone: 4 4 0 0 1 0 7
+Phone: 3120437893
+Phone: 1482184792
+Phone: 2 2 0 0 1 1-1
+
+=== ADDRESS / LOCATION INFO ===
+Address Match: Data Centre - Raised floor, Racks, Cabling, EMS, FM200, CCU, UPS
+Address Match: ,g,b;for(;l>2&&u>1||d>2&&f>1;){let y=u,A=f;l>2&&u>1&&(y=u>=16384?Math.floor(u/2)-1||1:Math.ceil(u/2),l/=u/y),d>2&&f>1&&(A=f>=16384?Math.floor(f/2)-1||1:Math.ceil(f)/2,d/=f/A),g=this.cachedCanvases.getCanvas(m,y,A),b=g.context,b.clearRect(0,0,y,A),b.drawImage(e,0,0,u,f,0,0,y,A),e=g.canvas,u=y,f=A,m=m===
+Address Match: )z=ae+X+ce;else{const{clientWidth:se,offsetWidth:de}=H;z=ae+W+ee+X+ce+(de-se)}}Q&&(H.style.transform=Q),Z&&(H.style.webkitTransform=Z),t.roundLengths&&(z=Math.floor(z))}else z=(l-(t.slidesPerView-1)*C)/t.slidesPerView,t.roundLengths&&(z=Math.floor(z)),g[U]&&(g[U].style[r.getDirectionLabel(
+Address Match: }),s._clientLeft=s.wrapperEl.clientLeft}const b=u?s.translate:-s.translate;function y(k){return k<0?-Math.floor(Math.abs(k)):Math.floor(k)}const A=y(b),E=l.map(k=>y(k)),j=a.freeMode&&a.freeMode.enabled;let L=l[E.indexOf(A)-1];if(typeof L>
+Address Match: &&(e=l.params.speed);const j=Math.min(l.params.slidesPerGroupSkip,d);let L=j+Math.floor((d-j)/l.params.slidesPerGroup);L>=f.length&&(L=f.length-1);const T=-f[L];if(u.normalizeSlideIndex)for(let I=0;I<m.length;I+=1){const z=-Math.floor(T*100),O=Math.floor(m[I]*100),U=Math.floor(m[I+1]*100);typeof m[I+1]<
+Address Match: ,description:`We are Developing Best Website and Customized Softwares with cutting edge technology applications.
+
+We are the most experienced and highly trusted Website and Software Development Company in Dubai. Our best professional team design both Software and Websites starting from small startups to large enterprises.`,link:
+Address Match: Public Sector
+Address Match: :const u=e.verticesPerRow,f=Math.floor(s.length/u)-1,m=u-1;for(l=0;l<f;l++){let g=l*u;for(let b=0;b<m;b++,g++)sb(r,t,s[g],s[g+1],s[g+u],a[g],a[g+1],a[g+u]),sb(r,t,s[g+u+1],s[g+1],s[g+u],a[g+u+1],a[g+1],a[g+u])}break;case
+Address Match: We are the most experienced and highly trusted Website and Software Development Company in Dubai. Our best professional team design both Software and Websites starting from small startups to large enterprises.
+Address Match: ,0,Is),f=a.getImageData(0,0,Is,Is).data,d=0;for(let g=0,b=f.length;g<b;g+=4)if(f[g]>0){d=Is-Math.floor(g/4/Is);break}a.canvas.width=a.canvas.height=0;const m=d?d/(d+u):E3;return p(this,Wl).set(e,m),m},P(jt,ui),P(jt,Wl,new Map),P(jt,Yl,new Map),P(jt,Vh,new WeakMap),P(jt,_r,null),P(jt,Jc,new Set),jt);class oh{static textContent(e){const t=[],s={items:t,styles:Object.create(null)};function a(l){var f;if(!l)return;let d=null;const u=l.name;if(u===
+Address Match: 🌟 2024 Achievement Spotlight 🌟 *We are thrilled to announce the incredible success of FIFA BEACH SOCCER WORLD CUP UAE 2024 DUBAI*
+Address Match: Commnet started in the early 2000s as a two-member IT consulting firm and rapidly grew into a well-known company with offices in Dubai and India.
+Address Match: Raised Access Flooring Systems
+Address Match: ,node:l}):null}const Y2=ZT;function O6(r){const e=Cg();lt(e);const t=Object.assign(Object.assign({},e),r),{_className:s,canvasBackground:a,devicePixelRatio:l=A6(),onRenderError:d,onRenderSuccess:u,page:f,renderForms:m,renderTextLayer:g,rotate:b,scale:y}=t,{canvasRef:A}=r;lt(f);const E=F.useRef(null);function j(){f&&u&&u(Rv(f,y))}function L(w){T6(w)||(Ss(!1,w.toString()),d&&d(w))}const T=F.useMemo(()=>f.getViewport({scale:y*l,rotation:b}),[l,f,b,y]),k=F.useMemo(()=>f.getViewport({scale:y,rotation:b}),[f,b,y]);F.useEffect(function(){if(!f)return;f.cleanup();const{current:S}=E;if(!S)return;S.width=T.width,S.height=T.height,S.style.width=`${Math.floor(k.width)}px`,S.style.height=`${Math.floor(k.height)}px`,S.style.visibility=
+Address Match: &&(r=a.params.speed);let l=a.activeIndex;const d=Math.min(a.params.slidesPerGroupSkip,l),u=d+Math.floor((l-d)/a.params.slidesPerGroup),f=a.rtlTranslate?a.translate:-a.translate;if(f>=a.snapGrid[u]){const m=a.snapGrid[u],g=a.snapGrid[u+1];f-m>(g-m)*s&&(l+=a.params.slidesPerGroup)}else{const m=a.snapGrid[u-1],g=a.snapGrid[u];f-m<=(g-m)*s&&(l-=a.params.slidesPerGroup)}return l=Math.max(l,0),l=Math.min(l,a.slidesGrid.length-1),a.slideTo(l,r,e,t)}function p4(){const r=this;if(r.destroyed)return;const{params:e,slidesEl:t}=r,s=e.slidesPerView===
+Address Match: Dubai Electricity and Water Authority (DEWA)-CSOC
+Address Match: Focusing on security, storage, and disaster recovery for military, commercial, and industrial sectors.
+Address Match: )]=`${z}px`);g[U]&&(g[U].swiperSlideSize=z),E.push(z),t.centeredSlides?(w=w+z/2+S/2+C,S===0&&U!==0&&(w=w-l/2-C),U===0&&(w=w-l/2-C),Math.abs(w)<1/1e3&&(w=0),t.roundLengths&&(w=Math.floor(w)),_%t.slidesPerGroup===0&&y.push(w),A.push(w)):(t.roundLengths&&(w=Math.floor(w)),(_-Math.min(r.params.slidesPerGroupSkip,_))%r.params.slidesPerGroup===0&&y.push(w),A.push(w),w=w+z+C),r.virtualSize+=z+C,S=z,_+=1}}if(r.virtualSize=Math.max(r.virtualSize,l)+L,d&&u&&(t.effect===
+Address Match: Dubai & Abu Dhabi
+Address Match: CCTV for CID & Dubai Police
+Address Match: ),this.addAltTextButton(),p(this,vt)?R(this,Ue,Sv).call(this):R(this,Ue,Lm).call(this),this.width&&!this.annotationElementId){const[a,l]=this.parentDimensions;this.setAt(t*a,s*l,this.width*a,this.height*l)}return this.div}copyCanvas(t,s,a=!1){var A;t||(t=224);const{width:l,height:d}=p(this,vt),u=new xb;let f=p(this,vt),m=l,g=d,b=null;if(s){if(l>s||d>s){const z=Math.min(s/l,s/d);m=Math.floor(l*z),g=Math.floor(d*z)}b=document.createElement(
+Address Match: Office No.301, Centurion Star Building, Tower A, Port Saeed Dubai, UAE, PO Box 117133
+Address Match: Delivering excellence in engineering and construction with innovative solutions and uncompromising quality across the UAE.
+Address Match: Port Saeed Dubai, UAE, PO Box 117133
+Address Match: Dubai
+Address Match: );this.ctx._removeMirroring(),Iu(this.ctx,this.suspendedCtx),this.ctx=this.suspendedCtx,this.suspendedCtx=null}compose(e){if(!this.current.activeSMask)return;e?(e[0]=Math.floor(e[0]),e[1]=Math.floor(e[1]),e[2]=Math.ceil(e[2]),e[3]=Math.ceil(e[3])):e=[0,0,this.ctx.canvas.width,this.ctx.canvas.height];const t=this.current.activeSMask,s=this.suspendedCtx;this.composeSMask(s,t,this.ctx,e),this.ctx.save(),this.ctx.setTransform(1,0,0,1,0,0),this.ctx.clearRect(0,0,this.ctx.canvas.width,this.ctx.canvas.height),this.ctx.restore()}composeSMask(e,t,s,a){const l=a[0],d=a[1],u=a[2]-l,f=a[3]-d;u===0||f===0||(this.genericComposeSMask(t.context,s,u,f,t.subtype,t.backdrop,t.transferMap,l,d,t.offsetX,t.offsetY),e.save(),e.globalAlpha=1,e.globalCompositeOperation=
+Address Match: Trusted by Defense and Commercial Sectors
+Address Match: India
+Address Match: Providing comprehensive data center solutions, including design, product selection, and customized implementations focusing on security, storage, and disaster recovery. Serving military, commercial, and industrial sectors, we integrate new technology with existing IT infrastructure to create efficient, service-driven data centers. Our solutions reduce costs, simplify management, improve productivity, and mitigate risks.
+Address Match: Senior IT Consultant, Jotun UAE
+Address Match: Sharjah, UAE
+Address Match: /assets/DubaiSafar.png
+Address Match: ):I=0<W?Math.floor(1e3/W):5},r.unstable_getCurrentPriorityLevel=function(){return y},r.unstable_getFirstCallbackNode=function(){return t(f)},r.unstable_next=function(W){switch(y){case 1:case 2:case 3:var ee=3;break;default:ee=y}var X=y;y=ee;try{return W()}finally{y=X}},r.unstable_pauseExecution=function(){},r.unstable_requestPaint=function(){},r.unstable_runWithPriority=function(W,ee){switch(W){case 1:case 2:case 3:case 4:case 5:break;default:W=3}var X=y;y=W;try{return ee()}finally{y=X}},r.unstable_scheduleCallback=function(W,ee,X){var ce=r.unstable_now();switch(typeof X==
+Address Match: Access control system for branches Dubai and Abu Dhabi
+Address Match: ?-T/2+.5:0);if(ae<C){q=Math.max(C-ae,k);for(let W=0;W<C-ae;W+=1){const ee=W-Math.floor(W/I)*I;if(w){const X=I-ee-1;for(let ce=g.length-1;ce>=0;ce-=1)g[ce].column===X&&S.push(ce)}else S.push(I-ee-1)}}else if(ae+T>I-C){Q=Math.max(ae-(I-C*2),k),z&&(Q=Math.max(Q,T-I+L+1));for(let W=0;W<Q;W+=1){const ee=W-Math.floor(W/I)*I;w?g.forEach((X,ce)=>{X.column===ee&&_.push(ce)}):_.push(ee)}}if(m.__preventObserver__=!0,requestAnimationFrame(()=>{m.__preventObserver__=!1}),m.params.effect===
+Address Match: )]=`${r.virtualSize+C}px`),I&&r.grid.updateWrapperSize(z,y),!t.centeredSlides){const U=[];for(let H=0;H<y.length;H+=1){let q=y[H];t.roundLengths&&(q=Math.floor(q)),y[H]<=r.virtualSize-l&&U.push(q)}y=U,Math.floor(r.virtualSize-l)-Math.floor(y[y.length-1])>1&&y.push(r.virtualSize-l)}if(f&&t.loop){const U=E[0]+C;if(t.slidesPerGroup>1){const H=Math.ceil((r.virtual.slidesBefore+r.virtual.slidesAfter)/t.slidesPerGroup),q=U*t.slidesPerGroup;for(let Q=0;Q<H;Q+=1)y.push(y[y.length-1]+q)}for(let H=0;H<r.virtual.slidesBefore+r.virtual.slidesAfter;H+=1)t.slidesPerGroup===1&&y.push(y[y.length-1]+U),A.push(A[A.length-1]+U),r.virtualSize+=U}if(y.length===0&&(y=[0]),C!==0){const U=r.isHorizontal()&&d?
+Address Match: )}}class qL extends ey{constructor(e){super(),this._coords=e[2],this._colors=e[3],this._figures=e[4],this._bounds=e[5],this._bbox=e[7],this._background=e[8],this.matrix=null}_createMeshCanvas(e,t,s){const u=Math.floor(this._bounds[0]),f=Math.floor(this._bounds[1]),m=Math.ceil(this._bounds[2])-u,g=Math.ceil(this._bounds[3])-f,b=Math.min(Math.ceil(Math.abs(m*e[0]*1.1)),3e3),y=Math.min(Math.ceil(Math.abs(g*e[1]*1.1)),3e3),A=m/b,E=g/y,j={coords:this._coords,colors:this._colors,offsetX:-u,offsetY:-f,scaleX:1/A,scaleY:1/E},L=b+2*2,T=y+2*2,k=s.getCanvas(
+Address Match: Applying deep domain knowledge across various industry sectors.
+Address Match: These Terms are governed by the laws of the United Arab Emirates. Any disputes shall be resolved in the courts of Dubai.
+Address Match: UAE Football Association
+Address Match: Commnet is a CERT-IN empanelled security auditor and ranks top 4 on the panel of IT security auditing organisations in India. Our team consists of consultants and auditors who are well versed in globally accepted information security standards: ISO27001, ISO 20000, OSSTMM, SSE-CMM, CobIT and OWASP, you name it and we have it.
+Address Match: UAE
+Address Match: Structural Ceiling and Raised Floor
+Address Match: SMB-scalable and built to adapt across sectors.
+Address Match: )?e.style.backgroundColor=`color-mix(in srgb, ${l} 30%, white)`:e.style.backgroundColor=we.makeHexColor(...p(this,eo).map(u=>Math.floor(.7*(255-u)+u)))}const t=document.createElement(
+Address Match: Palm Jumeirah, Dubai
+Address Match: FIFA BEACH SOCCER WORLD CUP UAE 2024
+Address Match: }],iR=(r,e)=>`https://www.openstreetmap.org/export/embed.html?bbox=${e-.02},${r-.01},${e+.02},${r+.01}&layer=mapnik&marker=${r},${e}`;function nR(){const[r,e]=F.useState(0),t=F.useRef(null),[s,a]=F.useState(null);return F.useEffect(()=>{Vs.init({duration:800,once:!0,easing:
+Address Match: ,G,se),oe=de.context,le=_?Math.floor(E/f):0,Se=I?Math.floor(j/m):0;for(let fe=0;fe<=le;fe++)for(let me=0;me<=Se;me++)oe.drawImage(ee,G*fe,se*me,G,se,0,0,G,se);return{canvas:de.canvas,scaleX:X.scale,scaleY:ce.scale,offsetX:g,offsetY:b}}return{canvas:Z.canvas,scaleX:q.scale,scaleY:Q.scale,offsetX:g,offsetY:b}}getSizeAndScale(e,t,s){const a=Math.max(ng.MAX_PATTERN_SIZE,t);let l=Math.ceil(e*s);return l>=a?l=a:s=l/e,{scale:s,size:l}}clipBbox(e,t,s,a,l){const d=a-t,u=l-s;e.ctx.rect(t,s,d,u),e.current.updateRectMinMax(yt(e.ctx),[t,s,a,l]),e.clip(),e.endPath()}setFillAndStrokeStyleToContext(e,t,s){const a=e.ctx,l=e.current;switch(t){case T2.COLORED:const d=this.ctx;a.fillStyle=d.fillStyle,a.strokeStyle=d.strokeStyle,l.fillColor=d.fillStyle,l.strokeColor=d.strokeStyle;break;case T2.UNCOLORED:const u=we.makeHexColor(s[0],s[1],s[2]);a.fillStyle=u,a.strokeStyle=u,l.fillColor=u,l.strokeColor=u;break;default:throw new bL(`Unsupported paint type: ${t}`)}}getPattern(e,t,s,a){let l=s;a!==_s.SHADING&&(l=we.transform(l,t.baseTransform),this.matrix&&(l=we.transform(l,this.matrix)));const d=this.createPatternCanvas(t);let u=new DOMMatrix(l);u=u.translate(d.offsetX,d.offsetY),u=u.scale(1/d.scaleX,1/d.scaleY);const f=e.createPattern(d.canvas,
+Address Match: ),10);Number.isNaN(E)&&(E=Math.max(e.slides.indexOf(A),0)),y=Math.floor(E/a.grid.rows)}else if(e.slides[f]){const A=e.slides[f].getAttribute(
+Address Match: )}serialize([t,s,a,l],d){const u=a-t,f=l-s;let m,g;switch(d){case 0:m=R(this,Gs,Ku).call(this,p(this,_t),t,l,u,-f),g=R(this,Gs,Ku).call(this,p(this,ai),t,l,u,-f);break;case 90:m=R(this,Gs,Qu).call(this,p(this,_t),t,s,u,f),g=R(this,Gs,Qu).call(this,p(this,ai),t,s,u,f);break;case 180:m=R(this,Gs,Ku).call(this,p(this,_t),a,s,-u,f),g=R(this,Gs,Ku).call(this,p(this,ai),a,s,-u,f);break;case 270:m=R(this,Gs,Qu).call(this,p(this,_t),a,l,-u,-f),g=R(this,Gs,Qu).call(this,p(this,ai),a,l,-u,-f);break}return{outline:Array.from(m),points:[Array.from(g)]}}get box(){return p(this,oo)}newOutliner(t,s,a,l,d,u=0){return new $m(t,s,a,l,d,u)}getNewOutline(t,s){const{x:a,y:l,width:d,height:u}=p(this,oo),[f,m,g,b]=p(this,pd),y=d*g,A=u*b,E=a*g+f,j=l*b+m,L=this.newOutliner({x:p(this,ai)[0]*y+E,y:p(this,ai)[1]*A+j},p(this,pd),p(this,hf),t,p(this,uf),s??p(this,Aa));for(let T=2;T<p(this,ai).length;T+=2)L.add({x:p(this,ai)[T]*y+E,y:p(this,ai)[T+1]*A+j});return L.getOutlines()}get mustRemoveSelfIntersections(){return!0}}pd=new WeakMap,oo=new WeakMap,Aa=new WeakMap,uf=new WeakMap,ai=new WeakMap,hf=new WeakMap,_t=new WeakMap,Gs=new WeakSet,Ku=function(t,s,a,l,d){const u=new Float64Array(t.length);for(let f=0,m=t.length;f<m;f+=2)u[f]=s+t[f]*l,u[f+1]=a+t[f+1]*d;return u},Qu=function(t,s,a,l,d){const u=new Float64Array(t.length);for(let f=0,m=t.length;f<m;f+=2)u[f]=s+t[f+1]*l,u[f+1]=a+t[f]*d;return u},vT=function(t){const s=p(this,_t);let a=s[4],l=s[5],d=a,u=l,f=a,m=l,g=a,b=l;const y=t?Math.max:Math.min;for(let T=6,k=s.length;T<k;T+=6){if(isNaN(s[T]))d=Math.min(d,s[T+4]),u=Math.min(u,s[T+5]),f=Math.max(f,s[T+4]),m=Math.max(m,s[T+5]),b<s[T+5]?(g=s[T+4],b=s[T+5]):b===s[T+5]&&(g=y(g,s[T+4]));else{const C=we.bezierBoundingBox(a,l,...s.slice(T,T+6));d=Math.min(d,C[0]),u=Math.min(u,C[1]),f=Math.max(f,C[2]),m=Math.max(m,C[3]),b<C[3]?(g=C[2],b=C[3]):b===C[3]&&(g=y(g,C[2]))}a=s[T+4],l=s[T+5]}const A=d-p(this,Aa),E=u-p(this,Aa),j=f-d+2*p(this,Aa),L=m-u+2*p(this,Aa);M(this,oo,{x:A,y:E,width:j,height:L,lastPoint:[g,b]})};var ff,Pr,Ji,Rs,yT,jm,wT,ST,av;class F2{constructor(e,t=0,s=0,a=!0){P(this,Rs);P(this,ff);P(this,Pr,[]);P(this,Ji,[]);let l=1/0,d=-1/0,u=1/0,f=-1/0;const m=10**-4;for(const{x:L,y:T,width:k,height:C}of e){const w=Math.floor((L-t)/m)*m,S=Math.ceil((L+k+t)/m)*m,_=Math.floor((T-t)/m)*m,I=Math.ceil((T+C+t)/m)*m,z=[w,_,I,!0],O=[S,_,I,!1];p(this,Pr).push(z,O),l=Math.min(l,w),d=Math.max(d,S),u=Math.min(u,_),f=Math.max(f,I)}const g=d-l+2*s,b=f-u+2*s,y=l-s,A=u-s,E=p(this,Pr).at(a?-1:-2),j=[E[0],E[2]];for(const L of p(this,Pr)){const[T,k,C]=L;L[0]=(T-y)/g,L[1]=(k-A)/b,L[2]=(C-A)/b}M(this,ff,{x:y,y:A,width:g,height:b,lastPoint:j})}getOutlines(){p(this,Pr).sort((t,s)=>t[0]-s[0]||t[1]-s[1]||t[2]-s[2]);const e=[];for(const t of p(this,Pr))t[3]?(e.push(...R(this,Rs,av).call(this,t)),R(this,Rs,wT).call(this,t)):(R(this,Rs,ST).call(this,t),e.push(...R(this,Rs,av).call(this,t)));return R(this,Rs,yT).call(this,e)}}ff=new WeakMap,Pr=new WeakMap,Ji=new WeakMap,Rs=new WeakSet,yT=function(e){const t=[],s=new Set;for(const d of e){const[u,f,m]=d;t.push([u,f,d],[u,m,d])}t.sort((d,u)=>d[1]-u[1]||d[0]-u[0]);for(let d=0,u=t.length;d<u;d+=2){const f=t[d][2],m=t[d+1][2];f.push(m),m.push(f),s.add(f),s.add(m)}const a=[];let l;for(;s.size>0;){const d=s.values().next().value;let[u,f,m,g,b]=d;s.delete(d);let y=u,A=f;for(l=[u,m],a.push(l);;){let E;if(s.has(g))E=g;else if(s.has(b))E=b;else break;s.delete(E),[u,f,m,g,b]=E,y!==u&&(l.push(y,A,u,A===f?f:m),y=u),A=A===f?m:f}l.push(y,A)}return new oP(a,p(this,ff))},jm=function(e){const t=p(this,Ji);let s=0,a=t.length-1;for(;s<=a;){const l=s+a>>1,d=t[l][0];if(d===e)return l;d<e?s=l+1:a=l-1}return a+1},wT=function([,e,t]){const s=R(this,Rs,jm).call(this,e);p(this,Ji).splice(s,0,[e,t])},ST=function([,e,t]){const s=R(this,Rs,jm).call(this,e);for(let a=s;a<p(this,Ji).length;a++){const[l,d]=p(this,Ji)[a];if(l!==e)break;if(l===e&&d===t){p(this,Ji).splice(a,1);return}}for(let a=s-1;a>=0;a--){const[l,d]=p(this,Ji)[a];if(l!==e)break;if(l===e&&d===t){p(this,Ji).splice(a,1);return}}},av=function(e){const[t,s,a]=e,l=[[t,s,a]],d=R(this,Rs,jm).call(this,a);for(let u=0;u<d;u++){const[f,m]=p(this,Ji)[u];for(let g=0,b=l.length;g<b;g++){const[,y,A]=l[g];if(!(m<=y||A<=f)){if(y>=f){if(A>m)l[g][1]=m;else{if(b===1)return[];l.splice(g,1),g--,b--}continue}l[g][2]=f,A>m&&l.push([t,m,A])}}}return l};var pf,md;class oP extends uT{constructor(t,s){super();P(this,pf);P(this,md);M(this,md,t),M(this,pf,s)}toSVGPath(){const t=[];for(const s of p(this,md)){let[a,l]=s;t.push(`M${a} ${l}`);for(let d=2;d<s.length;d+=2){const u=s[d],f=s[d+1];u===a?(t.push(`V${f}`),l=f):f===l&&(t.push(`H${u}`),a=u)}t.push(
+Address Match: Headquartered in Dubai with branches in India.
+Address Match: Grew operations across UAE and India.
+Address Match: Dubai Safari Park
+Address Match: ?e.slidePrev():e.slideToLoop(w)}else e.slideTo(w)}function y(){const k=e.rtl,C=e.params.pagination;if(f())return;let w=e.pagination.el;w=ns(w);let S,_;const I=e.virtual&&e.params.virtual.enabled?e.virtual.slides.length:e.slides.length,z=e.params.loop?Math.ceil(I/e.params.slidesPerGroup):e.snapGrid.length;if(e.params.loop?(_=e.previousRealIndex||0,S=e.params.slidesPerGroup>1?Math.floor(e.realIndex/e.params.slidesPerGroup):e.realIndex):typeof e.snapIndex<
+Address Match: Office No 7/1, KKSK Building, 1st Floor, Visvanathar Koil St, St. Thomas Mount, Chennai-600016
+Address Match: https://www.linkedin.com/posts/commnet-systems-consultancy_uae-activity-7282347829472227329-pI_G
+Address Match: })}drag(e,t){p(this,Tr)||M(this,Tr,[this.x,this.y]);const[s,a]=this.parentDimensions;if(this.x+=e/s,this.y+=t/a,this.parent&&(this.x<0||this.x>1||this.y<0||this.y>1)){const{x:m,y:g}=this.div.getBoundingClientRect();this.parent.findNewParent(this,m,g)&&(this.x-=Math.floor(this.x),this.y-=Math.floor(this.y))}let{x:l,y:d}=this;const[u,f]=this.getBaseTranslation();l+=u,d+=f,this.div.style.left=`${(100*l).toFixed(2)}%`,this.div.style.top=`${(100*d).toFixed(2)}%`,this.div.scrollIntoView({block:
+Address Match: ,p(this,Ed))},$T=function(t,s){var u;const[a,l]=this.parentDimensions;this.width=t/a,this.height=s/l,(u=this._initialOptions)!=null&&u.isCentered?this.center():this.fixAndSetPosition(),this._initialOptions=null,p(this,Mn)!==null&&clearTimeout(p(this,Mn)),M(this,Mn,setTimeout(()=>{M(this,Mn,null),R(this,Ue,Av).call(this,t,s)},200))},Pm=function(t,s){const{width:a,height:l}=p(this,vt);let d=a,u=l,f=p(this,vt);for(;d>2*t||u>2*s;){const m=d,g=u;d>2*t&&(d=d>=16384?Math.floor(d/2)-1:Math.ceil(d/2)),u>2*s&&(u=u>=16384?Math.floor(u/2)-1:Math.ceil(u/2));const b=new OffscreenCanvas(d,u);b.getContext(
+Address Match: Established with a focus on quality IT consulting services in Dubai
+Address Match: Head of Infrastructure & Information Security, UAEFA (Dubai)
+Address Match: 🎉 Biggest Achievement of 2024-FIFA BEACH SOCCER WORLD CUP UAE 2024 DUBAI 🎉 Askar Basha M N karthikeyan Narayanasamy Gopi Commnet swathi dumpala 
+Address Match: Dubai, UAE
+Address Match: ;function I2(r){return Math.floor(Math.max(0,Math.min(1,r))*255).toString(16).padStart(2,
+Address Match: Address: Office No.301, Centurion Star Building Tower A, Port Saeed Dubai, UAE, PO Box 117133
+Address Match: &&(f=YM(e)),s.indexOf(t)>=0)m=s.indexOf(t);else{const A=Math.min(a.slidesPerGroupSkip,f);m=A+Math.floor((f-A)/a.slidesPerGroup)}if(m>=s.length&&(m=s.length-1),f===l&&!e.params.loop){m!==u&&(e.snapIndex=m,e.emit(
+Address Match: s broadest and most comprehensive portfolio of cutting-edge digital infrastructure, and a wide range of services, all meticulously designed to empower and support your organizations growth and success.
+Address Match: )crypto.getRandomValues(r);else for(let e=0;e<32;e++)r[e]=Math.floor(Math.random()*255);return XA(r)}const Yv=
+Address Match: );const e=this,{params:t,rtlTranslate:s,translate:a,wrapperEl:l}=e;if(t.virtualTranslate)return s?-a:a;if(t.cssMode)return a;let d=NM(l,r);return d+=e.cssOverflowAdjustment(),s&&(d=-d),d||0}function JM(r,e){const t=this,{rtlTranslate:s,params:a,wrapperEl:l,progress:d}=t;let u=0,f=0;const m=0;t.isHorizontal()?u=s?-r:r:f=r,a.roundLengths&&(u=Math.floor(u),f=Math.floor(f)),t.previousTranslate=t.translate,t.translate=t.isHorizontal()?u:f,a.cssMode?l[t.isHorizontal()?
+Address Match: An elite infrastructure implementation including GRMS and AV systems for one of the most luxurious landmarks in Dubai.
+Address Match: ),L.fillRect(0,0,E,j),L.drawImage(f,0,0,f.width,f.height,0,0,E,j)}let y=null;if(a){let E,j;if(u.symmetric&&f.width<t&&f.height<t)E=f.width,j=f.height;else if(f=p(this,vt),l>t||d>t){const k=Math.min(t/l,t/d);E=Math.floor(l*k),j=Math.floor(d*k),p(this,ri)||(f=R(this,Ue,Pm).call(this,E,j))}const T=new OffscreenCanvas(E,j).getContext(
+Address Match: );let a=we.getAxialAlignedBoundingBox(e.bbox,yt(t));const l=[0,0,t.canvas.width,t.canvas.height];a=we.intersect(a,l)||[0,0,0,0];const d=Math.floor(a[0]),u=Math.floor(a[1]),f=Math.max(Math.ceil(a[2])-d,1),m=Math.max(Math.ceil(a[3])-u,1);this.current.startNewPathAndClipBox([0,0,f,m]);let g=
+Address Match: Al Jadaf, Dubai
+
+=== CLIENT / PARTNER / TESTIMONIAL / PROJECT DATA ===
+Key Statement: Data Center Infrastructure
+Key Statement: Certified technicians for installation & maintenance.
+Key Statement: Expert consulting, deployment, and managed services to support your IT landscape.
+Key Statement: An elite infrastructure implementation including GRMS and AV systems for one of the most luxurious landmarks in Dubai.
+Key Statement: Infrastructure Systems 
+Key Statement: We have nurtured partnerships with the world
+Key Statement: These Terms and Conditions govern your use of Commnet Systems Consultancy LLC
+Key Statement: Ongoing IT infrastructure support, including structured cabling and WiFi at Safari Park.
+Key Statement: Infrastructure Systems Group
+Key Statement: Hear directly from our Managing Director about our vision, values, and commitment to excellence.
+Key Statement: Long-term infrastructure support covering server and storage, network, WiFi, and AV systems.
+Key Statement: Modern IT Infrastructure Integration
+Key Statement: Integration of new technology with existing IT infrastructure to enhance performance.
+Key Statement: Optimize IT infrastructure
+Key Statement: Our Premier Projects
+Key Statement: https://www.commnetsysconsult.com/wp-content/uploads/2023/02/Commnet-LLC-Video-Whatsapp.mp4
+Key Statement: SLA for network infrastructure
+Key Statement: Installation of cyber security devices, Testing and commissioning
+Key Statement: Commnet System Consultancy LLC – ICT & ELV Solutions
+Key Statement: Words from our trusted partners and clients who
+Key Statement: Occidental Hotel Al Jadaf – ELV & IT Infrastructure
+Key Statement: info@commnetsysconsult.in
+Key Statement: Recognized for delivering mission-critical infrastructure to global clients
+Key Statement: Data centre maintenance, Service level agreement for network infrastructure
+Key Statement: Join hundreds of businesses that trust Commnet for their technology needs.
+Key Statement: Enterprise-Grade Security with MFA and encryption.
+Key Statement: Advancing our vision through strategy, 
+Key Statement: Turn your business vision into reality with
+Key Statement: /cybersecurityservices
+Key Statement: Achieved rapid growth and became a well-known IT consulting firm.
+Key Statement: Established with a focus on quality IT consulting services in Dubai
+Key Statement: Discover how Commnet empowers modern businesses with efficiency, reliability, and innovation across regions.
+Key Statement: Cyber security devices installation, testing & commissioning
+Key Statement: Enterprise Systems Group
+Key Statement: s security policies, procedures, standards and organisation structure against the ISO27001 standard.
+Key Statement: Cloud Infrastructure Planning & Setup.
+Key Statement: Build and scale IT infrastructure aligned with your enterprise growth strategy.
+Key Statement: 2017 to 2024 (8 Years)
+Key Statement: Email: info@commnetsysconsult.com 
+Key Statement: 2022 to 2024 (2 Years)
+Key Statement: Started in the early 2000s as a 2-member consulting team.
+Key Statement: Utmost efficiency & professionalism at every level to service our satisfied clients.
+Key Statement: /infrastructuresystemgroup
+Key Statement: Started as a 2-member consultancy with a vision to transform IT services
+Key Statement: ELV & IT Infrastructure
+Key Statement: Experience in global and multi-cultural projects
+Key Statement: We aim to build lasting partnerships by aligning our expertise with your success.
+Key Statement: Structured Cabling Infrastructure
+Key Statement: Commnet Systems Consultancy LLC
+Key Statement: Cybersecurity Services
+Key Statement: /enterprise-systems-group
+Key Statement: Operator Training Programs and Certification.
+Key Statement: Supporting SaaS, platform teams, and tech innovators with robust infrastructure.
+Key Statement: IT infrastructure and Security System solutions.
+Key Statement: Head of Infrastructure & Information Security, UAEFA (Dubai)
+Key Statement: info@commnetsysconsult.com
+Key Statement: Delivering agility and innovation through optimized enterprise IT infrastructure.
+Key Statement: TODO: Support non-isolated groups.
+Key Statement: Accelerating performance with isolated, secure, high-speed environments.
+Key Statement: https://www.linkedin.com/posts/commnet-systems-consultancy_uae-activity-7282347829472227329-pI_G
+Key Statement: Complete Infrastructure Services
+Key Statement: Certified experience with UPS & battery technologies

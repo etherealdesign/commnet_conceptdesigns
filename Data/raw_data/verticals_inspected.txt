@@ -1,0 +1,49 @@
+=== KEYWORD: chainex ===
+- ),label:"Chainex",link:"/Verticles2"
+- icon:Bk,label:"Chainex",link:"/Verticles2"
+- :text-6xl font-extrabold tracking-wide",children:"Chainex"
+- t-lg leading-relaxed max-w-3xl mx-auto",children:"Chainex is a global boutique product engineering firm at the forefront of deep-tech innovation and embedded product architecture. In strategic partnership wi
+
+=== KEYWORD: lighting ===
+- -rendering"],["letterSpacing","letter-spacing"],["lightingColor","lighting-color"],["markerEnd","marker-end"],["markerMid","marker-mid"],["markerStart","marker-start"],["overlinePosition","overline-position"]
+- static startHighlighting(t,s,
+- ),p(this,ws).div.classList.add("highlighting")
+- his,Ma,null),p(this,ws).div.classList.remove("highlighting"))
+- List.add("free"),this.toggleDrawing(),Ym.startHighlighting(this,p(this,Te).direction==="ltr",
+
+=== KEYWORD: lightning ===
+- ),label:"Lightning Solutions",link:"/Verticles"
+- icon:xA,label:"Lightning Solutions",link:"/Verticles"
+- old tracking-wide","data-aos":"fade-up",children:"Lightning Solutions"
+
+=== KEYWORD: verticle ===
+- ),label:"Chainex",link:"/Verticles2"
+- ),label:"Power Solutions",link:"/Verticles3"
+- ),label:"Lightning Solutions",link:"/Verticles"
+- onMouseEnter:()=>E("verticles"),onMouseLeave:j,className:"relative cursor-pointer hover:text-red-500",children:c.jsx("span",
+- ),r==="verticles"&&c.jsxs("div",
+
+=== KEYWORD: datacenter ===
+- ),label:"Data Center",link:"/Datacenter"
+- path:"/Datacenter",element:c.jsx(aD,
+
+=== KEYWORD: brochure ===
+- y.href=Xm,y.download="Commnet_Brochure.pdf",document.body.appendChild(y),y.click(),document.body.removeChild(y)
+- ),"View Brochure"]
+- ),"Download Brochure"]
+- path:"/brochure",element:c.jsx(K6,
+
+=== KEYWORD: terms ===
+- href:"/TermsAndConditions",className:"hover:underline text-sky-700",children:"Terms & Conditions"
+- difications","Governing Law","Contact"],e=["These Terms and Conditions govern your use of Commnet Systems Consultancy LLC's services and website. By accessing or using our services, you agree to be bound b
+- y these Terms.","Our services are intended for businesses and individuals who are legally capable of entering into binding contracts.","To access certain services,
+- e subject to acceptance and availability. Payment terms will be specified at the time of order and must be adhered to as agreed.","Delivery timelines are estimates and may vary based on location and other
+- formation.","We reserve the right to modify these Terms at any time. Changes will be effective upon posting on our website. Continued use of our services constitutes acceptance of the updated Terms.","Thes
+
+=== KEYWORD: privacy ===
+- href:"/PrivacyPolicy",className:"hover:underline text-sky-700",children:"Privacy Policy"
+- Intellectual Property","Limitation of Liability","Privacy Clause","Modifications","Governing Law","Contact"],e=["These Terms and Conditions govern your use of Commnet Systems Consultancy LLC's services and w
+- "Your use of our services is also governed by our Privacy Policy, which outlines how we handle your personal information.","We reserve the right to modify these Terms at any time. Changes will be effective u
+- Consultancy LLC is committed to safeguarding the privacy of our clients and visitors. This Privacy Policy outlines how we collect, use, disclose, and protect your information in accordance with traditional
+- ites. We are not responsible for their content or privacy practices.","You have the right to access, correct, or delete your data, and to restrict or object to certain processing activities.","We may update
+

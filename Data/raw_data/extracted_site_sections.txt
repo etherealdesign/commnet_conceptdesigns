@@ -1,0 +1,577 @@
+act(...) is not supported in production builds of React.
+==================================================
+
+forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported
+==================================================
+
+react.client.reference
+==================================================
+
+React has blocked a javascript: URL as a security precaution.
+==================================================
+
+,h.digest=N,Qd({value:h,source:null,stack:null}),n=D0(i,n,o)}else if(Xt||ou(i,n,o,!1),N=(o&i.childLanes)!==0,Xt||N){if(N=ot,N!==null){if(h=o&-o,h&42)h=1;else switch(h){case 2:h=1;break;case 8:h=4;break;case 32:h=16;break;case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:case 4194304:case 8388608:case 16777216:case 33554432:h=64;break;case 268435456:h=134217728;break;default:h=0}if(h=h&(N.suspendedLanes|o)?0:h,h!==0&&h!==B.retryLane)throw B.retryLane=h,$a(i,h),Ts(N,i,h),d1}D.data===
+==================================================
+
+?WeakSet:Set,Kt=null,R1=!1;function LC(i,n){if(i=i.containerInfo,wx=Hp,i=Xy(i),Xg(i)){if(
+==================================================
+
+&&B.rel.toLowerCase()===
+==================================================
+
+,ve,o,ie),ke.target=K,ke.relatedTarget=Et,ne=ke),Et=ne,te&&ve)t:{for(ke=te,Y=ve,V=0,K=ke;K;K=hc(K))V++;for(K=0,ne=Y;ne;ne=hc(ne))K++;for(;0<V-K;)ke=hc(ke),V--;for(;0<K-V;)Y=hc(Y),K--;for(;V--;){if(ke===Y||Y!==null&&ke===Y.alternate)break t;ke=hc(ke),Y=hc(Y)}ke=null}else ke=null;te!==null&&pS(re,J,te,ke,!1),ve!==null&&Et!==null&&pS(re,Et,ve,ke,!0)}}e:{if(J=$?Fd($):window,te=J.nodeName&&J.nodeName.toLowerCase(),te===
+==================================================
+
+You can provide a way better UX than this when your app throws errors by providing your own
+==================================================
+
+A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.
+==================================================
+
+You cannot render a <Router> inside another <Router>. You should never have more than one in your app.
+==================================================
+
+};/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const bk=F.forwardRef(({color:r=
+==================================================
+
+,vk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const yk=[[
+==================================================
+
+,yk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Sk=[[
+==================================================
+
+,Sk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Ek=[[
+==================================================
+
+,Ek);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Tk=[[
+==================================================
+
+,Tk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const jk=[[
+==================================================
+
+,jk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Ck=[[
+==================================================
+
+,Ck);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Nk=[[
+==================================================
+
+,Nk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const kk=[[
+==================================================
+
+,kk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Mk=[[
+==================================================
+
+,Mk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Rk=[[
+==================================================
+
+,Rk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Lk=[[
+==================================================
+
+,Lk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Dk=[[
+==================================================
+
+,Dk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Ik=[[
+==================================================
+
+,Ik);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Fk=[[
+==================================================
+
+,Fk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Hk=[[
+==================================================
+
+,Hk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Uk=[[
+==================================================
+
+,Uk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Vk=[[
+==================================================
+
+,Vk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const $k=[[
+==================================================
+
+,$k);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Wk=[[
+==================================================
+
+,Wk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Yk=[[
+==================================================
+
+,Yk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Xk=[[
+==================================================
+
+,Xk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Kk=[[
+==================================================
+
+,Kk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Qk=[[
+==================================================
+
+,Qk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Zk=[[
+==================================================
+
+,Zk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Jk=[[
+==================================================
+
+,Jk);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const eM=[[
+==================================================
+
+,eM);/**
+ * @license lucide-react v0.507.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const sM=[[
+==================================================
+
+)+r.className),We.createElement(
+==================================================
+
+}),l&&We.createElement(
+==================================================
+
+,className:`fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 animate-fadeDown ${f?
+==================================================
+
+by yourself.
+    `),z.disableMutationObserver=!0),document.querySelector(
+==================================================
+
+}),c.jsx(Tc,{className:`w-5 h-5 transition-transform ${r.services?
+==================================================
+
+}`})]}),r.services&&c.jsx(
+==================================================
+
+}),c.jsx(Tc,{className:`w-5 h-5 transition-transform ${r.solutions?
+==================================================
+
+}`})]}),r.solutions&&c.jsx(
+==================================================
+
+)),l=new t.WebKitCSSMatrix(a===
+==================================================
+
+&&(t.WebKitCSSMatrix?a=l.m41:s.length===16?a=parseFloat(s[12]):a=parseFloat(s[4])),e===
+==================================================
+
+&&r.params.width!==null?e=r.params.width:e=s.clientWidth,typeof r.params.height<
+==================================================
+
+&&r.params.height!==null?t=r.params.height:t=s.clientHeight,!(e===0&&r.isHorizontal()||t===0&&r.isVertical())&&(e=e-parseInt(Ur(s,
+==================================================
+
+&&(L=t.slidesOffsetAfter.call(r));const T=r.snapGrid.length,k=r.slidesGrid.length;let C=t.spaceBetween,w=-j,S=0,_=0;if(typeof l>
+==================================================
+
+);const q=getComputedStyle(H),Q=H.style.transform,Z=H.style.webkitTransform;if(Q&&(H.style.transform=
+==================================================
+
+),Z&&(H.style.webkitTransform=
+==================================================
+
+)z=ae+X+ce;else{const{clientWidth:se,offsetWidth:de}=H;z=ae+W+ee+X+ce+(de-se)}}Q&&(H.style.transform=Q),Z&&(H.style.webkitTransform=Z),t.roundLengths&&(z=Math.floor(z))}else z=(l-(t.slidesPerView-1)*C)/t.slidesPerView,t.roundLengths&&(z=Math.floor(z)),g[U]&&(g[U].style[r.getDirectionLabel(
+==================================================
+
+)]=`${z}px`);g[U]&&(g[U].swiperSlideSize=z),E.push(z),t.centeredSlides?(w=w+z/2+S/2+C,S===0&&U!==0&&(w=w-l/2-C),U===0&&(w=w-l/2-C),Math.abs(w)<1/1e3&&(w=0),t.roundLengths&&(w=Math.floor(w)),_%t.slidesPerGroup===0&&y.push(w),A.push(w)):(t.roundLengths&&(w=Math.floor(w)),(_-Math.min(r.params.slidesPerGroupSkip,_))%r.params.slidesPerGroup===0&&y.push(w),A.push(w),w=w+z+C),r.virtualSize+=z+C,S=z,_+=1}}if(r.virtualSize=Math.max(r.virtualSize,l)+L,d&&u&&(t.effect===
+==================================================
+
+&&e.updateSlidesOffset();let d=-r;a&&(d=r),e.visibleSlidesIndexes=[],e.visibleSlides=[];let u=t.spaceBetween;typeof u==
+==================================================
+
+&&(f=YM(e)),s.indexOf(t)>=0)m=s.indexOf(t);else{const A=Math.min(a.slidesPerGroupSkip,f);m=A+Math.floor((f-A)/a.slidesPerGroup)}if(m>=s.length&&(m=s.length-1),f===l&&!e.params.loop){m!==u&&(e.snapIndex=m,e.emit(
+==================================================
+
+&&(e=l.params.speed);const j=Math.min(l.params.slidesPerGroupSkip,d);let L=j+Math.floor((d-j)/l.params.slidesPerGroup);L>=f.length&&(L=f.length-1);const T=-f[L];if(u.normalizeSlideIndex)for(let I=0;I<m.length;I+=1){const z=-Math.floor(T*100),O=Math.floor(m[I]*100),U=Math.floor(m[I+1]*100);typeof m[I+1]<
+==================================================
+
+,!0),1));const f=s.activeIndex<l.slidesPerGroupSkip?1:u,m=s.virtual&&l.virtual.enabled;if(l.loop){if(d&&!m&&l.loopPreventsSliding)return!1;if(s.loopFix({direction:
+==================================================
+
+&&t.slides.length-a.slidesPerView>=2?t.slidesSizesGrid[t.activeIndex+1]+t.params.spaceBetween:0)-t.params.spaceBetween:t.minTranslate())&&t.loopFix({direction:
+==================================================
+
+,setTranslate:!0,activeSlideIndex:0}),s.currentTranslate>t.minTranslate()&&(C=!1,a.resistance&&(s.currentTranslate=t.minTranslate()-1+(-t.minTranslate()+s.startTranslate+E)**w))):E<0&&(T&&k&&s.allowThresholdMove&&s.currentTranslate<(a.centeredSlides?t.maxTranslate()+t.slidesSizesGrid[t.slidesSizesGrid.length-1]+t.params.spaceBetween+(a.slidesPerView!==
+==================================================
+
+&&t.slides.length-a.slidesPerView>=2?t.slidesSizesGrid[t.slidesSizesGrid.length-1]+t.params.spaceBetween:0):t.maxTranslate())&&t.loopFix({direction:
+==================================================
+
+].includes(s.type)&&(e.browser.isSafari||e.browser.isWebView)))return;t.pointerId=null,t.touchId=null;const{params:d,touches:u,rtlTranslate:f,slidesGrid:m,enabled:g}=e;if(!g||!d.simulateTouch&&s.pointerType===
+==================================================
+
+,s)}if(t.lastClickTime=Hm(),cb(()=>{e.destroyed||(e.allowClick=!0)}),!t.isTouched||!t.isMoved||!e.swipeDirection||u.diff===0&&!t.loopSwapReset||t.currentTranslate===t.startTranslate&&!t.loopSwapReset){t.isTouched=!1,t.isMoved=!1,t.startMoving=!1;return}t.isTouched=!1,t.isMoved=!1,t.startMoving=!1;let A;if(d.followFinger?A=f?e.translate:-e.translate:A=-t.currentTranslate,d.cssMode)return;if(d.freeMode&&d.freeMode.enabled){e.freeMode.onTouchEnd({currentPos:A});return}const E=A>=-e.maxTranslate()&&!e.params.loop;let j=0,L=e.slidesSizesGrid[0];for(let S=0;S<m.length;S+=S<d.slidesPerGroupSkip?1:d.slidesPerGroup){const _=S<d.slidesPerGroupSkip-1?1:d.slidesPerGroup;typeof m[S+_]<
+==================================================
+
+?(E||A>=m[S]&&A<m[S+_])&&(j=S,L=m[S+_]-m[S]):(E||A>=m[S])&&(j=S,L=m[m.length-1]-m[m.length-2])}let T=null,k=null;d.rewind&&(e.isBeginning?k=d.virtual&&d.virtual.enabled&&e.virtual?e.virtual.slides.length-1:e.slides.length-1:e.isEnd&&(T=0));const C=(A-m[j])/L,w=j<d.slidesPerGroupSkip-1?1:d.slidesPerGroup;if(y>d.longSwipesMs){if(!d.longSwipes){e.slideTo(e.activeIndex);return}e.swipeDirection===
+==================================================
+
+?a.innerHeight:t.clientHeight,d=Object.keys(r).map(u=>{if(typeof u==
+==================================================
+
+,spaceBetween:0,slidesPerView:1,slidesPerGroup:1,slidesPerGroupSkip:0,slidesPerGroupAuto:!1,centeredSlides:!1,centeredSlidesBounds:!1,slidesOffsetBefore:0,slidesOffsetAfter:0,normalizeSlideIndex:!0,centerInsufficientSlides:!1,watchOverflow:!0,roundLengths:!1,touchRatio:1,touchAngle:45,simulateTouch:!0,shortSwipes:!0,longSwipes:!0,longSwipesRatio:.5,longSwipesMs:300,followFinger:!0,allowTouchMove:!0,threshold:5,touchMoveStopPropagation:!1,touchStartPreventDefault:!0,touchStartForcePreventDefault:!1,touchReleaseOnEdges:!1,uniqueNavElements:!0,resistance:!0,resistanceRatio:.85,watchSlidesProgress:!1,grabCursor:!1,preventClicks:!0,preventClicksPropagation:!0,slideToClickedSlide:!1,loop:!1,loopAddBlankSlides:!0,loopAdditionalSlides:0,loopPreventsSliding:!0,rewind:!1,allowSlidePrev:!0,allowSlideNext:!0,swipeHandler:null,noSwiping:!0,noSwipingClass:
+==================================================
+
+,t.params.wrapperClass),s.append(d),Pn(s,`.${t.params.slideClass}`).forEach(u=>{d.append(u)})),Object.assign(t,{el:s,wrapperEl:d,slidesEl:t.isElement&&!s.parentNode.host.slideSlots?s.parentNode.host:d,hostEl:t.isElement?s.parentNode.host:s,mounted:!0,rtl:s.dir.toLowerCase()===
+==================================================
+
+&&(s.dir.toLowerCase()===
+==================================================
+
+?e?s[`${f[2].toLowerCase()}${f.substr(3)}`]=r[f]:t.on[`${f[2].toLowerCase()}${f.substr(3)}`]=r[f]:l[f]=r[f])}),[
+==================================================
+
+}`)},U),We.createElement(Z4.Provider,{value:T.current},Q[
+==================================================
+
+],We.createElement(a,{className:V4(z.wrapperClass)},Q[
+==================================================
+
+]),IA(z)&&We.createElement(We.Fragment,null,We.createElement(
+==================================================
+
+}),We.createElement(
+==================================================
+
+})),FA(z)&&We.createElement(
+==================================================
+
+}),zA(z)&&We.createElement(
+==================================================
+
+:f,onLoad:C},g),d&&We.createElement(g2.Provider,{value:T},We.createElement(
+==================================================
+
+?d:void 0},k(),u&&!E&&We.createElement(
+==================================================
+
+}))),!d&&We.createElement(g2.Provider,{value:T},k(),u&&!E&&We.createElement(
+==================================================
+
+)),a.append(l)),l}function on(r){let{swiper:e,extendParams:t,on:s}=r;t({coverflowEffect:{rotate:50,stretch:0,depth:100,scale:1,modifier:1,slideShadows:!0}}),J4({effect:
+==================================================
+
+,swiper:e,on:s,setTranslate:()=>{const{width:d,height:u,slides:f,slidesSizesGrid:m}=e,g=e.params.coverflowEffect,b=e.isHorizontal(),y=e.translate,A=b?-y+d/2:-y+u/2,E=b?g.rotate:-g.rotate,j=g.depth,L=PM(e);for(let T=0,k=f.length;T<k;T+=1){const C=f[T],w=m[T],S=C.swiperSlideOffset,_=(A-S-w/2)/w,I=typeof g.modifier==
+==================================================
+
+] py-4 md:py-16 w-full overflow-hidden",children:[c.jsxs("div",{className:"text-center px-4 mb-6 md:mb-12 max-w-screen-lg mx-auto","data-aos":"fade-up",children:[c.jsx("div",{className:"inline-block px-4 py-1 rounded-full bg-sky-50 border border-sky-500 text-sky-600 text-sm mb-2",children:"Our Global Presence"}),c.jsx("p",{className:"text-gray-600 text-sm md:text-base max-w-2xl mx-auto mt-4",children:"We are proud to serve clients worldwide with offices strategically located across continents, bringing our expertise closer to you."})]}),c.jsxs("div",{className:"mx-auto px-4 md:px-6 max-w-7xl",children:[c.jsxs("div",{className:"relative bg-gradient-to-r from-sky-900 to-indigo-900 rounded-xl md:rounded-2xl overflow-hidden mb-8 md:mb-12",children:[c.jsx("div",{className:"absolute inset-0 bg-grid-pattern opacity-5"}),c.jsx("div",{className:"absolute top-10 right-10 w-20 md:w-32 h-20 md:h-32 bg-gradient-to-r from-red-500 to-red-600 rounded-full blur-xl md:blur-3xl opacity-20"}),c.jsx("div",{className:"absolute bottom-10 left-10 w-24 md:w-40 h-24 md:h-40 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full blur-xl md:blur-3xl opacity-20"}),c.jsxs("div",{className:"py-8 md:py-16 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center z-10 relative",children:[c.jsxs("div",{className:"max-w-full md:max-w-lg text-center md:text-left mb-8 md:mb-0",children:[c.jsxs("div",{className:"inline-flex items-center px-3 md:px-4 py-1 rounded-full bg-white bg-opacity-10 backdrop-blur-sm space-x-2 mb-4 md:mb-6",children:[c.jsx("span",{className:"w-2 h-2 bg-green-400 rounded-full animate-pulse"}),c.jsx("span",{className:"text-white text-xs md:text-sm font-medium",children:"Global Network"})]}),c.jsxs("h3",{className:"text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6",children:["Our Global Presence ",c.jsx("br",{}),c.jsx("span",{className:"bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent"})]}),c.jsx("p",{className:"text-gray-200 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed",children:"With strategically positioned offices across key global markets, we deliver exceptional service with deep local knowledge and international standards."}),c.jsx("div",{className:"inline-flex flex-wrap justify-center md:justify-start bg-white bg-opacity-10 backdrop-blur-sm p-1 rounded-xl",children:Ti.map((l,d)=>c.jsxs("button",{onClick:()=>e(d),onMouseEnter:()=>a(d),onMouseLeave:()=>a(null),className:`relative px-4 md:px-8 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 text-sm md:text-base ${r===d?"bg-white text-indigo-900 shadow-lg":s===d?"bg-white bg-opacity-5 text-white":"text-white hover:bg-white hover:bg-opacity-5"}`,children:[l.name,r===d&&c.jsx("span",{className:"absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-white rounded-full"})]},d))})]}),c.jsxs("div",{className:"relative hidden sm:block",children:[c.jsx("div",{className:"w-52 h-52 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 opacity-20 blur-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"}),c.jsxs("div",{className:"w-48 h-48 md:w-72 md:h-72 border-2 border-white border-opacity-20 rounded-full relative",children:[c.jsx("div",{className:"absolute w-full h-full rounded-full border-t-2 border-r-2 border-sky-300 border-opacity-30 animate-spin-slow"}),c.jsx("div",{className:"absolute w-full h-full rounded-full border-b-2 border-l-2 border-red-300 border-opacity-30 animate-spin-reverse-slow"}),c.jsx("div",{className:"absolute top-1/4 left-1/4 w-3 h-3 bg-red-500 rounded-full animate-pulse"}),c.jsx("div",{className:"absolute top-1/3 right-1/4 w-3 h-3 bg-sky-400 rounded-full animate-pulse"}),c.jsx("div",{className:"absolute bottom-1/3 left-1/3 w-3 h-3 bg-green-400 rounded-full animate-pulse"}),c.jsx("div",{className:"absolute inset-0 flex items-center justify-center text-center",children:c.jsxs("div",{children:[c.jsx("div",{className:"text-3xl md:text-5xl font-bold text-white",children:Ti.length}),c.jsx("div",{className:"text-white text-base md:text-lg",children:"Global Offices"})]})})]})]})]})]}),c.jsxs("div",{className:"grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-8 md:mb-12","data-aos":"fade-up","data-aos-delay":"200",children:[c.jsx("div",{className:"col-span-1 md:col-span-5",children:c.jsxs("div",{className:"bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden h-full",children:[c.jsxs("div",{className:"bg-gradient-to-r from-red-500 to-red-500 px-6 md:px-8 py-4 md:py-6 relative",children:[c.jsx("div",{className:"absolute top-0 right-0 w-16 md:w-20 h-16 md:h-20 bg-white opacity-10 rounded-bl-full"}),c.jsx("div",{className:"inline-block px-3 py-1 rounded-full bg-white bg-opacity-20 text-white text-xs md:text-sm font-medium mb-1 md:mb-2",children:Ti[r].name}),c.jsx("h4",{className:"text-xl md:text-2xl font-bold text-white",children:"Let’s Connect"})]}),c.jsxs("div",{className:"p-5 md:p-8",children:[c.jsxs("div",{className:"flex items-start mb-6 md:mb-8",children:[c.jsx("div",{className:"bg-gradient-to-br from-sky-50 to-blue-100 p-2 md:p-3 rounded-lg mr-4 md:mr-5 shadow-sm",children:c.jsx("svg",{className:"w-5 h-5 md:w-6 md:h-6 text-sky-600",fill:"currentColor",viewBox:"0 0 20 20",children:c.jsx("path",{fillRule:"evenodd",d:"M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z",clipRule:"evenodd"})})}),c.jsxs("div",{children:[c.jsx("h5",{className:"font-semibold text-gray-800 text-base md:text-lg mb-1 md:mb-2",children:"Office Address"}),c.jsx("p",{className:"text-gray-600 text-sm md:text-base leading-relaxed",children:Ti[r].address})]})]}),c.jsxs("div",{className:"flex items-start mb-6 md:mb-8",children:[c.jsx("div",{className:"bg-gradient-to-br from-sky-50 to-blue-100 p-2 md:p-3 rounded-lg mr-4 md:mr-5 shadow-sm",children:c.jsx("svg",{className:"w-5 h-5 md:w-6 md:h-6 text-sky-600",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"})})}),c.jsxs("div",{children:[c.jsx("h5",{className:"font-semibold text-gray-800 text-base md:text-lg mb-1 md:mb-2",children:"Office Hours"}),c.jsx("p",{className:"text-gray-600 text-sm md:text-base",children:Ti[r].hours}),c.jsx("p",{className:"text-gray-600 text-sm md:text-base",children:Ti[r].timezone})]})]}),c.jsxs("div",{className:"flex items-start mb-6 md:mb-10",children:[c.jsx("div",{className:"bg-gradient-to-br from-sky-50 to-blue-100 p-2 md:p-3 rounded-lg mr-4 md:mr-5 shadow-sm",children:c.jsx("svg",{className:"w-5 h-5 md:w-6 md:h-6 text-sky-600",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"})})}),c.jsxs("div",{children:[c.jsx("h5",{className:"font-semibold text-gray-800 text-base md:text-lg mb-1 md:mb-2",children:"Contact"}),c.jsx("p",{className:"text-gray-600 text-sm md:text-base",children:Ti[r].phone}),c.jsx("p",{className:"text-gray-600 text-sm md:text-base",children:Ti[r].email})]})]}),c.jsx("div",{className:"flex space-x-3 md:space-x-4"})]})]})}),c.jsx("div",{className:"col-span-1 md:col-span-7",children:c.jsxs("div",{className:"bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-2xl h-full relative border border-gray-200",children:[c.jsxs("div",{className:"absolute top-0 left-0 right-0 bg-sky-600 z-10 px-4 md:px-6 py-3 md:py-4 flex items-center gap-2 md:gap-3 text-white shadow-md",children:[c.jsx("div",{className:"bg-red-600 p-1.5 md:p-2 rounded-md",children:c.jsx("svg",{className:"w-4 h-4 md:w-5 md:h-5",fill:"currentColor",viewBox:"0 0 20 20",children:c.jsx("path",{fillRule:"evenodd",d:"M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z",clipRule:"evenodd"})})}),c.jsx("div",{className:"font-semibold tracking-wide text-sm md:text-base",children:Ti[r].name})]}),c.jsx("iframe",{src:iR(Ti[r].lat,Ti[r].lon),className:"w-full h-full min-h-[300px] md:min-h-[550px] border-0 pt-12 md:pt-16",loading:"lazy",title:`Map of ${Ti[r].name}`}),c.jsxs("div",{className:"absolute bottom-4 md:bottom-6 right-4 md:right-6 flex space-x-2 md:space-x-3",children:[c.jsx("button",{className:"bg-white p-2 md:p-3 rounded-lg shadow-md md:shadow-lg text-gray-700 hover:bg-gray-50 transition-all",children:c.jsx("svg",{className:"w-4 h-4 md:w-5 md:h-5",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M12 6v6m0 0v6m0-6h6m-6 0H6"})})}),c.jsx("button",{className:"bg-white p-2 md:p-3 rounded-lg shadow-md md:shadow-lg text-gray-700 hover:bg-gray-50 transition-all",children:c.jsx("svg",{className:"w-4 h-4 md:w-5 md:h-5",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M20 12H4"})})}),c.jsx("button",{className:"bg-white p-2 md:p-3 rounded-lg shadow-md md:shadow-lg text-gray-700 hover:bg-gray-50 transition-all",children:c.jsx("svg",{className:"w-4 h-4 md:w-5 md:h-5",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"})})})]})]})})]}),c.jsxs("div",{className:"bg-gradient-to-r from-red-500 to-red-500 rounded-xl md:rounded-2xl p-6 md:p-10 text-center shadow-lg md:shadow-xl relative overflow-hidden mb-6","data-aos":"fade-up",children:[c.jsx("div",{className:"absolute top-0 left-0 w-24 md:w-40 h-24 md:h-40 bg-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2"}),c.jsx("div",{className:"absolute bottom-0 right-0 w-40 md:w-64 h-40 md:h-64 bg-white opacity-10 rounded-full translate-x-1/4 translate-y-1/4"}),c.jsx("h3",{className:"text-xl md:text-3xl font-bold text-white mb-3 md:mb-4 relative z-10",children:"Ready to Expand Your Global Reach?"}),c.jsx("p",{className:"text-white text-opacity-90 text-sm md:text-base max-w-xl mx-auto mb-6 md:mb-8 relative z-10",children:"Partner with us to leverage our international presence and local expertise to grow your business across borders."}),c.jsx("div",{className:"flex flex-wrap justify-center gap-3 md:gap-4 relative z-10",children:c.jsx("a",{href:"/contactus",className:"bg-transparent border-2 border-white text-white hover:bg-white hover:bg-opacity-10 font-medium py-2 md:py-3 px-6 md:px-8 rounded-lg transition-all text-sm md:text-base",children:"Contact Us"})})]})]})]})}const Zx=[{title:"Infrastructure Systems Group",description:`Commnet has a specialized team of cabling professionals trained and experienced on various low current solutions. We undertake turnkey ELV projects from scratch and commission them to best industry standards.
+
+Be it coaxial cabling for traditional analog video, CCTV, latest technology enhanced IP-based CCTV/IPTV, UTP & Fiber cabling for high-speed data needs.`,link:"/infrastructuresystemgroup"},{title:"Cyber Security Services",description:"In today’s hyper-connected world, cybersecurity is no longer an option—it is a necessity. As businesses undergo digital transformation, the attack surface expands, leaving organizations vulnerable to ever-evolving cyber threats. At Commnet, we understand the critical need for a comprehensive cybersecurity strategy that protects your digital assets while enabling growth and innovation.",link:"/cybersecurityservices"},{title:"Enterprise Systems Group",description:"Organizations are looking at ways to meet the IT demands of business while providing innovative services that give them business agility and competitive advantage. One of the key focuses of commnet DC Transformation and Operation services is the dynamic alignment of business requirements and IT systems that deliver efficiencies that drive down costs, optimize resources, and enable innovation. Enterprises are witnessing exponential growths, with innovation in supply chain, multiple delivery channels for customers and their relationships with global spread.",link:"/enterprise-systems-group"},{title:"Professional IT Services",description:"Expert technical solutions customized to enterprise needs across infrastructure, development, and deployment.These services are tailored to align with an organization’s goals, improve efficiency, ensure data security, and support digital transformation.",link:"/professionalitservices"},{title:"Security Systems",description:"We are dedicated to build positive relationships with our customers by understanding our client’s business needs and provide them with the most professional and high quality services that fulfill them, whether its Residential, Retail, Commercial, Industrial or Governmental.",link:"/securitysystems"},{title:"Power Solutions",description:`Our goal is ensure a secure supply of energy and cooling for you.
+
+AREAS OF EXPERTISE:
+- UPS and Power Distribution Systems
+- Security, Real Time Monitoring, Management & Control Systems
+- Emergency Diesel Generators
+- Cooling Systems`,link:"/powersolutions"},{title:"Internet of Things (IoT)",description:"The Internet of Things is here and information access to the network is even more profound as homes, buildings, offices and even the whole city begins to connect to each other, providing a whole new experience of a connected world and a seamless virtual reality which can only be made possible through strong connectivity.",link:"/iotservices"},{title:"AV Solutions",description:`Commnet deploy our design talents and engineering capabilities to deliver customized user-friendly AV solutions that meet client expectations, budgets and timeframes.
+
+AREAS OF EXPERTISE:
+- Intelligent Video Solutions for Educational, Medical and Law Enforcement
+- Command & Control Centers and Crisis Management Centers
+- Theaters, Auditoriums and Multi-purpose Halls
+- Smart Meeting Rooms, and Innovation Centers`,link:"/avsolutions"},{title:"Website Development",description:"Creative website development tailored for optimal UX, responsiveness, and business growth.Static Website, Dynamic and ResponsiveWordPress, SitesE-commerce, SitesLMS ,SiteCRM ,SitesLearning Management.",link:"/websitedevelopment"},{title:"Software Development",description:`We are Developing Best Website and Customized Softwares with cutting edge technology applications.
+
+We are the most experienced and highly trusted Website and Software Development Company in Dubai. Our best professional team design both Software and Websites starting from small startups to large enterprises.`,link:"/softwaredevelopment"},{title:"Information Security",description:"ISO/IEC 27001 is a standard designed to ensure the selection of adequate and proportionate security controls to help you manage and protect your valuable information assets. Our security consultants evaluate your organisation
+==================================================
+
+,children:c.jsx($t,{modules:[Mf],pagination:{clickable:!0},spaceBetween:24,breakpoints:{320:{slidesPerView:1.1,spaceBetween:20},640:{slidesPerView:1.5,spaceBetween:24},768:{slidesPerView:2,spaceBetween:24}},className:
+==================================================
+
+,children:c.jsx($t,{modules:[],pagination:!1,spaceBetween:24,slidesPerView:4,className:
+==================================================
+
+,children:c.jsx($t,{slidesPerView:1.1,spaceBetween:20,pagination:{clickable:!0},modules:[Mf],className:
+==================================================
+
+,children:c.jsx($t,{spaceBetween:12,modules:[Mf],pagination:{clickable:!0},className:
+==================================================
+
+s broadest and most comprehensive portfolio of cutting-edge digital infrastructure, and a wide range of services, all meticulously designed to empower and support your organizations growth and success."}),c.jsx("p",{"data-aos":"fade-up",className:"font-light leading-[1.45] text-base tracking-tight",children:"We have nurtured partnerships with the world
+==================================================
+
+s specific, complex and diverse business needs."})]}),c.jsx("div",{className:"flex justify-between items-start w-full flex-col lg:flex-row gap-8",children:c.jsx("button",{"data-aos":"fade-up",className:"rounded-xl bg-sky-600 text-white px-4 py-2",onClick:()=>r("/aboutus"),children:"Read More"})})]})]})},gR=()=>(F.useEffect(()=>{Vs.init({duration:800,once:!0})},[]),c.jsxs("div",{className:"relative py-[3em] bg-cover bg-center overflow-hidden shadow-inner",style:{backgroundImage:"url(
+==================================================
+
+)"},children:[c.jsx("div",{className:"absolute inset-0 bg-white/80"}),c.jsxs("div",{className:"relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center","data-aos":"fade-up",children:[c.jsxs("div",{children:[c.jsx("h2",{className:"text-3xl md:text-4xl font-bold mb-6  text-sky-600",children:"Information Security"}),c.jsxs("div",{className:"space-y-6 text-gray-800 leading-relaxed text-base md:text-lg",children:[c.jsx("p",{children:"ISO/IEC 27001 is a standard designed to ensure the selection of adequate and proportionate security controls to help you manage and protect your valuable information assets. Our security consultants evaluate your organisation
+==================================================
+
+),this.isFontLoadingAPISupported){const{loadedName:s,src:a,style:l}=e,d=new FontFace(s,a,l);this.addNativeFontFace(d);try{await d.load(),p(this,Vc).add(s),t==null||t(e)}catch{Ie(`Cannot load system font: ${e.baseFontName}, installing it could help to improve PDF rendering.`),this.removeNativeFontFace(d)}return}ft(
+==================================================
+
+,e)}get isSyncFontLoadingSupported(){let e=!1;return(As||typeof navigator<
+==================================================
+
+;src:${e}}`;else{let a=`font-weight: ${this.cssFontInfo.fontWeight};`;this.cssFontInfo.italicAngle&&(a+=`font-style: oblique ${this.cssFontInfo.italicAngle}deg;`),t=`@font-face {font-family:
+==================================================
+
+)}}_h=new WeakMap;class IL extends AE{constructor({ownerDocument:e=globalThis.document,enableHWA:t=!1}){super({enableHWA:t}),this._document=e}_createCanvas(e,t){const s=this._document.createElement(
+==================================================
+
+,u,f),g=m.context;g.clearRect(0,0,g.canvas.width,g.canvas.height),g.beginPath(),g.rect(0,0,g.canvas.width,g.canvas.height),g.translate(-d[0],-d[1]),s=we.transform(s,[1,0,0,1,d[0],d[1]]),g.transform(...t.baseTransform),this.matrix&&g.transform(...this.matrix),Hb(g,this._bbox),g.fillStyle=this._createGradient(g),g.fill(),l=e.createPattern(m.canvas,
+==================================================
+
++l);const g=t[0],b=t[1],y=t[2],A=t[3],E=y-g,j=A-b,L=we.singularValueDecompose2dScale(this.matrix),T=we.singularValueDecompose2dScale(this.baseTransform),k=L[0]*T[0],C=L[1]*T[1];let w=E,S=j,_=!1,I=!1;const z=Math.ceil(f*k),O=Math.ceil(m*C),U=Math.ceil(E*k),H=Math.ceil(j*C);z>=U?w=f:_=!0,O>=H?S=m:I=!0;const q=this.getSizeAndScale(w,this.ctx.canvas.width,k),Q=this.getSizeAndScale(S,this.ctx.canvas.height,C),Z=e.cachedCanvases.getCanvas(
+==================================================
+
+,s,a),R2(b.context,e));let y=we.transform(u,[1/s,0,0,-1/a,0,0]);y=we.transform(y,[1,0,0,1,0,-a]);const[A,E,j,L]=we.getAxialAlignedBoundingBox([0,0,s,a],y),T=Math.round(j-A)||1,k=Math.round(L-E)||1,C=this.cachedCanvases.getCanvas(
+==================================================
+
+,e.setTransform(1,0,0,1,0,0),e.drawImage(s.canvas,0,0),e.restore())}genericComposeSMask(e,t,s,a,l,d,u,f,m,g,b){let y=e.canvas,A=f-g,E=m-b;if(d){const L=we.makeHexColor(...d);if(A<0||E<0||A+s>y.width||E+a>y.height){const T=this.cachedCanvases.getCanvas(
+==================================================
+
+,d=((g=s.systemFontInfo)==null?void 0:g.css)||`
+==================================================
+
+is not available.`);continue}this.contentVisible&&(this.processingType3=j,this.save(),t.scale(l,l),t.transform(...b),this.executeOperatorList(C),this.restore()),L=we.applyTransform([j.width,0],b)[0]*l+k,t.translate(L,0),s.x+=L*g}t.restore(),this.processingType3=null}}setCharWidth(e,t){}setCharWidthAndBounds(e,t,s,a,l,d){this.ctx.rect(s,a,l-s,d-a),this.ctx.clip(),this.endPath()}getColorN_Pattern(e){let t;if(e[0]===
+==================================================
+
+}setFillRGBColor(e,t,s){this.ctx.fillStyle=this.current.fillColor=we.makeHexColor(e,t,s),this.current.patternFill=!1}setFillTransparent(){this.ctx.fillStyle=this.current.fillColor=
+==================================================
+
+);let a=we.getAxialAlignedBoundingBox(e.bbox,yt(t));const l=[0,0,t.canvas.width,t.canvas.height];a=we.intersect(a,l)||[0,0,0,0];const d=Math.floor(a[0]),u=Math.floor(a[1]),f=Math.max(Math.ceil(a[2])-d,1),m=Math.max(Math.ceil(a[3])-u,1);this.current.startNewPathAndClipBox([0,0,f,m]);let g=
+==================================================
+
+,1]]),this.groupStack.push(t),this.groupLevel++}endGroup(e){if(!this.contentVisible)return;this.groupLevel--;const t=this.ctx,s=this.groupStack.pop();if(this.ctx=s,this.ctx.imageSmoothingEnabled=!1,e.smask)this.tempSMask=this.smaskStack.pop(),this.restore();else{this.ctx.restore();const a=yt(this.ctx);this.restore(),this.ctx.save(),this.ctx.setTransform(...a);const l=we.getAxialAlignedBoundingBox([0,0,t.canvas.width,t.canvas.height],a);this.ctx.drawImage(t.canvas,0,0),this.ctx.restore(),this.compose(l)}}beginAnnotation(e,t,s,a,l){if(R(this,$r,Ub).call(this),Zp(this.ctx),this.ctx.save(),this.save(),this.baseTransform&&this.ctx.setTransform(...this.baseTransform),t){const d=t[2]-t[0],u=t[3]-t[1];if(l&&this.annotationCanvasMap){s=s.slice(),s[4]-=t[0],s[5]-=t[1],t=t.slice(),t[0]=t[1]=0,t[2]=d,t[3]=u;const[f,m]=we.singularValueDecompose2dScale(yt(this.ctx)),{viewportScale:g}=this,b=Math.ceil(d*this.outputScaleX*g),y=Math.ceil(u*this.outputScaleY*g);this.annotationCanvas=this.canvasFactory.create(b,y);const{canvas:A,context:E}=this.annotationCanvas;this.annotationCanvasMap.set(e,A),this.annotationCanvas.savedCtx=this.ctx,this.ctx=E,this.ctx.save(),this.ctx.setTransform(f,0,0,-m,0,u*m),Zp(this.ctx)}else Zp(this.ctx),this.endPath(),this.ctx.rect(t[0],t[1],d,u),this.ctx.clip(),this.ctx.beginPath()}this.current=new k2(this.ctx.canvas.width,this.ctx.canvas.height),this.transform(...s),this.transform(...a)}endAnnotation(){this.annotationCanvas&&(this.ctx.restore(),R(this,$r,Gb).call(this),this.ctx=this.annotationCanvas.savedCtx,delete this.annotationCanvas.savedCtx,delete this.annotationCanvas)}paintImageMaskXObject(e){if(!this.contentVisible)return;const t=e.count;e=this.getObject(e.data,e),e.count=t;const s=this.ctx,a=this.processingType3;if(a&&(a.compiled===void 0&&(a.compiled=ZL(e)),a.compiled)){a.compiled(s);return}const l=this._createMaskCanvas(e),d=l.canvas;s.save(),s.setTransform(1,0,0,1,0,0),s.drawImage(d,l.offsetX,l.offsetY),s.restore(),this.compose()}paintImageMaskXObjectRepeat(e,t,s=0,a=0,l,d){if(!this.contentVisible)return;e=this.getObject(e.data,e);const u=this.ctx;u.save();const f=yt(u);u.transform(t,s,a,l,0,0);const m=this._createMaskCanvas(e);u.setTransform(1,0,0,1,m.offsetX-f[4],m.offsetY-f[5]);for(let g=0,b=d.length;g<b;g+=2){const y=we.transform(f,[t,s,a,l,d[g],d[g+1]]),[A,E]=we.applyTransform([0,0],y);u.drawImage(m.canvas,A,E)}u.restore(),this.compose()}paintImageMaskXObjectGroup(e){if(!this.contentVisible)return;const t=this.ctx,s=this.current.fillColor,a=this.current.patternFill;for(const l of e){const{data:d,width:u,height:f,transform:m}=l,g=this.cachedCanvases.getCanvas(
+==================================================
+
+);M(this,Mh,e)}}kh=new WeakMap,Mh=new WeakMap,P(La,kh,null),P(La,Mh,
+==================================================
+
+).request(r,{headers:e},t)}class b3{constructor(e){this.source=e,this.url=x3(e.url),this.isHttp=this.url.protocol===
+==================================================
+
+,t=>{this._error(t)}),!this._isStreamingSupported&&this._isRangeSupported&&this._error(new Mo(
+==================================================
+
+.`);this._storedError=f,this._headersCapability.reject(f);return}this._headersCapability.resolve(),this._setReadableStream(a);const l=new Headers(this._readableStream.headers),{allowRangeRequests:d,suggestedLength:u}=sy({responseHeaders:l,isHttp:e.isHttp,rangeChunkSize:this._rangeChunkSize,disableRange:this._disableRange});this._isRangeSupported=d,this._contentLength=u||this._contentLength,this._filename=iy(l)};this._request=IE(this._url,t,s),this._request.on(
+==================================================
+
+,hasEOL:e.hasEOL,fontSize:0};p(this,$l).push(t);const a=we.transform(p(this,Gh),e.transform);let l=Math.atan2(a[1],a[0]);const d=p(this,Qc)[e.fontName];d.vertical&&(l+=Math.PI/2);let u=p(this,zh)&&d.fontSubstitution||d.fontFamily;u=jt.fontFamilyMap.get(u)||u;const f=Math.hypot(a[2],a[3]),m=f*R(j=jt,ui,GE).call(j,u,p(this,Vl));let g,b;l===0?(g=a[4],b=a[5]-m):(g=a[4]+m*Math.sin(l),b=a[5]-m*Math.cos(l));const y=
+==================================================
+
+?r.standardFontDataUrl:null,T=r.StandardFontDataFactory||M3,k=r.stopAtErrors!==!0,C=Number.isInteger(r.maxImageSize)&&r.maxImageSize>-1?r.maxImageSize:-1,w=r.isEvalSupported!==!1,S=typeof r.isOffscreenCanvasSupported==
+==================================================
+
+?r.isOffscreenCanvasSupported:!As,_=typeof r.isChrome==
+==================================================
+
+?r.isChrome:!ks.platform.isFirefox&&typeof window<
+==================================================
+
+?r.disableFontFace:As,O=r.fontExtraProperties===!0,U=r.enableXfa===!0,H=r.ownerDocument||globalThis.document,q=r.disableRange===!0,Q=r.disableStream===!0,Z=r.disableAutoFetch===!0,ae=r.pdfBug===!0,W=r.CanvasFactory||N3,ee=r.FilterFactory||k3,X=r.enableHWA===!0,ce=f?f.length:r.length??NaN,G=typeof r.useSystemFonts==
+==================================================
+
+?r.useSystemFonts:!As&&!z,se=typeof r.useWorkerFetch==
+==================================================
+
+,()=>{this._webWorker||a()},{signal:l.signal}),s.on(
+==================================================
+
+,u=>{if(l.abort(),this.destroyed||!u){a();return}this._messageHandler=s,this._port=t,this._webWorker=t,R(this,ed,bm).call(this)}),s.on(
+==================================================
+
+,(s,a)=>{Vt(this._networkStream,
+==================================================
+
+,{source:this,detail:{id:s.id,name:l}}),!1})}t.onclick||(t.onclick=()=>!1),R(this,di,bl).call(this)}_bindResetFormAction(t,s){const a=t.onclick;if(a||(t.href=this.linkService.getAnchorUrl(
+==================================================
+
+]`);if(E){if(!To.has(E)){Ie(`_bindResetFormAction - element not allowed: ${A}`);continue}}else continue;E.dispatchEvent(new Event(
+==================================================
+
+,{source:this,detail:{id:
+==================================================
+
++this.data.name.toLowerCase()+
+==================================================
+
+:we.makeHexColor(t[0],t[1],t[2])}_setTextStyle(e){const t=[
+==================================================
+
+],{fontColor:s}=this.data.defaultAppearanceData,a=this.data.defaultAppearanceData.fontSize||G3,l=e.style;let d;const u=2,f=m=>Math.round(10*m)/10;if(this.data.multiLine){const m=Math.abs(this.data.rect[3]-this.data.rect[1]-u),g=Math.round(m/(Jx*a))||1,b=m/g;d=Math.min(a,f(b/Jx))}else{const m=Math.abs(this.data.rect[3]-this.data.rect[1]-u);d=Math.min(a,f(m/Jx))}l.fontSize=`calc(${d}px * var(--scale-factor))`,l.color=we.makeHexColor(s[0],s[1],s[2]),this.data.textAlignment!==null&&(l.textAlign=t[this.data.textAlignment])}_setRequired(e,t){t?e.setAttribute(
+==================================================
+
+,A=>{this.showElementAndHideCanvas(A.target);const E={value(j){g.userValue=j.detail.value??
+==================================================
+
+,{source:this,detail:{id:t,name:
+==================================================
+
+,p(this,eo)){const l=e.style.outlineColor=we.makeHexColor(...p(this,eo));CSS.supports(
+==================================================
+
+)?e.style.backgroundColor=`color-mix(in srgb, ${l} 30%, white)`:e.style.backgroundColor=we.makeHexColor(...p(this,eo).map(u=>Math.floor(.7*(255-u)+u)))}const t=document.createElement(
+==================================================
+
+)}}ef=new WeakMap;class tP extends sT{constructor(e){super(e),this.containerClassName=
+==================================================
+
+)}}tf=new WeakMap;class iT extends kt{constructor(e){super(e,{isRenderable:!0,ignoreBorder:!0,createQuadrilaterals:!0}),this.annotationEditorType=Pe.HIGHLIGHT}render(){return!this.data.popupRef&&this.hasPopupData&&this._createPopup(),this.container.classList.add(
+==================================================
+
+,{source:this,...s})}render(){this.container.classList.add(
+==================================================
+
+),a.src=`${this.imageResourcesPath}annotation-${/paperclip/i.test(s.name)?
+==================================================
+
+,l.div.append(this.div),a=d.getBoundingClientRect(),d.remove(),d.style.display=u,d.classList.toggle(
+==================================================
+
+),p(this,Bs)||R(this,Re,Nm).call(this,!1))}get _mustFixPosition(){return!p(this,Bs)}show(t=this._isVisible){super.show(t),this.parent&&(this.parent.drawLayer.show(p(this,ys),t),this.parent.drawLayer.show(p(this,Gt),t))}static startHighlighting(t,s,{target:a,x:l,y:d}){const{x:u,y:f,width:m,height:g}=a.getBoundingClientRect(),b=new AbortController,y=t.combinedSignal(b),A=j=>{j.preventDefault(),j.stopPropagation()},E=j=>{b.abort(),R(this,Li,MT).call(this,t,j)};window.addEventListener(
+==================================================
+
+,this.supportedTypes.join(
+==================================================
+
+,minWidth:315,maxWidth:550,minHeight:420,maxHeight:633,maxShadowOpacity:.5,showCover:!0,mobileScrollSupport:!0,onFlip:s,className:
+==================================================
+
+output, performance and health leading to less than desired levels of quality and service."})]}),c.jsx("img",{src:"/assets/verticle/v1.jpg",className:"rounded-xl shadow-xl w-full",alt:"Workplace Lighting","data-aos":"fade-up","data-aos-delay":"200"})]}),c.jsxs("div",{className:"grid md:grid-cols-2 gap-12 items-center mb-20",children:[c.jsx("img",{src:"/assets/verticle/v2.jpg",className:"rounded-xl shadow-xl w-full",alt:"Home Lighting","data-aos":"fade-up"}),c.jsxs("div",{"data-aos":"fade-up","data-aos-delay":"200",children:[c.jsx("h3",{className:"text-xl font-semibold mb-3",children:"Home Lighting"}),c.jsx("p",{className:"text-sm sm:text-base leading-relaxed",children:"Light is one of the most overlooked and yet important elements of good interior design. Lighting is essential to create the mood and ambience of a living space. Professional lighting design can help illuminate a room, create a safe and comfortable environment, and strike a perfect balance between style, comfort, and practicality."})]})]}),c.jsxs("div",{className:"grid md:grid-cols-2 gap-12 items-center mb-20",children:[c.jsxs("div",{"data-aos":"fade-up",children:[c.jsx("h3",{className:"text-xl font-semibold mb-3",children:"Hospital Lighting"}),c.jsx("p",{className:"text-sm sm:text-base leading-relaxed",children:"Lighting has a positive impact on patients and is one of the factors that contribute to a well-designed hospital facility. Great hospital lighting is both aesthetic and useful, making a positive and impactful statement. Lighting design has the potential to transform a space for the betterment of all."})]}),c.jsx("img",{src:"/assets/verticle/v3.jpg",className:"rounded-xl shadow-xl w-full",alt:"Hospital Lighting","data-aos":"fade-up","data-aos-delay":"200"})]}),c.jsxs("div",{className:"grid md:grid-cols-2 gap-12 items-center mb-20",children:[c.jsx("img",{src:"/assets/verticle/v5.jpg",className:"rounded-xl shadow-xl w-full",alt:"Hotel Lighting","data-aos":"fade-up"}),c.jsxs("div",{"data-aos":"fade-up","data-aos-delay":"200",children:[c.jsx("h3",{className:"text-xl font-semibold mb-3",children:"Hotel Lighting"}),c.jsx("p",{className:"text-sm sm:text-base leading-relaxed",children:"Lighting is not something to take lightly when planning the design of a hotel room. It can make or break the ambiance, which in turn affects guest satisfaction. Whether cozy and warm or bright and luxurious, lighting defines the hotel
+==================================================
+
+})}),c.jsx($t,{modules:[Oi,Mf,Ii],spaceBetween:16,slidesPerView:1,breakpoints:{640:{slidesPerView:2},768:{slidesPerView:3}},pagination:{clickable:!0},navigation:{prevEl:
+==================================================
+
+,children:a.client})]})]}),c.jsxs(
+==================================================
+
+,a.client]}),c.jsxs(
+==================================================
+
+})})}),m().map((g,b)=>c.jsx(We.Fragment,{children:g===
+==================================================
+
+,children:r.client})]})]}),c.jsxs(
+==================================================
+

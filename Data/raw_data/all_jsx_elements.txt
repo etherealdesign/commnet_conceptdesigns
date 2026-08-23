@@ -1,0 +1,462 @@
+<a> href:"/",children:c.jsx("img",{src:f?"/assets/logo.png":"/assets/commentLogo.png",alt:"COMMNET Logo",className:"h-14 w-auto transition-all duration-300 scale-110"
+<a> href:"/",className:"hover:text-red-500",children:"Home"
+<span> children:"About Us"
+<span> children:"Services"
+<span> children:"Solutions"
+<a> href:"/ourprojects1",className:"hover:text-red-500",children:"Projects"
+<a> href:"/contactus",className:"hover:text-red-500",children:"Contact Us"
+<button> onClick:()=>s(!1),className:"w-9 h-9 border border-black rounded-full flex items-center justify-center",children:c.jsx(tM,{className:"w-5 h-5"
+<a> href:"/",onClick:()=>s(!1),children:"Home"
+<span> children:"About Us"
+<span> children:S.icon
+<span> children:S.label
+<span> children:"Services"
+<span> children:S.icon
+<span> children:S.label
+<span> children:"Solutions"
+<span> children:S.icon
+<span> children:S.label
+<a> href:"/ourprojects1",onClick:()=>s(!1),children:"Projects"
+<a> href:"/contactus",onClick:()=>s(!1),children:"Contact Us"
+<span> children:"Need Help?"
+<a> href:"https://wa.me/+971526965307?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services",target:"_blank",rel:"noopener noreferrer",className:"block mt-1",children:c.jsx("img",{src:"/assets/watsapp-1.png",alt:"WhatsApp",className:"w-12 h-12"
+<p> className:"text-[17px] leading-relaxed",children:"With more than 25 years of experience, 7 offices across the region - Commnet is a leading end-to-end digital solutions provider..."
+<a> href:"https://facebook.com",target:"_blank",rel:"noopener noreferrer",className:"text-sky-700 hover:text-sky-900 text-2xl",children:c.jsx("i",{className:"fab fa-facebook-f"
+<a> href:"https://instagram.com",target:"_blank",rel:"noopener noreferrer",className:"text-sky-700 hover:text-sky-900 text-2xl",children:c.jsx("i",{className:"fab fa-instagram"
+<a> href:"https://linkedin.com",target:"_blank",rel:"noopener noreferrer",className:"text-sky-700 hover:text-sky-900 text-2xl",children:c.jsx("i",{className:"fab fa-linkedin-in"
+<h4> className:"text-sky-700 font-semibold text-lg mb-3 whitespace-nowrap",children:"Useful Links"
+<a> href:"/",className:"hover:underline",children:"Home"
+<a> href:"/aboutus",className:"hover:underline",children:"About Us"
+<a> href:"/",className:"hover:underline",children:"Services"
+<a> href:"/contactus",className:"hover:underline",children:"Contact Us"
+<h4> className:"text-sky-700 font-semibold text-lg mb-4",children:"Our Services"
+<h4> className:"text-sky-700 font-semibold text-lg text-center",children:"Our Solutions"
+<span> className:"w-5 flex justify-center",children:c.jsx(l.icon,{size:16
+<span> children:l.label
+<span> className:"w-5 flex justify-center",children:c.jsx(l.icon,{size:16
+<span> children:l.label
+<p> className:"text-[15px] leading-relaxed","data-aos":"fade-up",children:"With more than 25 years of experience, 7 offices and over across the region - Commnet is a leading end-to-end digital solutions provider..."
+<span> className:"text-sky-700 font-semibold",children:"Useful Links"
+<a> href:"/",className:"hover:underline",children:"Home"
+<a> href:"/aboutus",className:"hover:underline",children:"About Us"
+<a> href:"/",className:"hover:underline",children:"Services"
+<a> href:"/contactus",className:"hover:underline",children:"Contact Us"
+<span> className:"text-sky-700 font-semibold",children:"Our Services"
+<span> className:"text-sky-700 font-semibold",children:"Our Solutions"
+<span> className:"w-5 flex justify-center",children:c.jsx(l.icon,{size:16
+<span> children:l.label
+<h4> className:"text-sky-700 font-semibold text-lg mb-3",children:"Social Media"
+<a> href:"https://www.facebook.com",target:"_blank",rel:"noopener noreferrer",className:"hover:underline",children:"Facebook"
+<a> href:"https://www.instagram.com",target:"_blank",rel:"noopener noreferrer",className:"hover:underline",children:"Instagram"
+<a> href:"https://www.linkedin.com",target:"_blank",rel:"noopener noreferrer",className:"hover:underline",children:"LinkedIn"
+<a> href:"https://vulturelines.com/",target:"blank",className:"text-sky-700 font-semibold hover:underline",children:"VLT"
+<span> className:"text-sky-700 font-semibold",children:"Commnet"
+<a> href:"/PrivacyPolicy",className:"hover:underline text-sky-700",children:"Privacy Policy"
+<span> children:"|"
+<a> href:"/TermsAndConditions",className:"hover:underline text-sky-700",children:"Terms & Conditions"
+<span> className:"text-red-600",children:"Communication "
+<a> href:"/aboutus",children:c.jsx("button",{className:"mt-8 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition",children:"Learn More"
+<span> className:"text-sky-600",children:"Our"
+<span> className:"text-red-600",children:"Client Says"
+<p> className:"text-center text-gray-500 mb-12 max-w-2xl mx-auto","data-aos":"fade-up","data-aos-delay":"200",children:"Words from our trusted partners and clients who've walked the journey with us."
+<h4> className:"text-center text-lg font-semibold text-gray-800",children:r.name
+<p> className:"text-center text-sm text-gray-500 mb-3",children:r.position
+<p> className:"text-gray-600 text-sm leading-relaxed text-left overflow-y-auto max-h-[120px] px-2 scrollbar-thin scrollbar-thumb-gray-300",children:r.feedback
+<p> className:"text-gray-600 text-sm md:text-base max-w-2xl mx-auto mt-4",children:"We are proud to serve clients worldwide with offices strategically located across continents, bringing our expertise closer to you."
+<span> className:"text-white text-xs md:text-sm font-medium",children:"Global Network"
+<p> className:"text-gray-200 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed",children:"With strategically positioned offices across key global markets, we deliver exceptional service with deep local knowledge and international standards."
+<h4> className:"text-xl md:text-2xl font-bold text-white",children:"Let’s Connect"
+<h5> className:"font-semibold text-gray-800 text-base md:text-lg mb-1 md:mb-2",children:"Office Address"
+<p> className:"text-gray-600 text-sm md:text-base leading-relaxed",children:Ti[r].address
+<h5> className:"font-semibold text-gray-800 text-base md:text-lg mb-1 md:mb-2",children:"Office Hours"
+<p> className:"text-gray-600 text-sm md:text-base",children:Ti[r].hours
+<p> className:"text-gray-600 text-sm md:text-base",children:Ti[r].timezone
+<h5> className:"font-semibold text-gray-800 text-base md:text-lg mb-1 md:mb-2",children:"Contact"
+<p> className:"text-gray-600 text-sm md:text-base",children:Ti[r].phone
+<p> className:"text-gray-600 text-sm md:text-base",children:Ti[r].email
+<button> className:"bg-white p-2 md:p-3 rounded-lg shadow-md md:shadow-lg text-gray-700 hover:bg-gray-50 transition-all",children:c.jsx("svg",{className:"w-4 h-4 md:w-5 md:h-5",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M12 6v6m0 0v6m0-6h6m-6 0H6"
+<button> className:"bg-white p-2 md:p-3 rounded-lg shadow-md md:shadow-lg text-gray-700 hover:bg-gray-50 transition-all",children:c.jsx("svg",{className:"w-4 h-4 md:w-5 md:h-5",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M20 12H4"
+<button> className:"bg-white p-2 md:p-3 rounded-lg shadow-md md:shadow-lg text-gray-700 hover:bg-gray-50 transition-all",children:c.jsx("svg",{className:"w-4 h-4 md:w-5 md:h-5",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+<h3> className:"text-xl md:text-3xl font-bold text-white mb-3 md:mb-4 relative z-10",children:"Ready to Expand Your Global Reach?"
+<p> className:"text-white text-opacity-90 text-sm md:text-base max-w-xl mx-auto mb-6 md:mb-8 relative z-10",children:"Partner with us to leverage our international presence and local expertise to grow your business across borders."
+<a> href:"/contactus",className:"bg-transparent border-2 border-white text-white hover:bg-white hover:bg-opacity-10 font-medium py-2 md:py-3 px-6 md:px-8 rounded-lg transition-all text-sm md:text-base",children:"Contact Us"
+<span> className:"text-red-600",children:"end-to-end IT Solutions"
+<h3> className:"text-lg font-semibold mb-2",children:r.title
+<p> className:"text-gray-700 text-sm whitespace-pre-line line-clamp-[8]",children:r.description
+<a> href:r.link,className:"text-sky-600 text-sm font-medium mt-4 hover:underline",children:"Find More"
+<h3> className:"text-lg font-semibold mb-2",children:r.title
+<p> className:"text-gray-700 text-sm whitespace-pre-line line-clamp-[8]",children:r.description
+<a> href:r.link,className:"text-sky-600 text-sm font-medium mt-4 hover:underline",children:"Find More"
+<h3> className:"text-lg font-semibold mb-2",children:r.title
+<p> className:"text-gray-700 text-sm whitespace-pre-line line-clamp-[8]",children:r.description
+<a> href:r.link,className:"text-sky-600 text-sm font-medium mt-4 hover:underline",children:"Find More"
+<span> className:"text-sky-600",children:"Industries"
+<span> className:"text-red-600",children:"We Work"
+<h3> className:"text-lg font-semibold text-gray-800 mb-2",children:r.title
+<p> className:"text-sm text-gray-600 leading-relaxed",children:r.description
+<h3> className:"text-lg font-semibold text-gray-800 mb-2",children:r.title
+<p> className:"text-sm text-gray-600 leading-relaxed",children:r.description
+<span> className:"text-sky-600 block sm:inline",children:"social media"
+<span> className:"font-semibold text-sm text-sky-600",children:"COMMNET"
+<p> className:"text-sm text-gray-800 mt-2 leading-snug line-clamp-3",children:e.text
+<a> href:e.link,target:"_blank",rel:"noopener noreferrer",className:"text-xs text-[#666] mt-2 underline inline-block",children:"Read more"
+<span> className:"font-bold text-sky-600",children:"Commnet,"
+<span> className:"font-bold text-sky-600",children:"right people, processes, technologies, and proven methodologies"
+<p> "data-aos":"fade-up",className:"font-light leading-[1.45] text-base tracking-tight",children:"We offer the region's broadest and most comprehensive portfolio of cutting-edge digital infrastructure, and a wide range of services, all meticulously designed to empower and support your organizations growth and success."
+<p> "data-aos":"fade-up",className:"font-light leading-[1.45] text-base tracking-tight",children:"We have nurtured partnerships with the world's leading technology companies and invested in a talented, skilled workforce to implement solutions that cater to customer's specific, complex and diverse business needs."
+<button> "data-aos":"fade-up",className:"rounded-xl bg-sky-600 text-white px-4 py-2",onClick:()=>r("/aboutus"),children:"Read More"
+<span> className:"text-sky-600",children:"Our "
+<span> className:"text-red-600",children:"Clients"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Enterprise Systems Group"
+<p> className:"text-base sm:text-lg md:text-xl",children:"Delivering agility and innovation through optimized IT systems."
+<h2> className:"text-3xl md:text-4xl font-bold mb-6  text-sky-600",children:"Enterprise Systems Group"
+<p> children:"Organizations are looking at ways to meet the IT demands of business while providing innovative services that give them business agility and competitive advantage. One of the key focuses of comment DC Transformation and Operation services is the dynamic alignment of business requirements and IT systems that deliver efficiencies that drive down costs, optimize resources, and enable innovation. Enterprises are witnessing exponential growths, with innovation in supply chain, multiple delivery channels for customers and their relationships with global spread. Businesses need to act fast to meet the dynamic and changing landscape for customer and supply chain profiles with newer applications and connections. Today, the enterprise data centers continue to be the main service hub to drive innovation with a new paradigm for business agility and response. To meet the business need, Data Centre transformation and managed services continue to be core and key strategies for IT."
+<p> children:"Organizations are looking at ways to meet the IT demands of business while providing innovative services that give them business agility and competitive advantage. One of the key focuses of Commnet DC Transformation and Operation services is the dynamic alignment of business requirements and IT systems that deliver efficiencies that drive down costs, optimize resources, and enable innovation."
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-blue-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Audiovisual Systems"
+<h2> className:"text-3xl md:text-4xl font-bold mb-2 uppercase  text-sky-600",children:"Audiovisual Systems"
+<p> className:"text-gray-600 mb-6",children:"Commnet deploy our design talents and engineering capabilities to deliver customized user-friendly AV solutions that meet client expectations, budgets and timeframes."
+<h3> className:"text-lg font-semibold uppercase mb-4",children:"Areas of Expertise"
+<span> children:e
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-sky-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Cyber Security Services"
+<h2> className:"text-3xl md:text-4xl font-bold mb-6  text-sky-600",children:"Cyber Security"
+<p> children:"In today’s hyper-connected world, cybersecurity is no longer an option—it is a necessity. As businesses undergo digital transformation, the attack surface expands, leaving organizations vulnerable to ever-evolving cyber threats. At Commnet, we understand the critical need for a comprehensive cybersecurity strategy that protects your digital assets while enabling growth and innovation."
+<p> children:"Our Cyber Security Services are designed to provide complete visibility, proactive defense, and rapid response across your enterprise. From securing endpoints and networks to safeguarding sensitive data and cloud environments, we deliver solutions that ensure business continuity and regulatory compliance."
+<p> children:"With the rise of ransomware, phishing, insider threats, and sophisticated malware, traditional security measures are no longer sufficient. We employ a layered defense approach, integrating advanced tools such as AI-driven threat detection, behavioral analytics, and real-time monitoring to counter both known and emerging threats."
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-blue-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Information Security"
+<h2> className:"text-3xl md:text-4xl font-bold mb-6  text-sky-600",children:"Information Security"
+<p> children:"ISO/IEC 27001 is a standard designed to ensure the selection of adequate and proportionate security controls to help you manage and protect your valuable information assets. Our security consultants evaluate your organisation's security policies, procedures, standards and organisation structure against the ISO27001 standard."
+<p> children:"We start with identifying gaps in existing information security policy. We build inventory of information assets and statement of applicability. And then move on to publishing risk treatment plan and security policy."
+<p> children:"Our reports are more than a bunch of papers. They highlight areas of maximum risk and impact. They showcase proof-of-concept exploits. They contain statistics of the number of vulnerabilities. Not just that, they also suggest solutions for immediate and tangible improvements."
+<p> children:"Now it's time to identify gaps in the new controls through internal audit. And prepare for final certification. We help you build an evolving policy and provide checkpoint audits to stay compliant over a period of time."
+<p> children:"Commnet is a CERT-IN empanelled security auditor and ranks top 4 on the panel of IT security auditing organisations in India. Our team consists of consultants and auditors who are well versed in globally accepted information security standards: ISO27001, ISO 20000, OSSTMM, SSE-CMM, CobIT and OWASP, you name it and we have it."
+<p> children:"You build response to legal requirements and potential security threats such as, virus attacks, hacking, natural disasters, information theft and information misuse. And stay compliant to ISO27001 year on year."
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-blue-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Infrastructure Systems Group"
+<h2> className:"text-3xl md:text-4xl font-bold mb-4  text-sky-600",children:"Infrastructure Systems Group"
+<p> className:"text-gray-600 mb-4",children:"Commnet has a specialized team of cabling professionals trained and experienced on various low current solutions. We undertake turnkey ELV projects from scratch and commission them to best industry standards."
+<p> className:"text-gray-600 mb-6",children:"Be it coaxial cabling for traditional analog video, CCTV, latest technology enhanced IP-based CCTV/IPTV, UTP & Fiber cabling for high-speed data needs, traditional multicore telephone cabling as well as for IP-based systems, Commnet is geared up with a respective fleet of professionals to be at your service."
+<h3> className:"text-lg font-semibold uppercase mb-4",children:"SC Service Process"
+<span> children:e
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-sky-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Internet of Things (IoT)"
+<h2> className:"text-3xl md:text-4xl font-bold mb-6  text-sky-600",children:"  Internet of Things (IoT)"
+<p> children:"The Internet of Things is here and information access to the network is even more profound as homes, buildings, offices and even the whole city begins to connect to each other, providing a whole new experience of a connected world and a seamless virtual reality which can only be made possible through strong connectivity."
+<p> children:"Businesses of all sizes in every industry are looking to IoT solution providers to develop, secure, and maintain the integration of their IoT solutions. Is IoT worth calling a revolution? YES. Revolution is directly proportional to change. And the Internet of Things has brought about much disruption, in positively every field and industry, for it to cause a powerful Technology and an Industrial Revolution."
+<p> className:"text-lg font-semibold uppercase mb-4",children:"Our IoT Capabilities :"
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-sky-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Power Solutions"
+<h2> className:"text-3xl md:text-4xl font-bold mb-2   text-sky-600",children:"Power Solutions"
+<p> className:"text-gray-600 mb-6",children:"Our goal is ensure a secure supply of energy and cooling for you."
+<h3> className:"text-lg font-semibold uppercase mb-4",children:"Areas of Expertise"
+<span> children:e
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-sky-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-sky-600",children:"Professional Service Group"
+<h2> className:"text-3xl md:text-4xl font-bold mb-4 text-sky-600",children:"Professional Service Group"
+<h3> className:"text-lg font-semibold mb-4",children:"Types of Security"
+<span> children:e
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-blue-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Security Systems"
+<h2> className:"text-3xl md:text-4xl font-bold mb-4  text-sky-600",children:"Security Systems"
+<p> className:"text-gray-600 mb-4",children:"We are dedicated to build positive relationships with our customers by understanding our client’s business needs and provide them with the most professional and high quality services that fulfill them, whether its Residential, Retail, Commercial, Industrial or Governmental."
+<p> className:"text-gray-600 mb-4",children:"Our mission is to be the premier global supplier to the Electronic Security Industry by responding on time, to our customer’s requirements with the most innovative and cost effective products of the highest quality."
+<p> className:"text-gray-600 mb-4",children:"Utmost efficiency & professionalism at every level to service our satisfied clients."
+<p> className:"text-gray-600 mb-6",children:"Promoting competency through organization-wide training in a learning environment that is open and where people feel free to ask for consultancy."
+<h3> className:"text-lg font-semibold mb-4",children:"Types of Security"
+<span> children:e
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-blue-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Software Development"
+<h2> className:"text-3xl md:text-4xl font-bold mb-4  text-sky-600",children:"Software Development"
+<p> className:"text-gray-600 mb-4",children:"We are Developing Best Website and Customized Softwares with cutting edge technology applications."
+<p> className:"text-gray-600 mb-6",children:"We are the most experienced and highly trusted Website and Software Development Company in Dubai. Our best professional team design both Software and Websites starting from small startups to large enterprises."
+<h3> className:"text-lg font-semibold mb-4",children:"We are Providing"
+<span> children:e
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-blue-600 px-5 py-2 rounded-xl",children:"Read More"
+<p> className:"inline-block border border-white px-4 py-1 rounded-full text-sm font-medium",children:"Solutions"
+<h1> className:"text-3xl sm:text-4xl md:text-5xl font-bold leading-tight",children:"Website Development"
+<h2> className:"text-3xl md:text-4xl font-bold mb-4  text-sky-600",children:"Website Development"
+<p> className:"text-gray-600 mb-4",children:"We are Developing Best Website and Customized Softwares with cutting edge technology applications."
+<p> className:"text-gray-600 mb-6",children:"Your business’s digital presence will be our core responsibility and we will fulfill it successfully. We understand each and every unique demand and requirement of all the clients and work accordingly with a positive attitude."
+<h3> className:"text-lg font-semibold mb-4",children:"We are Providing"
+<span> children:e
+<h1> className:"text-4xl font-semibold mb-4",children:e.title
+<p> className:"text-center text-base font-medium mb-8",children:e.description
+<a> href:e.link,className:"bg-blue-600 px-5 py-2 rounded-xl",children:"Read More"
+<h1> className:"text-white text-5xl font-bold leading-tight",children:"Get in Touch for Expert Assistance"
+<p> className:"text-white text-lg",children:"Connect with our team of experts for personalized support and solutions tailored to your needs."
+<button> onClick:s,className:"bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold",children:"Request For A Meeting"
+<span> className:"text-sky-600",children:"Details"
+<p> className:"font-semibold",children:"Global Head Office"
+<p> children:"Commnet Systems Consultancy LLC"
+<p> className:"font-semibold",children:"Phone"
+<p> children:"+971 4-295 5299"
+<p> className:"font-semibold",children:"Email"
+<p> children:"info@commnetsysconsult.com"
+<p> className:"font-semibold",children:"Location"
+<h2> className:"text-3xl font-bold mb-6",children:"Enquire Now"
+<button> type:"submit",className:"bg-sky-600 text-white px-6 py-2 rounded-lg w-32 hover:bg-sky-700 transition",children:"Submit"
+<p> children:"Click and drag the corners to flip pages. Use mouse wheel to zoom."
+<h2> className:"text-xl font-semibold mb-4 text-center",children:"Enter your Email"
+<button> onClick:()=>l(!1),className:"w-full py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400",children:"Cancel"
+<button> onClick:b,className:"w-full py-2 bg-sky-600 text-white rounded hover:bg-sky-700",children:"Submit"
+<h2> className:"text-[1.8em] sm:text-[2em] lg:text-[2.5em] xl:text-[3em] font-semibold leading-[1.14]",children:"Who We Are"
+<span> className:"text-sky-600 font-semibold",children:"Commnet"
+<h3> className:"text-3xl font-bold",children:"Our Mission"
+<h3> className:"text-3xl font-bold",children:"Our Vision"
+<p> className:"text-5xl font-sans font-bold text-neutral-800",children:e.id
+<p> className:"text-2xl font-semibold tracking-tight capitalize leading-7 mt-6 text-sky-600",children:e.title
+<p> className:"text-lg leading-6 line-clamp-3",children:e.description
+<h1> className:"text-4xl font-bold mb-4 ",children:"Our Journey"
+<p> className:"text font-medium font-sans max-w-2xl text-justify ",children:"Commnet started in the early 2000s as a two-member IT consulting firm and rapidly grew into a well-known company with offices in Dubai and India."
+<p> className:"text-3xl font-bold",children:e.count
+<p> className:"text-xl font-medium",children:e.title
+<p> className:"text-sm opacity-80 mt-2",children:e.description
+<p> className:"font-medium",children:"How to use:"
+<button> onClick:r,className:"text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg",children:"Close"
+<h2> className:"text-center text-xl font-semibold text-sky-700 mb-8",children:"Trusted By"
+<h1> className:"text-4xl font-bold",children:"Terms and Conditions"
+<p> className:"mt-2 text-lg",children:"Commnet System Consultancy LLC – ICT & ELV Solutions"
+<h2> className:"text-2xl font-semibold text-sky-600 mb-6 text-center",children:"Table of Contents"
+<p> className:"text-gray-700 leading-relaxed",children:e[s]
+<h1> className:"text-4xl font-bold",children:"Privacy Policy"
+<p> className:"mt-2 text-lg",children:"Commnet System Consultancy LLC – ICT & ELV Solutions"
+<h2> className:"text-2xl font-semibold text-sky-600 mb-6 text-center",children:"Table of Contents"
+<p> className:"text-gray-700 leading-relaxed",children:e[s]
+<h1> className:"mt-6 text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-wide","data-aos":"fade-up",children:"Lightning Solutions"
+<p> className:"mt-10 text-base sm:text-lg md:text-xl font-light","data-aos":"fade-up","data-aos-delay":"200",children:"Engineering Elegance with Light"
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-6","data-aos":"fade-up",children:"About Us"
+<p> className:"text-base sm:text-lg leading-relaxed max-w-3xl mx-auto","data-aos":"fade-up","data-aos-delay":"400",children:"Lighting solutions play a crucial role in shaping the ambiance, functionality, and energy efficiency of any space. From architectural highlights to task-specific illumination, modern lighting design focuses on enhancing comfort, aesthetics, and sustainability. With the right strategy, lighting transforms environments—improving productivity in workplaces, adding warmth to homes, and elevating the experience in commercial and public spaces."
+<h2> className:"text-4xl font-extrabold tracking-tight text-gray-900 uppercase","data-aos":"fade-up",children:"Our Process"
+<p> className:"mt-4 text-gray-600 max-w-xl mx-auto text-base sm:text-lg","data-aos":"fade-up","data-aos-delay":"100",children:"A calm, clear sequence of steps that shape results with consistency and care."
+<p> className:"text-gray-800 text-sm leading-relaxed",children:a
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase","data-aos":"fade-up",children:"Why Choose Us"
+<p> className:"text-sm sm:text-base",children:l
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase","data-aos":"fade-up",children:"Our Project Verticals"
+<span> className:"px-4 py-2 bg-white rounded-full border border-sky-600 text-sky-700 text-sm font-medium shadow hover:bg-sky-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105","data-aos":"fade-up","data-aos-delay":l*50,children:a
+<h3> className:"text-xl font-semibold mb-3",children:"Work Place Lighting"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Lighting your office efficiently and effectively makes sound business sense. The ideal office lighting solution will have a considerable impact on the office environment and, in turn, your workforce. Good lighting helps us to see and to recognise hazards, reduce visual strain and discomfort. While poor lighting may affect workers' output, performance and health leading to less than desired levels of quality and service."
+<h3> className:"text-xl font-semibold mb-3",children:"Home Lighting"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Light is one of the most overlooked and yet important elements of good interior design. Lighting is essential to create the mood and ambience of a living space. Professional lighting design can help illuminate a room, create a safe and comfortable environment, and strike a perfect balance between style, comfort, and practicality."
+<h3> className:"text-xl font-semibold mb-3",children:"Hospital Lighting"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Lighting has a positive impact on patients and is one of the factors that contribute to a well-designed hospital facility. Great hospital lighting is both aesthetic and useful, making a positive and impactful statement. Lighting design has the potential to transform a space for the betterment of all."
+<h3> className:"text-xl font-semibold mb-3",children:"Hotel Lighting"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Lighting is not something to take lightly when planning the design of a hotel room. It can make or break the ambiance, which in turn affects guest satisfaction. Whether cozy and warm or bright and luxurious, lighting defines the hotel's identity."
+<h3> className:"text-xl font-semibold mb-3",children:"Facade Lighting"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"The facade of a building—modern or historic—is key to first impressions. In the architectural world, facades have become an important showcase of branding, identity, and technology. Our lighting designs elevate that impression."
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 text-center mb-12","data-aos":"fade-up",children:"Lighting & Human Health"
+<p> className:"text-base sm:text-lg leading-relaxed","data-aos":"fade-up","data-aos-delay":"200",children:"Light plays a crucial role in regulating our circadian rhythms, impacting sleep, mood, and productivity. Our smart lighting designs adapt throughout the day to support physical and mental wellbeing naturally."
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-10","data-aos":"fade-up",children:"Let's Build Brilliance Together"
+<p> className:"text-base sm:text-lg max-w-3xl mx-auto mb-8","data-aos":"fade-up","data-aos-delay":"200",children:"Whether it's commercial, residential, or industrial – lighting design begins with purpose."
+<span> className:"inline-block",children:"Technology with Purpose"
+<p> className:"text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed",children:"Discover how Commnet empowers modern businesses with efficiency, reliability, and innovation across regions."
+<span> className:"inline-block py-1 px-3 rounded-full bg-red-100 text-red-600 text-xs font-semibold tracking-wider mb-4",children:"LEADERSHIP INSIGHTS"
+<h2> className:"text-3xl md:text-4xl font-bold mb-4",children:"Our MD Speaks"
+<p> className:"text-gray-600 text-base md:text-lg max-w-2xl mx-auto",children:"Hear directly from our Managing Director about our vision, values, and commitment to excellence."
+<h2> className:"text-3xl md:text-4xl font-bold mb-4",children:"A Message From Our Leadership"
+<p> className:"text-black text-sm md:text-base",children:"Our success is built on understanding the unique challenges our clients face and delivering tailored solutions that drive real business outcomes."
+<p> className:"text-black text-sm md:text-base",children:"At Commnet, we believe that technology should serve people – not the other way around. Our approach combines technical excellence with a deep understanding of human needs."
+<h2> className:"text-3xl md:text-4xl font-bold text-gray-800 leading-tight",children:"Empowering Your Business with Modern Technology"
+<p> className:"text-gray-600 leading-relaxed",children:"At Commnet, we believe in delivering solutions that not only meet current needs but anticipate future challenges in the digital landscape."
+<h4> className:"font-bold text-gray-800 mb-1",children:"Proven Growth"
+<p> className:"text-sm text-gray-600",children:"200% Year-over-Year growth across 5 regional markets"
+<h4> className:"font-bold text-gray-800 mb-1",children:"Strategic Focus"
+<p> className:"text-sm text-gray-600",children:"Targeted solutions that improve cash flow and agility"
+<span> className:"inline-block py-1 px-3 rounded-full bg-sky-100 text-red-600 text-xs font-semibold tracking-wider mb-4",children:"OUR JOURNEY"
+<h2> className:"text-3xl md:text-4xl font-bold text-gray-800",children:"From Local Consultancy to Regional IT Powerhouse"
+<h3> className:"text-2xl font-bold text-gray-800 mb-3",children:"Our Beginning"
+<p> className:"text-gray-600",children:"Started as a 2-member consultancy with a vision to transform IT services"
+<span> className:"text-xl font-bold",children:"1"
+<h4> className:"font-bold text-gray-800 mb-2",children:"Founded Early 2000s"
+<p> className:"text-sm text-gray-600",children:"Established with a focus on quality IT consulting services in Dubai"
+<span> className:"text-xl font-bold",children:"2"
+<h4> className:"font-bold text-gray-800 mb-2",children:"Regional Expansion"
+<p> className:"text-sm text-gray-600",children:"Grew operations across UAE and India."
+<h3> className:"text-2xl font-bold text-gray-800 mb-3",children:"Our Growth"
+<p> className:"text-gray-600",children:"Expanded services and geographical presence to meet growing demand"
+<h3> className:"text-2xl font-bold text-gray-800 mb-3",children:"Today"
+<p> className:"text-gray-600",children:"A leading provider of innovative IT solutions across multiple industries"
+<span> className:"text-xl font-bold",children:"3"
+<h4> className:"font-bold text-gray-800 mb-2",children:"Industry Leader"
+<p> className:"text-sm text-gray-600",children:"Recognized for delivering mission-critical infrastructure to global clients"
+<span> className:"text-sky-600",children:"Vision & Mission"
+<h3> className:"text-xl font-bold text-center text-red-600 mb-4",children:"Our Vision"
+<p> className:"text-black text-center",children:"To be the digital partner of choice by driving transformation through trusted and scalable IT solutions."
+<h3> className:"text-xl font-bold text-center text-red-600 mb-4",children:"Our Mission"
+<p> className:"text-black text-center",children:"We aim to build lasting partnerships by aligning our expertise with your success."
+<h3> className:"text-xl font-bold text-center text-red-600 mb-4",children:"Benefits With Us"
+<span> className:"text-sm uppercase text-white/70 tracking-wide mb-3",children:"Leadership Panel"
+<span> children:"Leadership"
+<p> className:"text-white/90 max-w-md mx-auto text-base mb-2",children:"Our team of seasoned professionals brings a wealth of knowledge and experience to the table, driving innovation and excellence across the organization."
+<h4> className:"text-xl font-bold text-gray-800 mb-2",children:s.name
+<p> className:"text-sm text-red-600 font-medium",children:s.title
+<span> className:"text-sm uppercase text-white/70 tracking-wide mb-3",children:"Leadership Panel"
+<span> children:"Leadership"
+<p> className:"text-white/90 max-w-md text-base",children:"Our team of seasoned professionals brings a wealth of knowledge and experience to the table, driving innovation and excellence across the organization."
+<h4> className:"text-base font-bold text-gray-800 mb-1",children:s.name
+<p> className:"text-xs text-red-600 font-medium",children:s.title
+<h4> className:"text-base font-bold text-gray-800 mb-1",children:s.name
+<p> className:"text-xs text-red-600 font-medium",children:s.title
+<h2> className:"text-3xl md:text-4xl font-bold mb-6",children:"Ready to Transform Your Business?"
+<p> className:"text-lg text-sky-100 max-w-2xl mx-auto mb-8",children:"Join hundreds of businesses that trust Commnet for their technology needs."
+<a> href:"/contactus",children:c.jsx("button",{className:"bg-white text-sky-700 px-8 py-3 rounded-full font-bold hover:bg-sky-50 transition-colors duration-300 shadow-lg",children:"Contact Us"
+<h1> className:"text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight","data-aos":"fade-up","data-aos-delay":"200",children:"Our Premier Projects"
+<p> className:"text-lg md:text-xl text-gray-200 max-w-2xl","data-aos":"fade-up","data-aos-delay":"400",children:"Exceptional solutions delivered with uncompromising excellence"
+<button> onClick:()=>s("prev"),className:"p-3 rounded-full bg-gray-100 hover:bg-sky-500 hover:text-white transition-all duration-300",children:c.jsx("svg",{className:"w-6 h-6",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",xmlns:"http://www.w3.org/2000/svg",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"2",d:"M15 19l-7-7 7-7"
+<button> onClick:()=>s("next"),className:"p-3 rounded-full bg-gray-100 hover:bg-sky-500 hover:text-white transition-all duration-300",children:c.jsx("svg",{className:"w-6 h-6",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",xmlns:"http://www.w3.org/2000/svg",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"2",d:"M9 5l7 7-7 7"
+<h3> className:"text-lg font-semibold text-sky-600",children:a.heading
+<h2> className:"text-3xl font-bold text-gray-800 mb-6",children:a.title
+<p> className:"text-sm text-gray-500",children:"Client"
+<p> className:"font-semibold text-gray-800",children:a.client
+<p> className:"text-lg font-semibold text-gray-800 mb-3",children:"Scope of Work"
+<span> className:"text-gray-700",children:d
+<p> className:"text-sm text-gray-500",children:"Project Value"
+<p> className:"text-xl font-bold text-gray-800",children:a.value
+<p> className:"text-sm text-gray-500",children:"Duration"
+<p> className:"text-xl font-bold text-gray-800",children:a.duration
+<h3> className:"text-sm font-semibold text-sky-600",children:a.heading
+<h2> className:"text-xl font-bold text-gray-800 mb-4",children:a.title
+<span> className:"font-semibold",children:"Client:"
+<p> className:"text-sm font-semibold text-gray-700 mb-2",children:"Scope Of Work:"
+<span> className:"text-sm text-gray-700",children:d
+<p> className:"text-xs text-gray-500",children:"Project Value"
+<p> className:"text-base font-bold text-gray-800",children:a.value
+<p> className:"text-xs text-gray-500",children:"Duration"
+<p> className:"text-base font-bold text-gray-800",children:a.duration
+<h2> className:"text-3xl md:text-4xl font-bold text-white mb-6","data-aos":"fade-up",children:"Ready to build your next world-class project?"
+<p> className:"text-lg text-sky-100 mb-8 max-w-2xl mx-auto","data-aos":"fade-up","data-aos-delay":"200",children:"Our expert team delivers exceptional solutions tailored to your needs"
+<button> className:"px-8 py-3 bg-white text-sky-700 font-bold rounded-full hover:bg-sky-50 transition-all duration-300 shadow-lg","data-aos":"fade-up","data-aos-delay":"400",children:"Contact Us"
+<h2> className:"text-3xl md:text-5xl font-bold text-white mb-6","data-aos":"fade-up",children:"Our Projects"
+<p> className:"text-lg text-sky-100 max-w-2xl mx-auto","data-aos":"fade-up","data-aos-delay":"300",children:"Delivering excellence in engineering and construction with innovative solutions and uncompromising quality across the UAE."
+<h3> className:"text-xl font-bold text-white mb-2",children:g.title
+<p> className:"text-sky-200 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300",children:g.subtitle
+<h3> className:"text-xl font-bold text-white mb-2",children:g.title
+<p> className:"text-sky-100 mb-4",children:g.subtitle
+<span> className:"inline-block px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-sky-800 transition-colors duration-300",children:"View Details"
+<span> className:"px-3 py-2 text-gray-500",children:"..."
+<button> onClick:f,className:"absolute top-4 right-4 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-2 text-white transition-all duration-300",children:c.jsx("svg",{className:"w-6 h-6",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:c.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"2",d:"M6 18L18 6M6 6l12 12"
+<h3> className:"text-lg font-semibold text-sky-600",children:r.subtitle
+<h2> className:"text-3xl font-bold text-gray-800 mb-4",children:r.title
+<p> className:"text-gray-600 mb-6",children:r.description
+<p> className:"text-sm text-gray-500",children:"Location"
+<p> className:"font-semibold text-gray-800",children:r.location
+<p> className:"text-sm text-gray-500",children:"Client"
+<p> className:"font-semibold text-gray-800",children:r.client
+<p> className:"text-sm text-gray-500",children:"Status"
+<p> className:"font-semibold text-gray-800",children:r.status
+<p> className:"text-sm text-gray-500",children:"Project Value"
+<p> className:"font-semibold text-gray-800",children:r.value
+<p> className:"text-sm text-gray-500",children:"Duration"
+<p> className:"font-semibold text-gray-800",children:r.duration
+<p> className:"text-lg font-semibold text-gray-800 mb-3",children:"Scope of Work"
+<span> className:"text-gray-700",children:g
+<button> onClick:f,className:"px-6 py-2 bg-sky-600 text-white font-medium rounded-lg hover:bg-sky-700 transition-colors duration-300",children:"Close Details"
+<h1> className:"text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-wide",children:"Chainex"
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-6",children:"About Us"
+<p> className:"text-base sm:text-lg leading-relaxed max-w-3xl mx-auto",children:"Chainex is a global boutique product engineering firm at the forefront of deep-tech innovation and embedded product architecture. In strategic partnership with Commnet System Consulting, it blends domain expertise with next-gen engineering."
+<h2> className:"text-4xl font-extrabold tracking-tight text-sky-800 uppercase","data-aos":"fade-up",children:"Our Process"
+<p> className:"mt-4 text-gray-600 max-w-xl mx-auto text-base sm:text-lg","data-aos":"fade-up","data-aos-delay":"100",children:"From diagnostics to implementation, each step is executed with care and precision."
+<p> className:"text-gray-800 text-sm leading-relaxed",children:a
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase",children:"Why Choose Us"
+<p> className:"text-sm sm:text-base",children:l
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase",children:"Our Project Verticals"
+<span> className:"px-4 py-2 bg-white rounded-full border border-sky-600 text-sky-700 text-sm font-medium shadow hover:bg-sky-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105","data-aos":"zoom-in",children:a
+<h1> className:"mt-6 text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-wide",children:"Power Solutions"
+<p> className:"mt-10 text-base sm:text-lg md:text-xl font-light",children:"Engineering Elegance with Power"
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-6",children:"About Us"
+<p> className:"mt-4 text-gray-500 max-w-2xl mx-auto text-base sm:text-lg",children:"Our Power Solutions are designed to deliver reliability, efficiency, and sustainability. From energy audits and load assessments to implementation and long-term maintenance, each step is executed with precision to ensure optimal performance and safety across residential, commercial, and industrial projects."
+<h2> className:"text-4xl font-extrabold tracking-tight text-sky-800 uppercase","data-aos":"fade-up",children:"Our Process"
+<p> className:"mt-4 text-gray-600 max-w-xl mx-auto text-base sm:text-lg","data-aos":"fade-up","data-aos-delay":"100",children:"From diagnostics to implementation, each step is executed with care and precision."
+<p> className:"text-gray-800 text-sm leading-relaxed",children:a
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase",children:"Why Choose Us"
+<p> className:"text-sm sm:text-base",children:l
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase",children:"Our Specializations"
+<span> className:"px-4 py-2 bg-white rounded-full border border-sky-600 text-sky-700 text-sm font-medium shadow hover:bg-sky-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105","data-aos":"zoom-in",children:a
+<h3> className:"text-xl font-semibold mb-3",children:"24/7 Hotline Support"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Our dedicated support team is always available to offer expert advice, troubleshoot issues, and provide emergency solutions to power problems anytime, anywhere."
+<h3> className:"text-xl font-semibold mb-3",children:"Specialized Training"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"We offer specialized training programs designed to equip your team with the knowledge and skills needed to operate and maintain AC/DC power systems effectively."
+<h3> className:"text-xl font-semibold mb-3",children:"Integrated IT Solutions"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"RNC Electrical Solutions provides a complete range of IT hardware, networking, and security solutions tailored to your business needs, all under one trusted roof."
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-10",children:"Reliable Power. Always."
+<p> className:"text-base sm:text-lg max-w-3xl mx-auto mb-8",children:"From industrial UPS systems to customized control panels and real-time battery monitoring, RNC delivers engineering-backed excellence. Let’s keep your power running."
+<h1> className:"mt-6 text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-wide","data-aos":"fade-up",children:"Core services"
+<p> className:"mt-10 text-base sm:text-lg md:text-xl font-light","data-aos":"fade-up","data-aos-delay":"200",children:"Engineering Innovation with Intelligence"
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-6","data-aos":"fade-up",children:"About Us"
+<p> className:"text-base sm:text-lg leading-relaxed max-w-3xl mx-auto","data-aos":"fade-up","data-aos-delay":"200",children:"Technology solutions play a crucial role in transforming businesses, enhancing efficiency, and driving innovation across industries. From AI-powered automation to cloud infrastructure, modern technology focuses on scalability, security, and user experience. With the right strategy, technology transforms operations—improving productivity in enterprises, streamlining processes, and creating competitive advantages in the digital marketplace."
+<h2> className:"text-4xl font-extrabold tracking-wide text-sky-800 uppercase","data-aos":"fade-up",children:"Our Process"
+<p> className:"mt-4 text-gray-500 max-w-2xl mx-auto text-base sm:text-lg","data-aos":"fade-up","data-aos-delay":"100",children:"From analysis to deployment, each step is executed with precision and expertise."
+<p> className:"text-gray-800 text-sm leading-relaxed",children:a
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase","data-aos":"fade-up",children:"Why Choose Us"
+<p> className:"text-sm sm:text-base",children:l
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase","data-aos":"fade-up",children:"Our Domain Expertise"
+<span> className:"px-4 py-2 bg-white rounded-full border border-sky-600 text-sky-700 text-sm font-medium shadow hover:bg-sky-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105","data-aos":"fade-up","data-aos-delay":l*50,children:a
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-16 tracking-wide uppercase","data-aos":"fade-up",children:"Core Services"
+<h3> className:"text-xl font-semibold mb-3",children:"AI & Machine Learning"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"AI-driven solutions for business automation and predictive analytics, NLP and computer vision applications. Transform your business processes with intelligent automation that learns and adapts to your needs."
+<h4> className:"text-lg font-semibold mb-2",children:"Intelligent Systems"
+<h4> className:"text-lg font-semibold mb-2",children:"Process Automation"
+<h3> className:"text-xl font-semibold mb-3",children:"Process Automation"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Robotic Process Automation (RPA) for streamlining workflows and intelligent automation for improved efficiency. Eliminate repetitive tasks and focus on strategic initiatives while our automation handles routine operations."
+<h3> className:"text-xl font-semibold mb-3",children:"Mobile App Development"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Native and cross-platform app development for Android & iOS. Scalable and user-friendly mobile solutions that deliver exceptional user experiences and drive business growth."
+<h4> className:"text-lg font-semibold mb-2",children:"Mobile Solutions"
+<h4> className:"text-lg font-semibold mb-2",children:"ERP Solutions"
+<h3> className:"text-xl font-semibold mb-3",children:"ERP Solutions"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Custom ERP development with cloud-based architecture and real-time reporting with dashboard insights. Integrate all your business processes into one comprehensive system for better visibility and control."
+<h3> className:"text-xl font-semibold mb-3",children:"Cybersecurity Services"
+<p> className:"text-sm sm:text-base leading-relaxed",children:"Network Security: Implementing firewalls, VPNs, and intrusion detection systems. Data Encryption: Protecting sensitive data in storage and transmission with compliance assurance and advanced threat protection."
+<h4> className:"text-lg font-semibold mb-2",children:"Security Solutions"
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 text-center mb-12","data-aos":"fade-up",children:"Technical Expertise"
+<h4> className:"font-semibold text-lg mb-2",children:"Cloud Platforms"
+<p> className:"text-gray-600",children:"AWS, Azure, Google Cloud"
+<h4> className:"font-semibold text-lg mb-2",children:"Programming Languages"
+<p> className:"text-gray-600",children:"Python, JavaScript, Flutter, Angular, Google Cloud"
+<h4> className:"font-semibold text-lg mb-2",children:"DevOps & Automations"
+<p> className:"text-gray-600",children:"CI/CD Pipelines, Kubernetes, Docker"
+<h4> className:"text-2xl font-bold mb-4",children:"Advanced Technologies"
+<p> className:"text-lg opacity-90 mb-4",children:"Machine Learning, Predictive Analytics, NLP"
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-10","data-aos":"fade-up",children:"Let's Build Innovation Together"
+<p> className:"text-base sm:text-lg max-w-3xl mx-auto mb-8","data-aos":"fade-up","data-aos-delay":"200",children:"Whether it's enterprise software, mobile applications, or AI solutions – technology development begins with understanding your vision."
+<h1> className:"mt-6 text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-wide",children:"Data Center Products and Solutions"
+<p> className:"mt-10 text-base sm:text-lg md:text-xl font-light",children:"Secure. Scalable. Service-Driven."
+<h2> className:"text-2xl sm:text-3xl md:text-5xl font-bold text-sky-600 mb-6",children:"About Our Data Center Solutions"
+<p> className:"mt-4 text-gray-500 max-w-3xl mx-auto text-base sm:text-lg",children:"Providing comprehensive data center solutions, including design, product selection, and customized implementations focusing on security, storage, and disaster recovery. Serving military, commercial, and industrial sectors, we integrate new technology with existing IT infrastructure to create efficient, service-driven data centers. Our solutions reduce costs, simplify management, improve productivity, and mitigate risks."
+<h2> className:"text-4xl font-extrabold tracking-wide text-sky-800 uppercase","data-aos":"fade-up",children:"Our Process"
+<p> className:"mt-4 text-gray-500 max-w-2xl mx-auto text-base sm:text-lg","data-aos":"fade-up","data-aos-delay":"100",children:"From design to deployment, our structured approach ensures operational excellence."
+<p> className:"text-gray-800 text-sm leading-relaxed",children:s
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase",children:"Why Choose Us"
+<p> className:"text-sm sm:text-base",children:a
+<h2> className:"text-4xl font-bold text-center text-sky-700 mb-12 tracking-wide uppercase",children:"Key Focus Areas"
+<span> className:"px-4 py-2 bg-white rounded-full border border-sky-600 text-sky-700 text-sm font-medium shadow hover:bg-sky-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105","data-aos":"zoom-in",children:s

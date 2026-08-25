@@ -1,0 +1,11 @@
+# Nothing below is referenced by any page — excluded so the deployment
+# stays a few MB rather than a few hundred.
+Teleiostec/Interior/
+Teleiostec/Asset/Parallax/
+Teleiostec/Asset/photos/
+Teleiostec/_to_delete/
+Data/
+.impeccable/
+commnet-prototype.backup.html
+PRODUCT.md
+_mobiletest.html

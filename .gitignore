@@ -1,1 +1,11 @@
 .DS_Store
+
+# Teleiostec source renders — ~400 MB of stills and clips that the built
+# site never references. Kept locally, deliberately out of the repo.
+Teleiostec/Interior/
+Teleiostec/Asset/Parallax/
+Teleiostec/Asset/photos/
+Teleiostec/_to_delete/
+
+# local scratch
+_mobiletest.html

@@ -84,7 +84,11 @@ dl,dt,dd{margin:0}
    gentle scroll drift for life. Reuses the .film treatment. */
 .band{padding:var(--sec) var(--mx) 0}
 .band__fig{margin:0;position:relative;overflow:hidden;border-radius:2px}
-.band__fig .media{aspect-ratio:21/9;transform:scale(1.06);will-change:transform}
+/* The clip is 720p shown ~1.4x oversize, so it cannot afford the extra 6%
+   scale that used to give the drift its overhang. object-fit:cover already
+   crops ~240px off a 16:9 source in this 21:9 frame — js/app.js drifts
+   object-position within that slack instead, at native scale. */
+.band__fig .media{aspect-ratio:21/9;will-change:object-position}
 .band__fig figcaption{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;margin-top:16px;
   font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
 .band__fig .idx{color:var(--ink);font-weight:500}

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..460&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css?v=r9-20260825">
+<link rel="stylesheet" href="css/main.css?v=r11-20260825">
 <link rel="icon" href="Asset/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#F3F1E9">
 <meta property="og:type" content="website">
@@ -118,9 +118,9 @@
   </div>
 
   <figure class="studio__fig" data-img-reveal>
-    <img src="Asset/media/kitchen-house.jpg"
-         srcset="Asset/media/kitchen-house-800.jpg 800w, Asset/media/kitchen-house-1400.jpg 1400w, Asset/media/kitchen-house.jpg 1600w"
-         sizes="(max-width:820px) 100vw, 92vw"
+    <img src="Asset/media/kitchen-house-1616.jpg"
+         srcset="Asset/media/kitchen-house-400.jpg 400w, Asset/media/kitchen-house-800.jpg 800w, Asset/media/kitchen-house-1200.jpg 1200w, Asset/media/kitchen-house-1616.jpg 1616w"
+         sizes="calc(100vw - 2 * clamp(20px, 6vw, 120px))"
          alt="Open-plan kitchen and living under a vaulted timber ceiling with valley views" decoding="async" loading="lazy">
     <figcaption><span>Valley Estate</span><span>Interior &amp; fit-out — Hatta</span></figcaption>
   </figure>
@@ -159,7 +159,7 @@
   <div class="deck" id="deck" data-reveal>
     <div class="deck__stage" id="deckStage" aria-live="polite">
       <article class="deck__card" data-i="0">
-        <img class="deck__img" src="Asset/media/atrium.jpg" srcset="Asset/media/atrium-800.jpg 800w, Asset/media/atrium-1400.jpg 1400w, Asset/media/atrium.jpg 1600w" sizes="(max-width:820px) 92vw, 44vw" alt="Double-height atrium living room" loading="lazy" decoding="async" draggable="false">
+        <img class="deck__img" src="Asset/media/atrium-1087.jpg" srcset="Asset/media/atrium-400.jpg 400w, Asset/media/atrium-800.jpg 800w, Asset/media/atrium-1087.jpg 1087w" sizes="(max-width:820px) min(86vw, 430px), clamp(280px, 40vw, 520px)" alt="Double-height atrium living room" loading="lazy" decoding="async" draggable="false">
         <span class="deck__tint" aria-hidden="true"></span>
         <div class="deck__meta">
           <span class="deck__no">01 · Interior</span>
@@ -169,7 +169,7 @@
         </div>
       </article>
       <article class="deck__card" data-i="1">
-        <img class="deck__img" src="Asset/media/fitout.jpg" srcset="Asset/media/fitout-800.jpg 800w, Asset/media/fitout-1400.jpg 1400w, Asset/media/fitout.jpg 1600w" sizes="(max-width:820px) 92vw, 44vw" alt="Contemporary corporate workspace with lounge and open desks" loading="lazy" decoding="async" draggable="false">
+        <img class="deck__img" src="Asset/media/fitout-1536.jpg" srcset="Asset/media/fitout-400.jpg 400w, Asset/media/fitout-800.jpg 800w, Asset/media/fitout-1200.jpg 1200w, Asset/media/fitout-1536.jpg 1536w" sizes="(max-width:820px) min(86vw, 430px), clamp(280px, 40vw, 520px)" alt="Contemporary corporate workspace with lounge and open desks" loading="lazy" decoding="async" draggable="false">
         <span class="deck__tint" aria-hidden="true"></span>
         <div class="deck__meta">
           <span class="deck__no">02 · Fit-Out</span>
@@ -179,7 +179,7 @@
         </div>
       </article>
       <article class="deck__card" data-i="2">
-        <img class="deck__img" src="Asset/media/joinery.jpg" srcset="Asset/media/joinery-800.jpg 800w, Asset/media/joinery-1400.jpg 1400w, Asset/media/joinery.jpg 1600w" sizes="(max-width:820px) 92vw, 44vw" alt="In-house joinery workshop with walnut cabinetry and hand tools" loading="lazy" decoding="async" draggable="false">
+        <img class="deck__img" src="Asset/media/joinery-1536.jpg" srcset="Asset/media/joinery-400.jpg 400w, Asset/media/joinery-800.jpg 800w, Asset/media/joinery-1200.jpg 1200w, Asset/media/joinery-1536.jpg 1536w" sizes="(max-width:820px) min(86vw, 430px), clamp(280px, 40vw, 520px)" alt="In-house joinery workshop with walnut cabinetry and hand tools" loading="lazy" decoding="async" draggable="false">
         <span class="deck__tint" aria-hidden="true"></span>
         <div class="deck__meta">
           <span class="deck__no">03 · Joinery</span>
@@ -189,7 +189,7 @@
         </div>
       </article>
       <article class="deck__card" data-i="3">
-        <img class="deck__img" src="Asset/media/mep.jpg" srcset="Asset/media/mep-800.jpg 800w, Asset/media/mep-1400.jpg 1400w, Asset/media/mep.jpg 1600w" sizes="(max-width:820px) 92vw, 44vw" alt="Building with exposed, colour-coded mechanical, electrical and plumbing services" loading="lazy" decoding="async" draggable="false">
+        <img class="deck__img" src="Asset/media/mep-1536.jpg" srcset="Asset/media/mep-400.jpg 400w, Asset/media/mep-800.jpg 800w, Asset/media/mep-1200.jpg 1200w, Asset/media/mep-1536.jpg 1536w" sizes="(max-width:820px) min(86vw, 430px), clamp(280px, 40vw, 520px)" alt="Building with exposed, colour-coded mechanical, electrical and plumbing services" loading="lazy" decoding="async" draggable="false">
         <span class="deck__tint" aria-hidden="true"></span>
         <div class="deck__meta">
           <span class="deck__no">04 · MEP Solutions</span>
@@ -222,8 +222,10 @@
   <!-- LEFT · dark image hero -->
   <div class="feature__left">
     <div class="feature__bg" aria-hidden="true">
-      <img class="feature__bgimg is-on" id="featBgA" src="Asset/media/great-room.jpg" alt="" decoding="async">
-      <img class="feature__bgimg" id="featBgB" alt="" decoding="async">
+      <img class="feature__bgimg is-on" id="featBgA" src="Asset/media/great-room-1535.jpg"
+           srcset="Asset/media/great-room-400.jpg 400w, Asset/media/great-room-800.jpg 800w, Asset/media/great-room-1200.jpg 1200w, Asset/media/great-room-1535.jpg 1535w" sizes="(max-width:820px) 100vw, 47vw"
+           alt="" decoding="async" fetchpriority="high">
+      <img class="feature__bgimg" id="featBgB" sizes="(max-width:820px) 100vw, 47vw" alt="" decoding="async">
       <span class="feature__scrim"></span>
     </div>
     <div class="feature__hero">
@@ -257,40 +259,44 @@
       <ul class="dcards" id="dcards">
         <li class="dcard is-active" data-i="0" data-cat="Residential"
             data-title="The Great Room" data-meta="Valley Estate, Hatta · Residential Interior · 2025"
-            data-img="Asset/media/great-room.jpg"
+            data-img="Asset/media/great-room-1535.jpg"
+            data-srcset="Asset/media/great-room-400.jpg 400w, Asset/media/great-room-800.jpg 800w, Asset/media/great-room-1200.jpg 1200w, Asset/media/great-room-1535.jpg 1535w"
             data-desc="A double-height living volume opened to the valley — concrete, oak and glass held in quiet proportion.">
           <button class="dcard__frame" type="button" data-sel="0" aria-label="View The Great Room">
-            <img src="Asset/media/great-room.jpg" srcset="Asset/media/great-room-800.jpg 800w, Asset/media/great-room-1400.jpg 1400w" sizes="(max-width:820px) 62vw, 20vw" alt="Double-height great room with a circular oculus and valley view" loading="lazy" decoding="async">
+            <img src="Asset/media/great-room-1535.jpg" srcset="Asset/media/great-room-400.jpg 400w, Asset/media/great-room-800.jpg 800w, Asset/media/great-room-1200.jpg 1200w, Asset/media/great-room-1535.jpg 1535w" sizes="(max-width:820px) 60vw, clamp(180px, 19vw, 258px)" alt="Double-height great room with a circular oculus and valley view" loading="lazy" decoding="async">
             <span class="dcard__mark" aria-hidden="true"></span>
             <span class="dcard__cap"><b>The Great Room</b><span>Valley Estate, Hatta</span></span>
           </button>
         </li>
         <li class="dcard" data-i="1" data-cat="Residential"
             data-title="Atrium House" data-meta="Palm Jumeirah · Turnkey Fit-Out · 2025"
-            data-img="Asset/media/atrium.jpg"
+            data-img="Asset/media/atrium-1087.jpg"
+            data-srcset="Asset/media/atrium-400.jpg 400w, Asset/media/atrium-800.jpg 800w, Asset/media/atrium-1087.jpg 1087w"
             data-desc="A turnkey residence around a full-height atrium, where light falls the length of the stair.">
           <button class="dcard__frame" type="button" data-sel="1" aria-label="View Atrium House">
-            <img src="Asset/media/atrium.jpg" srcset="Asset/media/atrium-800.jpg 800w, Asset/media/atrium-1400.jpg 1400w" sizes="(max-width:820px) 62vw, 20vw" alt="Atrium living space with staircase and pendant lighting" loading="lazy" decoding="async">
+            <img src="Asset/media/atrium-1087.jpg" srcset="Asset/media/atrium-400.jpg 400w, Asset/media/atrium-800.jpg 800w, Asset/media/atrium-1087.jpg 1087w" sizes="(max-width:820px) 60vw, clamp(180px, 19vw, 258px)" alt="Atrium living space with staircase and pendant lighting" loading="lazy" decoding="async">
             <span class="dcard__mark" aria-hidden="true"></span>
             <span class="dcard__cap"><b>Atrium House</b><span>Palm Jumeirah</span></span>
           </button>
         </li>
         <li class="dcard" data-i="2" data-cat="Residential"
             data-title="Hearth Residence" data-meta="Emirates Hills · Interior &amp; Joinery · 2024"
-            data-img="Asset/media/hearth.jpg"
+            data-img="Asset/media/hearth-1023.jpg"
+            data-srcset="Asset/media/hearth-400.jpg 400w, Asset/media/hearth-800.jpg 800w, Asset/media/hearth-1023.jpg 1023w"
             data-desc="A living room built around a sculpted hearth, wrapped in hand-finished timber joinery.">
           <button class="dcard__frame" type="button" data-sel="2" aria-label="View Hearth Residence">
-            <img src="Asset/media/hearth.jpg" srcset="Asset/media/hearth-800.jpg 800w, Asset/media/hearth-1400.jpg 1400w" sizes="(max-width:820px) 62vw, 20vw" alt="Living room with sculpted fireplace and timber joinery" loading="lazy" decoding="async">
+            <img src="Asset/media/hearth-1023.jpg" srcset="Asset/media/hearth-400.jpg 400w, Asset/media/hearth-800.jpg 800w, Asset/media/hearth-1023.jpg 1023w" sizes="(max-width:820px) 60vw, clamp(180px, 19vw, 258px)" alt="Living room with sculpted fireplace and timber joinery" loading="lazy" decoding="async">
             <span class="dcard__mark" aria-hidden="true"></span>
             <span class="dcard__cap"><b>Hearth Residence</b><span>Emirates Hills</span></span>
           </button>
         </li>
         <li class="dcard" data-i="3" data-cat="Commercial"
             data-title="Performance Club" data-meta="Business Bay · Wellness Fit-Out · 2024"
-            data-img="Asset/media/performance-club.jpg"
+            data-img="Asset/media/performance-club-1536.jpg"
+            data-srcset="Asset/media/performance-club-400.jpg 400w, Asset/media/performance-club-800.jpg 800w, Asset/media/performance-club-1200.jpg 1200w, Asset/media/performance-club-1536.jpg 1536w"
             data-desc="A wellness and training club — warm materials and considered light, engineered end to end.">
           <button class="dcard__frame" type="button" data-sel="3" aria-label="View Performance Club">
-            <img src="Asset/media/performance-club.jpg" srcset="Asset/media/performance-club-800.jpg 800w, Asset/media/performance-club-1400.jpg 1400w" sizes="(max-width:820px) 62vw, 20vw" alt="Luxury gym and wellness interior" loading="lazy" decoding="async">
+            <img src="Asset/media/performance-club-1536.jpg" srcset="Asset/media/performance-club-400.jpg 400w, Asset/media/performance-club-800.jpg 800w, Asset/media/performance-club-1200.jpg 1200w, Asset/media/performance-club-1536.jpg 1536w" sizes="(max-width:820px) 60vw, clamp(180px, 19vw, 258px)" alt="Luxury gym and wellness interior" loading="lazy" decoding="async">
             <span class="dcard__mark" aria-hidden="true"></span>
             <span class="dcard__cap"><b>Performance Club</b><span>Business Bay</span></span>
           </button>
@@ -362,22 +368,22 @@
   <div class="gal" id="gal" data-reveal>
     <div class="gal__stage" id="galStage">
       <button class="gcard" type="button" data-g="0" aria-label="Phase 1 — Discover">
-        <img src="Asset/media/kitchen-house-800.jpg" srcset="Asset/media/kitchen-house-800.jpg 800w, Asset/media/kitchen-house-1400.jpg 1400w" sizes="(max-width:820px) 74vw, 25vw" alt="" loading="lazy" decoding="async">
+        <img src="Asset/media/kitchen-house-800.jpg" srcset="Asset/media/kitchen-house-400.jpg 400w, Asset/media/kitchen-house-800.jpg 800w, Asset/media/kitchen-house-1200.jpg 1200w, Asset/media/kitchen-house-1616.jpg 1616w" sizes="(max-width:480px) clamp(200px, 62vw, 280px), (max-width:820px) clamp(210px, 54vw, 300px), clamp(220px, 25vw, 326px)" alt="" loading="lazy" decoding="async">
         <span class="gcard__scrim" aria-hidden="true"></span>
         <span class="gcard__cap"><em>01 — Discover</em><b>Discover</b><span>Site, brief and budget mapped to the building.</span></span>
       </button>
       <button class="gcard" type="button" data-g="1" aria-label="Phase 2 — Design">
-        <img src="Asset/media/atrium-800.jpg" srcset="Asset/media/atrium-800.jpg 800w, Asset/media/atrium-1400.jpg 1400w" sizes="(max-width:820px) 74vw, 25vw" alt="" loading="lazy" decoding="async">
+        <img src="Asset/media/atrium-800.jpg" srcset="Asset/media/atrium-400.jpg 400w, Asset/media/atrium-800.jpg 800w, Asset/media/atrium-1087.jpg 1087w" sizes="(max-width:480px) clamp(200px, 62vw, 280px), (max-width:820px) clamp(210px, 54vw, 300px), clamp(220px, 25vw, 326px)" alt="" loading="lazy" decoding="async">
         <span class="gcard__scrim" aria-hidden="true"></span>
         <span class="gcard__cap"><em>02 — Design</em><b>Design</b><span>BIM, MEP, joinery and materials resolved together.</span></span>
       </button>
       <button class="gcard" type="button" data-g="2" aria-label="Phase 3 — Build">
-        <img src="Asset/media/hearth-800.jpg" srcset="Asset/media/hearth-800.jpg 800w, Asset/media/hearth-1400.jpg 1400w" sizes="(max-width:820px) 74vw, 25vw" alt="" loading="lazy" decoding="async">
+        <img src="Asset/media/hearth-800.jpg" srcset="Asset/media/hearth-400.jpg 400w, Asset/media/hearth-800.jpg 800w, Asset/media/hearth-1023.jpg 1023w" sizes="(max-width:480px) clamp(200px, 62vw, 280px), (max-width:820px) clamp(210px, 54vw, 300px), clamp(220px, 25vw, 326px)" alt="" loading="lazy" decoding="async">
         <span class="gcard__scrim" aria-hidden="true"></span>
         <span class="gcard__cap"><em>03 — Build</em><b>Build</b><span>Our own craftsmen construct what was drawn.</span></span>
       </button>
       <button class="gcard" type="button" data-g="3" aria-label="Phase 4 — Deliver">
-        <img src="Asset/media/great-room-800.jpg" srcset="Asset/media/great-room-800.jpg 800w, Asset/media/great-room-1400.jpg 1400w" sizes="(max-width:820px) 74vw, 25vw" alt="" loading="lazy" decoding="async">
+        <img src="Asset/media/great-room-800.jpg" srcset="Asset/media/great-room-400.jpg 400w, Asset/media/great-room-800.jpg 800w, Asset/media/great-room-1200.jpg 1200w, Asset/media/great-room-1535.jpg 1535w" sizes="(max-width:480px) clamp(200px, 62vw, 280px), (max-width:820px) clamp(210px, 54vw, 300px), clamp(220px, 25vw, 326px)" alt="" loading="lazy" decoding="async">
         <span class="gcard__scrim" aria-hidden="true"></span>
         <span class="gcard__cap"><em>04 — Deliver</em><b>Deliver</b><span>Snagged to a boutique standard, on time.</span></span>
       </button>
@@ -437,6 +443,6 @@
   </div>
 </footer>
 
-<script src="js/app.js?v=r9-20260825" defer></script>
+<script src="js/app.js?v=r11-20260825" defer></script>
 </body>
 </html>

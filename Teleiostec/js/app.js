@@ -253,7 +253,7 @@
   if (dcards.length) {
     var pdata = dcards.map(function (c) {
       return { el: c, cat: c.dataset.cat, title: c.dataset.title, meta: c.dataset.meta,
-               desc: c.dataset.desc, img: c.dataset.img };
+               desc: c.dataset.desc, img: c.dataset.img, srcset: c.dataset.srcset };
     });
     var pn = pdata.length;
     var strip = $('#dcards');
@@ -267,17 +267,29 @@
     // Warm the hero crossfades, but not while the page is still fetching what
     // is actually on screen — four full-size photographs at load time starve
     // the first paint. Wait for idle (or a beat) and only then prefetch.
-    var warm = function () { pdata.forEach(function (d) { var im = new Image(); im.src = d.img; }); };
+    var warm = function () {
+      pdata.forEach(function (d) {
+        var im = new Image();
+        if (d.srcset) { im.sizes = bgA ? bgA.sizes : '100vw'; im.srcset = d.srcset; }
+        im.src = d.img;
+      });
+    };
     if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 3000 });
     else setTimeout(warm, 1600);
 
-    function crossfade(src) {
+    /* srcset has to be set with src, or the candidate list still describes
+       the previous project and the browser resolves the wrong file. */
+    function paint(el, d) {
+      if (d.srcset) el.setAttribute('srcset', d.srcset); else el.removeAttribute('srcset');
+      el.src = d.img;
+    }
+    function crossfade(d) {
       if (!bgA || !bgB) return;
-      if (reduced) { bgA.src = src; bgA.classList.add('is-on'); bgB.classList.remove('is-on'); return; }
+      if (reduced) { paint(bgA, d); bgA.classList.add('is-on'); bgB.classList.remove('is-on'); return; }
       var show = bgFlip ? bgB : bgA, hide = bgFlip ? bgA : bgB;
       var reveal = function () { show.classList.add('is-on'); hide.classList.remove('is-on'); };
-      if (show.getAttribute('src') === src) reveal();
-      else { show.onload = reveal; show.src = src; }
+      if (show.getAttribute('src') === d.img) reveal();
+      else { show.onload = reveal; paint(show, d); }
       bgFlip = !bgFlip;
     }
     function pad(i) { return ('0' + (i + 1)).slice(-2); }
@@ -299,7 +311,7 @@
       var seat = visible.indexOf(i);
       if (fIdx) fIdx.textContent = pad(seat === -1 ? i : seat);
       if (fTotal) fTotal.textContent = pad(visible.length - 1);
-      crossfade(d.img);
+      crossfade(d);
       if (doScroll) scrollToCard(i);
     }
 
@@ -548,7 +560,8 @@
         if (r.bottom < -80 || r.top > vh + 80) return;
         var prog = (r.top + r.height / 2 - vh / 2) / vh;   // -~ .. +~
         var y = Math.max(-20, Math.min(20, -prog * 22));
-        el.style.transform = 'scale(1.06) translate3d(0,' + y.toFixed(1) + 'px,0)';
+        // shift the crop window, not the element — no upscale, no softening
+        el.style.objectPosition = '50% calc(50% + ' + y.toFixed(1) + 'px)';
       });
     }
     var driftReq = function () { if (!dTick) { dTick = true; requestAnimationFrame(driftPaint); } };

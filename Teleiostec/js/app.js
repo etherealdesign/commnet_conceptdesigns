@@ -58,6 +58,25 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
+  /* ── years of practice, derived ─────────────────────────────
+     data-founded in the hero is the only place the founding year is
+     written. Both the "Est." line and the years figure are rendered from
+     it, so the two cannot contradict each other and the figure cannot go
+     stale in January. Runs before the counter, which animates to it. */
+  (function () {
+    var src = $('[data-founded]');
+    var since = src ? parseInt(src.getAttribute('data-founded'), 10) : 0;
+    if (!since) return;
+    src.textContent = 'Est. ' + since;
+    var yrs = new Date().getFullYear() - since;
+    if (yrs < 1) return;
+    $$('[data-years-since-founded]').forEach(function (el) {
+      // replace only the leading number, leaving any styled suffix alone
+      if (el.firstChild && el.firstChild.nodeType === 3) el.firstChild.nodeValue = String(yrs);
+      else el.insertBefore(document.createTextNode(String(yrs)), el.firstChild);
+    });
+  })();
+
   /* ── animated stat counters ─────────────────────────────────
      The facts figures count up to their value the first time the
      block enters view. */

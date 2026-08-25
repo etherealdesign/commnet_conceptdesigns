@@ -362,6 +362,10 @@ body.menu-open .drawer__nav a{opacity:1;transform:none;transition:opacity .6s va
    ~980px min-content size, which would otherwise blow out the grid track
    that holds this panel. The 6px padding is the gutter the active card's
    2px outline + 3px offset needs so it isn't clipped by overflow. */
+/* min-width:0 stops the row of cards reporting a ~980px min-content size,
+   which would otherwise blow out the grid track that holds this panel. The
+   6px padding is the gutter the active card's 2px outline + 3px offset
+   needs so it is not clipped by the overflow. */
 .dcards{display:flex;gap:clamp(14px,1.4vw,24px);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;
   scroll-snap-type:x proximity;cursor:grab;flex:1 1 auto;min-width:0;min-height:0;
   align-items:stretch;padding:6px;margin:-6px}
@@ -387,7 +391,10 @@ body.menu-open .drawer__nav a{opacity:1;transform:none;transition:opacity .6s va
 .dbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);display:grid;place-items:center;
   font-size:17px;color:var(--ink);transition:background .3s var(--e),color .3s,border-color .3s,opacity .3s}
 .dbtn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.dbtn:disabled{opacity:.3;pointer-events:none}
+/* At the end of the strip the arrow dims but stays operable — see the
+   note on setEnd() in js/app.js. */
+.dbtn.is-end{opacity:.3}
+.dbtn.is-end:hover{background:none;color:var(--ink);border-color:var(--rule)}
 .disc__more{border-top:1px solid var(--rule);padding-top:clamp(18px,2.2vw,28px);
   display:flex;flex-direction:column;gap:14px}
 .disc__more-k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}

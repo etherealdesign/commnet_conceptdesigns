@@ -242,7 +242,7 @@
         fIdx = $('#featIdx'), fTotal = $('#featTotal'),
         bgA = $('#featBgA'), bgB = $('#featBgB');
     var fbehavior = reduced ? 'auto' : 'smooth';
-    var fActive = -1, bgFlip = true, stripMoved = false;
+    var fActive = -1, bgFlip = true, stripMoved = false, dnavRO = null;
     var visible = pdata.map(function (_, k) { return k; });
 
     // Warm the hero crossfades, but not while the page is still fetching what
@@ -265,7 +265,8 @@
     function scrollToCard(i) {
       if (!strip) return;
       var c = pdata[i].el;
-      strip.scrollTo({ left: Math.max(0, c.offsetLeft - strip.offsetLeft - 4), behavior: fbehavior });
+      var padL = parseFloat(getComputedStyle(strip).paddingLeft) || 0;
+      strip.scrollTo({ left: Math.max(0, c.offsetLeft - strip.offsetLeft - padL), behavior: fbehavior });
     }
     function setActive(i, doScroll) {
       i = (i % pn + pn) % pn;
@@ -326,12 +327,22 @@
       return vis[1].el.offsetLeft - vis[0].el.offsetLeft;
     }
     var dprev = $('.dbtn[data-dprev]'), dnext = $('.dbtn[data-dnext]');
+    /* The end-state is shown with aria-disabled, never the `disabled`
+       property: the strip's scrollable extent is not final until the cards
+       have laid out, and a real `disabled` set from that early, transient
+       measurement cannot be clicked — so it could never heal itself. Left
+       operable, a stale state costs at most one no-op scroll. */
+    function setEnd(btn, atEnd) {
+      if (!btn) return;
+      btn.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
+      btn.classList.toggle('is-end', atEnd);
+    }
     function updateDnav() {
       if (!strip) return;
       var maxL = strip.scrollWidth - strip.clientWidth;
-      var pad = parseFloat(getComputedStyle(strip).paddingLeft) || 0;
-      if (dprev) dprev.disabled = strip.scrollLeft <= pad + 2;
-      if (dnext) dnext.disabled = strip.scrollLeft >= maxL - 2 || maxL <= pad + 2;
+      var padL = parseFloat(getComputedStyle(strip).paddingLeft) || 0;
+      setEnd(dprev, strip.scrollLeft <= padL + 2);
+      setEnd(dnext, strip.scrollLeft >= maxL - 2 || maxL <= padL + 2);
     }
     if (dnext) dnext.addEventListener('click', function () { strip.scrollBy({ left: stripStep(), behavior: fbehavior }); });
     if (dprev) dprev.addEventListener('click', function () { strip.scrollBy({ left: -stripStep(), behavior: fbehavior }); });
@@ -342,6 +353,19 @@
       }, { passive: true });
     }
     window.addEventListener('resize', updateDnav);
+    // The strip has no scrollable extent until its cards have laid out, and
+    // neither scroll nor resize fires afterwards — so re-check as the strip
+    // and its cards settle, or the arrows keep a stale end-state from load.
+    window.addEventListener('load', updateDnav);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateDnav);
+    if ('ResizeObserver' in window) {
+      dnavRO = new ResizeObserver(updateDnav);
+      dnavRO.observe(strip);
+      pdata.forEach(function (x) { dnavRO.observe(x.el); });
+    }
+    $$('img', strip).forEach(function (im) {
+      if (!im.complete) im.addEventListener('load', updateDnav, { once: true });
+    });
 
     // drag-to-scroll the strip (mouse)
     if (strip && finePointer) {
@@ -381,7 +405,7 @@
     var gcards = $$('.gcard', galStage);
     var gdots  = $('#galDots');
     var n = gcards.length;
-    var gActive = 0, dir = 1, timer = null, hovering = false, onScreen = false;
+    var gActive = 0, dir = 1, timer = null, hovering = false, onScreen = false, galRO = null;
     var STEP = 2600;                 // ms between auto-advances
     var ANGLE = 20, MAXROT = 40;     // deg per step, clamp — gentle uniform tilt
     var DEPTH = 62;                  // px each step recedes — shallow, cards stay even
@@ -464,6 +488,7 @@
 
     layout();
     window.addEventListener('resize', layout);
+    if ('ResizeObserver' in window) { galRO = new ResizeObserver(layout); galRO.observe(galStage); }
   }
 
   /* ── ambient video ────────────────────────────────────────────

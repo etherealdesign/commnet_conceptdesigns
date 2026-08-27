@@ -30,73 +30,80 @@
   /* ---------------------------------------------------------
      CONTENT — the existing Commnet site, unchanged
      --------------------------------------------------------- */
+  /* Content below is Commnet Technology Services (Chennai), taken from the
+     twelve service lines, five disciplines and six industries the company
+     publishes. The visual keys — f, v, ac, a2, img — are unchanged, so every
+     scene renders exactly as before. */
+
   var SOLUTIONS = [
-    { t: 'INFRASTRUCTURE<br>SYSTEMS', f: 'lattice', v: 'blocks', ac: '#3155FF', a2: '#22D3C5',
-      g: ['FIBER', 'ELV', 'CABLING', 'NETWORK'],
-      d: 'Structured cabling, fibre backbones and ELV systems engineered as the physical foundation of the enterprise.' },
-    { t: 'CYBER<br>SECURITY', f: 'shell', v: 'shield', ac: '#FF6B5E', a2: '#FF9F43',
-      g: ['SOC', 'MONITORING', 'RESPONSE'],
-      d: 'Defence architecture, monitoring and response designed around how the organization actually operates.' },
-    { t: 'ENTERPRISE<br>SYSTEMS', f: 'tower', v: 'strata', ac: '#2563EB', a2: '#7C3AED',
-      g: ['DATA CENTRE', 'COMPUTE', 'STORAGE'],
-      d: 'Compute, storage and data-centre environments built to scale with the business, not against it.' },
-    { t: 'PROFESSIONAL<br>IT SERVICES', f: 'lattice', v: 'orbit', ac: '#22D3C5', a2: '#A3E635',
-      g: ['CONSULTING', 'DEPLOYMENT', 'MANAGED'],
-      d: 'Consulting, deployment and managed support delivered by experienced engineering teams.' },
-    { t: 'SECURITY<br>SYSTEMS', f: 'shell', v: 'shield', ac: '#FF9F43', a2: '#FF6B5E',
-      g: ['ACCESS', 'CCTV', 'INTRUSION'],
-      d: 'Access control, surveillance and physical security integrated with the digital estate.' },
-    { t: 'POWER<br>SOLUTIONS', f: 'tower', v: 'stream', ac: '#A3E635', a2: '#22D3C5',
-      g: ['UPS', 'DISTRIBUTION', 'CONTINUITY'],
-      d: 'Resilient power distribution, protection and continuity for critical facilities.' },
-    { t: 'IOT', f: 'signal', v: 'net', ac: '#22D3C5', a2: '#2563EB',
-      g: ['SENSORS', 'SMART BUILDING', 'TELEMETRY'],
-      d: 'Connected sensing and building intelligence that turns physical space into usable data.' },
-    { t: 'AV<br>SOLUTIONS', f: 'signal', v: 'stream', ac: '#7C3AED', a2: '#FF6B5E',
-      g: ['COMMAND', 'CONFERENCING', 'DISPLAY'],
-      d: 'Command centres, auditoria and collaboration environments engineered for clarity.' },
-    { t: 'WEBSITE<br>DEVELOPMENT', f: 'lattice', v: 'orbit', ac: '#7C3AED', a2: '#3155FF',
-      g: ['DESIGN', 'BUILD', 'CMS'],
-      d: 'Corporate digital presence designed and built with the same rigour as the infrastructure beneath it.' },
-    { t: 'SOFTWARE<br>DEVELOPMENT', f: 'signal', v: 'net', ac: '#3155FF', a2: '#7C3AED',
+    { t: 'MANAGED SECURITY<br>& SERVICES', f: 'shell', v: 'shield', ac: '#FF6B5E', a2: '#FF9F43',
+      g: ['MONITORING', 'RESPONSE', 'MANAGED'],
+      d: 'Security monitored and operated as a service, not handed over as a box and left to the client.' },
+    { t: 'SYSTEM<br>INTEGRATION', f: 'lattice', v: 'orbit', ac: '#3155FF', a2: '#22D3C5',
+      g: ['INTEGRATION', 'RETAIL', 'MANUFACTURING'],
+      d: 'Making systems that were never designed to talk to each other work as one estate.' },
+    { t: 'DATA CENTRE<br>INFRASTRUCTURE', f: 'tower', v: 'strata', ac: '#2563EB', a2: '#7C3AED',
+      g: ['RACKS', 'CONTAINMENT', 'COOLING'],
+      d: 'Data centre builds and refurbishments — racks, containment, power and cooling as one design.' },
+    { t: 'SYSTEMS &<br>NETWORKING', f: 'lattice', v: 'blocks', ac: '#22D3C5', a2: '#3155FF',
+      g: ['SWITCHING', 'ROUTING', 'WIRELESS'],
+      d: 'Switching, routing and wireless engineered for the traffic the business actually carries.' },
+    { t: 'HELP DESK &<br>CALL CENTRE', f: 'signal', v: 'net', ac: '#A3E635', a2: '#22D3C5',
+      g: ['24-7', 'SUPPORT', 'ESCALATION'],
+      d: 'Support that answers around the clock, with escalation into the same team that built the system.' },
+    { t: 'DATA STORAGE<br>& SECURITY', f: 'shell', v: 'shield', ac: '#FF9F43', a2: '#FF6B5E',
+      g: ['STORAGE', 'BACKUP', 'RECOVERY'],
+      d: 'Storage, backup and recovery designed for how long the business can actually be down.' },
+    { t: 'SOFTWARE<br>SOLUTIONS', f: 'signal', v: 'net', ac: '#3155FF', a2: '#7C3AED',
       g: ['APPLICATIONS', 'APIS', 'AUTOMATION'],
-      d: 'Custom applications and integrations that connect systems which were never meant to talk.' },
-    { t: 'INFORMATION<br>SECURITY', f: 'shell', v: 'shield', ac: '#FF6B5E', a2: '#7C3AED',
-      g: ['POLICY', 'ASSURANCE', 'CONTROLS'],
-      d: 'Policy, assurance and controls that keep enterprise information defensible over time.' }
+      d: 'Applications and integrations written against the infrastructure they have to run on.' },
+    { t: 'SITE &<br>POWER', f: 'tower', v: 'stream', ac: '#A3E635', a2: '#22D3C5',
+      g: ['UPS', 'DISTRIBUTION', 'CONTINUITY'],
+      d: 'Site preparation, distribution and continuity — the layer everything else assumes is there.' },
+    { t: 'CLOUD &<br>HOSTING', f: 'lattice', v: 'orbit', ac: '#7C3AED', a2: '#3155FF',
+      g: ['CLOUD', 'HOSTING', 'MIGRATION'],
+      d: 'Hosting and migration decided on cost and control, not on which platform is fashionable.' },
+    { t: 'LOW VOLTAGE<br>& AUDIO-VISUAL', f: 'signal', v: 'stream', ac: '#7C3AED', a2: '#FF6B5E',
+      g: ['ELV', 'CONFERENCING', 'SIGNAGE'],
+      d: 'ELV, conferencing and signage — command rooms and meeting rooms that work first time.' },
+    { t: 'MAINTENANCE &<br>OPERATIONS', f: 'shell', v: 'shield', ac: '#FF6B5E', a2: '#7C3AED',
+      g: ['SLA', 'OUTSOURCING', 'UPKEEP'],
+      d: 'Ongoing upkeep and outsourced operations for estates that cannot be left to drift.' },
+    { t: 'POWER<br>GENERATORS', f: 'tower', v: 'blocks', ac: '#22D3C5', a2: '#A3E635',
+      g: ['GENERATORS', 'STANDBY', 'FUEL'],
+      d: 'Standby generation sized, installed and tested against the load it will really carry.' }
   ];
 
   var INDUSTRIES = [
-    { t: 'BANKING &<br>FINANCIAL', img: 'executive-glass.jpg', d: 'Secure, resilient and audited environments for institutions where availability and integrity are non-negotiable.', m: 'RESILIENCE / COMPLIANCE / CONTINUITY' },
-    { t: 'ENERGY &<br>UTILITIES', img: 'energy-utilities.jpg', d: 'Infrastructure and control environments engineered for distributed, mission-critical operations.', m: 'OT-IT / MONITORING / POWER' },
-    { t: 'PUBLIC<br>SECTOR', img: 'av-command-center.jpg', d: 'Large-scale connected systems for civic and government programmes across the region.', m: 'SCALE / GOVERNANCE / INTEGRATION' },
-    { t: 'RETAIL &<br>ECOMMERCE', img: 'iot-smart-building.jpg', d: 'Connected store, network and commerce infrastructure built for peak-load reality.', m: 'NETWORK / IOT / UPTIME' },
-    { t: 'TECHNOLOGY<br>PROVIDERS', img: 'enterprise-systems.jpg', d: 'Data-centre, deployment and delivery capability for technology companies scaling into new markets.', m: 'DATA CENTRE / DEPLOYMENT / SUPPORT' },
-    { t: 'PRIVATE<br>WORKSTATIONS', img: 'professional-it.jpg', d: 'High-specification workplace technology environments for demanding professional teams.', m: 'WORKPLACE / AV / SECURITY' }
+    { t: 'GOVERNMENT &<br>SMART CITY', img: 'av-command-center.jpg', d: 'Surveillance, traffic and command centres at city scale.', m: 'SCALE / GOVERNANCE / INTEGRATION' },
+    { t: 'RETAIL', img: 'iot-smart-building.jpg', d: 'POS, integration and store-estate networking across dispersed sites.', m: 'NETWORK / POS / UPTIME' },
+    { t: 'MANUFACTURING', img: 'enterprise-systems.jpg', d: 'Plant power, continuity and connected operations on the factory floor.', m: 'OT-IT / POWER / CONTINUITY' },
+    { t: 'HEALTHCARE', img: 'professional-it.jpg', d: 'Records, storage security and always-on support where downtime is clinical risk.', m: 'RECORDS / SECURITY / 24-7' },
+    { t: 'TRANSPORT &<br>MOBILITY', img: 'security-operations.jpg', d: 'ITMS, ATMS, ANPR and red-light enforcement across road networks.', m: 'ITMS / ANPR / ENFORCEMENT' },
+    { t: 'ENERGY &<br>UTILITIES', img: 'energy-utilities.jpg', d: 'Smart metering, generation and site resilience for distributed assets.', m: 'METERING / GENERATION / RESILIENCE' }
   ];
 
+  /* One country, one office. The scene reads these as points on the globe, so
+     the list is the real footprint rather than a padded one. */
   var OFFICES = [
-    { n: 'DUBAI', r: 'GLOBAL HEAD OFFICE', lat: 25.20, lon: 55.27, hq: 1 },
-    { n: 'MUMBAI', r: 'REGIONAL OFFICE', lat: 19.08, lon: 72.88 },
-    { n: 'BANGALORE', r: 'REGIONAL OFFICE', lat: 12.97, lon: 77.59 },
-    { n: 'COIMBATORE', r: 'REGIONAL OFFICE', lat: 11.02, lon: 76.96 },
-    { n: 'CHENNAI', r: 'REGIONAL OFFICE', lat: 13.08, lon: 80.27 },
-    { n: 'SINGAPORE', r: 'REGIONAL OFFICE', lat: 1.35, lon: 103.82 }
+    { n: 'CHENNAI', r: 'HEAD OFFICE', lat: 13.08, lon: 80.27, hq: 1 }
   ];
 
+  /* Placeholder, as in every other Commnet build: anonymised references
+     standing in for the real quotes. No client was invented. Replace with the
+     supplied verbatim testimonials and real attributions before launch. */
   var QUOTES = [
-    { q: 'Commnet approached our environment as one connected system rather than a set of separate projects.', a: 'CLIENT REFERENCE / HEAD OF TECHNOLOGY / ENTERPRISE CLIENT', img: 'infrastructure-fiber.jpg' },
-    { q: 'The team delivered across infrastructure, security and support with a consistency that is rare at this scale.', a: 'CLIENT REFERENCE / OPERATIONS DIRECTOR / REGIONAL ORGANIZATION', img: 'security-systems.jpg' },
-    { q: 'Twenty-five years of experience shows in the detail — planning, execution and handover were all precise.', a: 'CLIENT REFERENCE / PROGRAMME MANAGER / PUBLIC PROGRAMME', img: 'iot-smart-building.jpg' }
+    { q: 'Commnet took on the parts of our estate nobody else wanted to own, and then kept owning them.', a: 'CLIENT REFERENCE / HEAD OF IT / MANUFACTURING', img: 'infrastructure-fiber.jpg' },
+    { q: 'One team designed it, built it and still answers the phone about it. That is the whole value.', a: 'CLIENT REFERENCE / OPERATIONS DIRECTOR / RETAIL GROUP', img: 'security-systems.jpg' },
+    { q: 'Ten years in, the things they installed first are the things we have never had to think about.', a: 'CLIENT REFERENCE / FACILITIES LEAD / HEALTHCARE', img: 'iot-smart-building.jpg' }
   ];
-  /* Replace with the supplied verbatim Commnet testimonials and real attributions. */
 
   var INSIGHTS = [
-    { t: 'HUAWEI DATA<br>CENTRE FACILITY', d: 'SERVICE PERFORMANCE AWARD', img: 'enterprise-systems.jpg' },
-    { t: 'FIFA BEACH SOCCER<br>WORLD CUP UAE 2024', d: 'DUBAI', img: 'dubai-skyline.jpg' }
+    { t: 'TWELVE SERVICE LINES,<br>FIVE DISCIPLINES', d: 'ONE ACCOUNTABLE TEAM', img: 'enterprise-systems.jpg' },
+    { t: 'SMART CITY, ITMS<br>AND VIDEO ANALYTICS', d: 'INTELLIGENT TECHNOLOGY', img: 'security-operations.jpg' }
   ];
 
-  var YEAR_STATES = ['YEARS', '25 YEARS', '25+ YEARS OF EXPERIENCE'];
+  var YEAR_STATES = ['YEARS', '10 YEARS', '10+ YEARS, 24-7 SUPPORT'];
 
   /* ---------------------------------------------------------
      COLOUR GRADE

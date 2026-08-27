@@ -7,7 +7,7 @@ ever disagree again, this file is wrong — fix it here first, then the folder.
 |---|---|---|---|
 | commnetsysconsult.com | `commnetsysconsult-com/` | `Commnet - 2.html`, unmodified | ready |
 | commnetsys.com | `commnetsys-com/` | `Commnet - 2.html` with the base location moved to India | ready |
-| commnettech.com | `commnettech-com/` | the WebGL build (was `New Version.html`) | ready — see caveat |
+| commnettech.com | `commnettech-com/` | `Commnet - 3.html`, unmodified | ready — see caveat |
 | teleiostec.com | `teleiostec-com/` | the version 02 Teleiostec build | ready |
 
 `index.html` at the root is the review index. It links to exactly these four and
@@ -43,17 +43,27 @@ certifications or clients, those are what should replace this section on
 
 ## Caveat on commnettech.com
 
-The build now sitting there calls itself **Commnet Systems Consultancy** and
-names Dubai, India and Singapore. It carries no Commnet Technology Services
-content — no Chennai address, none of the twelve service lines, none of the
-commnettech.com copy. It is the right *design* on that domain, with the wrong
-company's *words* in it.
+The build on this domain is `Commnet - 3.html`: the full Commnet Systems
+Consultancy site — eleven sections, the Dubai and Chennai offices, the UAE
+project register — presented behind the WebGL hero. It is the newest and most
+developed of everything delivered so far.
 
-Before it goes live on commnettech.com the copy has to be repointed. The
-material for that is in `_unassigned/commnettech-chennai-content-build/`, which
-is a complete build made entirely from commnettech.com — every service line,
-the real address, the JSON-LD. Nothing links to it and it is not deployed, but
-it is the content source when someone comes to fix this.
+It says **Commnet Systems Consultancy** throughout, and names Dubai, India and
+Singapore. It carries no Commnet Technology Services content: no Chennai head
+office, none of the twelve service lines, none of the commnettech.com copy.
+This was flagged and the file was supplied again for this domain, so it is a
+deliberate choice, not an oversight — but the copy still has to be repointed
+before it goes live under that name.
+
+Two things exist for that work, both in `_unassigned/`, in git and never
+deployed:
+
+- `commnettech-chennai-content-build/` — a complete build made entirely from
+  commnettech.com: twelve service lines, five disciplines, six industries, the
+  real Chennai address and JSON-LD. This is the content source.
+- `webgl-build-commnet-tech-copy/` — the earlier WebGL-only build, with its
+  copy already repointed to Commnet Technology Services. Useful as a worked
+  example of which strings carry the company identity.
 
 ## Directories that are not sites
 

@@ -1,0 +1,582 @@
+/* ============================================================
+   COMMNET — NEW ERA
+   One environment. The page scroll is a camera path.
+
+   Layer order in z is the whole trick:
+     1  #stage      the environment
+     3  .scenes     text layers
+        .ty--back   sits below the canvas — geometry crosses in front
+        .ty--front  sits above it
+   ============================================================ */
+:root{
+  --k0:#030303;
+  --k1:#060606;
+  --k2:#0A0A0A;
+
+  --w:#EDECEF;      /* 17.0:1 */
+  --w2:#A5A4AA;     /*  8.0:1 */
+  --w3:#8E8D95;     /*  6.2:1 */
+  --w4:#7C7B83;     /*  4.9:1 */
+
+  --hair:rgba(255,255,255,.10);
+  --hair2:rgba(255,255,255,.28);
+
+  --sig:#C9252B;    /* Commnet red — marks, rules, pulses */
+  --sigt:#F04A50;   /* the same red, lifted for small type */
+
+  --ff:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --g:clamp(18px,3.2vw,44px);
+  --e:cubic-bezier(.16,1,.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--k0); -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--k0); color:var(--w);
+  font-family:var(--ff); font-weight:400; font-size:16px; line-height:1.5;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body.booting{overflow:hidden}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+ol,ul{margin:0; padding:0; list-style:none}
+button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
+canvas{display:block}
+
+.skip{position:fixed; left:-9999px; top:0; z-index:900; background:#fff; color:#000; padding:12px 20px}
+.skip:focus{left:16px; top:16px}
+:focus-visible{outline:1px solid var(--w); outline-offset:5px}
+
+/* the scroll track gives the document its length; nothing renders in it */
+.track{height:1100vh; pointer-events:none}
+
+/* ============================================================
+   ENVIRONMENT
+   ============================================================ */
+#stage{position:fixed; inset:0; width:100vw; height:100svh; z-index:1}
+/* sits above the type, so real geometry can pass in front of the words */
+#stageFront{position:fixed; inset:0; width:100vw; height:100svh; z-index:6; pointer-events:none}
+
+/* the world's light spilling onto the frame — colour lives here and in
+   the 3D scene, never in the interface chrome */
+.glow{position:fixed; inset:0; z-index:2; pointer-events:none; mix-blend-mode:screen;
+  --c1:#22D3EE; --c2:#F97316; --x1:22%; --y1:34%; --x2:78%; --y2:70%; --i:.5;
+  background:
+    radial-gradient(46vw 46vw at var(--x1) var(--y1), color-mix(in srgb, var(--c1) 26%, transparent), transparent 70%),
+    radial-gradient(38vw 38vw at var(--x2) var(--y2), color-mix(in srgb, var(--c2) 20%, transparent), transparent 72%);
+  opacity:var(--i); transition:none}
+
+/* optical falloff: only the centre of frame is in focus */
+.dof{position:fixed; inset:0; z-index:3; pointer-events:none;
+  backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px);
+  -webkit-mask-image:radial-gradient(72% 68% at 50% 48%, transparent 42%, #000 100%);
+  mask-image:radial-gradient(72% 68% at 50% 48%, transparent 42%, #000 100%)}
+
+.atmos{position:fixed; inset:0; z-index:70; pointer-events:none}
+.atmos__grain{position:absolute; inset:-140px; opacity:.16;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  animation:gr 5s steps(5) infinite}
+@keyframes gr{0%{transform:translate(0,0)}20%{transform:translate(-12px,7px)}40%{transform:translate(9px,-11px)}
+  60%{transform:translate(-7px,12px)}80%{transform:translate(12px,5px)}100%{transform:translate(0,0)}}
+.atmos__vig{position:absolute; inset:0;
+  background:radial-gradient(130% 100% at 50% 46%, transparent 45%, rgba(0,0,0,.5) 100%)}
+
+/* the technical grid — present, almost never noticed */
+.grid{position:fixed; inset:0; z-index:2; pointer-events:none; opacity:0}
+.grid i{position:absolute; top:0; bottom:0; width:1px; background:var(--hair)}
+.grid i:nth-child(1){left:var(--g)}
+.grid i:nth-child(2){left:25%}
+.grid i:nth-child(3){left:50%}
+.grid i:nth-child(4){left:75%}
+.grid i:nth-child(5){right:var(--g)}
+
+/* ============================================================
+   CURSOR
+   ============================================================ */
+.cur{position:fixed; top:0; left:0; z-index:200; pointer-events:none; opacity:0;
+  display:grid; place-items:center; width:0; height:0}
+.cur__d{grid-area:1/1; width:6px; height:6px; border-radius:50%; background:var(--w);
+  border:1px solid transparent;
+  transition:width .5s var(--e), height .5s var(--e), background .5s var(--e), border-color .5s var(--e)}
+.cur.wide .cur__d{width:46px; height:46px; background:transparent; border-color:var(--hair2)}
+.cur.lab .cur__d{width:84px; height:84px; background:var(--w); border-color:transparent}
+.cur__l{grid-area:1/1; font-size:9px; letter-spacing:.2em; color:var(--k0); opacity:0;
+  transition:opacity .3s var(--e)}
+.cur.lab .cur__l{opacity:1}
+@media (hover:none){.cur{display:none}}
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+.boot{position:fixed; inset:0; z-index:500; background:#000; display:grid; place-items:center}
+.boot__pt{width:2px; height:2px; border-radius:50%; background:#fff;
+  box-shadow:0 0 30px 8px rgba(255,255,255,.45); transform:scale(0)}
+.boot__hud{position:absolute; left:var(--g); right:var(--g); bottom:52px; opacity:0;
+  display:flex; justify-content:space-between;
+  font-size:10.5px; letter-spacing:.2em; color:var(--w3)}
+.boot__ln{position:absolute; left:var(--g); right:var(--g); bottom:40px; height:1px;
+  background:var(--hair); overflow:hidden}
+.boot__ln i{display:block; height:100%; background:var(--w); transform:scaleX(0); transform-origin:left}
+
+/* ============================================================
+   HUD
+   ============================================================ */
+.hud{position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:22px var(--g); display:flex; align-items:center; gap:24px; opacity:0}
+.hud__brand img{height:30px; width:auto}
+.hud__sys{margin-left:auto; display:flex; align-items:center; gap:9px;
+  font-size:10.5px; letter-spacing:.18em; color:var(--w3); font-variant-numeric:tabular-nums}
+.hud__sys b{font-weight:400; color:var(--w2)}
+.hud__dim,.hud__sep{color:var(--w4)}
+.hud__dot{width:5px; height:5px; border-radius:50%; background:var(--sig); animation:pl 2.8s var(--e) infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(201,37,43,.5)}70%{box-shadow:0 0 0 8px rgba(201,37,43,0)}100%{box-shadow:0 0 0 0 rgba(201,37,43,0)}}
+
+.hud__menu{display:flex; align-items:center; gap:12px; padding:8px 0}
+.hud__mt{position:relative; display:block; width:48px; height:13px; overflow:hidden;
+  font-size:10.5px; letter-spacing:.2em; color:var(--w2)}
+.hud__mt i{position:absolute; left:0; top:0; font-style:normal; transition:transform .6s var(--e)}
+.hud__mt i:last-child{transform:translateY(130%)}
+body.mo .hud__mt i:first-child{transform:translateY(-130%)}
+body.mo .hud__mt i:last-child{transform:translateY(0)}
+.hud__mb{display:block; width:24px}
+.hud__mb b{display:block; height:1px; background:var(--w2); margin:4px 0; transition:transform .5s var(--e)}
+body.mo .hud__mb b:first-child{transform:translateY(2.5px) rotate(45deg)}
+body.mo .hud__mb b:last-child{transform:translateY(-2.5px) rotate(-45deg)}
+
+/* ============================================================
+   MENU
+   ============================================================ */
+.menu{position:fixed; inset:0; z-index:90; pointer-events:none;
+  background:rgba(3,3,3,.86); backdrop-filter:blur(14px);
+  clip-path:inset(0 0 100% 0);
+  display:flex; flex-direction:column; justify-content:center; padding:110px var(--g) 120px}
+.menu.on{pointer-events:auto}
+.menu__l a{display:flex; align-items:center; gap:clamp(14px,2.4vw,36px);
+  padding:clamp(2px,.6vh,9px) 0; overflow:hidden}
+.menu__l i{font-style:normal; font-size:10.5px; letter-spacing:.2em; color:var(--w4);
+  width:2.6em; flex:none; transition:color .5s var(--e)}
+.menu__l span{display:block; font-size:clamp(30px,min(6.4vw,9vh),96px); line-height:1.04;
+  letter-spacing:-.05em; font-weight:500; color:var(--w3);
+  transition:color .5s var(--e), transform .7s var(--e)}
+.menu__l a:hover span{color:var(--w); transform:translateX(clamp(10px,1.6vw,26px))}
+.menu__l a:hover i{color:var(--sigt)}
+.menu__f{position:absolute; left:var(--g); right:var(--g); bottom:40px;
+  display:flex; gap:clamp(20px,4vw,56px); flex-wrap:wrap; font-size:12px; color:var(--w2)}
+.menu__f i{display:block; font-style:normal; font-size:10px; letter-spacing:.2em;
+  color:var(--w4); margin-bottom:5px}
+
+/* ============================================================
+   SCENES
+   Each scene is a fixed layer. The camera decides which is
+   present; nothing scrolls in the ordinary sense.
+   ============================================================ */
+.scenes{position:fixed; inset:0; z-index:4; pointer-events:none;
+  perspective:1400px; perspective-origin:50% 50%}
+.sc{position:absolute; inset:0; padding:96px var(--g) 76px;
+  opacity:0; visibility:hidden; transform-style:preserve-3d; will-change:transform,opacity}
+/* a controlled dark zone under the type — readability without a panel.
+   Anchored to the side the copy sits on, so the world stays visible. */
+.sc::before{content:""; position:absolute; inset:0; pointer-events:none; z-index:-2;
+  background:linear-gradient(100deg, rgba(3,3,3,.88) 0%, rgba(3,3,3,.62) 34%,
+    rgba(3,3,3,.12) 62%, transparent 84%)}
+.sc--03::before{background:radial-gradient(58% 54% at 50% 50%, rgba(3,3,3,.86), transparent 78%)}
+.sc--06::before{background:linear-gradient(100deg, rgba(3,3,3,.86) 0%, rgba(3,3,3,.3) 40%,
+    transparent 66%), linear-gradient(260deg, rgba(3,3,3,.8) 0%, transparent 40%)}
+.sc--09::before{background:linear-gradient(100deg, rgba(3,3,3,.9) 0%, rgba(3,3,3,.55) 44%,
+    transparent 78%)}
+.sc.on{visibility:visible}
+.sc a,.sc button,.sc input{pointer-events:auto}
+
+/* ---- spatial typography ---- */
+.ty{margin:0; font-weight:500; letter-spacing:-.055em; line-height:.84;
+  /* the environment behind can be bright metal; this keeps type legible
+     without a scrim panel */
+  text-shadow:0 2px 30px rgba(0,0,0,.65);
+  will-change:transform, filter}
+.ty__l{display:block; overflow:hidden}
+.ty__l>span{display:block; will-change:transform}
+.ty--back{position:absolute; z-index:-1}     /* the canvas passes in front of this */
+.ty--front{position:relative; z-index:4}     /* this passes in front of the canvas */
+
+/* ---- micro typography ---- */
+.mi{position:absolute; margin:0; font-size:10.5px; line-height:1.7; letter-spacing:.18em;
+  color:var(--w3); text-transform:uppercase; max-width:34ch;
+  text-shadow:0 1px 16px rgba(0,0,0,.9), 0 0 3px rgba(0,0,0,.7)}
+.mi--tl{top:96px; left:var(--g); display:flex; gap:18px; align-items:baseline}
+.mi--wide{max-width:48ch; display:block}
+.mi--bl{bottom:76px; left:var(--g)}
+.mi--br{bottom:76px; right:var(--g); text-align:right}
+.mi__c{color:var(--w4)}
+.mi__c b{font-weight:400; color:var(--w2)}
+.mi a{color:var(--w2)}
+.mi a:hover{color:var(--w)}
+
+.act{display:inline-flex; align-items:center; gap:10px; color:var(--w);
+  font-size:11px; letter-spacing:.2em; padding-bottom:5px; position:relative}
+.act::after{content:""; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:currentColor; transform-origin:left; transition:transform .6s var(--e)}
+.act:hover::after{transform:scaleX(0); transform-origin:right}
+.act i{font-style:normal; transition:transform .55s var(--e)}
+.act:hover i{transform:translateX(7px)}
+
+/* ---------- 01 arrival ---------- */
+.sc--01 .ty{font-size:clamp(52px,12.4vw,230px)}
+.sc--01 .ty--front{position:absolute; left:var(--g); top:34%; z-index:4}
+.sc--01 .ty--back{left:var(--g); top:calc(34% + .78em); right:var(--g)}
+
+/* ---------- 02 position ---------- */
+.sc--02 .ty{font-size:clamp(46px,11.6vw,215px)}
+.sc--02 .ty--front{position:absolute; left:var(--g); top:26%}
+.sc--02 .ty--back{left:auto; right:var(--g); top:52%; text-align:right; color:var(--w2)}
+
+/* ---------- 03 duration ---------- */
+.sc--03 .num{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  font-size:clamp(180px,42vw,760px); line-height:.76; letter-spacing:-.07em}
+.sc--03 .num em{font-style:normal; font-size:.4em; vertical-align:super}
+.sc--03 .mi--bl{font-size:12px; letter-spacing:.3em}
+
+/* ---------- 04 solutions ----------
+   A spatial deck. Cards are laid out in depth around an active
+   card; every transform is derived from one continuous offset so
+   dragging is smooth rather than stepped.
+   ------------------------------------------------------------ */
+.sol{position:absolute; left:var(--g); top:15%; max-width:min(520px,46vw)}
+.sol__t{font-size:clamp(28px,4.2vw,66px); line-height:.92}
+.sol__d{position:static; margin-top:16px; max-width:38ch; text-transform:none;
+  letter-spacing:.01em; font-size:13.5px; line-height:1.7; color:var(--w2)}
+
+.deck{position:absolute; left:0; right:0; bottom:0; top:0; z-index:4;
+  pointer-events:auto; touch-action:pan-y}
+.deck__track{position:absolute; left:0; right:0; top:57%; height:0;
+  transform-style:preserve-3d; perspective:1600px; cursor:grab}
+.deck.drag .deck__track{cursor:grabbing}
+body.grabbing{cursor:grabbing}
+body.grabbing .cur__d{width:34px; height:34px; background:transparent;
+  border-color:rgba(255,255,255,.6)}
+
+.card{
+  position:absolute; left:50%; top:0;
+  width:clamp(210px, 23vw, 330px); height:clamp(292px, 32vw, 458px);
+  border-radius:10px; overflow:hidden;
+  background:linear-gradient(168deg, #171A21 0%, #0C0E13 58%, #08090C 100%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 40px 90px rgba(0,0,0,.6);
+  transition:border-color .6s var(--e), box-shadow .8s var(--e);
+  transform-style:preserve-3d; will-change:transform, opacity;
+  backface-visibility:hidden;
+}
+/* a single raking highlight — material, not glassmorphism */
+.card::after{content:""; position:absolute; inset:0; pointer-events:none; z-index:3;
+  background:linear-gradient(150deg, rgba(255,255,255,.09) 0%, transparent 34%),
+    radial-gradient(120% 80% at 50% 118%, rgba(0,0,0,.55), transparent 60%);
+  mix-blend-mode:screen; opacity:.55}
+/* fine grain keeps the surface from reading as flat vector */
+.card::before{content:""; position:absolute; inset:0; z-index:4; pointer-events:none;
+  opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.card__v{position:absolute; inset:0; z-index:1}
+/* the composition lives in the upper field; this keeps the copy
+   sitting on clean material rather than on top of the drawing */
+.card__v::after{content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, transparent 40%, rgba(10,12,16,.55) 58%, rgba(8,9,12,.94) 82%)}
+.card__v canvas{width:100%; height:100%; display:block}
+
+.card__c{position:absolute; left:20px; right:20px; bottom:20px; z-index:5;
+  transform-style:preserve-3d}
+.card__n{margin:0 0 auto; font-size:9.5px; letter-spacing:.2em; color:var(--w3)}
+.card__t{margin:0 0 8px; font-size:clamp(14px,1.15vw,17px); line-height:1.14;
+  letter-spacing:-.02em; font-weight:500; color:var(--w)}
+.card__d{margin:0; font-size:11px; line-height:1.55; color:var(--w3);
+  max-width:26ch; opacity:0; transform:translateY(6px);
+  transition:opacity .6s var(--e), transform .6s var(--e)}
+.card__k{position:absolute; top:18px; left:20px; z-index:5;
+  font-size:9.5px; letter-spacing:.2em; color:var(--w3)}
+.card__k b{font-weight:400; color:var(--ac)}
+/* the accent only ever appears as one hairline rule */
+.card__r{position:absolute; left:20px; bottom:0; height:2px; width:64px; z-index:5;
+  background:linear-gradient(90deg, var(--ac), var(--a2)); transform-origin:left; transform:scaleX(0);
+  transition:transform .8s var(--e)}
+.card.on .card__r{transform:scaleX(1)}
+.card.on .card__d{opacity:1; transform:translateY(0)}
+.card.on{border-color:color-mix(in srgb, var(--ac) 45%, rgba(255,255,255,.2));
+  box-shadow:0 40px 100px rgba(0,0,0,.62),
+             0 0 0 1px color-mix(in srgb, var(--ac) 22%, transparent),
+             0 24px 90px -30px color-mix(in srgb, var(--ac) 55%, transparent)}
+
+.deck__ui{position:absolute; left:0; right:0; bottom:44px; z-index:6;
+  display:flex; align-items:center; gap:18px; padding:0 var(--g)}
+.deck__hint{position:relative; font-size:9.5px; letter-spacing:.22em; color:var(--w4);
+  padding-bottom:6px; min-width:34px}
+/* the underline is the countdown to the next card */
+.deck__hint::after{content:""; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:var(--w2); transform:scaleX(var(--auto,0)); transform-origin:left}
+.deck__hint.run{color:var(--w2)}
+.deck__nav{display:flex; gap:8px}
+.deck__nav button{width:36px; height:36px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.22); color:var(--w2); font-size:13px;
+  transition:background .45s var(--e), color .45s var(--e), border-color .45s var(--e);
+  will-change:transform}
+.deck__nav button:hover{background:var(--w); color:var(--k0); border-color:var(--w)}
+.deck__nav button:disabled{opacity:.3; pointer-events:none}
+.deck__bar{flex:1; height:1px; background:rgba(255,255,255,.13); position:relative; overflow:hidden}
+.deck__bar i{position:absolute; inset:0; background:var(--w);
+  transform:scaleX(0); transform-origin:left}
+
+/* ---------- 05 industries — slipstream stage ---------- */
+.ind__t{position:absolute; left:var(--g); top:44%; transform:translateY(-50%);
+  font-size:clamp(42px,9.4vw,178px); line-height:.86; max-width:12ch;
+  z-index:8; pointer-events:none}
+
+/* sc--05 scrim: gradient only covers left edge where text sits;
+   right side is left open for the card stream */
+.sc--05::before{
+  background:linear-gradient(105deg,
+    rgba(3,3,3,.92) 0%,
+    rgba(3,3,3,.70) 28%,
+    rgba(3,3,3,.18) 52%,
+    transparent 72%) !important;
+}
+
+/* mi elements in sc--05 sit above cards */
+.sc--05 .mi{ z-index:8; pointer-events:none; }
+
+/* Perspective stage — the entire viewport, centred vanishing point.
+   z-index:2 sits above the section's dark scrim (z:-2) but below
+   the text overlay (z:4+). pointer-events:auto so drag works. */
+.ind__stage{
+  position:absolute; inset:0;
+  z-index:2;
+  perspective:1400px; perspective-origin:50% 50%;
+  pointer-events:auto; overflow:hidden;
+  touch-action:pan-y;
+}
+
+/* Stream container — rotates subtly with pointer sway */
+.ind__stream{
+  position:absolute; inset:0;
+  transform-style:preserve-3d;
+  cursor:grab;
+}
+.ind__stream.dragging{ cursor:grabbing; }
+
+/* Individual industry card */
+.ind__card{
+  position:absolute;
+  left:50%; top:50%;
+  width: clamp(260px, 28vw, 400px);
+  height: clamp(340px, 38vw, 540px);
+  border-radius:12px;
+  overflow:hidden;
+  background:linear-gradient(168deg, #171a21 0%, #0c0e13 58%, #08090c 100%);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 40px 90px rgba(0,0,0,.65);
+  transform-style:preserve-3d;
+  will-change:transform, opacity;
+  backface-visibility:hidden;
+  transition:border-color .7s var(--e), box-shadow .9s var(--e);
+  user-select:none;
+}
+/* raking highlight — material not glassmorphism */
+.ind__card::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:3;
+  background:
+    linear-gradient(150deg, rgba(255,255,255,.08) 0%, transparent 34%),
+    radial-gradient(110% 75% at 50% 115%, rgba(0,0,0,.52), transparent 60%);
+  mix-blend-mode:screen; opacity:.6;
+}
+/* micro grain keeps surface from reading as flat vector */
+.ind__card::before{
+  content:""; position:absolute; inset:0; z-index:4; pointer-events:none;
+  opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Active focal-plane card — fallback then color-mix */
+.ind__card.ind--active{
+  border-color: rgba(45,212,191,.5);
+  border-color: color-mix(in srgb, var(--ind-ac, #2DD4BF) 50%, rgba(255,255,255,.22));
+  box-shadow:
+    0 60px 140px rgba(0,0,0,.75),
+    0 0 0 1px rgba(45,212,191,.28),
+    0 0 0 1px color-mix(in srgb, var(--ind-ac, #2DD4BF) 28%, transparent),
+    0 32px 110px -24px rgba(45,212,191,.55),
+    0 32px 110px -24px color-mix(in srgb, var(--ind-ac, #2DD4BF) 65%, transparent);
+}
+
+/* Generative visual canvas — upper 68% of card */
+.ind__card__vis{
+  position:absolute; inset:0; height:68%; z-index:1; overflow:hidden;
+}
+.ind__card__vis canvas{
+  width:100%; height:100%; display:block;
+}
+/* gradient scrim so text sits on clean material */
+.ind__card__vis::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, transparent 38%, rgba(10,12,16,.48) 62%, rgba(8,9,12,.98) 84%);
+}
+
+/* Content area */
+.ind__card__body{
+  position:absolute; left:22px; right:22px; bottom:22px; top:60%; z-index:5;
+}
+.ind__card__num{
+  margin:0 0 9px; font-size:9.5px; letter-spacing:.22em; color:var(--w4);
+  display:flex; align-items:center; gap:8px;
+}
+.ind__card__num::before{
+  content:""; display:block; width:20px; height:1px;
+  background:var(--ind-ac, #2DD4BF); flex:none;
+  transition: width .6s var(--e);
+}
+.ind__card.ind--active .ind__card__num::before{ width:32px; }
+.ind__card__name{
+  margin:0 0 9px; font-size:clamp(14px,1.25vw,18px); line-height:1.12;
+  letter-spacing:-.022em; font-weight:500; color:var(--w);
+}
+.ind__card__desc{
+  margin:0; font-size:10.5px; line-height:1.65; color:var(--w3);
+  max-width:28ch;
+  opacity:0; transform:translateY(10px);
+  transition:opacity .75s var(--e), transform .75s var(--e);
+}
+.ind__card.ind--active .ind__card__desc{
+  opacity:1; transform:translateY(0);
+}
+/* accent bar — one hairline rule, reveals on active */
+.ind__card__bar{
+  position:absolute; left:22px; bottom:0; height:2px; width:56px; z-index:5;
+  background:linear-gradient(90deg, var(--ind-ac, #2DD4BF), var(--ind-a2, #FB923C));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .95s var(--e);
+}
+.ind__card.ind--active .ind__card__bar{ transform:scaleX(1); }
+
+/* Drag hint — bottom-right so it never overlaps the bottom-left description */
+.ind__hint{
+  position:absolute; bottom:44px; right:var(--g); z-index:9;
+  font-size:9.5px; letter-spacing:.22em; color:var(--w4);
+  padding-bottom:6px;
+  pointer-events:none;
+  text-align:right;
+}
+.ind__hint::after{
+  content:""; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:var(--w2); transform:scaleX(var(--ind-auto,0)); transform-origin:left;
+  transition: none;
+}
+.ind__hint.run{ color:var(--w2); }
+
+/* Mobile adjustments */
+@media (max-width:900px){
+  .ind__t{font-size:clamp(36px,12.6vw,104px); top:42%}
+  .ind__card{
+    width:74vw; height:100vw;
+    max-width:340px; max-height:460px;
+  }
+  .ind__card__body{ left:16px; right:16px; bottom:16px; top:58%; }
+  .ind__hint{ bottom:34px; right:var(--g); }
+}
+
+
+/* ---------- 06 global ---------- */
+.glb{position:absolute; left:var(--g); top:50%; transform:translateY(-50%); z-index:4}
+.glb li{pointer-events:auto}
+.glb button{display:flex; align-items:center; gap:12px; padding:7px 0;
+  font-size:clamp(14px,1.5vw,21px); letter-spacing:-.02em; color:var(--w3);
+  transition:color .45s var(--e), transform .55s var(--e)}
+.glb button:hover{color:var(--w2)}
+.glb li.on button{color:var(--w); transform:translateX(9px)}
+.glb em{font-style:normal; width:5px; height:5px; border-radius:50%; flex:none;
+  background:var(--hair2); transition:.45s var(--e)}
+.glb li.on em{background:var(--sig); box-shadow:0 0 0 4px rgba(201,37,43,.2)}
+.glb__p{position:absolute; right:var(--g); bottom:76px; width:min(300px,40vw); text-align:right}
+.glb__p .mi{position:static; max-width:none}
+.glb__c{margin:8px 0; font-size:clamp(24px,2.6vw,40px); letter-spacing:-.035em; font-weight:500}
+
+/* ---------- 07 testimony ---------- */
+.q{position:absolute; left:var(--g); right:var(--g); top:50%; transform:translateY(-50%);
+  font-size:clamp(26px,4.6vw,86px); line-height:1.02; letter-spacing:-.045em; font-weight:400}
+.q__nav{display:flex; gap:14px; font-size:15px}
+.q__nav button{color:var(--w3); transition:color .4s var(--e)}
+.q__nav button:hover{color:var(--w)}
+
+/* ---------- 08 insights ---------- */
+.ins{position:absolute; left:var(--g); bottom:76px; font-size:clamp(34px,7.4vw,140px);
+  line-height:.88; max-width:13ch}
+
+/* ---------- 09 invitation ---------- */
+.cta{position:absolute; left:var(--g); top:50%; transform:translateY(-50%);
+  font-size:clamp(38px,8.6vw,166px); line-height:.86}
+
+/* ---------- 10 contact ---------- */
+.talk{position:absolute; left:var(--g); top:20%; font-size:clamp(44px,9.4vw,180px)}
+.fm{position:absolute; right:var(--g); top:50%; transform:translateY(-50%);
+  width:min(430px,44vw); pointer-events:auto; z-index:4}
+.fm__r{position:relative; display:flex; align-items:flex-end; gap:12px;
+  border-bottom:1px solid var(--hair2); padding:16px 0 8px}
+.fm__r i{font-style:normal; font-size:9.5px; letter-spacing:.2em; color:var(--w4); padding-bottom:4px}
+.fm__r input{flex:1; background:none; border:0; outline:none; font:inherit; font-size:14px;
+  color:var(--w); padding:0 0 3px}
+.fm__r label{position:absolute; left:34px; bottom:9px; font-size:10.5px; letter-spacing:.2em;
+  color:var(--w3); pointer-events:none; transform-origin:left;
+  transition:transform .5s var(--e), color .4s var(--e)}
+.fm__r input:focus ~ label,
+.fm__r input:not(:placeholder-shown) ~ label{transform:translateY(-19px) scale(.86); color:var(--w4)}
+.fm__r.bad{border-color:var(--sigt)}
+.fm .act{margin-top:26px}
+.fm__m{margin:14px 0 0; font-size:10.5px; letter-spacing:.14em; color:var(--w3); min-height:16px}
+.end{max-width:46ch; line-height:2}
+.end__n{display:block; color:var(--w4); margin-bottom:10px}
+.end__n b{font-weight:400; color:var(--w2)}
+
+/* ============================================================
+   RESPONSIVE — a smaller camera, the same journey
+   ============================================================ */
+@media (max-width:900px){
+  .sc{padding:88px var(--g) 68px}
+  .mi{font-size:10px; letter-spacing:.16em; max-width:26ch}
+  .mi--tl{top:88px} .mi--bl,.mi--br{bottom:68px}
+  .sc--01 .ty{font-size:clamp(38px,12.6vw,110px)}
+  .sc--01 .ty--front{top:30%}
+  .sc--01 .ty--back{top:calc(30% + .8em)}
+  .sc--02 .ty{font-size:clamp(40px,14vw,110px)}
+  .sc--02 .ty--back{top:48%}
+  .sc--03 .num{font-size:clamp(150px,56vw,420px)}
+  .sc--04 .mi--tl{max-width:none; white-space:nowrap}
+  .sol{max-width:none; right:var(--g); top:15%}
+  .sol__t{font-size:clamp(24px,7vw,46px)}
+  .sol__d{display:none}
+  .deck__track{top:56%}
+  .card{width:64vw; height:86vw; max-width:none; max-height:none}
+  .card__c{left:16px; right:16px; bottom:16px}
+  .card__k{left:16px}
+  .card__r{left:16px}
+  .deck__hint{min-width:30px}
+  .deck__ui{bottom:34px}
+  .ind__t{font-size:clamp(36px,12.6vw,104px); top:42%}
+  .glb{position:static; transform:none; margin-top:16vh;
+    display:flex; flex-wrap:wrap; gap:4px 20px}
+  .glb__p{position:absolute; left:var(--g); right:var(--g); width:auto; text-align:left; bottom:68px}
+  .q{font-size:clamp(23px,6.6vw,52px)}
+  .ins{font-size:clamp(30px,10.4vw,84px)}
+  .cta{font-size:clamp(34px,11.4vw,90px)}
+  .talk{font-size:clamp(38px,13vw,110px); top:13%}
+  .fm{position:absolute; left:var(--g); right:var(--g); width:auto; top:auto; bottom:68px;
+    transform:none}
+  .fm__r{padding:12px 0 6px}
+  .end{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important;
+    transition-duration:.001ms !important}
+  .atmos__grain{display:none}
+  .cur{display:none}
+  .track{height:auto}
+  .scenes{position:static}
+  .sc{position:relative; opacity:1 !important; visibility:visible !important;
+    min-height:100svh; transform:none !important}
+  .ty--back{position:relative; z-index:4}
+}

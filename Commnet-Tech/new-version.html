@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Commnet Systems Consultancy — Integration Simplified</title>
+<meta name="description" content="Commnet Systems Consultancy — technology, infrastructure, networking and cybersecurity across Dubai, India and Singapore." />
+<meta name="theme-color" content="#030303" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="new-era.css" />
+</head>
+<body class="booting">
+
+<!-- ============================================================
+     THE ENVIRONMENT
+     One canvas. One renderer. One scene. The camera travels
+     through it; the page scroll is the camera's position.
+     Text layers sit either side of the canvas in z, so geometry
+     can pass in front of some words and behind others.
+     ============================================================ -->
+<canvas id="stage" aria-hidden="true"></canvas>
+<!-- foreground pass: the few members that must cross IN FRONT of the type -->
+<canvas id="stageFront" aria-hidden="true"></canvas>
+
+<!-- colour wash: the world's light bleeding onto the frame -->
+<div class="glow" id="glow" aria-hidden="true"></div>
+<!-- optical falloff: the frame edges sit outside the focal plane -->
+<div class="dof" aria-hidden="true"></div>
+
+<div class="atmos" aria-hidden="true">
+  <span class="atmos__grain"></span>
+  <span class="atmos__vig"></span>
+</div>
+
+<div class="grid" id="grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<div class="cur" aria-hidden="true"><span class="cur__d"></span><span class="cur__l"></span></div>
+
+<!-- ============ BOOT ============ -->
+<div class="boot" id="boot" role="status">
+  <span class="boot__pt"></span>
+  <div class="boot__hud">
+    <span>COMMNET SYSTEMS CONSULTANCY</span>
+    <span id="bootN">000</span>
+  </div>
+  <span class="boot__ln"><i id="bootB"></i></span>
+</div>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<!-- ============ HUD ============ -->
+<header class="hud" id="hud">
+  <a class="hud__brand" href="#top" aria-label="Commnet Systems Consultancy">
+    <img src="Assets/commnet-logo.png" alt="Commnet Systems Consultancy" width="1000" height="425" />
+  </a>
+  <div class="hud__sys" aria-hidden="true">
+    <span class="hud__dot"></span>
+    <span id="hudTime">--:--</span>
+    <span class="hud__sep">/</span>
+    <span id="hudScene">01</span><span class="hud__dim">/10</span>
+  </div>
+  <button class="hud__menu" id="menuBtn" aria-expanded="false" aria-controls="menu">
+    <span class="hud__mt"><i>MENU</i><i>CLOSE</i></span>
+    <span class="hud__mb"><b></b><b></b></span>
+  </button>
+</header>
+
+<!-- ============ MENU ============ -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__l" aria-label="Main">
+    <a href="#sc-02" data-go="1"><i>01</i><span>ABOUT</span></a>
+    <a href="#sc-04" data-go="3"><i>02</i><span>SOLUTIONS</span></a>
+    <a href="#sc-05" data-go="4"><i>03</i><span>INDUSTRIES</span></a>
+    <a href="#sc-06" data-go="5"><i>04</i><span>GLOBAL</span></a>
+    <a href="#sc-08" data-go="7"><i>05</i><span>INSIGHTS</span></a>
+    <a href="#sc-10" data-go="9"><i>06</i><span>CONTACT</span></a>
+  </nav>
+  <div class="menu__f">
+    <span><i>HEAD OFFICE</i>Dubai, United Arab Emirates</span>
+    <span><i>REGIONS</i>Middle East / India / South East Asia</span>
+    <span><i>ESTABLISHED</i>25+ years</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     SCENES — fixed layers, revealed by camera position
+     ============================================================ -->
+<main id="content" class="scenes">
+
+  <!-- ---------- 01 · ARRIVAL ---------- -->
+  <section class="sc sc--01" id="sc-01" data-sc="0">
+    <p class="mi mi--tl mi--wide">COMMNET SYSTEMS CONSULTANCY<br />DUBAI / INDIA / SINGAPORE</p>
+    <h1 class="ty ty--back" aria-label="Integration Simplified">
+      <span class="ty__l"><span>SIMPLIFIED.</span></span>
+    </h1>
+    <p class="ty ty--front" aria-hidden="true"><span class="ty__l"><span>INTEGRATION</span></span></p>
+    <p class="mi mi--bl"><a class="act" href="#sc-02" data-go="1" data-cur="enter">ENTER SYSTEM <i>&rarr;</i></a></p>
+    <p class="mi mi--br">SCROLL</p>
+  </section>
+
+  <!-- ---------- 02 · POSITION ---------- -->
+  <section class="sc sc--02" id="sc-02" data-sc="1">
+    <p class="mi mi--tl">02 / POSITION</p>
+    <h2 class="ty ty--front"><span class="ty__l"><span>ONE PARTNER.</span></span></h2>
+    <h2 class="ty ty--back ty--off"><span class="ty__l"><span>EVERY LAYER.</span></span></h2>
+    <p class="mi mi--bl">TECHNOLOGY / INFRASTRUCTURE / SECURITY / DIGITAL SYSTEMS<br />
+      INTEGRATED ENVIRONMENTS BUILT FOR MODERN ORGANIZATIONS</p>
+  </section>
+
+  <!-- ---------- 03 · DURATION ---------- -->
+  <section class="sc sc--03" id="sc-03" data-sc="2">
+    <p class="mi mi--tl">03 / DURATION</p>
+    <div class="ty ty--front num"><span class="ty__l"><span>25<em>+</em></span></span></div>
+    <p class="mi mi--bl" id="yrCap">YEARS</p>
+    <p class="mi mi--br">TECHNOLOGY / INFRASTRUCTURE / NETWORKING / CYBERSECURITY / ENTERPRISE SYSTEMS</p>
+  </section>
+
+  <!-- ---------- 04 · SOLUTIONS ---------- -->
+  <section class="sc sc--04" id="sc-04" data-sc="3">
+    <p class="mi mi--tl">04 / SOLUTIONS<span class="mi__c"><b id="solN">01</b>/11</span></p>
+
+    <div class="sol">
+      <h2 class="ty ty--front sol__t" id="solT"><span class="ty__l"><span></span></span></h2>
+      <p class="mi sol__d" id="solD"></p>
+    </div>
+
+    <!-- card deck: media / title / tags / badge, dragged laterally -->
+    <div class="deck" id="deck">
+      <div class="deck__track" id="deckTrack"></div>
+      <div class="deck__ui">
+        <span class="deck__hint" id="deckHint" data-l="AUTO">AUTO</span>
+        <div class="deck__nav">
+          <button id="deckP" aria-label="Previous discipline">&larr;</button>
+          <button id="deckX" aria-label="Next discipline">&rarr;</button>
+        </div>
+        <span class="deck__bar"><i id="deckBar"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- 05 · INDUSTRIES ---------- -->
+  <section class="sc sc--05" id="sc-05" data-sc="4">
+
+    <!-- Top-left: section label + counter -->
+    <p class="mi mi--tl">
+      05 / INDUSTRIES
+      <span class="mi__c"><b id="indN">01</b>/06</span>
+    </p>
+
+    <!-- Centre-left overlay: active industry name (compact, not giant) -->
+    <div class="ind__label" aria-live="polite">
+      <h2 class="ind__label__t" id="indT"><span class="ty__l"><span></span></span></h2>
+    </div>
+
+    <!-- Bottom corners: description + metadata -->
+    <p class="mi mi--bl" id="indD"></p>
+    <p class="mi mi--br" id="indM"></p>
+
+    <!-- SLIPSTREAM STAGE — full-viewport perspective container -->
+    <div class="ind__stage" id="indStage" aria-hidden="true">
+      <div class="ind__stream" id="indStream"></div>
+    </div>
+
+  </section>
+
+
+  <!-- ---------- 06 · GLOBAL ---------- -->
+  <section class="sc sc--06" id="sc-06" data-sc="5">
+    <p class="mi mi--tl">06 / GLOBAL NETWORK<span class="mi__c">06 NODES</span></p>
+    <ol class="glb" id="glbNav" aria-label="Offices"></ol>
+    <div class="glb__p">
+      <p class="mi" id="glbR"></p>
+      <h2 class="glb__c" id="glbC"></h2>
+      <p class="mi" id="glbX"></p>
+    </div>
+  </section>
+
+  <!-- ---------- 07 · TESTIMONY ---------- -->
+  <section class="sc sc--07" id="sc-07" data-sc="6">
+    <p class="mi mi--tl">07 / TESTIMONY<span class="mi__c"><b id="qN">01</b>/03</span></p>
+    <blockquote class="ty ty--front q" id="qT"><span class="ty__l"><span></span></span></blockquote>
+    <p class="mi mi--bl" id="qA"></p>
+    <div class="mi mi--br q__nav">
+      <button id="qP" aria-label="Previous">&larr;</button>
+      <button id="qX" aria-label="Next">&rarr;</button>
+    </div>
+  </section>
+
+  <!-- ---------- 08 · INSIGHTS ---------- -->
+  <section class="sc sc--08" id="sc-08" data-sc="7">
+    <p class="mi mi--tl">08 / INSIGHTS</p>
+    <h2 class="ty ty--front ins" id="insT"><span class="ty__l"><span></span></span></h2>
+    <p class="mi mi--bl" id="insD"></p>
+  </section>
+
+  <!-- ---------- 09 · INVITATION ---------- -->
+  <section class="sc sc--09" id="sc-09" data-sc="8">
+    <p class="mi mi--tl">09 / INVITATION</p>
+    <h2 class="ty ty--front cta">
+      <span class="ty__l"><span>READY TO</span></span>
+      <span class="ty__l"><span>EXPAND YOUR</span></span>
+      <span class="ty__l"><span>GLOBAL REACH?</span></span>
+    </h2>
+    <p class="mi mi--bl"><a class="act" href="#sc-10" data-go="9" data-cur="open">CONTACT <i>&rarr;</i></a></p>
+  </section>
+
+  <!-- ---------- 10 · CONTACT ---------- -->
+  <section class="sc sc--10" id="sc-10" data-sc="9">
+    <p class="mi mi--tl">10 / CONTACT</p>
+    <h2 class="ty ty--front talk"><span class="ty__l"><span>LET'S TALK.</span></span></h2>
+
+    <form class="fm" id="form" novalidate>
+      <div class="fm__r"><i>01</i><input id="f1" name="name" type="text" required placeholder=" " autocomplete="name" /><label for="f1">NAME</label></div>
+      <div class="fm__r"><i>02</i><input id="f2" name="email" type="email" required placeholder=" " autocomplete="email" /><label for="f2">EMAIL</label></div>
+      <div class="fm__r"><i>03</i><input id="f3" name="phone" type="tel" placeholder=" " autocomplete="tel" /><label for="f3">PHONE</label></div>
+      <div class="fm__r"><i>04</i><input id="f4" name="company" type="text" placeholder=" " autocomplete="organization" /><label for="f4">COMPANY</label></div>
+      <div class="fm__r"><i>05</i><input id="f5" name="country" type="text" placeholder=" " autocomplete="country-name" /><label for="f5">COUNTRY</label></div>
+      <div class="fm__r"><i>06</i><input id="f6" name="city" type="text" placeholder=" " autocomplete="address-level2" /><label for="f6">CITY</label></div>
+      <button class="act" type="submit" data-cur="send">TRANSMIT <i>&rarr;</i></button>
+      <p class="fm__m" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="mi mi--bl end">
+      <span class="end__n" id="endNodes"></span>
+      <!-- Dubai address, telephone and email to be inserted from supplied Commnet details. -->
+      <span>&copy; <i id="yr">2026</i> COMMNET SYSTEMS CONSULTANCY LLC &nbsp;/&nbsp;
+        <a href="#">PRIVACY</a> &nbsp; <a href="#">TERMS</a> &nbsp;
+        <a href="#sc-01" data-go="0">BACK TO START &uarr;</a></span>
+    </div>
+  </section>
+
+</main>
+
+<!-- scroll track — its height is the length of the camera's journey -->
+<div class="track" id="track" aria-hidden="true"></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="new-era.js"></script>
+</body>
+</html>

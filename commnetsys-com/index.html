@@ -1118,7 +1118,7 @@ const pos=new Float32Array(N*3),vel=new Float32Array(N*3);
 const dCol=new Float32Array(N*3),jit=new Float32Array(N*3);
 const ph=new Float32Array(N),sp=new Float32Array(N);
 const dFall=new Float32Array(N),dBase=new Float32Array(N*3);
-const BG=[.043,.086,.212];
+const BG=[.043,.086,.212],CY=[.22,.87,.99];
 
 const PAL=[[.74,.81,.94],[.31,.55,1],[.13,.83,.93]];
 for(let i=0;i<N;i++){
@@ -1199,13 +1199,21 @@ function buildText(){
   if(d[(y*sw+x)*4+3]>130)pts.push(x/sw-.5,.5-y/sh);
  }
  const n=pts.length/2;
- const TW=VW*.74,TH=TW*(sh/sw);
+ const TW=VW*.68,TH=TW*(sh/sw);
+ let lo=1e9;
  for(let i=0;i<N;i++){
   if(!n){textT[i*3]=home[i*3];textT[i*3+1]=home[i*3+1];textT[i*3+2]=home[i*3+2];continue;}
   const k=(i*7919)%n;
   textT[i*3]=pts[k*2]*TW;
   textT[i*3+1]=pts[k*2+1]*TH;
   textT[i*3+2]=jit[i*3+2]*1.5;
+  if(textT[i*3+1]<lo)lo=textT[i*3+1];
+ }
+ /* Sit the mark low in the hero so it never runs through the headline.
+    Measured off its own ink box, so it holds at any viewport height. */
+ if(n&&lo<1e8){
+  const dy=(-VH*.462)-lo;
+  for(let i=0;i<N;i++)textT[i*3+1]+=dy;
  }
 }
 function layout(){
@@ -1294,7 +1302,7 @@ function pulse(t){
 }
 
 /* ---- frame ---- */
-const EASE=.072,DAMP=.86,R=2.4,R2=R*R;
+const EASE=.058,DAMP=.875,R=2.4,R2=R*R;
 let raf=0;
 function frame(){
  raf=requestAnimationFrame(frame);
@@ -1303,12 +1311,12 @@ function frame(){
 }
 function tick(t){
  const el=t-t0;
- if(el>1750)morph=Math.min(1,(el-1750)/1400);
+ if(el>2350)morph=Math.min(1,(el-2350)/2300);
  const mm=morph<1?(1-Math.pow(1-morph,3)):1;
 
  for(let i=0;i<N;i++){
   const i3=i*3;
-  const wob=Math.sin(t*.0004*sp[i]+ph[i])*.15*mm;
+  const wob=Math.sin(t*.0003*sp[i]+ph[i])*.15*mm;
   const tx=textT[i3]+(home[i3]-textT[i3])*mm;
   const ty=textT[i3+1]+(home[i3+1]-textT[i3+1])*mm+wob;
   const tz=textT[i3+2]+(home[i3+2]-textT[i3+2])*mm;
@@ -1328,16 +1336,20 @@ function tick(t){
     network state takes over, so the headline never competes with the field.
     During the wordmark phase there is no falloff - the mark reads at full. */
  if(mm<1||!fallDone){
+  const wk=(1-mm)*.88;
   for(let i=0;i<N;i++){
    const i3=i*3,f=1-(1-dFall[i])*mm;
-   dCol[i3]  =BG[0]+(dBase[i3]  -BG[0])*f;
-   dCol[i3+1]=BG[1]+(dBase[i3+1]-BG[1])*f;
-   dCol[i3+2]=BG[2]+(dBase[i3+2]-BG[2])*f;
+   const r=dBase[i3]  +(CY[0]-dBase[i3]  )*wk;
+   const g=dBase[i3+1]+(CY[1]-dBase[i3+1])*wk;
+   const b=dBase[i3+2]+(CY[2]-dBase[i3+2])*wk;
+   dCol[i3]  =BG[0]+(r-BG[0])*f;
+   dCol[i3+1]=BG[1]+(g-BG[1])*f;
+   dCol[i3+2]=BG[2]+(b-BG[2])*f;
   }
   dGeo.attributes.color.needsUpdate=true;
   fallDone=(mm>=1);
  }
- dMat.size=(small?.062:.043)+(small?.03:.028)*(1-mm);
+ dMat.size=(small?.062:.043)+(small?.042:.043)*(1-mm);
 
  pulse(t);
  hotOn=false;
@@ -1365,12 +1377,12 @@ function tick(t){
  const s=Math.min(1,(scrollY||0)/(innerHeight||1));
  lMat.opacity=LINK_OP*net*(1-s);
  hMat.opacity=.85*net*(1-s*.95);
- dMat.opacity=(.6+.28*(1-mm))*(1-s*.95);
+ dMat.opacity=(.6+.39*(1-mm))*(1-s*.95);
 
  cx+=(mnx*1.15-cx)*.045;cy+=(mny*.7-cy)*.045;
  camera.position.x=cx;camera.position.y=cy;camera.lookAt(0,0,0);
- group.rotation.y=Math.sin(t*.00012)*.075;
- group.rotation.x=Math.cos(t*.00009)*.038;
+ group.rotation.y=Math.sin(t*.00009)*.075;
+ group.rotation.x=Math.cos(t*.00007)*.038;
  group.position.z=s*7;
 
  renderer.render(scene,camera);

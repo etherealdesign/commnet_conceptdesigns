@@ -1,30 +1,30 @@
 # Nothing below is referenced by any page — excluded so the deployment
 # stays a few MB rather than a few hundred.
-Teleiostec/Interior/
-Teleiostec/Asset/Parallax/
-Teleiostec/_to_delete/
+teleiostec-com/Interior/
+teleiostec-com/Asset/Parallax/
+teleiostec-com/_to_delete/
 Data/
 .impeccable/
 PRODUCT.md
 _mobiletest.html
-Teleiostec/README.md
+teleiostec-com/README.md
 
 # Asset/photos is no longer excluded wholesale — the current Teleiostec page
 # uses three of these sets. Everything else in there is still unreferenced.
-Teleiostec/Asset/photos/architects-reviewing-material-sa*
-Teleiostec/Asset/photos/commercial-interior-architecture*
-Teleiostec/Asset/photos/craftsman-installing-walnut-arch*
-Teleiostec/Asset/photos/dubai-corporate-headquarters-int*
-Teleiostec/Asset/photos/luxury-residence-living-room-int*
-Teleiostec/Asset/photos/man-walking-through-luxury-interior*
-Teleiostec/Asset/photos/workers-constructing-luxury-inte*
+teleiostec-com/Asset/photos/architects-reviewing-material-sa*
+teleiostec-com/Asset/photos/commercial-interior-architecture*
+teleiostec-com/Asset/photos/craftsman-installing-walnut-arch*
+teleiostec-com/Asset/photos/dubai-corporate-headquarters-int*
+teleiostec-com/Asset/photos/luxury-residence-living-room-int*
+teleiostec-com/Asset/photos/man-walking-through-luxury-interior*
+teleiostec-com/Asset/photos/workers-constructing-luxury-inte*
 
-# Commnet-Tech: authoring notes only, and one asset no build references.
-Commnet-Tech/NOTES-commnet-build.md
-Commnet-Sys/NOTES-new-era-build.md
-Commnet-Sys/README.md
-Commnet-Tech/README.md
-Commnet-Tech/Assets/commentLogo.png
+# Authoring notes and READMEs — reference material, not part of any site.
+commnettech-com/NOTES-new-era-build.md
+commnettech-com/README.md
 
 # Local archive — never deployed.
 _archive/
+
+# Builds with no domain assigned to them. Kept in git, never deployed.
+_unassigned/

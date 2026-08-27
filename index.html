@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Commnet | Concept Designs &amp; Site Builds</title>
-<meta name="description" content="Website concept direction for Commnet Systems Consultancy, plus the Commnet Technology Services and Teleiostec site builds. Internal review.">
+<title>Commnet | Site Builds</title>
+<meta name="description" content="Site builds for commnetsysconsult.com, commnetsys.com, commnettech.com and teleiostec.com. Client review.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,6 @@ header img{height:34px;width:auto;margin-bottom:44px}
 .tag{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:12px;font-weight:500;margin-bottom:20px}
 h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.04;font-size:clamp(2.2rem,5vw,3.6rem)}
 .lede{color:var(--mute);max-width:58ch;margin-top:16px;font-size:17px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:52px;max-width:560px}
 .card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s}
 .card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(23,33,30,.09);border-color:#D3D9D4}
 .card .n{font-family:var(--disp);font-size:13px;color:var(--green);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
@@ -31,7 +30,7 @@ h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.
 /* Finished sites — a separate register from the concept cards above:
    each carries its own brand ground, and is a built site rather than a
    direction. One layout, per-site colour via the custom properties. */
-.also{margin-top:56px;padding-top:34px;border-top:1px solid var(--line)}
+.also{margin-top:44px}
 .also__k{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);font-weight:500;margin-bottom:18px}
 
 .site{--g:#F3F1E9;--e:#DFDACD;--eh:#CFC9B9;--si:#1B1915;--ss:#6E6A60;--sa:#0A5A2C;--sh:#E2DED4;--shd:27,25,21;
@@ -41,9 +40,24 @@ h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.
 .site:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(var(--shd),.11);border-color:var(--eh)}
 .site + .site{margin-top:18px}
 .site--tech{--g:#F7F7F5;--e:#DCDCD8;--eh:#C9C9C4;--si:#111111;--ss:#646464;--sa:#C8202B;--sh:#E4E4E0;--shd:17,17,17}
+.site--consult{--g:#0E1520;--e:#22303F;--eh:#33475C;--si:#EEF3F8;--ss:#93A4B6;--sa:#38BDF8;--sh:#0B111A;--shd:0,0,0}
+.site--india{--g:#12100C;--e:#332C1F;--eh:#4A4130;--si:#F5F1E8;--ss:#B0A48C;--sa:#F0A93B;--sh:#0D0B08;--shd:0,0,0}
 .site--sys{--g:#0A0A0B;--e:#26262A;--eh:#3A3A40;--si:#F2F2F3;--ss:#9A9AA2;--sa:#E23B47;--sh:#111114;--shd:0,0,0}
 /* The WebGL build has no still that represents it, so the tile is drawn rather
    than photographed — the same lattice the hero renders, held still. */
+/* Neither Commnet build has a still that represents it, so each tile is drawn:
+   the consultancy pair as a network reaching between two hubs, the WebGL build
+   as the lattice its hero renders, held still. */
+.site--consult .site__shot--consult{background:
+  radial-gradient(circle at 26% 42%,rgba(56,189,248,.40),transparent 46%),
+  radial-gradient(circle at 78% 58%,rgba(56,189,248,.22),transparent 44%),
+  repeating-linear-gradient(14deg,rgba(255,255,255,.10) 0 1px,transparent 1px 30px),
+  #0B111A}
+.site--india .site__shot--india{background:
+  radial-gradient(circle at 74% 44%,rgba(240,169,59,.42),transparent 46%),
+  radial-gradient(circle at 24% 60%,rgba(240,169,59,.20),transparent 44%),
+  repeating-linear-gradient(-14deg,rgba(255,255,255,.10) 0 1px,transparent 1px 30px),
+  #0D0B08}
 .site--sys .site__shot--sys{background:
   radial-gradient(circle at 28% 32%,rgba(226,59,71,.42),transparent 58%),
   radial-gradient(circle at 74% 70%,rgba(126,178,255,.34),transparent 55%),
@@ -73,60 +87,54 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:v
 <div class="wrap">
   <header><img src="assets/commnet-logo.png" alt="Commnet Systems Consultancy"></header>
 
-  <span class="tag">Concept designs &middot; Internal review</span>
-  <h1>Commnet Systems Consultancy</h1>
-  <p class="lede">The website concept direction &mdash; a complete, self-contained prototype. Open it and scroll through the full experience.</p>
-
-  <!-- Concepts 02 and 03 were declined and now live in _archive/, which is out of
-       git and out of the deployment. Recover them from history if they are ever
-       wanted again — see _archive/README.md. Drop the .grid cap when re-adding. -->
-  <div class="grid">
-    <a class="card" href="commnet-prototype.html">
-      <span class="n">Concept 01</span>
-      <span class="d">commnetsysconsult.com</span>
-      <h2>Engineering Mission&#8209;Critical Infrastructure</h2>
-      <p>The full prototype &mdash; tone of voice, page structure and content architecture in one build.</p>
-      <span class="go">View concept &rarr;</span>
-    </a>
-  </div>
+  <span class="tag">Site builds &middot; Client review</span>
+  <h1>Four sites, four domains</h1>
+  <p class="lede">One row per domain. Each links to the build that will sit on it &mdash; complete and self-contained, so open one and scroll the whole thing.</p>
 
   <section class="also">
-    <p class="also__k">Also in this review</p>
+    <a class="site site--consult" href="commnetsysconsult-com/index.html">
+      <div class="site__body">
+        <span class="site__n">Commnet Systems Consultancy</span>
+        <span class="site__d">commnetsysconsult.com &middot; Dubai</span>
+        <h2>Engineering Mission&#8209;Critical Infrastructure</h2>
+        <p>The Middle East practice. Dubai headquarters, Chennai engineering centre behind it.</p>
+        <span class="go">View website &rarr;</span>
+      </div>
+      <div class="site__shot site__shot--consult" aria-hidden="true"></div>
+    </a>
 
-    <a class="site site--tech" href="Commnet-Tech/index.html">
+    <a class="site site--india" href="commnetsys-com/index.html">
+      <div class="site__body">
+        <span class="site__n">Commnet Systems &mdash; India</span>
+        <span class="site__d">commnetsys.com &middot; Chennai</span>
+        <h2>Engineering Mission&#8209;Critical Infrastructure</h2>
+        <p>The same site with the base location moved: Chennai leads, Dubai sits behind it. Offices, contact and framing follow.</p>
+        <span class="go">View website &rarr;</span>
+      </div>
+      <div class="site__shot site__shot--india" aria-hidden="true"></div>
+    </a>
+
+    <a class="site site--sys" href="commnettech-com/index.html">
       <div class="site__body">
         <span class="site__n">Commnet Technology Services</span>
         <span class="site__d">commnettech.com</span>
-        <h2>Every System Your Business Runs On</h2>
-        <p>The Chennai practice &mdash; managed security, system integration, data centre infrastructure and power. A finished, single-page build.</p>
-        <span class="go">View website &rarr;</span>
-      </div>
-      <div class="site__shot">
-        <img src="Commnet-Tech/Assets/infrastructure-fiber-800.jpg" alt="Fibre infrastructure, the hero image of the Commnet Technology Services site" loading="lazy" decoding="async">
-      </div>
-    </a>
-
-    <a class="site site--sys" href="Commnet-Sys/index.html">
-      <div class="site__body">
-        <span class="site__n">Commnet Systems</span>
-        <span class="site__d">commnetsys.com</span>
         <h2>Integration Simplified</h2>
-        <p>Dubai, India and Singapore. A dark, WebGL build &mdash; the whole page is one camera moving through ten stations of real geometry.</p>
+        <p>The WebGL build &mdash; the whole page is one camera moving through ten stations of real geometry.</p>
         <span class="go">View website &rarr;</span>
       </div>
       <div class="site__shot site__shot--sys" aria-hidden="true"></div>
     </a>
 
-    <a class="site" href="Teleiostec/index.html">
+    <a class="site" href="teleiostec-com/index.html">
       <div class="site__body">
         <span class="site__n">Teleiostec</span>
-        <span class="site__d">teleiostec.com</span>
+        <span class="site__d">teleiostec.com &middot; Dubai</span>
         <h2>Interior Fit&#8209;Out &amp; MEP</h2>
-        <p>A boutique interior fit-out and MEP studio in Dubai. Full site redesign &mdash; a finished, single-page build rather than a concept direction.</p>
+        <p>A boutique interior fit-out and MEP studio. Full site redesign, finished and single-page.</p>
         <span class="go">View website &rarr;</span>
       </div>
       <div class="site__shot">
-        <img src="Teleiostec/Asset/media/great-room-800.jpg" alt="Double-height great room interior from the Teleiostec site" loading="lazy" decoding="async">
+        <img src="teleiostec-com/Asset/media/great-room-800.jpg" alt="Double-height great room interior from the Teleiostec site" loading="lazy" decoding="async">
       </div>
     </a>
   </section>

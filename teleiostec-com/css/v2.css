@@ -667,12 +667,13 @@ em{font-style:italic}
   display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,60px);justify-content:space-between;
 }
 .ft__nav{display:flex;flex-wrap:wrap;gap:clamp(16px,2.4vw,38px)}
-.ft__nav a,.ft__addr span,.ft__addr a{
+.ft__nav a,.ft__addr span,.ft__addr a,.ft__soc a{
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,241,234,.62);
   transition:color var(--t-fast);
 }
-.ft__nav a:hover,.ft__addr a:hover{color:var(--ivory)}
+.ft__nav a:hover,.ft__addr a:hover,.ft__soc a:hover{color:var(--ivory)}
 .ft__addr{font-style:normal;display:flex;flex-wrap:wrap;gap:clamp(14px,2vw,32px)}
+.ft__soc{display:flex;flex-wrap:wrap;gap:clamp(14px,2vw,32px)}
 .ft__base{
   max-width:var(--maxw);margin:0 auto;
   padding-top:clamp(18px,2vw,28px);border-top:1px solid var(--line-dark);

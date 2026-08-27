@@ -102,3 +102,25 @@ the forms should be replaced with the email address.
 **Discrepancy worth checking:** the live site says "7 offices across the
 region". These builds show two — Dubai and Chennai. If there are five more,
 they belong in the offices section.
+
+## Teleiostec, checked against teleiostec.com
+
+The live site corrected one thing and supplied three.
+
+**Corrected:** the build addressed every enquiry to `info@teleiostec.com`. The
+live site takes them at **`sales@teleiostec.com`**. That was wrong in seven
+places, including the "Start a Project" call to action, the contact block and
+the menu — every one of them sending a visitor to an address the studio may
+not read. Fixed throughout.
+
+**Supplied:** three real social accounts, which the redesign had dropped —
+`linkedin.com/company/teleiostec`, `instagram.com/teleiostec.ae` and
+`facebook.com/teleiostec`. Added to the footer beside the address, styled from
+the existing `.ft__nav` rules rather than a new treatment.
+
+Confirmed identical to the live site and left alone: `+971 4 295 5299`, and the
+Office 301, Centurion Star Tower A, Port Saeed address. The phone is shared
+with Commnet Systems Consultancy — that is correct, not a copy-paste error.
+
+teleiostec.com publishes no privacy or terms pages, so there is nothing to
+link; the build does not offer those links either. Consistent.

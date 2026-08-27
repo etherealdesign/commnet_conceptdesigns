@@ -2,7 +2,6 @@
 # stays a few MB rather than a few hundred.
 Teleiostec/Interior/
 Teleiostec/Asset/Parallax/
-Teleiostec/Asset/photos/
 Teleiostec/_to_delete/
 Data/
 .impeccable/
@@ -10,3 +9,19 @@ commnet-prototype.backup.html
 PRODUCT.md
 _mobiletest.html
 Teleiostec/README.md
+
+# Asset/photos is no longer excluded wholesale — the current Teleiostec page
+# uses three of these sets. Everything else in there is still unreferenced.
+Teleiostec/Asset/photos/architects-reviewing-material-sa*
+Teleiostec/Asset/photos/commercial-interior-architecture*
+Teleiostec/Asset/photos/craftsman-installing-walnut-arch*
+Teleiostec/Asset/photos/dubai-corporate-headquarters-int*
+Teleiostec/Asset/photos/luxury-residence-living-room-int*
+Teleiostec/Asset/photos/man-walking-through-luxury-interior*
+Teleiostec/Asset/photos/workers-constructing-luxury-inte*
+
+# Commnet-Tech: authoring notes only, and one asset no build references.
+Commnet-Tech/NOTES-commnet-build.md
+Commnet-Tech/NOTES-earlier-builds.md
+Commnet-Tech/README.md
+Commnet-Tech/Assets/commentLogo.png

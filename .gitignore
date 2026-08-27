@@ -4,7 +4,11 @@
 # site never references. Kept locally, deliberately out of the repo.
 Teleiostec/Interior/
 Teleiostec/Asset/Parallax/
-Teleiostec/Asset/photos/
+Teleiostec/Asset/photos/*
+# …except the three sets the current Teleiostec page actually uses.
+!Teleiostec/Asset/photos/craftsman-working-on-walnut-cabinet*.jpg
+!Teleiostec/Asset/photos/curved-walnut-and-limestone-inte*.jpg
+!Teleiostec/Asset/photos/modern-interior-corridor-leading*.jpg
 Teleiostec/_to_delete/
 
 # local scratch

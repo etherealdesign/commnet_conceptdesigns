@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Commnet Systems Consultancy | Concept Designs</title>
-<meta name="description" content="Website concept directions for Commnet Systems Consultancy, and the Teleiostec site redesign. Internal review.">
+<title>Commnet | Concept Designs &amp; Site Builds</title>
+<meta name="description" content="Website concept direction for Commnet Systems Consultancy, plus the Commnet Technology Services and Teleiostec site builds. Internal review.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,35 +20,38 @@ header img{height:34px;width:auto;margin-bottom:44px}
 .tag{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:12px;font-weight:500;margin-bottom:20px}
 h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.04;font-size:clamp(2.2rem,5vw,3.6rem)}
 .lede{color:var(--mute);max-width:58ch;margin-top:16px;font-size:17px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:52px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:52px;max-width:560px}
 .card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s}
 .card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(23,33,30,.09);border-color:#D3D9D4}
 .card .n{font-family:var(--disp);font-size:13px;color:var(--green);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 .card h2{font-family:var(--disp);font-weight:500;letter-spacing:-.03em;font-size:1.6rem;margin:10px 0 8px}
 .card p{color:var(--mute);font-size:14.5px;flex:1}
 .card .go{margin-top:22px;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--green)}
-.card.latest{border-color:var(--green);background:linear-gradient(180deg,var(--mint),var(--card) 42%)}
-.pill{align-self:flex-start;background:var(--green);color:#fff;font-size:11px;font-weight:500;padding:3px 9px;border-radius:999px;margin-bottom:12px;letter-spacing:.02em}
 
-/* Group company — a separate register from the Commnet concepts above:
-   its own brand ground, and a finished site rather than a direction. */
+/* Finished sites — a separate register from the concept cards above:
+   each carries its own brand ground, and is a built site rather than a
+   direction. One layout, per-site colour via the custom properties. */
 .also{margin-top:56px;padding-top:34px;border-top:1px solid var(--line)}
 .also__k{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);font-weight:500;margin-bottom:18px}
-.tel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.72fr);align-items:stretch;
-  background:#F3F1E9;border:1px solid #DFDACD;border-radius:var(--r);overflow:hidden;
+
+.site{--g:#F3F1E9;--e:#DFDACD;--eh:#CFC9B9;--si:#1B1915;--ss:#6E6A60;--sa:#0A5A2C;--sh:#E2DED4;--shd:27,25,21;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.72fr);align-items:stretch;
+  background:var(--g);border:1px solid var(--e);border-radius:var(--r);overflow:hidden;
   transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s}
-.tel:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(27,25,21,.11);border-color:#CFC9B9}
-.tel__body{padding:30px;display:flex;flex-direction:column;color:#1B1915}
-.tel__n{font-family:var(--disp);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:#0A5A2C;display:flex;align-items:center;gap:7px}
-.tel__n::after{content:"";width:5px;height:5px;border-radius:50%;background:#0A5A2C}
-.tel h2{font-family:var(--disp);font-weight:500;letter-spacing:-.03em;font-size:1.6rem;margin:10px 0 8px}
-.tel p{color:#6E6A60;font-size:14.5px;flex:1;max-width:46ch}
-.tel .go{margin-top:22px;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:#0A5A2C}
-.tel__shot{position:relative;min-height:190px;background:#E2DED4}
-.tel__shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.site:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(var(--shd),.11);border-color:var(--eh)}
+.site + .site{margin-top:18px}
+.site--tech{--g:#F7F7F5;--e:#DCDCD8;--eh:#C9C9C4;--si:#111111;--ss:#646464;--sa:#C8202B;--sh:#E4E4E0;--shd:17,17,17}
+.site__body{padding:30px;display:flex;flex-direction:column;color:var(--si)}
+.site__n{font-family:var(--disp);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--sa);display:flex;align-items:center;gap:7px}
+.site__n::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--sa)}
+.site h2{font-family:var(--disp);font-weight:500;letter-spacing:-.03em;font-size:1.6rem;margin:10px 0 8px}
+.site p{color:var(--ss);font-size:14.5px;flex:1;max-width:46ch}
+.site .go{margin-top:22px;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--sa)}
+.site__shot{position:relative;min-height:190px;background:var(--sh)}
+.site__shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media (max-width:620px){
-  .tel{grid-template-columns:1fr}
-  .tel__shot{order:-1;min-height:150px}
+  .site{grid-template-columns:1fr}
+  .site__shot{order:-1;min-height:150px}
 }
 
 footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
@@ -60,48 +63,49 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:v
 
   <span class="tag">Concept designs &middot; Internal review</span>
   <h1>Commnet Systems Consultancy</h1>
-  <p class="lede">Three website concept directions. Each is a complete, self-contained prototype &mdash; open one and scroll through the full experience.</p>
+  <p class="lede">The website concept direction &mdash; a complete, self-contained prototype. Open it and scroll through the full experience.</p>
 
+  <!-- Concepts 02 and 03 (commnet-v2.html, commnet-v3.html) are parked at client request.
+       The files stay in the repo and in the deployment; only the links here are removed.
+       To bring them back, restore the cards from git history and drop the .grid max-width. -->
   <div class="grid">
-    <a class="card latest" href="commnet-v3.html">
-      <span class="pill">Latest</span>
-      <span class="n">Concept 03</span>
-      <h2>Infrastructure, Engineered</h2>
-      <p>The most developed direction. Refined typography, motion and sector storytelling.</p>
-      <span class="go">View concept &rarr;</span>
-    </a>
-
-    <a class="card" href="commnet-v2.html">
-      <span class="n">Concept 02</span>
-      <h2>Mission&#8209;Critical Infrastructure</h2>
-      <p>An intermediate exploration of layout, imagery and capability structure.</p>
-      <span class="go">View concept &rarr;</span>
-    </a>
-
     <a class="card" href="commnet-prototype.html">
       <span class="n">Concept 01</span>
       <h2>Engineering Mission&#8209;Critical Infrastructure</h2>
-      <p>The original prototype that established the tone and content architecture.</p>
+      <p>The full prototype &mdash; tone of voice, page structure and content architecture in one build.</p>
       <span class="go">View concept &rarr;</span>
     </a>
   </div>
 
   <section class="also">
-    <p class="also__k">Group company</p>
-    <a class="tel" href="Teleiostec/index.html">
-      <div class="tel__body">
-        <span class="tel__n">Teleiostec</span>
+    <p class="also__k">Also in this review</p>
+
+    <a class="site site--tech" href="Commnet-Tech/index.html">
+      <div class="site__body">
+        <span class="site__n">Commnet Technology Services</span>
+        <h2>Every System Your Business Runs On</h2>
+        <p>The Chennai practice &mdash; managed security, system integration, data centre infrastructure and power. A finished, single-page build.</p>
+        <span class="go">View website &rarr;</span>
+      </div>
+      <div class="site__shot">
+        <img src="Commnet-Tech/Assets/infrastructure-fiber-800.jpg" alt="Fibre infrastructure, the hero image of the Commnet Technology Services site" loading="lazy" decoding="async">
+      </div>
+    </a>
+
+    <a class="site" href="Teleiostec/index.html">
+      <div class="site__body">
+        <span class="site__n">Teleiostec</span>
         <h2>Interior Fit&#8209;Out &amp; MEP</h2>
         <p>A boutique interior fit-out and MEP studio in Dubai. Full site redesign &mdash; a finished, single-page build rather than a concept direction.</p>
         <span class="go">View website &rarr;</span>
       </div>
-      <div class="tel__shot">
+      <div class="site__shot">
         <img src="Teleiostec/Asset/media/great-room-800.jpg" alt="Double-height great room interior from the Teleiostec site" loading="lazy" decoding="async">
       </div>
     </a>
   </section>
 
-  <footer>Ethereal Design &middot; Concept work for Commnet Systems Consultancy &middot; Not for public distribution</footer>
+  <footer>Ethereal Design &middot; Client review &middot; Not for public distribution</footer>
 </div>
 </body>
 </html>

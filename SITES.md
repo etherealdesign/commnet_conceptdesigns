@@ -5,13 +5,33 @@ ever disagree again, this file is wrong — fix it here first, then the folder.
 
 | Domain | Folder | Build | State |
 |---|---|---|---|
-| commnetsysconsult.com | `commnetsysconsult-com/` | `Commnet - 2.html`, unmodified | ready |
+| commnetsysconsult.com | `commnetsysconsult-com/` | `Commnet - 2.html`, plus `v1.html` (concept 01) | ready — see below |
 | commnetsys.com | `commnetsys-com/` | `Commnet - 2.html` with the base location moved to India | ready |
 | commnettech.com | `commnettech-com/` | `Commnet - 3.html`, unmodified | ready — see caveat |
 | teleiostec.com | `teleiostec-com/` | the version 02 Teleiostec build | ready |
 
 `index.html` at the root is the review index. It links to exactly these four and
 nothing else.
+
+## commnetsysconsult.com carries two concepts
+
+The client liked the original prototype after it had already been archived, so it
+came back out and now sits beside the current build:
+
+| File | Is | Switcher label |
+|---|---|---|
+| `commnetsysconsult-com/index.html` | the current build | V2 |
+| `commnetsysconsult-com/v1.html` | concept 01, the original prototype | V1 |
+
+A fixed pill at the top of the screen switches between them. It is injected into
+both files as a `<style id="vsw-style">` block plus a `<div class="vsw">` before
+`</body>`, and it nudges the fixed site header down 40px to clear itself.
+
+**That pill is review chrome and must come off before either page goes live under
+the real domain.** Remove both injected blocks; nothing else depends on them.
+
+Concepts 02 and 03 stay in `_archive/`. The client declined them, and confirmed
+again on 2026-08-27 that they are not wanted in the switcher.
 
 ## Dubai and India are one design, two bases
 

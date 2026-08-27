@@ -85,6 +85,32 @@ deployed:
   copy already repointed to Commnet Technology Services. Useful as a worked
   example of which strings carry the company identity.
 
+## This deployment is a demo link, not a launch
+
+Confirmed 2026-08-27: everything here goes to Vercel under its generated URL.
+No build is pointed at a real domain, and none is intended to be from here.
+
+Two things follow, and both are deliberate — do not "fix" either one:
+
+- **`vercel.json` sets `X-Robots-Tag: noindex, nofollow` on every path.** One
+  host serves four clients' domains, a review index that lists them all, and
+  `commnetsysconsult-com/index.html` + `v1.html`, which are the same site twice.
+  Removing the header would have Google index all of it as duplicates competing
+  with the real `commnetsysconsult.com`, which is already live and indexed.
+  The header comes off per-site *after* a domain is pointed at its own project,
+  never here.
+- **The V1/V2 pill is review chrome** and stays for the same reason.
+
+## The contact forms are not connected, on purpose
+
+All three Commnet forms post through `window.cxSendForm`. `CX_FORM_ENDPOINT`
+is empty, so the form does not claim receipt — it opens the visitor's mail
+client prefilled and says so. Set that one constant to a Formspree URL, or
+anything that accepts a POST, and it posts and confirms only on a 2xx.
+
+The destination is read from each page's own `mailto:` link, so each build
+uses its own inbox.
+
 ## Directories that are not sites
 
 - `_unassigned/` — finished builds with no domain. In git, never deployed.

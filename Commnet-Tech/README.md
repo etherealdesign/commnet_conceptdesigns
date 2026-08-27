@@ -11,27 +11,28 @@ http://127.0.0.1:8765/Commnet-Tech/index.html
 
 ## What is in here
 
-Three separate builds, delivered together because they share `Assets/`,
-`fonts/` and `vendor/`. Only the first is linked from the review index.
+One site: Commnet Technology Services of Chennai, the newest and shortest of the
+three builds that arrived in this folder (~7,700px).
 
-| File | Build | Company |
-|---|---|---|
-| `index.html` + `commnet.css` + `commnet.js` | **live** — the newest and shortest of the three (~7,700px) | Commnet Technology Services, Chennai |
-| `old-version.html` + `styles.css` + `main.js` | parked — the light GSAP build (~28,500px) | Commnet Systems Consultancy |
-| `new-version.html` + `new-era.css` + `new-era.js` | parked — the WebGL/Three.js build | Commnet Systems Consultancy |
+```
+index.html + commnet.css + commnet.js
+fonts/    Inter 400 + 500, self-hosted
+Assets/   photography
+vendor/   GSAP, ScrollTrigger, Lenis — bundled, runs offline
+```
 
-The two parked builds are a different company from the live one, and cover the
-same ground as the parked `commnet-v2.html` / `commnet-v3.html` concepts at the
-repository root. They are kept, unlinked, not deleted.
+The folder originally also carried two Commnet Systems Consultancy builds, which
+are a different company and did not belong here. The WebGL one is now its own
+site at `../Commnet-Sys/` for commnetsys.com. The GSAP one had no domain
+assigned to it and is in `_archive/`, out of git and out of the deployment.
 
 Source filenames were `Commnet.html`, `Old Version.html` and `New Version.html`.
 The spaces were removed because they do not belong in a URL; nothing else about
 those files was changed.
 
-`NOTES-commnet-build.md` and `NOTES-earlier-builds.md` are the authoring notes
-that came with the folder — content sourcing, design tokens, motion, and the
-open placeholder list. Read those before editing copy. Both are excluded from
-the deployment.
+`NOTES-commnet-build.md` is the authoring note that came with the folder —
+content sourcing, design tokens, motion, and the open placeholder list. Read it
+before editing copy. Excluded from the deployment.
 
 ## Changed on the way in
 

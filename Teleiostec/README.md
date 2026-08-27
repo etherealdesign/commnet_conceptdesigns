@@ -5,9 +5,10 @@ Static one-page site. No build step, no dependencies — `index.html`,
 server (module-free, but the video and `srcset` behave better over HTTP than
 over `file://`).
 
-The live page is version 02. The first build is kept, unlinked, as
-`index-v1.html` with `css/main.css` and `js/app.js`; nothing links to it and
-it can be deleted whenever the v2 direction is settled.
+The live page is version 02. The first build — `index-v1.html` with
+`css/main.css` and `js/app.js` — is in `_archive/` at the repository root: on
+this machine only, out of git and out of the deployment, and recoverable from
+history. See `_archive/README.md`.
 
 ## Editing content
 

@@ -13,3 +13,7 @@ Teleiostec/_to_delete/
 
 # local scratch
 _mobiletest.html
+
+# Superseded and declined work — kept on this machine, out of the repo.
+# Everything in here is recoverable from git history; see _archive/README.md.
+_archive/

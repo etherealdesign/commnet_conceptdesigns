@@ -41,8 +41,20 @@ h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.
 .site:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(var(--shd),.11);border-color:var(--eh)}
 .site + .site{margin-top:18px}
 .site--tech{--g:#F7F7F5;--e:#DCDCD8;--eh:#C9C9C4;--si:#111111;--ss:#646464;--sa:#C8202B;--sh:#E4E4E0;--shd:17,17,17}
+.site--sys{--g:#0A0A0B;--e:#26262A;--eh:#3A3A40;--si:#F2F2F3;--ss:#9A9AA2;--sa:#E23B47;--sh:#111114;--shd:0,0,0}
+/* The WebGL build has no still that represents it, so the tile is drawn rather
+   than photographed — the same lattice the hero renders, held still. */
+.site--sys .site__shot--sys{background:
+  radial-gradient(circle at 28% 32%,rgba(226,59,71,.42),transparent 58%),
+  radial-gradient(circle at 74% 70%,rgba(126,178,255,.34),transparent 55%),
+  repeating-linear-gradient(58deg,rgba(255,255,255,.15) 0 1px,transparent 1px 22px),
+  repeating-linear-gradient(-32deg,rgba(255,255,255,.12) 0 1px,transparent 1px 30px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 1px,transparent 1px 60px),
+  #08080A}
 .site__body{padding:30px;display:flex;flex-direction:column;color:var(--si)}
 .site__n{font-family:var(--disp);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--sa);display:flex;align-items:center;gap:7px}
+.site__d{font-size:12px;color:var(--ss);letter-spacing:.02em;margin-top:6px;opacity:.85}
+.card .d{font-size:12px;color:var(--mute);letter-spacing:.02em;margin-top:6px;display:block}
 .site__n::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--sa)}
 .site h2{font-family:var(--disp);font-weight:500;letter-spacing:-.03em;font-size:1.6rem;margin:10px 0 8px}
 .site p{color:var(--ss);font-size:14.5px;flex:1;max-width:46ch}
@@ -65,12 +77,13 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:v
   <h1>Commnet Systems Consultancy</h1>
   <p class="lede">The website concept direction &mdash; a complete, self-contained prototype. Open it and scroll through the full experience.</p>
 
-  <!-- Concepts 02 and 03 (commnet-v2.html, commnet-v3.html) are parked at client request.
-       The files stay in the repo and in the deployment; only the links here are removed.
-       To bring them back, restore the cards from git history and drop the .grid max-width. -->
+  <!-- Concepts 02 and 03 were declined and now live in _archive/, which is out of
+       git and out of the deployment. Recover them from history if they are ever
+       wanted again — see _archive/README.md. Drop the .grid cap when re-adding. -->
   <div class="grid">
     <a class="card" href="commnet-prototype.html">
       <span class="n">Concept 01</span>
+      <span class="d">commnetsysconsult.com</span>
       <h2>Engineering Mission&#8209;Critical Infrastructure</h2>
       <p>The full prototype &mdash; tone of voice, page structure and content architecture in one build.</p>
       <span class="go">View concept &rarr;</span>
@@ -83,6 +96,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:v
     <a class="site site--tech" href="Commnet-Tech/index.html">
       <div class="site__body">
         <span class="site__n">Commnet Technology Services</span>
+        <span class="site__d">commnettech.com</span>
         <h2>Every System Your Business Runs On</h2>
         <p>The Chennai practice &mdash; managed security, system integration, data centre infrastructure and power. A finished, single-page build.</p>
         <span class="go">View website &rarr;</span>
@@ -92,9 +106,21 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:v
       </div>
     </a>
 
+    <a class="site site--sys" href="Commnet-Sys/index.html">
+      <div class="site__body">
+        <span class="site__n">Commnet Systems</span>
+        <span class="site__d">commnetsys.com</span>
+        <h2>Integration Simplified</h2>
+        <p>Dubai, India and Singapore. A dark, WebGL build &mdash; the whole page is one camera moving through ten stations of real geometry.</p>
+        <span class="go">View website &rarr;</span>
+      </div>
+      <div class="site__shot site__shot--sys" aria-hidden="true"></div>
+    </a>
+
     <a class="site" href="Teleiostec/index.html">
       <div class="site__body">
         <span class="site__n">Teleiostec</span>
+        <span class="site__d">teleiostec.com</span>
         <h2>Interior Fit&#8209;Out &amp; MEP</h2>
         <p>A boutique interior fit-out and MEP studio in Dubai. Full site redesign &mdash; a finished, single-page build rather than a concept direction.</p>
         <span class="go">View website &rarr;</span>

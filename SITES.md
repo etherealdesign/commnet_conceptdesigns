@@ -70,3 +70,35 @@ deployed:
 - `_unassigned/` — finished builds with no domain. In git, never deployed.
 - `_archive/` — declined and superseded work. Local only: in `.gitignore`, so
   not on GitHub either. Recoverable from history; see `_archive/README.md`.
+
+## Checked against the live site
+
+`https://commnetsysconsult.com/` is the live Commnet Systems Consultancy site.
+The contact details in these builds were cross-checked against its Contact page
+and match exactly: `+971 4 295 5299`, `info@commnetsysconsult.com`, Office 301,
+Centurion Star Building, Tower A, Port Saeed, PO Box 117133.
+
+Taken from it and wired in:
+
+- Privacy — `https://commnetsysconsult.com/PrivacyPolicy`
+- Terms — `https://commnetsysconsult.com/TermsAndConditions`
+- LinkedIn — `linkedin.com/company/commnet-systems-consultancy`
+
+The X and YouTube icons were removed rather than linked. Neither account
+exists; the live site points its Facebook and Instagram icons at bare
+`facebook.com` and `instagram.com`, which is worse than not offering them.
+If those accounts are created later, the markup pattern is still in git.
+
+Note these three URLs sit on the commnetsysconsult.com domain. They are correct
+for `commnetsysconsult-com/` and `commnetsys-com/`, and correct for
+`commnettech-com/` only for as long as that build carries Systems Consultancy
+copy. If it is repointed to Commnet Technology Services, these change too.
+
+**Still unresolved: the contact form.** The live site's own form posts by
+script with no `action` attribute, so there was nothing to copy. All three
+builds validate, confirm, and then drop the message. An endpoint is needed, or
+the forms should be replaced with the email address.
+
+**Discrepancy worth checking:** the live site says "7 offices across the
+region". These builds show two — Dubai and Chennai. If there are five more,
+they belong in the offices section.

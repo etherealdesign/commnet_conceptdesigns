@@ -40,19 +40,26 @@ Tokens and the 12-column grid (`grid-container`, `grid-layout`, `grid-span-N`,
 takes the surface colour of whichever section is under it once the page has
 scrolled.
 
-Signature pieces:
+## Motion (matched to the reference's source, not its look)
 
-- `ui/ascii-image` - a photograph re-drawn as monospace glyphs on a canvas; the
-  brightest cells take the accent, the pointer stirs the cells it passes. Used in
-  the hero, every inner-page hero, and behind the footer wordmark.
-- `shared/Button` - the square button with the detached `+` box that trades places
-  with the label on hover.
-- `shared/Scramble` - text that resolves out of noise as it arrives (and on hover).
-- `shared/SlotNumber` - counters whose digits roll into place.
-- `home/Process` - pinned; the stage in play steps forward and the photograph swaps.
-- `home/Work` - sticky sidebar with thumbnail navigation beside stacked contracts.
-- `nav/Nav` - the drop-down menu panel: display-size links with a square marker,
-  contact column, two photographs.
+Every mechanic below was read out of the reference's shipped JavaScript and
+rebuilt with the same timings and curves:
+
+| Moment | What happens |
+|---|---|
+| Preloader | four 16 px squares slide into place turning 90° on their corner (0.7 s expo in-out, staggered); `LOADING` resolves out of noise; at 2.275 s the plate is cut away on a diagonal (1.5 s expo in-out) and at 90 % of the cut the page is told to enter |
+| Page enter | `PageEnterProvider` fires registered entrances in priority order, 80 ms between groups: header slides down (0), hero headline (1), then the rest |
+| Headlines | `AnimatedHeadline`: per line, an accent bar sweeps in (0.45 s power3 in-out), a foreground bar follows 0.1 s later, the text appears at 0.5 s, both bars retract to the right; lines 0.15 s apart. Section titles play once on scroll |
+| Body copy | `AnimatedSubtext`: SplitText lines under masks, y 100 % → 0, 0.8 s power3-out, 0.05 s apart |
+| Buttons | left `+` rotates in from -45°/scale 0, label slides one box right, right `+` rotates out (700 ms power4 in-out); label scrambles and resolves on hover |
+| Labels | `Scramble` (ScrambleTextPlugin): a pass of random glyphs in the accent, then the real text revealed left to right |
+| Stats | cards rise from 25 % below (1 s expo-out, 0.1 s apart); `SlotNumber` digits roll through three stacks to -(20 + d) em over 1.5 s expo in-out, right column first |
+| Process | not pinned: scroll progress between 55 % and 45 % of the viewport picks the stage; it steps right 48 px (quickTo, back-out), the others rest at 30 %; the `Indicator` square flies with the overshoot curve (.68, -.3, .32, 1.1); the sticky photo crossfades |
+| Work | IntersectionObserver at 50 % with a 20 % margin picks the contract in view; each photo is scaled 1.3 and drifts -15 % → +15 % as its frame crosses the viewport |
+| Menu | panel grows its grid row 0fr → 1fr (1 s expo in-out); links rise through masks (1.4 s expo-out, 0.1 s apart); contact rows follow (0.5 s, 0.04 s apart); photos fade; closes with a clip from the bottom (0.6 s) |
+| Header | panel: transparent at top, surface colour after 50 px, wider padding with the menu open; slides away (`translateY(-200 %)`, 0.4 s quart in-out) until the page has entered, during route changes, and while the footer is within 10 % of the viewport top; MENU/CLOSE rolls vertically |
+| Route change | `PageTransitionProvider` intercepts in-app links: a square two viewports on a side pivots in at the bottom-centre (rotate -90° → 0, 1 s quart in-out), holds while the route mounts, moves its pivot one viewport right and swings out to 90°; the page behind dims and blurs; the new page enters as the curtain leaves |
+| Hero scroll | copy pushed down at 35 % of scroll speed, the glyph portrait at 30 %; the portrait grows from a point and warms from grey to the accent on entry |
 
 ## Architecture
 

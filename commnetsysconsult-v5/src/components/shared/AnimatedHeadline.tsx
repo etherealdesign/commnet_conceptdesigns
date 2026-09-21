@@ -35,6 +35,7 @@ export function AnimatedHeadline({ children, as: Tag = 'h2', className, trigger 
   const wrap = useRef<HTMLDivElement>(null)
   const [lines, setLines] = useState<string[] | null>(null)
   const played = useRef(false)
+  const pending = useRef<number | null>(null)
   const still = prefersReducedMotion()
   const text = muted ? `${children} ${muted}` : children
   const mutedStart = muted ? children.length + 1 : Infinity
@@ -70,14 +71,26 @@ export function AnimatedHeadline({ children, as: Tag = 'h2', className, trigger 
     if (!el || !lines) return
     gsap.set(el.querySelectorAll('[data-line-inner]'), { opacity: 0 })
     gsap.set(el.querySelectorAll('[data-brand-rect], [data-fg-rect]'), { scaleX: 0, transformOrigin: 'left' })
+    if (pending.current !== null) {
+      const d = pending.current
+      pending.current = null
+      reveal(d)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lines])
 
   const reveal = useCallback(
     (delay = 0) => {
       const el = root.current
       if (played.current || !el || still) return
+      const lineEls = el.querySelectorAll<HTMLElement>('[data-line]')
+      if (!lineEls.length) {
+        // lines not measured yet (fresh route): play as soon as they exist
+        pending.current = delay
+        return
+      }
       played.current = true
-      el.querySelectorAll<HTMLElement>('[data-line]').forEach((line, i) => {
+      lineEls.forEach((line, i) => {
         const inner = line.querySelector('[data-line-inner]')
         const brand = line.querySelector('[data-brand-rect]')
         const fg = line.querySelector('[data-fg-rect]')

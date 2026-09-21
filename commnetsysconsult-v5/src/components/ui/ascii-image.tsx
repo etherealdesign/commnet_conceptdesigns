@@ -46,6 +46,7 @@ export function AsciiImage({
 }: Props) {
   const host = useRef<HTMLDivElement>(null)
   const canvas = useRef<HTMLCanvasElement>(null)
+  const [ox0, oy0] = origin
 
   useEffect(() => {
     const h = host.current
@@ -136,8 +137,8 @@ export function AsciiImage({
       ctx.textBaseline = 'top'
       const still = prefersReducedMotion()
       const pr = cell * 9
-      const ox = origin[0] * cols
-      const oy = origin[1] * rows
+      const ox = ox0 * cols
+      const oy = oy0 * rows
       const maxD = Math.hypot(Math.max(ox, cols - ox), Math.max(oy, rows - oy))
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
@@ -209,7 +210,7 @@ export function AsciiImage({
       h.removeEventListener('ascii:start', onStart)
       revealTween?.kill()
     }
-  }, [src, cell, accentShare, floor, fps, interactive, origin])
+  }, [src, cell, accentShare, floor, fps, interactive, ox0, oy0])
 
   useEffect(() => {
     if (start) host.current?.dispatchEvent(new Event('ascii:start'))

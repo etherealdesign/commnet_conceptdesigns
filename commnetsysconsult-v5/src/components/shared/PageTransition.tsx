@@ -90,10 +90,12 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
       const url = new URL(href, window.location.origin)
       if (url.pathname === window.location.pathname) return
       e.preventDefault()
+      e.stopPropagation()
       startTransition(url.pathname + url.search + url.hash)
     }
-    document.addEventListener('click', onClick)
-    return () => document.removeEventListener('click', onClick)
+    // capture phase: before React Router's Link gets to navigate
+    document.addEventListener('click', onClick, true)
+    return () => document.removeEventListener('click', onClick, true)
   }, [startTransition])
 
   const value = useMemo<Ctx>(() => ({ phase, startTransition }), [phase, startTransition])

@@ -51,7 +51,7 @@ export function Footer() {
             <ul className="mono mt-8 flex flex-col gap-2">
               {footer.status.map((s, i) => (
                 <li key={s} className="flex items-center gap-2">
-                  <span className="sq" />
+                  <span className="sq sq--pulse" />
                   <Scramble text={s} delay={i * 150} />
                 </li>
               ))}

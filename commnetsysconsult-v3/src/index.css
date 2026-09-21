@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ---- Commnet brand tokens (locked — do not introduce new colors) ---- */
+  --color-primary: #2563EB;      /* existing brand blue */
+  --color-navy: #071826;          /* dark navy */
+  --color-bg: #F7F9FC;            /* background */
+  --color-white: #FFFFFF;
+  --color-text: #111827;
+  --color-secondary: #64748B;
+
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --breakpoint-3xl: 1920px;
+}
+
+:root {
+  --line: rgba(17, 24, 39, 0.08);
+  --line-dark: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Fluid type scale — clamps tuned to a 1440 desktop grid down to 375 mobile */
+:root {
+  --fs-display: clamp(2.75rem, 1.5rem + 4.5vw, 6.5rem);
+  --fs-h1: clamp(2.25rem, 1.4rem + 3vw, 4.25rem);
+  --fs-h2: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+  --fs-h3: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+  --fs-lead: clamp(1.05rem, 0.95rem + 0.4vw, 1.375rem);
+  --fs-body: clamp(0.9375rem, 0.9rem + 0.15vw, 1.0625rem);
+  --fs-small: clamp(0.8125rem, 0.8rem + 0.1vw, 0.9375rem);
+}
+
+/* Visible focus ring — accessibility, never suppressed */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}

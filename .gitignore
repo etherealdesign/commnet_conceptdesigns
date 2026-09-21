@@ -17,3 +17,6 @@ _mobiletest.html
 # Superseded and declined work — kept on this machine, out of the repo.
 # Everything in here is recoverable from git history; see _archive/README.md.
 _archive/
+
+# Large reference video (527 MB) — over GitHub's 100 MB limit, kept locally only.
+website animation reference.mov

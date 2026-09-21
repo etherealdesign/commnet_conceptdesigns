@@ -1,80 +1,71 @@
 import { useEffect, useRef } from 'react'
-import { gsap, SplitText, prefersReducedMotion } from '@/animations/gsap'
-import { Container } from '@/components/shared/Container'
-import { MagneticButton } from '@/components/shared/MagneticButton'
-import { BlueprintNetwork } from './BlueprintNetwork'
+import { gsap, prefersReducedMotion } from '@/animations/gsap'
+import { Block } from '@/components/shared/Block'
+import { Parallax } from '@/components/shared/Parallax'
+import { SonarGrid } from '@/components/ui/sonar-grid'
+import { hero } from '@/data/home'
 
-export function Hero({ ready }: { ready: boolean }) {
-  const h1Ref = useRef<HTMLHeadingElement>(null)
-  const subRef = useRef<HTMLParagraphElement>(null)
-  const ctaRef = useRef<HTMLDivElement>(null)
-  const artRef = useRef<HTMLDivElement>(null)
+/**
+ * Full-screen photograph, one centred sentence in cream. The photo drifts
+ * slower than the page as it leaves; a dot lattice sits over it and answers
+ * a click with a ripple, so the first screen is quietly interactive without
+ * a single decorative element competing with the words.
+ */
+export function Hero() {
+  const root = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    if (!ready) return
-    const h1 = h1Ref.current
-    if (!h1) return
-
+    const el = root.current
+    if (!el) return
+    const title = el.querySelector('[data-hero-title]')
+    const media = el.querySelector('[data-hero-media]')
+    if (!title || !media) return
     if (prefersReducedMotion()) {
-      gsap.set([h1, subRef.current, ctaRef.current, artRef.current], { opacity: 1, y: 0 })
+      gsap.set([title, media], { opacity: 1, y: 0, scale: 1 })
       return
     }
-
-    const split = new SplitText(h1, { type: 'words', wordsClass: 'word' })
-    gsap.set(split.words, { y: '110%', opacity: 0 })
-    gsap.set([subRef.current, ctaRef.current], { y: 16, opacity: 0 })
-    gsap.set(artRef.current, { opacity: 0, scale: 0.96 })
-
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-    tl.to(split.words, { y: '0%', opacity: 1, duration: 0.9, stagger: 0.05 })
-      .to(subRef.current, { y: 0, opacity: 1, duration: 0.8 }, '-=0.55')
-      .to(ctaRef.current, { y: 0, opacity: 1, duration: 0.8 }, '-=0.55')
-      .to(artRef.current, { opacity: 1, scale: 1, duration: 1.1 }, '-=0.7')
-
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' } })
+    tl.fromTo(media, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1.8 }, 0)
+      .fromTo(title, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.4 }, 0.35)
     return () => {
       tl.kill()
-      split.revert()
     }
-  }, [ready])
+  }, [])
 
   return (
-    <section id="top" className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
-      <Container>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-sm font-medium tracking-wide text-[--color-primary] mb-5 uppercase">
-              Turnkey ELV &amp; ICT Systems Integrator · Dubai HQ · Chennai Engineering
-            </p>
-            <h1
-              ref={h1Ref}
-              className="font-semibold tracking-tight text-[--color-navy] leading-[1.05]"
-              style={{ fontSize: 'var(--fs-h1)' }}
-            >
-              Mission-critical infrastructure, delivered as one package.
-            </h1>
-            <p
-              ref={subRef}
-              className="mt-6 max-w-xl text-[--color-secondary] leading-relaxed"
-              style={{ fontSize: 'var(--fs-lead)' }}
-            >
-              Structured cabling, networks, security systems, AV and critical power —
-              designed, installed, certified and supported by one engineering team.
-              18 documented contracts across data centres, hotels, government and
-              command centres in the UAE.
-            </p>
-            <div ref={ctaRef} className="mt-9 flex flex-wrap items-center gap-4">
-              <MagneticButton href="#projects">See the project register</MagneticButton>
-              <MagneticButton href="#contact" variant="ghost">
-                Send us your BoQ
-              </MagneticButton>
-            </div>
-          </div>
-
-          <div ref={artRef} className="flex justify-center md:justify-end">
-            <BlueprintNetwork />
-          </div>
+    <Block ref={root} isDark className="h-screen w-full bg-ink text-cream" ariaLabel="Introduction">
+      <Parallax distance={200} className="absolute inset-0 z-0">
+        <div data-hero-media className="relative h-full w-full opacity-0">
+          <img
+            src={hero.media}
+            alt={hero.mediaAlt}
+            className="absolute inset-0 h-full w-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
         </div>
-      </Container>
-    </section>
+      </Parallax>
+
+      <SonarGrid
+        className="absolute inset-0 z-1"
+        color="rgba(251,250,247,0.9)"
+        spacing={30}
+        dotRadius={1}
+        baseOpacity={0.16}
+        pingEvery={5}
+        speed={220}
+        ringWidth={110}
+        amplitude={1.6}
+        seedPing
+        aria-hidden="true"
+      />
+
+      <div className="margin-px-1 relative z-2 flex h-full items-center justify-center py-16 md:py-24">
+        <h1 data-hero-title className="md:span-w-10 max-w-5xl text-center text-25 opacity-0 md:text-60">
+          {hero.title} <span className="text-cream/50">{hero.muted}</span>
+        </h1>
+      </div>
+    </Block>
   )
 }

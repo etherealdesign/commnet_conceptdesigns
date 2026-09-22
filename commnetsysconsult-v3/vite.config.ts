@@ -4,7 +4,12 @@ import { defineConfig } from 'vite'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+const single = process.env.VITE_SINGLE === '1'
+
 export default defineConfig({
+  // '/' for the hosted site. The local review build sets VITE_BASE='./' so the
+  // folder opens straight off disk without a server.
+  base: process.env.VITE_BASE ?? '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -14,8 +19,13 @@ export default defineConfig({
   build: {
     target: 'es2022',
     cssTarget: 'chrome111',
+    // The review copy is one file: a browser opening a folder from disk will
+    // not fetch a module, so everything has to be in the document.
+    cssCodeSplit: !single,
     rollupOptions: {
-      output: {
+      output: single
+        ? { inlineDynamicImports: true, entryFileNames: 'app.js', assetFileNames: 'app.[ext]' }
+        : {
         // Keep the animation libraries in their own long-lived chunks so a
         // content change never invalidates them in the browser cache.
         manualChunks(id) {
@@ -27,6 +37,6 @@ export default defineConfig({
           return undefined
         },
       },
-    },
+  },
   },
 })

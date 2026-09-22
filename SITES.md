@@ -170,3 +170,24 @@ with Commnet Systems Consultancy — that is correct, not a copy-paste error.
 
 teleiostec.com publishes no privacy or terms pages, so there is nothing to
 link; the build does not offer those links either. Consistent.
+
+## reviews/ — the three React builds
+
+`reviews/index.html` is one row per React build of commnetsysconsult.com (v3,
+v4, v5), linked from the fourth card on the landing page. The folders under it
+are produced by `node scripts/build-reviews.mjs`, which builds each version
+with `VITE_BASE=./`, `VITE_HASH_ROUTER=1` and `VITE_SINGLE=1`, then inlines
+the bundle and rewrites the absolute `/media` and `/brand` references to
+folder-relative ones. That makes each folder run from any path — off disk, on
+Vercel or on a local server — with no SPA rewrite rule.
+
+Each build is a single self-contained `index.html`: one bundle with no code
+splitting, script and stylesheet inlined, because a browser opening a page
+from disk will not fetch a module. v5 rasterises photographs to glyphs on a
+canvas, which a `file://` image would taint, so its photographs are carried in
+the document as one data URI each and referenced from a lookup. Double-click
+any `reviews/<v>/index.html` and it runs. `./start.sh` still runs the dev
+servers with hot reload.
+
+Rebuild the review copies whenever a version changes; `dist/` in each version
+folder is still the hosted build and is unaffected.

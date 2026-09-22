@@ -43,6 +43,7 @@ h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.
 .site--consult{--g:#0E1520;--e:#22303F;--eh:#33475C;--si:#EEF3F8;--ss:#93A4B6;--sa:#38BDF8;--sh:#0B111A;--shd:0,0,0}
 .site--india{--g:#12100C;--e:#332C1F;--eh:#4A4130;--si:#F5F1E8;--ss:#B0A48C;--sa:#F0A93B;--sh:#0D0B08;--shd:0,0,0}
 .site--sys{--g:#0A0A0B;--e:#26262A;--eh:#3A3A40;--si:#F2F2F3;--ss:#9A9AA2;--sa:#E23B47;--sh:#111114;--shd:0,0,0}
+.site--builds{--g:#0F131A;--e:#232B36;--eh:#36404E;--si:#F6F4EF;--ss:#98A3B2;--sa:#6096FA;--sh:#0B0E14;--shd:0,0,0}
 /* The WebGL build has no still that represents it, so the tile is drawn rather
    than photographed — the same lattice the hero renders, held still. */
 /* Neither Commnet build has a still that represents it, so each tile is drawn:
@@ -65,6 +66,12 @@ h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.
   repeating-linear-gradient(-32deg,rgba(255,255,255,.12) 0 1px,transparent 1px 30px),
   repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 1px,transparent 1px 60px),
   #08080A}
+/* Three builds of one site, so the tile is three plates of the same field. */
+.site--builds .site__shot--builds{background:
+  radial-gradient(circle at 30% 42%,rgba(96,150,250,.34),transparent 50%),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 1px,transparent 1px 33.33%),
+  repeating-linear-gradient(12deg,rgba(255,255,255,.07) 0 1px,transparent 1px 30px),
+  #0B0E14}
 .site__body{padding:30px;display:flex;flex-direction:column;color:var(--si)}
 .site__n{font-family:var(--disp);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--sa);display:flex;align-items:center;gap:7px}
 .site__d{font-size:12px;color:var(--ss);letter-spacing:.02em;margin-top:6px;opacity:.85}
@@ -88,8 +95,8 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:v
   <header><img src="assets/commnet-logo.png" alt="Commnet Systems Consultancy"></header>
 
   <span class="tag">Site builds &middot; Client review</span>
-  <h1>Four sites, four domains</h1>
-  <p class="lede">One row per domain. Each links to the build that will sit on it &mdash; complete and self-contained, so open one and scroll the whole thing.</p>
+  <h1>Four domains, five builds</h1>
+  <p class="lede">One row per domain. Each links to the build that will sit on it &mdash; complete and self-contained, so open one and scroll the whole thing. The consultancy rebuild carries three of them.</p>
 
   <section class="also">
     <a class="site site--consult" href="commnetsysconsult-com/index.html">
@@ -123,6 +130,17 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:v
         <span class="go">View website &rarr;</span>
       </div>
       <div class="site__shot site__shot--sys" aria-hidden="true"></div>
+    </a>
+
+    <a class="site site--builds" href="reviews/index.html">
+      <div class="site__body">
+        <span class="site__n">Commnet Systems Consultancy &mdash; rebuilds</span>
+        <span class="site__d">commnetsysconsult.com &middot; React &middot; 3 builds</span>
+        <h2>v3 &middot; v4 &middot; v5</h2>
+        <p>The same content laid out three ways: the paper card, the stacked argument and the editorial grid. Open the set and compare them.</p>
+        <span class="go">View the three builds &rarr;</span>
+      </div>
+      <div class="site__shot site__shot--builds" aria-hidden="true"></div>
     </a>
 
     <a class="site" href="teleiostec-com/index.html">

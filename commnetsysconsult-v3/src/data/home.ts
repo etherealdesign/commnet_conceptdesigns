@@ -5,15 +5,15 @@ import { solutionMedia } from './solutions'
 // "approved", "licensed", "certified" or "Tier-N" — see claims.ts.
 
 export const hero = {
-  title: 'Structured cabling, networks, security, AV and critical power,',
+  title: 'Mission-critical infrastructure,',
   /** Second clause of the headline, set at reduced contrast. */
-  muted: 'designed, installed, certified and supported by one engineering team.',
+  muted: 'delivered as one package.',
   media: '/media/infrastructure-fiber.jpg',
   mediaAlt: 'Rows of terminated copper and fibre cabling inside a data-centre rack',
 }
 
 export const statement =
-  'Introducing a systems integrator that argues its case the way a prequalification document does: evidence first, taxonomy correct, and no claim that cannot survive a tender evaluator checking it.'
+  'Structured cabling, networks, security systems, AV and critical power for data centres, hotels, government and command centres in the UAE. Designed, installed, certified and supported by one engineering team.'
 
 /** The photo strip behind the systems section. */
 export const systemsStrip = [
@@ -79,7 +79,7 @@ export const repeat = {
 }
 
 export const work = {
-  title: 'Our Work',
+  title: 'Selected contracts',
   /** Project slugs shown in the carousel, in order. */
   slugs: [
     'hilton-jewel-of-the-creek',
@@ -103,4 +103,84 @@ export const complianceNote = {
   ],
   media: '/media/av-command-center.jpg',
   mediaAlt: 'Operators at a command centre overlooking the city',
+}
+
+
+/* ------------------------------------------------------------------
+   Lightship-idiom home page. Sections in page order after the hero.
+   ------------------------------------------------------------------ */
+
+/** The photo collage that scrolls in from the edges under the hero. Three columns, left / centre / right. */
+export const collage = {
+  columns: [
+    [
+      { src: '/media/professional-it.jpg', alt: 'Engineering team on a data-centre walkway', small: false },
+      { src: '/media/executive-glass.jpg', alt: 'Boardroom video wall', small: true },
+    ],
+    [{ src: '/media/av-command-center.jpg', alt: 'Operators in a control room overlooking the city', small: false }],
+    [
+      { src: '/media/security-systems.jpg', alt: 'Hotel atrium', small: true },
+      { src: '/media/power-infrastructure.jpg', alt: 'Engineer at a switchgear panel', small: false },
+    ],
+  ],
+  intro:
+    'Commnet is a new standard in ELV and ICT delivery, where the discipline of a prequalification document meets one accountable engineering team. From our Chennai engineering centre to the Dubai site, every system is designed, installed, certified and supported under one contract.',
+}
+
+/** The stacking cards under the giant sticky heading. */
+export const stack = {
+  heading: 'This is Commnet.',
+  cards: [
+    { src: '/media/infrastructure-fiber.jpg', alt: 'Terminated copper and fibre inside a rack' },
+    { src: '/media/enterprise-systems.jpg', alt: 'Engineer in a server hall' },
+    { src: '/media/security-operations.jpg', alt: 'Security operations centre' },
+    { src: '/media/dubai-skyline.jpg', alt: 'Dubai skyline at dusk' },
+  ],
+  blocks: [
+    { title: 'One package, not five subcontracts.', body: 'Cabling, networks, security, AV and power arrive as one contract against one programme, with one team accountable from survey to handover.' },
+    { title: 'More of what matters.', body: 'With 15,500 cabling points certified, 2,800 cameras commissioned and an eight-year managed SLA on the register, the evidence is measured, not described.' },
+  ],
+  last: { title: 'Built to the drawings.', button: { label: 'See the register', to: '/projects' } },
+}
+
+export const systemsRail = {
+  title: 'Six disciplines. Smooth handovers.',
+  tag: 'Systems',
+}
+
+/** Full-bleed parallax statement. */
+export const journey = {
+  title: 'The record starts with a closer look.',
+  button: { label: 'Explore the register', to: '/projects' },
+  media: '/media/dubai-skyline.jpg',
+  mediaAlt: 'Dubai skyline at dusk',
+}
+
+export const bigText =
+  'Discover a better way to build, where the taxonomy is correct, the quantities are as delivered and no claim is made that cannot survive a tender evaluator checking it. With one engineering team, a Chennai design centre and a Dubai field office, your programme holds.'
+
+export const editorial = {
+  body:
+    'We started Commnet with a belief: mission-critical infrastructure should be delivered by the people who engineered it. As a turnkey ELV and ICT integrator we bring the whole package straight to the site, reimagining the trade with one team that designs in Chennai, installs in Dubai and stays on through the SLA. Whether it is an 800-room hotel or a fifteen-day event, our contracts are built for reliability, documentation and repeat business, so you can focus on the opening date, not the integration.',
+  button: { label: 'About us', to: '/about' },
+  media: '/media/professional-it.jpg',
+  mediaAlt: 'The engineering team on a data-centre walkway',
+}
+
+export const industriesRail = {
+  title: 'Built for sectors where downtime is not an option.',
+  lead: 'Every vertical brings its own regulator, uptime target and threat model. Commnet engineers to all three.',
+}
+
+export const discover = {
+  title: 'More to discover',
+  /** Register entries shown, in order. */
+  slugs: ['hilton-jewel-of-the-creek', 'sharjah-police-dc', 'fifa-beach-soccer', 'orientek-containers', 'dewa-csoc', 'atlantis-the-royal', 'uae-fa'],
+}
+
+export const push = {
+  title: 'Want the full company profile?',
+  body: 'The prequalification pack carries the register with contract values, licences, manpower and the test documentation we hand over. Leave an email and an engineer sends it.',
+  media: '/media/av-command-center.jpg',
+  mediaAlt: 'Operators in a control room overlooking the city',
 }

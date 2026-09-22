@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/shared/PageHero'
 import { Container } from '@/components/shared/Container'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Seo } from '@/components/shared/Seo'
 import { Arrow } from '@/components/shared/Button'
 import { useReveal } from '@/hooks/useReveal'
@@ -93,8 +92,6 @@ export function SolutionsHub() {
           </div>
         </Container>
       </section>
-
-      <CtaBand />
     </>
   )
 }

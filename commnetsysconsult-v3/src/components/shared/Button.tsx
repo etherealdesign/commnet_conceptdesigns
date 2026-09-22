@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { useLenis } from './SmoothScroll'
 
-type Variant = 'primary' | 'underlined' | 'outline' | 'none'
+type Variant = 'primary' | 'grey' | 'blur' | 'underlined' | 'outline' | 'none'
 type Theme = 'light' | 'dark'
 
 interface Props {
@@ -45,26 +45,30 @@ export function Button({
   const lenis = useLenis()
 
   const base = 'group inline-flex cursor-pointer appearance-none items-center justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-40'
+  // The reference's pill: 2.5rem tall, 20px radius, text-sm, hover fills with the accent.
+  const pill = 'h-10 rounded-[20px] px-5 text-[0.875rem] transition-colors duration-300 ease-[var(--ease-power4-out)]'
   const variants: Record<Variant, string> = {
     primary: cn(
-      'h-11 rounded-full px-5 text-13 transition-colors duration-500 ease-[var(--ease-expo)]',
+      pill,
       theme === 'light'
-        ? 'bg-ink text-cream hover:bg-primary hover:text-white'
-        : 'bg-cream text-ink hover:bg-primary hover:text-white',
+        ? 'bg-ink text-white hover:bg-primary hover:text-white'
+        : 'bg-white text-ink hover:bg-primary hover:text-white',
     ),
+    grey: cn(pill, 'bg-grey-lighter text-ink hover:bg-primary hover:text-white'),
+    blur: cn(pill, 'bg-black/40 text-white backdrop-blur-[22px] hover:bg-primary'),
     outline: cn(
-      'h-11 rounded-full border px-5 text-13 transition-colors duration-500 ease-[var(--ease-expo)]',
+      'h-10 rounded-[20px] border px-5 text-[0.875rem] transition-colors duration-300 ease-[var(--ease-power4-out)]',
       theme === 'light'
         ? 'border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-cream'
         : 'border-cream/30 text-cream hover:border-cream hover:bg-cream hover:text-ink',
     ),
-    underlined: 'ul-link text-13 py-2',
+    underlined: 'ul-link text-[0.875rem] py-2',
     none: '',
   }
   const classes = cn(base, variants[variant], className)
 
   const label =
-    variant === 'primary' || variant === 'outline' ? (
+    variant === 'primary' || variant === 'outline' || variant === 'grey' || variant === 'blur' ? (
       <span className="roll">
         <span>{children}</span>
         <span aria-hidden="true">{children}</span>

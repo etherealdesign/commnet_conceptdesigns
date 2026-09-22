@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/shared/PageHero'
 import { Container } from '@/components/shared/Container'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Seo } from '@/components/shared/Seo'
 import { Arrow } from '@/components/shared/Button'
 import { useReveal } from '@/hooks/useReveal'
@@ -14,7 +13,7 @@ const CRUMBS = [
 ]
 
 const DESC =
-  'The five systems Commnet installs: structured cabling and containment, networks and compute, security systems, AV and guest technology, and critical power and cooling.'
+  'The six disciplines Commnet delivers: structured cabling and containment, networks and compute, security systems, AV and guest technology, critical power and cooling, and cyber security and CSOC integration.'
 
 export function ServicesHub() {
   const ref = useReveal<HTMLDivElement>()
@@ -22,21 +21,21 @@ export function ServicesHub() {
   return (
     <>
       <Seo
-        title="Services, the five systems we install"
+        title="Services, the six disciplines we deliver"
         description={DESC}
         path="/services"
         graph={[webPageSchema('Services', DESC, '/services'), breadcrumbSchema(CRUMBS)]}
       />
       <PageHero
         eyebrow="Axis A · What we install"
-        title="Five systems."
+        title="Six disciplines."
         muted="No overlapping disciplines."
-        definition="ELV is the trade, not a service card. These are the five leaf disciplines underneath it, each with its own evidence in the register. Structured cabling is the spine of fourteen of our eighteen documented contracts; the others sit on top of it."
+        definition="ELV is the trade, not a service card. These are the six disciplines underneath it, each with its own evidence in the register. Structured cabling is the spine of fourteen of our eighteen documented contracts; the others sit on top of it."
         crumbs={CRUMBS}
         media="/media/professional-it.jpg"
         mediaAlt="Engineering team on a data-centre walkway"
         meta={[
-          { label: 'Systems', value: 'Five' },
+          { label: 'Disciplines', value: 'Six' },
           { label: 'Cabling contracts', value: '14 of 18' },
           { label: 'Emirates', value: 'Dubai · AUH · SHJ' },
           { label: 'Engineering', value: 'Chennai centre' },
@@ -94,8 +93,6 @@ export function ServicesHub() {
           </div>
         </Container>
       </section>
-
-      <CtaBand />
     </>
   )
 }

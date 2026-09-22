@@ -4,7 +4,6 @@ import { Container } from '@/components/shared/Container'
 import { Block } from '@/components/shared/Block'
 import { Parallax } from '@/components/shared/Parallax'
 import { work } from '@/data/home'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Seo } from '@/components/shared/Seo'
 import { RelatedProjects } from '@/components/shared/RelatedProjects'
 import { useReveal } from '@/hooks/useReveal'
@@ -155,7 +154,6 @@ export function ProjectDetail() {
       </article>
 
       <RelatedProjects projects={siblings} heading="Other contracts in this environment" />
-      <CtaBand />
     </>
   )
 }

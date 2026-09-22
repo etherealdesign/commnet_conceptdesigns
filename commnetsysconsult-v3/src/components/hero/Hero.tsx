@@ -2,39 +2,41 @@ import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '@/animations/gsap'
 import { Block } from '@/components/shared/Block'
 import { Parallax } from '@/components/shared/Parallax'
-import { SonarGrid } from '@/components/ui/sonar-grid'
-import { hero } from '@/data/home'
+import { hero, statement } from '@/data/home'
+import { Button } from '@/components/shared/Button'
+import { useHeaderStore } from '@/components/shared/HeaderStore'
 
 /**
- * Full-screen photograph, one centred sentence in cream. The photo drifts
- * slower than the page as it leaves; a dot lattice sits over it and answers
- * a click with a ripple, so the first screen is quietly interactive without
- * a single decorative element competing with the words.
+ * One photograph, one sentence, one paragraph, one action. Left-aligned
+ * and set low in the frame, so the first screen reads like the cover of
+ * a tender submission rather than a landing page. The photo drifts slower
+ * than the page as it leaves.
  */
 export function Hero() {
   const root = useRef<HTMLElement>(null)
+  const { setModalOpen } = useHeaderStore()
 
   useEffect(() => {
     const el = root.current
     if (!el) return
-    const title = el.querySelector('[data-hero-title]')
     const media = el.querySelector('[data-hero-media]')
-    if (!title || !media) return
+    const lines = el.querySelectorAll('[data-hero-line]')
+    if (!media) return
     if (prefersReducedMotion()) {
-      gsap.set([title, media], { opacity: 1, y: 0, scale: 1 })
+      gsap.set([media, ...lines], { opacity: 1, y: 0, scale: 1 })
       return
     }
     const tl = gsap.timeline({ defaults: { ease: 'expo.out' } })
-    tl.fromTo(media, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1.8 }, 0)
-      .fromTo(title, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.4 }, 0.35)
+    tl.fromTo(media, { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 1.6 }, 0)
+      .fromTo(lines, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.12 }, 0.3)
     return () => {
       tl.kill()
     }
   }, [])
 
   return (
-    <Block ref={root} isDark className="h-screen w-full bg-ink text-cream" ariaLabel="Introduction">
-      <Parallax distance={200} className="absolute inset-0 z-0">
+    <Block ref={root} isDark className="min-h-[var(--shell-h)] w-full bg-ink text-cream" ariaLabel="Introduction">
+      <Parallax distance={160} className="absolute inset-0 z-0">
         <div data-hero-media className="relative h-full w-full opacity-0">
           <img
             src={hero.media}
@@ -43,28 +45,25 @@ export function Hero() {
             fetchPriority="high"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25" aria-hidden="true" />
         </div>
       </Parallax>
 
-      <SonarGrid
-        className="absolute inset-0 z-1"
-        color="rgba(251,250,247,0.9)"
-        spacing={30}
-        dotRadius={1}
-        baseOpacity={0.16}
-        pingEvery={5}
-        speed={220}
-        ringWidth={110}
-        amplitude={1.6}
-        seedPing
-        aria-hidden="true"
-      />
-
-      <div className="margin-px-1 relative z-2 flex h-full items-center justify-center py-16 md:py-24">
-        <h1 data-hero-title className="md:span-w-10 max-w-5xl text-center text-25 opacity-0 md:text-60">
-          {hero.title} <span className="text-cream/50">{hero.muted}</span>
+      <div className="margin-px-1 relative z-2 flex min-h-[var(--shell-h)] flex-col justify-end pb-16 pt-32 md:pb-24">
+        <h1 data-hero-line className="md:span-w-9 text-36 opacity-0 md:text-60">
+          {hero.title} <span className="text-cream/55">{hero.muted}</span>
         </h1>
+        <p data-hero-line className="md:span-w-5 mt-8 text-16 text-cream/80 opacity-0">
+          {statement}
+        </p>
+        <div data-hero-line className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 opacity-0">
+          <Button to="/projects" variant="primary" theme="dark">
+            See the project register
+          </Button>
+          <Button variant="underlined" theme="dark" onClick={() => setModalOpen(true)}>
+            Send us your BoQ
+          </Button>
+        </div>
       </div>
     </Block>
   )

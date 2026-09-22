@@ -16,7 +16,7 @@ export interface SolutionItem {
   /** ~60-word definition opening the page (§5 page anatomy, step 2) */
   definition: string
   /** Axis A system codes this environment consumes */
-  uses: ('A1' | 'A2' | 'A3' | 'A4' | 'A5')[]
+  uses: ('A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6')[]
   /** "What we deliver" for this environment */
   deliver: string[]
 }
@@ -53,7 +53,7 @@ export const solutions: SolutionItem[] = [
     pageH1: 'Command, Control & Security Centre Build-out, UAE',
     definition:
       'A command room is a data centre with people in it. Our scope is the physical build: racks, panel cabling, operator positions, display walls, and the device-by-device testing and commissioning that signs the room off. We build the room to utility standard, we do not staff or operate it.',
-    uses: ['A1', 'A2', 'A3', 'A4'],
+    uses: ['A1', 'A2', 'A3', 'A4', 'A6'],
     deliver: [
       'Rack and panel cabling to control-room standard',
       'Operator console positions and cable management',

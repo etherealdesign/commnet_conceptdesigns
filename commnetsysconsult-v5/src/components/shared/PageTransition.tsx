@@ -15,7 +15,7 @@ const PageTransitionContext = createContext<Ctx | null>(null)
 /**
  * Route changes go behind a curtain: a square in the accent colour, two
  * viewports on a side, pivoting at the bottom-centre of the screen. It
- * swings in from the left (rotate -90° → 0, 1 s quart in-out), holds while
+ * swings in from the left (rotate -90° → 0, 0.6 s quart in-out), holds while
  * the new route mounts and scrolls to the top, then its pivot moves one
  * viewport right and it swings out to 90°. The page behind dims and blurs
  * while it is covered, and the new page's entrance starts as the curtain
@@ -46,7 +46,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
       window.setTimeout(() => {
         setPhase('holding')
         navigate(to)
-      }, 1000)
+      }, 600)
     },
     [phase, navigate, lenis],
   )
@@ -61,8 +61,8 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
       const t = window.setTimeout(() => {
         setPhase('exiting')
         lenis?.start()
-        window.setTimeout(run, 250)
-        window.setTimeout(() => setPhase('idle'), 1100)
+        window.setTimeout(run, 150)
+        window.setTimeout(() => setPhase('idle'), 700)
       }, 120)
       return () => window.clearTimeout(t)
     }

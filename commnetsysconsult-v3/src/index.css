@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 /* ============================================================
@@ -21,6 +21,10 @@
   --color-primary: #2563EB;       /* brand blue, the accent */
   --color-mark: #CE2032;          /* wordmark red — logo only, never UI */
   --color-white: #FFFFFF;
+  --color-beige: #FAF6EF;        /* newsletter push, image placeholder */
+  --color-sand: #F2EFEA;         /* patterned ground */
+  --color-grey-lighter: #F7F7F7; /* grey button ground */
+  --color-line-grey: #D9D9D9;
 
   /* legacy aliases used by the inner pages */
   --color-navy: #0F131A;
@@ -48,7 +52,7 @@
   --radius: 0.5rem;
 
   /* ---- type ---- */
-  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: var(--font-sans);
 
   /* numeric scale, named by its desktop pixel size so markup reads like a
@@ -69,6 +73,29 @@
 
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-smooth: cubic-bezier(0.38, 0, 0.215, 1);
+  --ease-slow-out: cubic-bezier(0, 1, 0.4, 1);
+  --ease-power4-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* the reference's heading scale: -0.05em tracking, line-height 1 */
+  --text-heading-3xl: clamp(4rem, 2.5rem + 7.5vw, 9.25rem);
+  --text-heading-3xl--line-height: 1; --text-heading-3xl--letter-spacing: -0.05em;
+  --text-heading-2xl: clamp(2.0625rem, 1.2946rem + 3.8393vw, 4.75rem);
+  --text-heading-2xl--line-height: 1; --text-heading-2xl--letter-spacing: -0.05em;
+  --text-heading-xl: clamp(2.375rem, 1.7679rem + 3.0357vw, 4.5rem);
+  --text-heading-xl--line-height: 1; --text-heading-xl--letter-spacing: -0.05em;
+  --text-heading-lg: clamp(2.125rem, 1.5893rem + 2.6786vw, 4rem);
+  --text-heading-lg--line-height: 1; --text-heading-lg--letter-spacing: -0.05em;
+  --text-heading-md: clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem);
+  --text-heading-md--line-height: 1; --text-heading-md--letter-spacing: -0.05em;
+  --text-heading-sm: clamp(1.5rem, 1.3214rem + 0.8929vw, 2.125rem);
+  --text-heading-sm--line-height: 1.2; --text-heading-sm--letter-spacing: -0.05em;
+  --text-heading-xs: clamp(1.375rem, 1.3393rem + 0.1786vw, 1.5rem);
+  --text-heading-xs--line-height: 1.25; --text-heading-xs--letter-spacing: -0.03em;
+  --text-md: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+  --text-md--line-height: 1.25;
+  --text-lg: clamp(1.125rem, 1.0536rem + 0.3571vw, 1.375rem);
+  --text-lg--line-height: 1.25;
 
   --breakpoint-3xl: 1920px;
 }
@@ -84,15 +111,34 @@
   --column: calc((100vw - var(--sbw, 0px) - 2 * var(--margin) - (var(--cols) - 1) * var(--gutter)) / var(--cols));
   --vh: 1vh;
   --nav-h: 76px;
+  --ann-h: 44px;
+  --shell-x: 6px;
+  --shell-h: calc(100svh - var(--ann-h) - var(--shell-x));
   --line: rgba(15, 19, 26, 0.12);
   --line-dark: rgba(251, 250, 247, 0.14);
   --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+  /* the reference's text and slide entrances */
+  --anim-text-enter-duration: 0.8s;
+  --anim-text-enter-stagger: 10ms;
+  --anim-text-easing: var(--ease-smooth);
+  --anim-slide-enter-duration: 1.8s;
+  --anim-slide-enter-stagger: 80ms;
+  --anim-slide-easing: var(--ease-slow-out);
+  --anim-slide-offset: clamp(5rem, 4.6429rem + 1.7857vw, 6.25rem);
+  --radius-md: 12px;
+  --spacing-fluid-sm: clamp(1.875rem, 1.6964rem + 0.8929vw, 2.5rem);
+  --spacing-fluid-md: clamp(2.5rem, 2.2857rem + 1.0714vw, 3.25rem);
+  --spacing-fluid-lg: clamp(3.25rem, 2.75rem + 2.5vw, 5rem);
+  --spacing-fluid-xl: clamp(5rem, 4.6429rem + 1.7857vw, 6.25rem);
+  --spacing-fluid-2xl: clamp(6.25rem, 5.3571rem + 4.4643vw, 9.375rem);
+  --spacing-fluid-3xl: clamp(9.375rem, 8.4821rem + 4.4643vw, 12.5rem);
 }
 @media (min-width: 768px) {
   :root {
-    --margin: 24px;
+    --margin: 40px;
     --gutter: 24px;
     --cols: 12;
+    --shell-x: 10px;
   }
 }
 @supports (height: 1dvh) {
@@ -102,7 +148,7 @@
 @layer base {
   * { box-sizing: border-box; }
   html { scroll-behavior: auto; /* Lenis owns scrolling */ }
-  h1, h2, h3, h4, p { margin: 0; font-weight: 500; }
+  h1, h2, h3, h4, p { margin: 0; font-weight: 400; }
   img, video { display: block; }
   button { font: inherit; color: inherit; }
 }
@@ -113,12 +159,12 @@ html.lenis, html.lenis body { height: auto; }
 
 body {
   margin: 0;
-  background: var(--color-paper);
+  background: var(--color-ink);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.8125rem;
-  line-height: 1.45;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -299,4 +345,163 @@ body.global-grabbing, body.global-grabbing * { cursor: grabbing !important; }
   }
   .marquee-track { animation: none; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+/* ============================================================
+   PAGE CARD
+   The page is a rounded card of paper floating on ink, with the
+   announcement strip above it. Every ground change inside the card is
+   clipped by its corners.
+   ============================================================ */
+.page-shell {
+  margin: var(--ann-h) var(--shell-x) var(--shell-x);
+  border-radius: 20px;
+  background: var(--color-paper);
+  overflow: clip;
+  min-height: calc(100svh - var(--ann-h) - var(--shell-x));
+}
+
+@layer components {
+  /* ---- hairline list ----
+     The navigation idiom: one line of large type per row, a hairline
+     under each, the whole row a target. */
+  .hair-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    padding: 0.875rem 0;
+    transition: color 0.4s var(--ease-expo), padding-left 0.5s var(--ease-expo);
+  }
+  .hair-row:hover { padding-left: 0.75rem; color: var(--color-primary); }
+  .is-dark .hair-row, .hair-row--dark { border-color: var(--line-dark); }
+
+  /* ---- photo tile ----
+     A photograph with its name over it, the way the menu names a
+     destination. The scrim is what keeps the label at AA. */
+  .tile { position: relative; display: block; overflow: clip; border-radius: 12px; background: var(--color-ink); }
+  .tile img { transition: transform 1.6s var(--ease-expo); }
+  .tile:hover img { transform: scale(1.04); }
+  .tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 19, 26, 0.78) 0%, rgba(15, 19, 26, 0.25) 38%, rgba(15, 19, 26, 0) 66%);
+    pointer-events: none;
+  }
+  .tile-label { position: absolute; inset-inline: 0; bottom: 0; z-index: 1; padding: 1.25rem 1.25rem 1.125rem; color: var(--color-cream); }
+
+  /* ---- pill field ---- */
+  .pill-field {
+    height: 3rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--color-white);
+    padding: 0 1.25rem;
+    font-size: 0.8125rem;
+    color: var(--color-ink);
+    outline: none;
+    transition: border-color 0.4s var(--ease-expo);
+  }
+  .pill-field::placeholder { color: var(--color-grey); }
+  .pill-field:focus { border-color: var(--color-ink); }
+}
+
+
+/* ============================================================
+   REFERENCE MOTION (lightship idiom)
+   Text arrives one character at a time from below its own baseline; blocks
+   slide up a hand's width over almost two seconds; images are rounded
+   plates that drift slower than the page.
+   ============================================================ */
+[data-anim-text] [data-word] { display: inline-block; clip-path: inset(0 -0.1em); white-space: nowrap; }
+[data-anim-text] [data-char] { display: inline-block; opacity: 0; transform: translateY(100%); }
+html.is-ready [data-anim-text] [data-char] {
+  transition-property: transform, opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: var(--anim-text-easing);
+}
+html.is-ready [data-anim-text].is-inview [data-char] {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: calc(var(--anim-text-enter-stagger) * var(--char-index, 0) + var(--extra-delay, 0s));
+  transition-duration: var(--anim-text-enter-duration);
+}
+
+[data-anim-slide] { opacity: 0; transform: translate3d(0, var(--anim-slide-offset), 0); }
+html.is-ready [data-anim-slide] {
+  transition-property: transform, opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: var(--anim-slide-easing);
+}
+html.is-ready [data-anim-slide].is-inview,
+html.is-ready [data-anim-parent].is-inview [data-anim-slide] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-duration: var(--anim-slide-enter-duration);
+  transition-delay: calc(var(--anim-slide-enter-stagger) * var(--slide-index, 0) + var(--extra-delay, 0s));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-anim-text] [data-char], [data-anim-slide] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+@layer components {
+  /* ---- reference type ---- */
+  .heading-3xl { font-size: var(--text-heading-3xl); line-height: 1; letter-spacing: -0.05em; }
+  .heading-2xl { font-size: var(--text-heading-2xl); line-height: 1; letter-spacing: -0.05em; }
+  .heading-xl { font-size: var(--text-heading-xl); line-height: 1; letter-spacing: -0.05em; }
+  .heading-lg { font-size: var(--text-heading-lg); line-height: 1; letter-spacing: -0.05em; }
+  .heading-md { font-size: var(--text-heading-md); line-height: 1; letter-spacing: -0.05em; }
+  .heading-sm { font-size: var(--text-heading-sm); line-height: 1.2; letter-spacing: -0.05em; }
+  .heading-xs { font-size: var(--text-heading-xs); line-height: 1.25; letter-spacing: -0.03em; }
+  .text-md { font-size: var(--text-md); line-height: 1.25; }
+  .text-lg { font-size: var(--text-lg); line-height: 1.25; }
+
+  /* ---- rounded plate ---- */
+  .plate { clip-path: inset(0 round var(--radius-md)); overflow: clip; background: var(--color-beige); }
+  .plate img, .plate video { height: 100%; width: 100%; object-fit: cover; }
+
+  /* ---- pill label (section tag) ---- */
+  .tag { display: inline-flex; align-items: center; height: 1.75rem; padding-inline: 0.75rem; border-radius: 999px; background: var(--color-grey-lighter); font-size: 0.75rem; line-height: 1; color: var(--color-ink); }
+
+  /* ---- round icon button ---- */
+  .icon-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 2.5rem; height: 2.5rem; border-radius: 999px; cursor: pointer;
+    background: var(--color-grey-lighter); color: var(--color-ink);
+    transition: background-color 0.3s var(--ease-power4-out), color 0.3s var(--ease-power4-out), transform 0.3s var(--ease-power4-out);
+  }
+  .icon-btn:hover, .icon-btn:focus-visible { background: var(--color-primary); color: #fff; }
+  .icon-btn:disabled { opacity: 0.5; cursor: default; background: var(--color-grey-lighter); color: var(--color-ink); }
+  .icon-btn--black { background: var(--color-ink); color: #fff; }
+  .icon-btn--blur { background: rgba(0, 0, 0, 0.4); color: #fff; backdrop-filter: blur(22px); }
+
+  /* ---- pattern ground (newsletter push) ---- */
+  .pattern-ground { position: relative; z-index: 0; background: var(--color-sand); }
+  .pattern-ground::after {
+    content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0.15;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 130'%3E%3Cpath d='M65 55.23v19.55M74.78 65H55.23' fill='none' stroke='%23231f20' stroke-miterlimit='10'/%3E%3C/svg%3E");
+    background-repeat: repeat; background-size: 100px 100px;
+  }
+
+  /* ---- stacking cards ---- */
+  .stack-heading { position: sticky; top: var(--heading-sticky-top, calc(var(--ann-h) + 4rem)); z-index: 0; }
+  .stack-card {
+    position: sticky; top: var(--card-sticky-top, calc(var(--ann-h) + 6rem)); z-index: 1;
+    aspect-ratio: 592 / 644; transform-origin: top; color: #fff;
+    clip-path: inset(0 round var(--radius-md));
+    transform: scale(calc(1 - var(--sticky-progress, 0) * 0.15)) translate3d(0, calc(var(--sticky-progress, 0) * -5%), 0);
+  }
+  .stack-block { opacity: calc(1 - var(--progress, 0)); }
+
+  /* ---- header pill ---- */
+  .nav-pill {
+    border-radius: var(--radius-md);
+    background: color-mix(in oklab, #fff var(--header-bg, 100%), transparent);
+    backdrop-filter: blur(var(--header-blur, 12px));
+    transition: background-color 0.3s, backdrop-filter 0.3s, transform 0.9s var(--ease-power4-out);
+  }
+  html:not(.is-ready) .nav-pill { transform: translate3d(0, calc(-100% - var(--ann-h) - 1rem), 0); }
 }

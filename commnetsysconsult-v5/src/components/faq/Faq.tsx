@@ -20,7 +20,7 @@ function Row({ item, open, onToggle }: { item: FaqItem; open: boolean; onToggle:
     <li className="border-b border-line" data-row>
       <h3>
         <button type="button" onClick={toggle} aria-expanded={open} aria-controls={id} className="group flex w-full cursor-pointer items-center justify-between gap-6 py-6 text-left">
-          <span className={cn('mono transition-colors duration-300', open ? '' : 'text-fg-muted group-hover:text-current')}>{item.question}</span>
+          <span className={cn('t-body transition-colors duration-300', open ? '' : 'text-fg-muted group-hover:text-current')}>{item.question}</span>
           <Plus className={cn('size-4 shrink-0 transition-transform duration-500 ease-[var(--ease-out-expo)]', open && 'rotate-45')} />
         </button>
       </h3>
@@ -44,7 +44,7 @@ export function Faq({ items = faqItems, heading = 'Common questions' }: { items?
     return () => st.kill()
   }, [items.length])
   return (
-    <Block anchor="faq" isDark className="theme-dark py-24 md:py-32">
+    <Block anchor="faq" className="theme-light border-t border-line py-24 md:py-32">
       <div className="grid-container">
         <div className="grid-layout gap-y-12">
           <div className="grid-span-12 lg:grid-span-4">

@@ -1,6 +1,5 @@
 import { PageHero } from '@/components/shared/PageHero'
 import { Compliance } from '@/components/compliance/Compliance'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Seo } from '@/components/shared/Seo'
 import { breadcrumbSchema, webPageSchema } from '@/utils/schema'
 
@@ -37,7 +36,6 @@ export function CompliancePage() {
         ]}
       />
       <Compliance />
-      <CtaBand />
     </>
   )
 }

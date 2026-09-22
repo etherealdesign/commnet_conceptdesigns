@@ -3,6 +3,7 @@ import { useReveal } from '@/hooks/useReveal'
 import { recognition, regulatorExplainers } from '@/data/compliance'
 import { heldCredentials } from '@/data/claims'
 import { complianceNote } from '@/data/home'
+import { awards } from '@/data/company'
 
 /**
  * Regulators explained, then what we hold. Credentials render only when a
@@ -68,6 +69,21 @@ export function Compliance() {
               <li key={r.name} data-reveal className="grid gap-2 py-5 sm:grid-cols-2 sm:gap-6">
                 <span className="text-16">{r.name}</span>
                 <span className="text-13 text-grey">{r.detail}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="grid gap-y-10 pt-16 md:grid-cols-12 md:gap-x-6">
+          <h2 data-reveal className="text-16 md:col-span-3 md:text-21">
+            Awards and standards
+          </h2>
+          <ul className="grid gap-x-6 gap-y-8 sm:grid-cols-2 md:col-span-9">
+            {awards.map((a) => (
+              <li key={a.title} data-reveal className="flex flex-col gap-3 rounded-[12px] bg-grey-lighter p-6">
+                <span className="text-[0.75rem] text-grey">{a.issuer}</span>
+                <span className="heading-xs">{a.title}</span>
+                <span className="text-md text-grey">{a.body}</span>
               </li>
             ))}
           </ul>

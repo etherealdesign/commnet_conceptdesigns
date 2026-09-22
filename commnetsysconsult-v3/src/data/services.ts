@@ -7,7 +7,7 @@
 
 export interface ServiceItem {
   slug: string
-  code: 'A1' | 'A2' | 'A3' | 'A4' | 'A5'
+  code: 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6'
   title: string
   summary: string
   evidence: string
@@ -135,6 +135,27 @@ export const services: ServiceItem[] = [
       { title: 'Precision cooling', body: 'Close-control cooling units, airflow containment and validation against the installed heat load.' },
       { title: 'Environmental monitoring', body: 'EMS for temperature, humidity, leak and door state, alarmed to the operations team.' },
       { title: 'Suppression & raised floor', body: 'FM200 gas suppression and raised-floor systems installed with the room, not retrofitted to it.' },
+    ],
+  },
+  {
+    slug: 'cyber-security-csoc',
+    code: 'A6',
+    title: 'Cyber Security & CSOC',
+    summary:
+      'Security operations centre build-out, ISO/IEC 27001 gap analysis and policy auditing, and the physical and network layer a CSOC runs on.',
+    evidence: 'DEWA Cyber Security Operations Centre build-out for GBM · CSOC practice since 2017',
+    icon: 'shield',
+    media: '/media/security-operations.jpg',
+    mediaAlt: 'Operators at a security operations centre',
+    count: 1,
+    pageH1: 'Cyber Security & CSOC Integration, UAE',
+    definition:
+      'A security operations centre is a room, a network and a governance framework. We build the room and the network - racks, panel cabling, device installation, testing and commissioning, as at the DEWA CSOC - and run ISO/IEC 27001 gap analysis and policy auditing against the standard. The practice has operated since 2017.',
+    deliver: [
+      { title: 'CSOC build-out', body: 'Racks, panel cabling, device installation, testing and commissioning of the operations room, as delivered for the DEWA Cyber Security Operations Centre.' },
+      { title: 'ISO/IEC 27001 gap analysis', body: 'Assessment of the current posture against the standard, with a prioritised gap register.' },
+      { title: 'Policy auditing', body: 'Review of information-security policies and procedures against ISO 27001 controls.' },
+      { title: 'Governance', body: 'A governance framework the organisation can maintain after handover, with the documentation to match.' },
     ],
   },
 ]

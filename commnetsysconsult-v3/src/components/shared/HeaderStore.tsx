@@ -21,6 +21,9 @@ interface HeaderState {
   setHeaderCenter: (n: number) => void
   modalOpen: boolean
   setModalOpen: (v: boolean) => void
+  /** Prefills the modal's email field when the enquiry starts in the footer. */
+  contactEmail: string
+  setContactEmail: (v: string) => void
 }
 
 const Ctx = createContext<HeaderState | null>(null)
@@ -31,6 +34,7 @@ export function HeaderProvider({ children }: { children: ReactNode }) {
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null)
   const [headerCenter, setHeaderCenter] = useState(38)
   const [modalOpen, setModalOpen] = useState(false)
+  const [contactEmail, setContactEmail] = useState('')
 
   const pushDark = useCallback(() => {
     darkCount.current += 1
@@ -42,8 +46,8 @@ export function HeaderProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const value = useMemo<HeaderState>(
-    () => ({ theme, activeAnchor, headerCenter, pushDark, popDark, setActiveAnchor, setHeaderCenter, modalOpen, setModalOpen }),
-    [theme, activeAnchor, headerCenter, pushDark, popDark, modalOpen],
+    () => ({ theme, activeAnchor, headerCenter, pushDark, popDark, setActiveAnchor, setHeaderCenter, modalOpen, setModalOpen, contactEmail, setContactEmail }),
+    [theme, activeAnchor, headerCenter, pushDark, popDark, modalOpen, contactEmail],
   )
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>
 }

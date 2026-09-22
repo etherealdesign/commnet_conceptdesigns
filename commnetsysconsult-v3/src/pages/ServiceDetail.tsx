@@ -3,7 +3,6 @@ import { PageHero } from '@/components/shared/PageHero'
 import { Container } from '@/components/shared/Container'
 import { SpecPanel } from '@/components/shared/SpecPanel'
 import { RelatedProjects } from '@/components/shared/RelatedProjects'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Faq } from '@/components/faq/Faq'
 import { Seo } from '@/components/shared/Seo'
 import { Process } from '@/components/process/Process'
@@ -134,7 +133,6 @@ export function ServiceDetail() {
 
       <Process />
       <Faq items={pageFaq} heading="Questions we get on this scope." />
-      <CtaBand />
     </>
   )
 }

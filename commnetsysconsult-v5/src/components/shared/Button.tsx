@@ -66,7 +66,7 @@ export function Button({
   }
 
   const fill: Record<Exclude<Variant, 'underline'>, string> = {
-    accent: 'bg-accent text-[#141314] [.theme-dark_&]:text-[#EEEEEE]',
+    accent: 'bg-accent text-white',
     dark: 'bg-[#141314] text-[#EEEEEE]',
     light: 'bg-[#EEEEEE] text-[#141314]',
   }

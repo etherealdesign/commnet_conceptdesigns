@@ -3,7 +3,7 @@
 // "certified" or "Tier-N" — see claims.ts.
 
 export const hero = {
-  title: 'The infrastructure contractor for buildings that cannot fail.',
+  title: 'Mission-critical infrastructure, delivered as one package.',
   lead:
     'Structured cabling, networks, security, AV and critical power for data centres, hotels, government and command centres in the UAE. Designed, installed, certified and supported by one engineering team.',
   primary: { label: 'See the register', to: '/projects' },
@@ -39,7 +39,15 @@ export const work = {
   title: 'Selected contracts.',
   lead: 'From the register of eighteen. Quantities as delivered; contract values stay in the company profile.',
   slugs: ['hilton-jewel-of-the-creek', 'sharjah-police-dc', 'fifa-beach-soccer', 'atlantis-the-royal', 'orientek-containers'],
-  /** One photo per environment slug. */
+  /** One photograph per contract, so no two entries share a frame. */
+  photos: {
+    'hilton-jewel-of-the-creek': '/media/security-systems.jpg',
+    'sharjah-police-dc': '/media/infrastructure-fiber.jpg',
+    'fifa-beach-soccer': '/media/iot-smart-building.jpg',
+    'atlantis-the-royal': '/media/executive-glass.jpg',
+    'orientek-containers': '/media/power-infrastructure.jpg',
+  } as Record<string, string>,
+  /** Fallback, one photo per environment slug. */
   media: {
     'hotels-resorts': '/media/security-systems.jpg',
     'data-centres-it-rooms': '/media/infrastructure-fiber.jpg',

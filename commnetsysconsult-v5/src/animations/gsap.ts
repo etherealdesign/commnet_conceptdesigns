@@ -18,7 +18,7 @@ export const EASE = {
   expoInOut: 'expo.inOut',
 }
 
-export const SCRAMBLE_CHARS = '!<>-_\\/[]{}—=+*^?#%&@:;~ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+export const SCRAMBLE_CHARS = '!<>-_\\/[]{}=+*^?#%&@:;~ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 export const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches

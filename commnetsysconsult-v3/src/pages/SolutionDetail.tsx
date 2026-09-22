@@ -3,7 +3,6 @@ import { PageHero } from '@/components/shared/PageHero'
 import { Container } from '@/components/shared/Container'
 import { SpecPanel } from '@/components/shared/SpecPanel'
 import { RelatedProjects } from '@/components/shared/RelatedProjects'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Seo } from '@/components/shared/Seo'
 import { Process } from '@/components/process/Process'
 import { Faq } from '@/components/faq/Faq'
@@ -136,7 +135,6 @@ export function SolutionDetail() {
       />
       <Process />
       <Faq items={pageFaq} heading="Questions on this package." />
-      <CtaBand />
     </>
   )
 }

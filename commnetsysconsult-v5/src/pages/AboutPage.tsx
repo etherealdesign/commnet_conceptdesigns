@@ -1,5 +1,6 @@
 import { PageHero } from '@/components/shared/PageHero'
 import { About } from '@/components/about/About'
+import { Leadership } from '@/components/about/Leadership'
 import { Process } from '@/components/process/Process'
 import { ClientMarquee } from '@/components/shared/ClientMarquee'
 import { CtaBand } from '@/components/shared/CtaBand'
@@ -39,6 +40,7 @@ export function AboutPage() {
         ]}
       />
       <About />
+      <Leadership />
       <ClientMarquee />
       <Process />
       <CtaBand />

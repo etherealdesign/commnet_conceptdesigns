@@ -20,7 +20,7 @@
   --color-fg: #141314;
   --color-fg-light: #EEEEEE;
   --color-muted: #696869;        /* secondary text on light */
-  --color-muted-light: #818081;  /* secondary text on dark */
+  --color-muted-light: #A3A3A3;  /* secondary text on dark */
   --color-line: rgba(0, 0, 0, 0.2);
   --color-line-light: rgba(238, 238, 238, 0.16);
   --color-accent: var(--accent);
@@ -77,6 +77,8 @@
 :root {
   --accent: #2563EB;
   --accent-muted: #7FA4F5;
+  --accent-text-light: #1D4ED8;
+  --accent-text-dark: #6096FA;
   --accent-name: 'blue';
   --grid-columns: 12;
   --grid-gutter: 1rem;
@@ -139,7 +141,7 @@ body {
 }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-::selection { background: var(--accent); color: #EEEEEE; }
+::selection { background: var(--accent); color: #FFFFFF; }
 
 body.is-locked { overflow: hidden; }
 body.global-grabbing, body.global-grabbing * { cursor: grabbing !important; }
@@ -175,9 +177,9 @@ header.site-header.no-transition { transition: none; }
   transform-origin: 50vw 100%;
   transform: rotate(-90deg);
 }
-.page-curtain[data-phase='entering'] { transition: transform 1s var(--ease-in-out-quart); transform: rotate(0deg); }
+.page-curtain[data-phase='entering'] { transition: transform 0.6s var(--ease-in-out-quart); transform: rotate(0deg); }
 .page-curtain[data-phase='holding'] { transform-origin: calc(50vw + 100vw) 100%; transition: none; transform: rotate(0deg); }
-.page-curtain[data-phase='exiting'] { transform-origin: calc(50vw + 100vw) 100%; transition: transform 1s var(--ease-in-out-quart) 0.1s; transform: rotate(90deg); }
+.page-curtain[data-phase='exiting'] { transform-origin: calc(50vw + 100vw) 100%; transition: transform 0.6s var(--ease-in-out-quart) 0.05s; transform: rotate(90deg); }
 .page-curtain[data-phase='idle'] { transition: none; transform: rotate(-90deg); }
 body::before {
   content: '';
@@ -269,7 +271,11 @@ body[data-transition-phase='entering'] header, body[data-transition-phase='holdi
 
   /* ---- section label:  // PROCESS ---- */
   .label { font-family: var(--font-mono); font-size: 0.875rem; text-transform: uppercase; letter-spacing: -0.02em; color: var(--accent); }
-  .label::before { content: '// '; }
+  /* brand blue on near-black is 3.5:1; as TEXT the accent steps up on dark. Filled buttons keep the true blue. */
+  /* Small accent text needs a step away from the fill blue on both grounds:
+     #2563EB on #EEEEEE is 4.4:1 and on #141314 is 3.5:1. Fills keep the brand blue. */
+  .theme-light .label, .theme-light .u-eyebrow { color: var(--accent-text-light); }
+  .theme-dark .label, .theme-dark .u-eyebrow { color: var(--accent-text-dark); }
 
   /* ---- square marker ---- */
   .sq { display: inline-block; width: 0.625rem; height: 0.625rem; background: var(--accent); flex: none; }
@@ -283,7 +289,7 @@ body[data-transition-phase='entering'] header, body[data-transition-phase='holdi
 
   /* ---- chip (legacy) ---- */
   .chip { display: inline-block; padding: 0.375rem 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; line-height: 1; text-transform: uppercase; letter-spacing: -0.01em; white-space: nowrap; }
-  .chip--blue { background: var(--accent); color: #EEEEEE; }
+  .chip--blue { background: var(--accent); color: #FFFFFF; }
   .chip--line { border: 1px solid var(--line); }
   .chip--line-dark { border: 1px solid var(--line-dark); }
 
@@ -334,4 +340,9 @@ body[data-transition-phase='entering'] header, body[data-transition-phase='holdi
   }
   .marquee-track { animation: none; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+@layer utilities {
+  .theme-light .text-primary { color: var(--accent-text-light); }
+  .theme-dark .text-primary { color: var(--accent-text-dark); }
 }

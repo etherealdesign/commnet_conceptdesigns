@@ -1,6 +1,5 @@
 import { PageHero } from '@/components/shared/PageHero'
 import { ProjectsRegister } from '@/components/projects/ProjectsRegister'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Seo } from '@/components/shared/Seo'
 import { breadcrumbSchema, webPageSchema } from '@/utils/schema'
 
@@ -37,7 +36,6 @@ export function ProjectsPage() {
         ]}
       />
       <ProjectsRegister showHeading={false} />
-      <CtaBand heading="Need the full company profile?" sub="The prequalification PDF carries contract values, licences and manpower. Ask and we will send it." />
     </>
   )
 }

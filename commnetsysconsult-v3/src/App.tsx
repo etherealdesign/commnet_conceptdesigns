@@ -6,6 +6,8 @@ import { SmoothScroll } from '@/components/shared/SmoothScroll'
 import { HeaderProvider } from '@/components/shared/HeaderStore'
 import { ContactModal } from '@/components/contact/ContactModal'
 import { VersionSwitch } from '@/components/shared/VersionSwitch'
+import { Announcement } from '@/components/shared/Announcement'
+import { useReady } from '@/components/motion/useReady'
 import { Home } from '@/pages/Home'
 
 // The home page ships in the entry bundle; every other route is split out so
@@ -27,28 +29,32 @@ function RouteFallback() {
 }
 
 export default function App() {
+  useReady()
   return (
     <HeaderProvider>
       <SmoothScroll>
+        <Announcement />
         <Nav />
-        <main id="main">
-          <Suspense fallback={<RouteFallback />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<ServicesHub />} />
-              <Route path="/services/:slug" element={<ServiceDetail />} />
-              <Route path="/solutions" element={<SolutionsHub />} />
-              <Route path="/solutions/:slug" element={<SolutionDetail />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/projects/:slug" element={<ProjectDetail />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/compliance" element={<CompliancePage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
+        <div className="page-shell">
+          <main id="main">
+            <Suspense fallback={<RouteFallback />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<ServicesHub />} />
+                <Route path="/services/:slug" element={<ServiceDetail />} />
+                <Route path="/solutions" element={<SolutionsHub />} />
+                <Route path="/solutions/:slug" element={<SolutionDetail />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects/:slug" element={<ProjectDetail />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/compliance" element={<CompliancePage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
         <ContactModal />
         <VersionSwitch />
       </SmoothScroll>

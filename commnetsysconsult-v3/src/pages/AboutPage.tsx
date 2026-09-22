@@ -1,8 +1,10 @@
 import { PageHero } from '@/components/shared/PageHero'
 import { About } from '@/components/about/About'
+import { Timeline } from '@/components/about/Timeline'
+import { Industries } from '@/components/home/Industries'
+import { Leadership } from '@/components/about/Leadership'
 import { Process } from '@/components/process/Process'
 import { ClientMarquee } from '@/components/shared/ClientMarquee'
-import { CtaBand } from '@/components/shared/CtaBand'
 import { Seo } from '@/components/shared/Seo'
 import { breadcrumbSchema, organizationSchema, webPageSchema } from '@/utils/schema'
 
@@ -39,9 +41,11 @@ export function AboutPage() {
         ]}
       />
       <About />
+      <Timeline />
+      <Leadership />
+      <Industries />
       <ClientMarquee />
       <Process />
-      <CtaBand />
     </>
   )
 }

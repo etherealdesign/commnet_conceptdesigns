@@ -1,6 +1,7 @@
 import { useRef, useState, type FormEvent } from 'react'
 import { gsap, prefersReducedMotion } from '@/animations/gsap'
 import { Button } from '@/components/shared/Button'
+import { useHeaderStore } from '@/components/shared/HeaderStore'
 import { cn } from '@/lib/utils'
 
 const PROJECT_TYPES = ['Data Centre / IT Room', 'Command / Security Centre', 'Hotel / Resort', 'Corporate Fit-out', 'Event / Rapid Deployment', 'AMC / SLA']
@@ -14,12 +15,14 @@ function Field({
   type = 'text',
   required,
   as = 'input',
+  defaultValue,
 }: {
   label: string
   name: string
   type?: string
   required?: boolean
   as?: 'input' | 'textarea'
+  defaultValue?: string
 }) {
   const cls =
     'w-full rounded border border-ink/15 bg-transparent px-3 py-3 text-13 text-ink outline-none transition-colors duration-300 placeholder:text-grey/70 focus:border-ink'
@@ -30,9 +33,9 @@ function Field({
         {required && ' *'}
       </span>
       {as === 'textarea' ? (
-        <textarea name={name} required={required} rows={4} className={cls} />
+        <textarea name={name} required={required} rows={4} defaultValue={defaultValue} className={cls} />
       ) : (
-        <input name={name} type={type} required={required} className={cls} />
+        <input name={name} type={type} required={required} defaultValue={defaultValue} className={cls} />
       )}
     </label>
   )
@@ -43,6 +46,7 @@ function Field({
  * settles into the success state so the flow can be walked through.
  */
 export function ContactForm({ className, onSubmitted }: { className?: string; onSubmitted?: () => void }) {
+  const { contactEmail } = useHeaderStore()
   const [submitted, setSubmitted] = useState(false)
   const [busy, setBusy] = useState(false)
   const checkRef = useRef<SVGPathElement>(null)
@@ -90,7 +94,7 @@ export function ContactForm({ className, onSubmitted }: { className?: string; on
       <div className="grid gap-6 sm:grid-cols-2">
         <Field label="Name" name="name" required />
         <Field label="Company" name="company" />
-        <Field label="Email" name="email" type="email" required />
+        <Field label="Email" name="email" type="email" required defaultValue={contactEmail} />
         <Field label="Phone" name="phone" type="tel" />
       </div>
       <fieldset className="flex flex-col gap-2">

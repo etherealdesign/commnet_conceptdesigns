@@ -16,6 +16,9 @@ export function Contact() {
                   {o.city} · {o.id === 'dubai' ? 'HQ' : 'Engineering centre'}
                 </p>
                 <p className="mt-1">{o.role}</p>
+                <p className="mt-3 text-ink">{o.address}</p>
+                <p>{o.postal}</p>
+                <p className="mt-2">{o.hours}</p>
                 <a href={`tel:${o.phone.replace(/\s/g, '')}`} className="u-num mt-2 block transition-colors hover:text-fg">
                   {o.phone}
                 </a>

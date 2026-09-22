@@ -7,7 +7,6 @@ import { SmoothScroll } from '@/components/shared/SmoothScroll'
 import { HeaderProvider } from '@/components/shared/HeaderStore'
 import { PageEnterProvider, usePageEnterContext } from '@/components/shared/PageEnter'
 import { PageTransitionProvider } from '@/components/shared/PageTransition'
-import { AccentSwitch } from '@/components/shared/AccentSwitch'
 import { ContactModal } from '@/components/contact/ContactModal'
 import { VersionSwitch } from '@/components/shared/VersionSwitch'
 import { Home } from '@/pages/Home'
@@ -67,7 +66,6 @@ export default function App() {
       <SmoothScroll>
         <PageEnterProvider>
           <PageTransitionProvider>
-            <AccentSwitch />
             <Shell />
           </PageTransitionProvider>
         </PageEnterProvider>

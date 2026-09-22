@@ -11,7 +11,7 @@ export function NotFound() {
           <span className="chip chip--line text-13">404</span>
           <h1 className="mt-6 max-w-2xl text-36 md:text-60">That page is not on the register.</h1>
           <p className="mt-6 max-w-lg text-16 text-grey">
-            The link may be old. The eighteen documented contracts and the five systems behind them are all still here.
+            The link may be old. The eighteen documented contracts and the six disciplines behind them are all still here.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button to="/">Back to the home page</Button>

@@ -31,7 +31,7 @@ function Ellipse({ className }: { className?: string }) {
 }
 
 /**
- * The pinned chapter. The block is (n + 1) screens tall and its content is
+ * The pinned chapter. The block is one screen plus 0.7 of a screen per fact and its content is
  * stuck to the top, so scrolling through it turns the pages: each fact
  * fades out as the next rises in, and the compass arrows turn a quarter
  * turn per page. Scrubbed against scroll, so it can be read at any pace
@@ -72,7 +72,7 @@ export function Impact() {
       ref={root}
       anchor="impact"
       className="-mb-[calc(var(--vh)*35-12rem)] min-h-screen"
-      style={{ height: `calc(var(--vh) * ${100 * n + 100})` }}
+      style={{ height: `calc(var(--vh) * ${70 * n + 100})` }}
       ariaLabel="Scale, from the project register"
     >
       <div className="sticky top-0">

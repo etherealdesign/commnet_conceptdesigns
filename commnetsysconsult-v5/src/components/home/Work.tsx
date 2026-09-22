@@ -6,18 +6,19 @@ import { Button } from '@/components/shared/Button'
 import { AnimatedHeadline } from '@/components/shared/AnimatedHeadline'
 import { AnimatedSubtext } from '@/components/shared/AnimatedSubtext'
 import { Indicator } from '@/components/shared/Indicator'
-import { Scramble } from '@/components/shared/Scramble'
 import { useLenis } from '@/components/shared/SmoothScroll'
 import { projectBySlug, type Project } from '@/data/projects'
 import { work } from '@/data/home'
 import { cn } from '@/lib/utils'
 
 /**
- * Sticky column on the left, contracts stacked on the right. Which one is
- * in view is decided by an IntersectionObserver at 50 % with a 20 %
- * margin top and bottom, and the square beside the thumbnails flies to
- * it. Each photograph is scaled to 1.3 and drifts from -15 % to +15 % as
- * its frame crosses the viewport, so it moves slower than the page.
+ * Sticky column on the left, contracts on the right in an editorial
+ * rhythm: the first entry takes the full column at 16:10, the rest pair
+ * up as two portrait frames. Which one is in view is decided by an
+ * IntersectionObserver at 50 % with a 20 % margin top and bottom, and the
+ * square beside the thumbnails flies to it. Each photograph is scaled to
+ * 1.3 and drifts from -15 % to +15 % as its frame crosses the viewport,
+ * so it moves slower than the page.
  */
 export function Work() {
   const lenis = useLenis()
@@ -64,6 +65,8 @@ export function Work() {
     setMarkerY(a.top - b.top + a.height / 2 - 4)
   }, [active])
 
+  const photo = (p: Project) => work.photos[p.slug] ?? work.media[p.environmentSlug]
+
   const jump = (i: number) => {
     const el = cards.current[i]
     if (!el) return
@@ -96,7 +99,7 @@ export function Work() {
                     className="flex items-center gap-4"
                   >
                     <button type="button" onClick={() => jump(i)} className="block h-16 w-32 cursor-pointer overflow-clip bg-card" aria-label={p.name}>
-                      <img src={work.media[p.environmentSlug]} alt="" className={cn('h-full w-full object-cover transition-opacity duration-500', i === active ? 'opacity-100' : 'opacity-50 hover:opacity-80')} loading="lazy" />
+                      <img src={photo(p)} alt="" className={cn('h-full w-full object-cover transition-opacity duration-500', i === active ? 'opacity-100' : 'opacity-50 hover:opacity-80')} loading="lazy" />
                     </button>
                   </li>
                 ))}
@@ -107,21 +110,22 @@ export function Work() {
             </div>
           </div>
 
-          <div className="grid-span-12 lg:grid-span-8 flex flex-col gap-16 md:gap-24">
+          <div className="grid-span-12 lg:grid-span-8 grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2 md:gap-y-20">
             {items.map((p, i) => (
               <article
                 key={p.slug}
                 ref={(el) => {
                   cards.current[i] = el
                 }}
+                className={cn(i === 0 && 'md:col-span-2', i > 0 && i % 2 === 0 && 'md:mt-16')}
               >
                 <Link to={`/projects/${p.slug}`} className="group block">
-                  <div className="aspect-[16/10] w-full overflow-clip bg-card">
+                  <div className={cn('w-full overflow-clip bg-card', i === 0 ? 'aspect-[16/10]' : 'aspect-[4/5]')}>
                     <img
                       ref={(el) => {
                         imgs.current[i] = el
                       }}
-                      src={work.media[p.environmentSlug]}
+                      src={photo(p)}
                       alt=""
                       loading="lazy"
                       decoding="async"
@@ -129,9 +133,9 @@ export function Work() {
                     />
                   </div>
                   <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-                    <h3 className="mono mono-lg"><Scramble text={p.name} onHover /></h3>
-                    <p className="mono text-fg-muted">
-                      [{p.sector}] — [{p.quantities.split(' · ')[0]}]{p.prime && ` — [via ${p.prime}]`}
+                    <h3 className="text-[1.125rem] font-medium tracking-tight">{p.name}</h3>
+                    <p className="t-small text-fg-muted">
+                      {p.sector} · {p.quantities.split(' · ')[0]}{p.prime && ` · via ${p.prime}`}
                     </p>
                   </div>
                 </Link>

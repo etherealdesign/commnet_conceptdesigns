@@ -147,3 +147,119 @@ elsewhere.
 - Company profile PDF — linked from three places, does not exist.
 - Lighthouse run against a deployed URL.
 - Vector (SVG/AI) logo to replace the two extracted PNGs in `public/brand/`.
+
+## 2026-09-22: v1 content restore + creative-director pass
+
+Restored from v1: full Dubai and Chennai office addresses, PO box, opening
+hours and the Chennai phone/email (`data/site.ts`, rendered in Contact);
+the four-person leadership roster (`data/leadership.ts`,
+`components/about/Leadership.tsx`, mounted on /about).
+
+Design pass:
+- Home order is now hero, systems, method, impact, work, flagship, repeat,
+  faq, compliance, about: the register (evidence) comes before the
+  testimonials and FAQ.
+- Method chapter tightened: title screen 80svh, the 30vh spacer and the
+  min-h-screen on the delivery-model block removed, the two-line
+  statement 70svh, list lead-in 8vh. Chapter is ~2100px, was ~3900.
+- Impact stays the page's one pinned chapter; stride per fact is 70vh
+  instead of 100vh. Home is 13.8k px at 1440, was 15.9k.
+- Hero carries two actions (register, BoQ); page-level CtaBands removed
+  because the footer already asks for the BoQ.
+- Ship-check clean: 4 routes x 4 breakpoints, no overflow, clipping,
+  overlap, contrast or console errors.
+
+## 2026-09-22 (later): simplification pass
+
+Home is now six sections on one grid, one dark block (the hero), no
+decorative layers: hero, systems, work, method, proof, faq, footer CTA.
+- Hero: left-aligned, set low in the frame; headline, the statement as
+  its lead, one primary button and an underlined BoQ link. SonarGrid
+  removed.
+- Systems: statement and photo strip removed (the statement moved into
+  the hero); the two datasheets stay.
+- Work: three register entries on the page grid via ProjectCard; no
+  carousel, no 240px split title. ProjectCard lost its overlay, sector
+  chip and arrow square.
+- Method: one light section, heading + paragraph + six-step list. No
+  dark chapter, no sonar field, no legend.
+- Proof (new, `components/proof/Proof.tsx`): the 18-contracts line, the
+  three numbers from `impact`, and the three GBM records from `repeat`
+  as a list. Replaces Impact (pinned), Flagship (cityscape) and Repeat
+  (carousel) on the home page; the data stays in `data/home.ts`.
+- ComplianceNote and the About teaser are off the home page; both live
+  on /compliance and /about.
+- Home is 6.5k px at 1440 (was 13.8k). Ship-check clean.
+Unused now but kept: Impact.tsx, Flagship.tsx, Repeat.tsx,
+ComplianceNote.tsx, Carousel.tsx, DragMarquee.tsx, sonar-grid.tsx.
+
+## 2026-09-22 (later still): Lightship-idiom redesign
+
+Reference: lightshiprv.com. The page is now a card, the menu is a room,
+and the footer is a directory.
+
+- **Shell** (`App.tsx`, `index.css`): the body is ink; the page sits in a
+  20px-radius card of paper inset by `--shell-x`, with a fixed
+  announcement strip (`components/shared/Announcement.tsx`, dismissible)
+  above it. New vars: `--ann-h`, `--shell-x`, `--shell-h`. Page margin on
+  desktop widened 24 → 40px.
+- **Nav**: three clusters — menu button plus Systems/Solutions/Projects
+  on the left, wordmark centred, Compliance/About and the enquiry pill on
+  the right. The mobile-only overlay is gone; the menu is now for every
+  breakpoint.
+- **Menu**: a full card of white inside the same insets. Three photo
+  tiles that name where they go (Systems, About, Projects), the site as
+  six hairline rows at text-48, and both offices underneath. Escape
+  closes it.
+- **Footer**: the statement and the four destinations as hairline rows;
+  then the enquiry (a pill email field whose value travels into the
+  contact modal via `HeaderStore.contactEmail`), the Company and Systems
+  columns, and both offices; then the claims small print; then the
+  wordmark, copyright and the emirates.
+- **PageHero**: off the photograph and onto paper. Breadcrumb, label,
+  headline left across eight columns with its second clause in grey, the
+  definition in the last four, then the photograph as a wide rounded
+  plate and the facts as a ruled row. Fixes the grey-on-photo contrast
+  the centred version had.
+- **New CSS components**: `.hair-row` (the list idiom, indents and turns
+  blue on hover), `.tile` + `.tile-label` (photo with a scrim and its
+  name), `.pill-field`.
+- **ProjectCard** adopts the tile: the name and quantity sit on the
+  photograph, the terms underneath.
+- Ship-check clean at 4 routes x 4 breakpoints; menu verified at 390.
+
+## 2026-09-22 (evening): Lightship motion, layout and the v1 content
+
+Reference read from source (lightshiprv.com main.css / app.js): F37 Bolton
+→ Figtree; the heading scale (`heading-xl` … `-0.05em`, line-height 1);
+12px rounded plates; 2.5rem pills with the label roll and the accent fill
+on hover; round grey icon buttons; the sand pattern ground.
+
+Motion, mechanic for mechanic (`components/motion/`):
+- `AnimText` — chars rise from one line below (0.8s, `cubic-bezier(.38,0,.215,1)`,
+  10ms per char), words clipped so nothing bleeds; CSS-driven, `html.is-ready`
+  gated (`useReady`).
+- `SlideIn` / `SlideGroup` — 1.8s `cubic-bezier(0,1,.4,1)` rise from a
+  fluid 5–6.25rem offset, 80ms stagger.
+- `useScrollProgress` — writes a 0–1 CSS variable as an element crosses
+  the viewport (their `data-scroll-position/offset`).
+- `Rail` — native snap carousel bleeding to the right edge, round arrows.
+- `FeatureModal` — the tile "+" sheet.
+
+Home, in the reference's order after the (unchanged) hero:
+`Collage` (three columns of plates arriving from the edges by scroll
+progress, centred intro) → `Stack` (giant sticky heading, cards sticky and
+stacking with `scale(1 − p·0.15)` / `translateY(−5%·p)`, side blocks fading
+by progress, closing card with the button) → `SystemsRail` (tiles + modal)
+→ `Journey` (full-bleed plate, −0.1 parallax, one line + button) →
+`BigText` (manifesto at heading-xl, char rise) → `Editorial` → `Industries`
+→ `Discover` (register rail) → `Push` (sand pattern, email pill that opens
+the enquiry pre-filled). FAQ is off the home page (it stays on the service
+pages). Header is now the floating pill: transparent over the hero, white
+and blurred after 50px, slides in on load.
+
+v1 content now in v3 (`data/company.ts`, `data/services.ts`):
+- timeline (About), industries (home rail + About), awards (Compliance,
+  re-worded to the claims gate), Cyber Security & CSOC as discipline A6
+  (page, hub card, DEWA CSOC and the command-centre environment mapped).
+- Leadership and office addresses were already recovered.

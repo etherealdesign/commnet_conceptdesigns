@@ -27,7 +27,7 @@ export function Process() {
     const el = list.current
     const els = items.current.filter(Boolean) as HTMLLIElement[]
     if (!el || !els.length || still) return
-    const movers = els.map((it) => gsap.quickTo(it, 'x', { duration: 0.5, ease: 'back.out(1.4)' }))
+    const movers = els.map((it) => gsap.quickTo(it, 'x', { duration: 0.5, ease: 'power2.out' }))
     const faders = els.map((it) => gsap.quickTo(it, 'opacity', { duration: 0.4, ease: 'power2.out' }))
     let current = -1
     const st = ScrollTrigger.create({
@@ -44,8 +44,8 @@ export function Process() {
             bestD = d
             best = i
           }
-          movers[i](d < 0.5 ? 48 : 0)
-          faders[i](d < 0.5 ? 1 : 0.3)
+          movers[i](d < 0.5 ? 24 : 0)
+          faders[i](d < 0.5 ? 1 : 0.55)
         })
         if (bestD > 0.75) best = -1
         if (best !== current) {
@@ -56,7 +56,7 @@ export function Process() {
       onLeave: () => {
         els.forEach((_, i) => {
           movers[i](0)
-          faders[i](0.3)
+          faders[i](0.55)
         })
         current = -1
         setActive(null)
@@ -64,13 +64,13 @@ export function Process() {
       onLeaveBack: () => {
         els.forEach((_, i) => {
           movers[i](0)
-          faders[i](0.3)
+          faders[i](0.55)
         })
         current = -1
         setActive(null)
       },
     })
-    gsap.set(els, { opacity: 0.3 })
+    gsap.set(els, { opacity: 0.55 })
     return () => st.kill()
   }, [n, still])
 

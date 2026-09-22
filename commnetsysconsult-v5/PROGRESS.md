@@ -1,4 +1,4 @@
-# commnetsysconsult-v3 — build progress
+# commnetsysconsult-v5 — build progress
 
 React 19 + Vite + TypeScript + Tailwind CSS 4 rebuild of commnetsysconsult.com,
 per the Awwwards-grade master build prompt and `../CONTENT-REVAMP-REVIEW.md`
@@ -147,3 +147,43 @@ elsewhere.
 - Company profile PDF — linked from three places, does not exist.
 - Lighthouse run against a deployed URL.
 - Vector (SVG/AI) logo to replace the two extracted PNGs in `public/brand/`.
+
+## 2026-09-22: v1 content restore + creative-director pass
+
+Restored from v1: full office addresses, PO box, hours, Chennai
+phone/email (`data/site.ts`); four-person leadership roster
+(`data/leadership.ts`, `components/about/Leadership.tsx` on /about).
+
+Design pass:
+- Selected contracts: one photograph per contract (`work.photos`), so no
+  two frames repeat; layout is a full-width 16:10 lead followed by
+  portrait pairs with the right column dropped 4rem. Section is ~half
+  the height it was; home is 8.6k px at 1440, was 9.9k.
+- Accent contrast: filled accent buttons and chips use white text (the
+  ink-on-blue header button was 3.6:1). Small accent text steps to
+  `--accent-text-light` #1D4ED8 on light and `--accent-text-dark`
+  #6096FA on dark (`.label`, `.u-eyebrow`, `.text-primary`); fills keep
+  #2563EB.
+- Em-dash separators replaced with ` / `; scramble alphabet no longer
+  emits em-dashes.
+- Ship-check clean: 4 routes x 4 breakpoints.
+
+## 2026-09-22 (later): simplification pass
+
+The reference-site tics are out; the structure stays.
+- Hero: a photograph on the right instead of the glyph portrait;
+  "+ many more" removed from the client line.
+- Scramble renders plain text (API kept, so Button/SectionHead/Nav are
+  untouched); `.label` lost its `// ` prefix.
+- AccentSwitch removed from App (the footer's "C change colour" button
+  still cycles the accent). Footer reverted to the previous version at
+  the client's request: newsletter form, status ticker, site map, and
+  the glyph-rendered skyline behind the wordmark.
+- Work and ProjectCard meta lines read `Sector · quantity · via prime`
+  instead of bracketed mono.
+- FAQ on the light ground (page is now dark / light / light / dark /
+  light / light / light / dark); questions in body type, not mono caps.
+- Process: inactive steps at 0.55 opacity (was 0.3), active slide 24px
+  power2 (was 48px back.out).
+- Page curtain 0.6s each way (was 1s + 1.1s).
+- Home is 8.4k px at 1440. Ship-check clean.

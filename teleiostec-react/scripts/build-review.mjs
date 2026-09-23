@@ -13,7 +13,7 @@
  *   npm run build:review
  */
 import { execFileSync } from 'node:child_process'
-import { readdirSync, readFileSync, writeFileSync, statSync, rmSync } from 'node:fs'
+import { readdirSync, readFileSync, writeFileSync, statSync, rmSync, existsSync } from 'node:fs'
 import { join, dirname, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -29,10 +29,23 @@ const walk = (dir) =>
 /** So the bundle cannot close the tag it is sitting inside. */
 const safe = (code, tag) => code.replace(new RegExp(`</${tag}`, 'gi'), `<\\/${tag}`)
 
+// A clip is read from ../teleiostec-com/Asset/media only when its video and
+// poster are byte-identical there; anything new or re-cut ships in this copy.
+const staticMedia = join(app, '..', 'teleiostec-com', 'Asset', 'media')
+const same = (a, b) => existsSync(a) && existsSync(b) && readFileSync(a).equals(readFileSync(b))
+const sharedMedia = readdirSync(join(app, 'public', 'Asset', 'media'))
+  .filter((f) => f.endsWith('.mp4'))
+  .map((f) => f.slice(0, -4))
+  .filter((n) => {
+    const here = (x) => join(app, 'public', 'Asset', 'media', x)
+    const there = (x) => join(staticMedia, x)
+    return same(here(`${n}.mp4`), there(`${n}.mp4`)) && (!existsSync(here(`${n}-poster.jpg`)) || same(here(`${n}-poster.jpg`), there(`${n}-poster.jpg`)))
+  })
+
 execFileSync('npx', ['vite', 'build', '--outDir', out, '--emptyOutDir'], {
   cwd: app,
   stdio: 'inherit',
-  env: { ...process.env, VITE_BASE: './', VITE_HASH_ROUTER: '1', VITE_SINGLE: '1' },
+  env: { ...process.env, VITE_BASE: './', VITE_HASH_ROUTER: '1', VITE_SINGLE: '1', VITE_SHARED_MEDIA: sharedMedia.join(',') },
 })
 
 const files = walk(out)
@@ -64,20 +77,17 @@ html = html.replace('<head>', `<head>\n<script>(function(l){if(l.protocol!=='fil
 // Only the HTML shell is rewritten here: the JSON-LD's absolute https URLs don't match ROOTED.
 html = html.replace(ROOTED, '$1$2')
 
-// Video and its posters are byte-identical to the static site's copies one
-// folder up, so the review copy reads those instead of shipping ~16 MB twice.
-const SHARED = /Asset\/media\/\$\{(\w+)\}(\.mp4|-poster\.jpg)/g
-const shared = (html.match(SHARED) || []).length
-html = html.replace(SHARED, '../Asset/media/${$1}$2')
-
 writeFileSync(htmlPath, html)
 for (const f of spent) rmSync(f, { force: true })
 
-// Files the site never requests: videos/posters (read from ../Asset), the
+// Files the site never requests: shared clips (read from ../Asset), poster
+// avif/webp (<video poster> takes one jpg), the
 // unsized photo originals (srcsets only name -800/-1400), unused footage.
 const unused = (f) => {
   const r = relative(out, f).split('\\').join('/')
-  return /^Asset\/media\/.*(\.mp4|-poster\.(jpg|avif|webp))$/.test(r)
+  const clip = r.match(/^Asset\/media\/(.+?)(?:-720)?(?:\.mp4|-poster\.(?:jpg|avif|webp))$/)
+  return (clip && sharedMedia.includes(clip[1]))
+    || /^Asset\/media\/[a-z-]+-poster\.(avif|webp)$/.test(r)
     || /^Asset\/media\/feature/.test(r)
     || /^Asset\/photos\/[a-z-]+[a-z]\.(jpg|avif|webp)$/.test(r)
     || r === 'Asset/logo.svg' || r === 'Asset/favicon.svg'
@@ -90,5 +100,5 @@ for (const f of ['vercel.json', 'robots.txt', 'sitemap.xml']) rmSync(join(out, f
 
 const left = (html.match(/["'`(,\s]\/Asset\//g) || []).length
 const kb = Math.round(readFileSync(htmlPath).length / 1024)
-console.log(`teleiostec-com/react/ built — index.html is ${kb} KB, ${spent.length} file(s) inlined, ${shared} media path(s) shared with ../Asset, ${pruned} unused file(s) pruned, ${left} rooted /Asset reference(s) left`)
-if (shared !== 2) throw new Error(`expected 2 shared media paths (video src + poster), found ${shared} — check Video.tsx`)
+console.log(`teleiostec-com/react/ built — index.html is ${kb} KB, ${spent.length} file(s) inlined, shared with ../Asset: ${sharedMedia.join(', ') || 'none'}, ${pruned} unused file(s) pruned, ${left} rooted /Asset reference(s) left`)
+

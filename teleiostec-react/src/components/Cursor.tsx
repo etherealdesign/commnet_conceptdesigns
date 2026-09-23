@@ -4,32 +4,51 @@ import { cn } from '@/lib/cn'
 
 /**
  * Dot + ring cursor for fine pointers. Any element with `data-cursor="Label"`
- * grows the ring into a labelled disc; `data-cursor-hover` just enlarges it.
+ * swaps the ring for a labelled disc; `data-cursor-hover` just enlarges it.
+ *
+ * The blend sits on the fixed layer itself: `mix-blend-difference` on a child
+ * of a z-indexed layer only blends inside that layer, which leaves a plain
+ * white cursor that vanishes on ivory. The label disc is a separate,
+ * unblended layer so its text stays legible.
  */
 export function Cursor() {
   const dot = useRef<HTMLDivElement>(null)
   const ring = useRef<HTMLDivElement>(null)
+  const disc = useRef<HTMLDivElement>(null)
   const [label, setLabel] = useState('')
   const [hover, setHover] = useState(false)
   const [on, setOn] = useState(false)
+  const [seen, setSeen] = useState(false)
 
   useEffect(() => {
     if (!finePointer() || reducedMotion()) return
     setOn(true)
+  }, [])
+
+  useEffect(() => {
+    if (!on) return
     document.body.classList.add('has-cursor')
-    const dx = gsap.quickTo(dot.current, 'x', { duration: 0.12, ease: 'power3' })
-    const dy = gsap.quickTo(dot.current, 'y', { duration: 0.12, ease: 'power3' })
-    const rx = gsap.quickTo(ring.current, 'x', { duration: 0.55, ease: 'power3' })
-    const ry = gsap.quickTo(ring.current, 'y', { duration: 0.55, ease: 'power3' })
-    const move = (e: PointerEvent) => { dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY) }
+    const q = (el: HTMLElement | null, prop: 'x' | 'y', d: number) => gsap.quickTo(el, prop, { duration: d, ease: 'power3' })
+    const dx = q(dot.current, 'x', 0.12), dy = q(dot.current, 'y', 0.12)
+    const rx = q(ring.current, 'x', 0.5), ry = q(ring.current, 'y', 0.5)
+    const lx = q(disc.current, 'x', 0.5), ly = q(disc.current, 'y', 0.5)
+    let first = true
+    const move = (e: PointerEvent) => {
+      if (first) {
+        // jump straight to the pointer instead of flying in from the corner
+        gsap.set([dot.current, ring.current, disc.current], { x: e.clientX, y: e.clientY })
+        first = false
+        setSeen(true)
+      }
+      dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); lx(e.clientX); ly(e.clientY)
+    }
     const over = (e: PointerEvent) => {
       const t = e.target as HTMLElement
-      const labelled = t.closest<HTMLElement>('[data-cursor]')
-      setLabel(labelled?.dataset.cursor ?? '')
+      setLabel(t.closest<HTMLElement>('[data-cursor]')?.dataset.cursor ?? '')
       setHover(!!t.closest('a, button, [data-cursor-hover], input, textarea, select, label'))
     }
-    const leave = () => gsap.to([dot.current, ring.current], { opacity: 0, duration: 0.3 })
-    const enter = () => gsap.to([dot.current, ring.current], { opacity: 1, duration: 0.3 })
+    const leave = () => setSeen(false)
+    const enter = () => setSeen(true)
     window.addEventListener('pointermove', move)
     window.addEventListener('pointerover', over)
     document.documentElement.addEventListener('pointerleave', leave)
@@ -41,22 +60,36 @@ export function Cursor() {
       document.documentElement.removeEventListener('pointerleave', leave)
       document.documentElement.removeEventListener('pointerenter', enter)
     }
-  }, [])
+  }, [on])
 
   if (!on) return null
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-[120]">
-      <div ref={dot} className={cn('absolute left-0 top-0 -ml-[3px] -mt-[3px] size-[6px] rounded-full bg-white mix-blend-difference transition-opacity', (label || hover) && 'opacity-0')} />
-      <div ref={ring} className="absolute left-0 top-0">
-        <div
-          className={cn(
-            'flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-[width,height,background-color,border-color] duration-500 ease-out-expo',
-            label ? 'size-24 bg-ink text-ivory' : hover ? 'size-14 border border-white bg-white/10 mix-blend-difference' : 'size-9 border border-white/70 mix-blend-difference',
-          )}
-        >
-          <span className={cn('text-[11px] uppercase tracking-[0.18em] transition-opacity duration-300', label ? 'opacity-100' : 'opacity-0')}>{label}</span>
+    <>
+      <div aria-hidden className={cn('pointer-events-none fixed inset-0 z-[120] mix-blend-difference transition-opacity duration-300', seen ? 'opacity-100' : 'opacity-0')}>
+        <div ref={dot} className="absolute left-0 top-0">
+          <div className={cn('size-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-opacity duration-300', (label || hover) && 'opacity-0')} />
+        </div>
+        <div ref={ring} className="absolute left-0 top-0">
+          <div
+            className={cn(
+              '-translate-x-1/2 -translate-y-1/2 rounded-full border border-white transition-[width,height,opacity,background-color] duration-500 ease-out-expo',
+              label ? 'size-9 opacity-0' : hover ? 'size-14 bg-white' : 'size-9',
+            )}
+          />
         </div>
       </div>
-    </div>
+      <div aria-hidden className={cn('pointer-events-none fixed inset-0 z-[121] transition-opacity duration-300', seen ? 'opacity-100' : 'opacity-0')}>
+        <div ref={disc} className="absolute left-0 top-0">
+          <div
+            className={cn(
+              'flex size-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-ivory transition-[transform,opacity] duration-500 ease-out-expo',
+              label ? 'scale-100 opacity-100' : 'scale-50 opacity-0',
+            )}
+          >
+            <span className="text-[11px] uppercase tracking-[0.18em]">{label}</span>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }

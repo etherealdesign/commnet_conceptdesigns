@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/cn'
 
+// The review copy (scripts/build-review.mjs) lists here the clips that are
+// byte-identical to ../teleiostec-com/Asset/media, and reads those from there.
+const shared = (import.meta.env.VITE_SHARED_MEDIA ?? '').split(',').filter(Boolean)
+const base = (name: string) => (shared.includes(name) ? '../Asset/media/' : '/Asset/media/') + name
+
 type Props = {
   name: string
   label: string
@@ -9,10 +14,12 @@ type Props = {
   after?: Promise<unknown>
   /** Render no poster: the caller paints a responsive <Img> underneath and the video fades in over it. */
   noPoster?: boolean
+  /** A `<name>-720.mp4` exists; phones get it instead of the full-size file. */
+  mobile?: boolean
 }
 
 /** Muted looping video that only downloads/plays while on screen, never under reduced motion or Save-Data. */
-export function Video({ name, label, className, after, noPoster }: Props) {
+export function Video({ name, label, className, after, noPoster, mobile }: Props) {
   const ref = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(false)
 
@@ -44,11 +51,12 @@ export function Video({ name, label, className, after, noPoster }: Props) {
       loop
       playsInline
       preload="none"
-      poster={noPoster ? undefined : `/Asset/media/${name}-poster.jpg`}
+      poster={noPoster ? undefined : `${base(name)}-poster.jpg`}
       aria-label={label}
       onPlaying={() => setPlaying(true)}
     >
-      <source src={`/Asset/media/${name}.mp4`} type="video/mp4" />
+      {mobile && <source src={`${base(name)}-720.mp4`} type="video/mp4" media="(max-width: 768px)" />}
+      <source src={`${base(name)}.mp4`} type="video/mp4" />
     </video>
   )
 }

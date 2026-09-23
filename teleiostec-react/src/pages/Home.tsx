@@ -19,7 +19,8 @@ import { gsap, useGSAP, reducedMotion, finePointer } from '@/lib/gsap'
 import { introDone } from '@/lib/intro'
 import { idleAfter } from '@/lib/interaction'
 
-const heroPoster: Pic = { src: '/Asset/media/hero-poster', widths: [640, 1080, 1280], w: 1280, h: 720, alt: '' }
+// First frame of hero-film.mp4, so the swap to video is seamless.
+const heroPoster: Pic = { src: '/Asset/media/hero-film-poster', widths: [640, 1080, 1280, 1920], w: 1920, h: 1080, alt: '' }
 const heroVideoGate = idleAfter(introDone)
 
 /* ── Hero ─────────────────────────────────────────────── */
@@ -35,7 +36,7 @@ function Hero() {
     })
     // scroll-out: media drifts and dims, title lifts
     gsap.to('.hero-media', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: ref.current, start: 'top top', end: 'bottom top', scrub: true } })
-    gsap.to('.hero-scrim', { opacity: 0.85, ease: 'none', scrollTrigger: { trigger: ref.current, start: 'top top', end: 'bottom top', scrub: true } })
+    gsap.fromTo('.hero-dim', { opacity: 0 }, { opacity: 0.5, ease: 'none', scrollTrigger: { trigger: ref.current, start: 'top top', end: 'bottom top', scrub: true } })
     gsap.to('.hero-title', { yPercent: -30, ease: 'none', scrollTrigger: { trigger: ref.current, start: 'top top', end: 'bottom top', scrub: true } })
   }, { scope: ref })
 
@@ -43,9 +44,11 @@ function Hero() {
     <section ref={ref} className="relative h-svh min-h-[600px] overflow-hidden bg-dark text-ivory" aria-label="Introduction">
       <div className="hero-media absolute inset-0 will-change-transform">
         <Img pic={heroPoster} priority sizes="100vw" className="absolute inset-0" />
-        <Video name="hero" label="A furnished interior coming together, frame by frame" after={heroVideoGate} noPoster className="absolute inset-0" />
+        <Video name="hero-film" label="An empty concrete floor becoming a finished workplace, frame by frame" after={heroVideoGate} noPoster mobile className="absolute inset-0" />
       </div>
-      <span className="hero-scrim absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/60 opacity-60" aria-hidden />
+      {/* hero-film ends on a bright white office — the top band keeps the header legible over it */}
+      <span className="hero-scrim absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,.55)_0%,rgba(0,0,0,.12)_22%,rgba(0,0,0,.08)_45%,rgba(0,0,0,.62)_100%)]" aria-hidden />
+      <span className="hero-dim absolute inset-0 bg-black opacity-0" aria-hidden />
 
       <div className="wrap relative flex h-full flex-col justify-end pb-[clamp(28px,6vh,64px)]">
         <p className="hero-fade mb-6 flex gap-3 text-[11px] uppercase tracking-[0.24em] text-ivory/75">
@@ -56,7 +59,7 @@ function Hero() {
         </Split>
         <div className="hero-fade mt-10 flex flex-wrap items-end justify-between gap-6 border-t border-white/20 pt-5 text-[12px] uppercase tracking-[0.16em] text-ivory/80">
           <span>Boutique fit-out &amp; MEP studio — Dubai</span>
-          <span className="hidden sm:inline">Valley House — Ras Al Khaimah</span>
+          <span className="hidden sm:inline">Commercial fit-out — shell to handover</span>
           <span className="flex items-center gap-3">
             Scroll
             <span className="relative block h-10 w-px overflow-hidden bg-white/20">
@@ -134,9 +137,9 @@ function Work() {
         </div>
         <Link to="/projects" className="link-line hidden text-[12px] uppercase tracking-[0.18em] md:inline">All projects →</Link>
       </div>
-      <div ref={track} className="flex flex-col gap-10 px-[var(--pad)] pb-16 md:w-max md:flex-row md:items-center md:gap-[4vw] md:pb-0">
+      <div ref={track} className="flex flex-col gap-10 px-[var(--pad)] pb-16 md:w-max md:flex-row md:items-start md:gap-[4vw] md:pb-0">
         {projects.map((p, i) => (
-          <Link key={p.slug} to={`/projects/${p.slug}`} data-cursor="View" className="group block md:w-[clamp(320px,34vw,620px)]" style={{ marginTop: i % 2 ? '6vh' : 0 }}>
+          <Link key={p.slug} to={`/projects/${p.slug}`} data-cursor="View" className="group block md:w-[clamp(320px,34vw,620px)]">
             <div className="relative aspect-[4/5] overflow-hidden bg-ivory-2 md:h-[58vh] md:aspect-auto">
               <div className="wk-img absolute inset-[-10%]">
                 <Img pic={p.pic} sizes="(max-width:768px) 92vw, 34vw" imgClassName="transition-transform duration-[1.4s] ease-out-expo group-hover:scale-105" />
@@ -149,7 +152,7 @@ function Work() {
             <p className="text-[13px] text-muted">{p.location} · {p.discipline} · {p.year}</p>
           </Link>
         ))}
-        <Link to="/projects" data-cursor="Open" className="display flex shrink-0 items-center gap-4 text-fluid-2xl italic md:w-[28vw] md:justify-center">
+        <Link to="/projects" data-cursor="Open" className="display flex shrink-0 items-center gap-4 text-fluid-2xl italic md:h-[58vh] md:w-[28vw] md:justify-center">
           All projects <span className="not-italic">→</span>
         </Link>
       </div>

@@ -1,33 +1,39 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { nav } from '@/data/site'
 import { useLenis } from '@/lib/smooth'
 import { cn } from '@/lib/cn'
 
 /**
- * mix-blend-difference keeps the white header legible over the dark hero
- * film and turns it near-black over ivory pages, with no scroll bookkeeping.
+ * mix-blend-difference turns the white header near-black over ivory pages
+ * with no per-section bookkeeping. Over the home hero film it is switched
+ * off: difference against mid-tone footage lands on mid-grey, while plain
+ * white sits cleanly on the hero's darkened top band.
  */
 export function Header({ menuOpen, onMenu }: { menuOpen: boolean; onMenu: () => void }) {
   const lenis = useLenis()
   const [hidden, setHidden] = useState(false)
+  const { pathname } = useLocation()
+  const [overHero, setOverHero] = useState(pathname === '/')
 
   useEffect(() => {
     let last = 0
     const onScroll = () => {
       const y = lenis ? lenis.scroll : window.scrollY
       setHidden(y > 160 && y > last)
+      setOverHero(pathname === '/' && y < window.innerHeight - 80)
       last = y
     }
+    onScroll()
     if (lenis) { lenis.on('scroll', onScroll); return () => lenis.off('scroll', onScroll) }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [lenis])
+  }, [lenis, pathname])
 
   return (
     <motion.header
-      className="pointer-events-none fixed inset-x-0 top-0 z-[80] text-white mix-blend-difference"
+      className={cn('pointer-events-none fixed inset-x-0 top-0 z-[80] text-white', !(overHero && !menuOpen) && 'mix-blend-difference')}
       animate={{ y: hidden && !menuOpen ? '-110%' : '0%' }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >

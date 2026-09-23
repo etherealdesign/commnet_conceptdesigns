@@ -8,7 +8,7 @@ ever disagree again, this file is wrong — fix it here first, then the folder.
 | commnetsysconsult.com | `commnetsysconsult-com/` | `Commnet - 2.html`, plus `v1.html` (concept 01) | ready — see below |
 | commnetsys.com | `commnetsys-com/` | `Commnet - 2.html` with the base location moved to India | ready |
 | commnettech.com | `commnettech-com/` | `Commnet - 3.html`, unmodified | ready — see caveat |
-| teleiostec.com | `teleiostec-com/` | the version 02 Teleiostec build | ready |
+| teleiostec.com | `teleiostec-com/react/` | the React build — source in `teleiostec-react/`, built with `npm run build:review` there. The version 02 static page is still at `teleiostec-com/index.html` | review — Team page is placeholder content |
 
 `index.html` at the root is the review index. It links to exactly these four and
 nothing else.

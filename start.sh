@@ -7,6 +7,8 @@
 #   ./start.sh v4              # one concept only
 #   ./start.sh v3 v5           # any subset
 #   ./start.sh static [port]   # the legacy static multi-site build (vercel.json)
+#   ./start.sh teleiostec [dev|preview]   # Teleiostec React site on :5176
+#                                         # (TELEIOSTEC_PORT to override)
 #
 # Every React build carries a small fixed "V3 · V4 · V5" pill (dev only) that
 # flips to the same path on another build, so a page can be compared in
@@ -19,6 +21,33 @@ VERSIONS=(v3 v4 v5)
 V3_PORT="${V3_PORT:-5173}"
 V4_PORT="${V4_PORT:-5174}"
 V5_PORT="${V5_PORT:-5175}"
+
+if [ "${1:-}" = "teleiostec" ]; then
+  # Teleiostec React build (teleiostec-react/), separate from the Commnet set.
+  #   ./start.sh teleiostec           # dev server with hot reload
+  #   ./start.sh teleiostec preview   # production build, served as it will ship
+  DIR="teleiostec-react"
+  MODE="${2:-dev}"
+  PORT="${TELEIOSTEC_PORT:-5176}"
+  case "$MODE" in dev|preview) ;; *) echo "Unknown mode '$MODE'. Use: teleiostec [dev|preview]" >&2; exit 1 ;; esac
+  if lsof -nP -iTCP:"$PORT" -sTCP:LISTEN >/dev/null 2>&1; then
+    echo "Port $PORT is already in use:" >&2
+    lsof -nP -iTCP:"$PORT" -sTCP:LISTEN | tail -n +2 | awk '{print "  pid " $2 "  " $1}' >&2
+    echo "Stop it (kill <pid>) or set TELEIOSTEC_PORT to a free port." >&2
+    exit 1
+  fi
+  cd "$DIR"
+  if [ ! -d node_modules ]; then
+    echo "Installing dependencies for $DIR (first run)..."
+    npm install
+  fi
+  echo "  $DIR ($MODE)  ->  http://localhost:$PORT"
+  if [ "$MODE" = "preview" ]; then
+    npm run build
+    exec npx vite preview --port "$PORT" --strictPort
+  fi
+  exec npm run dev -- --port "$PORT" --strictPort
+fi
 
 if [ "${1:-}" = "static" ]; then
   PORT="${2:-3000}"
@@ -44,7 +73,7 @@ fi
 for t in "${TARGETS[@]}"; do
   case "$t" in
     v3|v4|v5) ;;
-    *) echo "Unknown target '$t'. Use: all | v3 | v4 | v5 | static [port]" >&2; exit 1 ;;
+    *) echo "Unknown target '$t'. Use: all | v3 | v4 | v5 | static [port] | teleiostec [dev|preview]" >&2; exit 1 ;;
   esac
 done
 

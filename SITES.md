@@ -5,7 +5,7 @@ ever disagree again, this file is wrong — fix it here first, then the folder.
 
 | Domain | Folder | Build | State |
 |---|---|---|---|
-| commnetsysconsult.com | `commnetsysconsult-com/` | `Commnet - 2.html`, plus `v1.html` (concept 01) | ready — see below |
+| commnetsysconsult.com | `commnetsysconsult-com/` | the React build of concept 01 (V1) — source in `commnetsysconsult-react/`, built with `npm run build:review` there. The static V1/V2 files are in `commnet HTML/` | review |
 | commnetsys.com | `commnetsys-com/` | `Commnet - 2.html` with the base location moved to India | ready |
 | commnettech.com | `commnettech-com/` | `Commnet - 3.html`, unmodified | ready — see caveat |
 | teleiostec.com | `teleiostec-com/react/` | the React build — source in `teleiostec-react/`, built with `npm run build:review` there. The version 02 static page is still at `teleiostec-com/index.html` | review — Team page is placeholder content |

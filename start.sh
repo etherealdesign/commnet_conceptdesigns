@@ -2,10 +2,12 @@
 # Run the Commnet concept builds locally.
 #
 # Usage: ./start.sh [target ...]
-#   ./start.sh                 # all concepts: v3 :5173, v4 :5174, v5 :5175 (default)
+#   ./start.sh                 # all concepts: v3 :5173, v4 :5174, v5 :5175,
+#                              #   react :5177 (default)
 #   ./start.sh all             # same, explicit
 #   ./start.sh v4              # one concept only
 #   ./start.sh v3 v5           # any subset
+#   ./start.sh react           # the React build of concept V1 (commnetsysconsult-react/)
 #   ./start.sh static [port]   # the legacy static multi-site build (vercel.json)
 #   ./start.sh teleiostec [dev|preview]   # Teleiostec React site on :5176
 #                                         # (TELEIOSTEC_PORT to override)
@@ -14,13 +16,15 @@
 # flips to the same path on another build, so a page can be compared in
 # place. Ports can be overridden with V3_PORT / V4_PORT / V5_PORT; the pills
 # read the resulting origins from VITE_VERSION_SWITCH_V*_URL.
+# The V1 React build (react) has no pill; override its port with REACT_PORT.
 set -euo pipefail
 cd "$(dirname "$0")"
 
-VERSIONS=(v3 v4 v5)
+VERSIONS=(v3 v4 v5 react)
 V3_PORT="${V3_PORT:-5173}"
 V4_PORT="${V4_PORT:-5174}"
 V5_PORT="${V5_PORT:-5175}"
+REACT_PORT="${REACT_PORT:-5177}"
 
 if [ "${1:-}" = "teleiostec" ]; then
   # Teleiostec React build (teleiostec-react/), separate from the Commnet set.
@@ -72,8 +76,8 @@ else
 fi
 for t in "${TARGETS[@]}"; do
   case "$t" in
-    v3|v4|v5) ;;
-    *) echo "Unknown target '$t'. Use: all | v3 | v4 | v5 | static [port] | teleiostec [dev|preview]" >&2; exit 1 ;;
+    v3|v4|v5|react) ;;
+    *) echo "Unknown target '$t'. Use: all | v3 | v4 | v5 | react | static [port] | teleiostec [dev|preview]" >&2; exit 1 ;;
   esac
 done
 
@@ -82,6 +86,7 @@ port_of() {
     v3) echo "$V3_PORT" ;;
     v4) echo "$V4_PORT" ;;
     v5) echo "$V5_PORT" ;;
+    react) echo "$REACT_PORT" ;;
   esac
 }
 

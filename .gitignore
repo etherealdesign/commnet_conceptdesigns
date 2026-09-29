@@ -2,14 +2,14 @@
 
 # Teleiostec source renders — ~400 MB of stills and clips that the built
 # site never references. Kept locally, deliberately out of the repo.
-teleiostec-com/Interior/
-teleiostec-com/Asset/Parallax/
-teleiostec-com/Asset/photos/*
+sites/teleiostec/v2/Interior/
+sites/teleiostec/v2/Asset/Parallax/
+sites/teleiostec/v2/Asset/photos/*
 # …except the three sets the current Teleiostec page actually uses.
-!teleiostec-com/Asset/photos/craftsman-working-on-walnut-cabinet*.jpg
-!teleiostec-com/Asset/photos/curved-walnut-and-limestone-inte*.jpg
-!teleiostec-com/Asset/photos/modern-interior-corridor-leading*.jpg
-teleiostec-com/_to_delete/
+!sites/teleiostec/v2/Asset/photos/craftsman-working-on-walnut-cabinet*.jpg
+!sites/teleiostec/v2/Asset/photos/curved-walnut-and-limestone-inte*.jpg
+!sites/teleiostec/v2/Asset/photos/modern-interior-corridor-leading*.jpg
+sites/teleiostec/v2/_to_delete/
 
 # local scratch
 _mobiletest.html

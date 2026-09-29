@@ -3,161 +3,356 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Commnet | Site Builds</title>
-<meta name="description" content="Site builds for commnetsysconsult.com, commnetsys.com, commnettech.com and teleiostec.com. Client review.">
+<title>Review Hub · Site Builds</title>
+<meta name="description" content="Every site build and version for commnetsysconsult.com, commnetsys.com, commnettech.com and teleiostec.com. Client review.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/commnet-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317211E'/%3E%3Crect x='8' y='8' width='7' height='7' rx='1.5' fill='%23fff'/%3E%3Crect x='17' y='8' width='7' height='7' rx='1.5' fill='%23fff' opacity='.5'/%3E%3Crect x='8' y='17' width='7' height='7' rx='1.5' fill='%23fff' opacity='.5'/%3E%3Crect x='17' y='17' width='7' height='7' rx='1.5' fill='%23fff'/%3E%3C/svg%3E">
 <style>
-:root{--bg:#FAFAF8;--card:#FFFFFF;--ink:#17211E;--mute:#6B7572;--line:#E6E8E4;--green:#1E6B55;--mint:#E7F3EC;--r:22px;--sans:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;--disp:"Inter Tight",Inter,"Helvetica Neue",Helvetica,Arial,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);font-size:15px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1080px,calc(100% - 40px));margin-inline:auto;padding:clamp(56px,9vw,110px) 0}
-header img{height:34px;width:auto;margin-bottom:44px}
-.tag{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:12px;font-weight:500;margin-bottom:20px}
-h1{font-family:var(--disp);font-weight:500;letter-spacing:-.035em;line-height:1.04;font-size:clamp(2.2rem,5vw,3.6rem)}
-.lede{color:var(--mute);max-width:58ch;margin-top:16px;font-size:17px}
-.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(23,33,30,.09);border-color:#D3D9D4}
-.card .n{font-family:var(--disp);font-size:13px;color:var(--green);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
-.card h2{font-family:var(--disp);font-weight:500;letter-spacing:-.03em;font-size:1.6rem;margin:10px 0 8px}
-.card p{color:var(--mute);font-size:14.5px;flex:1}
-.card .go{margin-top:22px;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--green)}
-
-/* Finished sites — a separate register from the concept cards above:
-   each carries its own brand ground, and is a built site rather than a
-   direction. One layout, per-site colour via the custom properties. */
-.also{margin-top:44px}
-.also__k{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);font-weight:500;margin-bottom:18px}
-
-.site{--g:#F3F1E9;--e:#DFDACD;--eh:#CFC9B9;--si:#1B1915;--ss:#6E6A60;--sa:#0A5A2C;--sh:#E2DED4;--shd:27,25,21;
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.72fr);align-items:stretch;
-  background:var(--g);border:1px solid var(--e);border-radius:var(--r);overflow:hidden;
-  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,border-color .35s}
-.site:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(var(--shd),.11);border-color:var(--eh)}
-.site + .site{margin-top:18px}
-.site--tech{--g:#F7F7F5;--e:#DCDCD8;--eh:#C9C9C4;--si:#111111;--ss:#646464;--sa:#C8202B;--sh:#E4E4E0;--shd:17,17,17}
-.site--consult{--g:#0E1520;--e:#22303F;--eh:#33475C;--si:#EEF3F8;--ss:#93A4B6;--sa:#38BDF8;--sh:#0B111A;--shd:0,0,0}
-.site--india{--g:#12100C;--e:#332C1F;--eh:#4A4130;--si:#F5F1E8;--ss:#B0A48C;--sa:#F0A93B;--sh:#0D0B08;--shd:0,0,0}
-.site--sys{--g:#0A0A0B;--e:#26262A;--eh:#3A3A40;--si:#F2F2F3;--ss:#9A9AA2;--sa:#E23B47;--sh:#111114;--shd:0,0,0}
-.site--builds{--g:#0F131A;--e:#232B36;--eh:#36404E;--si:#F6F4EF;--ss:#98A3B2;--sa:#6096FA;--sh:#0B0E14;--shd:0,0,0}
-/* The WebGL build has no still that represents it, so the tile is drawn rather
-   than photographed — the same lattice the hero renders, held still. */
-/* Neither Commnet build has a still that represents it, so each tile is drawn:
-   the consultancy pair as a network reaching between two hubs, the WebGL build
-   as the lattice its hero renders, held still. */
-.site--consult .site__shot--consult{background:
-  radial-gradient(circle at 26% 42%,rgba(56,189,248,.40),transparent 46%),
-  radial-gradient(circle at 78% 58%,rgba(56,189,248,.22),transparent 44%),
-  repeating-linear-gradient(14deg,rgba(255,255,255,.10) 0 1px,transparent 1px 30px),
-  #0B111A}
-.site--india .site__shot--india{background:
-  radial-gradient(circle at 74% 44%,rgba(240,169,59,.42),transparent 46%),
-  radial-gradient(circle at 24% 60%,rgba(240,169,59,.20),transparent 44%),
-  repeating-linear-gradient(-14deg,rgba(255,255,255,.10) 0 1px,transparent 1px 30px),
-  #0D0B08}
-.site--sys .site__shot--sys{background:
-  radial-gradient(circle at 28% 32%,rgba(226,59,71,.42),transparent 58%),
-  radial-gradient(circle at 74% 70%,rgba(126,178,255,.34),transparent 55%),
-  repeating-linear-gradient(58deg,rgba(255,255,255,.15) 0 1px,transparent 1px 22px),
-  repeating-linear-gradient(-32deg,rgba(255,255,255,.12) 0 1px,transparent 1px 30px),
-  repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 1px,transparent 1px 60px),
-  #08080A}
-/* Three builds of one site, so the tile is three plates of the same field. */
-.site--builds .site__shot--builds{background:
-  radial-gradient(circle at 30% 42%,rgba(96,150,250,.34),transparent 50%),
-  repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 1px,transparent 1px 33.33%),
-  repeating-linear-gradient(12deg,rgba(255,255,255,.07) 0 1px,transparent 1px 30px),
-  #0B0E14}
-.site__body{padding:30px;display:flex;flex-direction:column;color:var(--si)}
-.site__n{font-family:var(--disp);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--sa);display:flex;align-items:center;gap:7px}
-.site__d{font-size:12px;color:var(--ss);letter-spacing:.02em;margin-top:6px;opacity:.85}
-.card .d{font-size:12px;color:var(--mute);letter-spacing:.02em;margin-top:6px;display:block}
-.site__n::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--sa)}
-.site h2{font-family:var(--disp);font-weight:500;letter-spacing:-.03em;font-size:1.6rem;margin:10px 0 8px}
-.site p{color:var(--ss);font-size:14.5px;flex:1;max-width:46ch}
-.site .go{margin-top:22px;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--sa)}
-.site__shot{position:relative;min-height:190px;background:var(--sh)}
-.site__shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media (max-width:620px){
-  .site{grid-template-columns:1fr}
-  .site__shot{order:-1;min-height:150px}
+:root{
+  --bg:#F6F6F3;--surface:#FFFFFF;--sunk:#EEEEEA;--ink:#141A18;--ink-2:#3C4542;--mute:#6A7370;--line:#E2E3DE;--line-2:#D3D5CF;
+  --accent:#1F5FD9;--accent-ink:#fff;
+  --ok:#17744F;--ok-bg:#E4F2EA;--warn:#8A5A06;--warn-bg:#FBF0DA;--info:#2952A3;--info-bg:#E6EDFB;--old:#5E6663;--old-bg:#ECEDE9;
+  --shadow:0 1px 2px rgba(20,26,24,.04),0 8px 24px -12px rgba(20,26,24,.12);
+  --shadow-hover:0 2px 4px rgba(20,26,24,.05),0 22px 40px -18px rgba(20,26,24,.28);
+  --r:16px;--r-sm:10px;
+  --sans:Inter,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --disp:"Inter Tight",Inter,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1211;--surface:#161B1A;--sunk:#1C2220;--ink:#EEF1EF;--ink-2:#C4CBC8;--mute:#8B9591;--line:#252C2A;--line-2:#323A37;
+    --accent:#6C9BFF;--accent-ink:#0E1211;
+    --ok:#6BD3A2;--ok-bg:#15291F;--warn:#F0C06A;--warn-bg:#2E2412;--info:#9DB8F5;--info-bg:#18223A;--old:#A3ABA8;--old-bg:#222826;
+    --shadow:0 1px 2px rgba(0,0,0,.3);--shadow-hover:0 22px 40px -18px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1211;--surface:#161B1A;--sunk:#1C2220;--ink:#EEF1EF;--ink-2:#C4CBC8;--mute:#8B9591;--line:#252C2A;--line-2:#323A37;
+  --accent:#6C9BFF;--accent-ink:#0E1211;
+  --ok:#6BD3A2;--ok-bg:#15291F;--warn:#F0C06A;--warn-bg:#2E2412;--info:#9DB8F5;--info-bg:#18223A;--old:#A3ABA8;--old-bg:#222826;
+  --shadow:0 1px 2px rgba(0,0,0,.3);--shadow-hover:0 22px 40px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
 }
 
-footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+code{font-family:var(--mono);font-size:.86em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:16px;top:-60px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px;z-index:10}
+.skip:focus{top:12px}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+@media (min-width:720px){.wrap{width:min(1240px,100% - 64px)}}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.bar.stuck{border-bottom-color:var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.mark i{width:22px;height:22px;border-radius:6px;background:var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:5px}
+.mark i::before,.mark i::after{content:"";background:var(--bg);border-radius:1px}
+.mark small{font-family:var(--sans);font-weight:500;color:var(--mute);font-size:13px}
+.jump{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump a{font-size:13px;font-weight:500;color:var(--ink-2);padding:7px 12px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
+.jump a:hover{background:var(--sunk);color:var(--ink)}
+.theme{flex:none;width:36px;height:36px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);display:grid;place-items:center;cursor:pointer}
+.theme:hover{color:var(--ink)}
+.theme svg{width:16px;height:16px}
+@media (max-width:760px){.jump{display:none}.theme{margin-left:auto}}
+
+/* intro */
+.intro{padding:clamp(48px,8vw,96px) 0 clamp(36px,5vw,56px);display:grid;gap:28px}
+@media (min-width:980px){.intro{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:end;gap:64px}}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+h1{font-family:var(--disp);font-weight:600;font-size:clamp(2.4rem,5.6vw,4.2rem);line-height:1.02;letter-spacing:-.035em;margin-top:14px;text-wrap:balance}
+.lede{margin-top:18px;font-size:clamp(1rem,1.3vw,1.1rem);color:var(--ink-2);max-width:56ch;text-wrap:pretty}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.stats div{padding:18px 20px}
+.stats div+div{border-left:1px solid var(--line)}
+.stats b{display:block;font-family:var(--disp);font-weight:600;font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-.03em;line-height:1}
+.stats span{display:block;margin-top:6px;font-size:13px;color:var(--mute)}
+
+/* client section */
+.client{padding:clamp(36px,5vw,56px) 0;border-top:1px solid var(--line);display:grid;gap:28px}
+@media (min-width:980px){.client{grid-template-columns:300px minmax(0,1fr);gap:48px}.client__meta{position:sticky;top:88px;align-self:start}}
+.client__meta h2{font-family:var(--disp);font-weight:600;font-size:clamp(1.5rem,2.4vw,1.85rem);letter-spacing:-.025em;line-height:1.1;margin-top:10px}
+.domain{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.domain::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--dot,var(--mute))}
+.client__meta p{margin-top:12px;font-size:14px;color:var(--mute);text-wrap:pretty}
+.client__meta .status{margin-top:16px}
+.notes{margin-top:16px;display:grid;gap:8px;list-style:none}
+.notes li{font-size:13px;line-height:1.45;color:var(--ink-2);padding-left:18px;position:relative}
+.notes li::before{content:"";position:absolute;left:2px;top:7px;width:6px;height:6px;border-radius:50%;border:1.5px solid var(--warn)}
+
+.status{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px 4px 8px;border-radius:999px;background:var(--bg-s);color:var(--fg-s);white-space:nowrap}
+.status::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.s-ok{--bg-s:var(--ok-bg);--fg-s:var(--ok)}
+.s-warn{--bg-s:var(--warn-bg);--fg-s:var(--warn)}
+.s-info{--bg-s:var(--info-bg);--fg-s:var(--info)}
+.s-old{--bg-s:var(--old-bg);--fg-s:var(--old)}
+
+/* version cards */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,256px),1fr))}
+.card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--line-2)}
+.card:has(.card__open:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+.card--lead{grid-column:1/-1}
+@media (min-width:760px){.card--lead{flex-direction:row}.card--lead .shot{flex:1.35;aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid var(--line)}.card--lead .card__body{flex:1;padding:28px}}
+.shot{position:relative;aspect-ratio:16/10;background:var(--sunk);border-bottom:1px solid var(--line);overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .shot img{transform:scale(1.025)}
+.shot .ver{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:12px;font-weight:500;padding:4px 9px;border-radius:7px;background:rgba(10,14,13,.72);color:#fff;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.card__body{display:flex;flex-direction:column;gap:10px;padding:18px 20px 20px;flex:1}
+.card__top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.kind{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.02em}
+.card h3{font-family:var(--disp);font-weight:600;font-size:1.12rem;letter-spacing:-.015em;line-height:1.25}
+.card--lead h3{font-size:clamp(1.3rem,2vw,1.6rem)}
+.card p{font-size:14px;color:var(--mute);text-wrap:pretty}
+.card__foot{margin-top:auto;padding-top:8px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.card__open{font-weight:600;font-size:14px;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.card__open::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.card__open svg{width:14px;height:14px;transition:transform .2s}
+.card:hover .card__open svg{transform:translateX(3px)}
+.src{position:relative;z-index:1;font-family:var(--mono);font-size:11.5px;color:var(--ink-2);background:var(--sunk);border:1px solid var(--line);padding:3px 8px;border-radius:6px;white-space:nowrap}
+
+/* run locally */
+.run{margin:clamp(36px,5vw,56px) 0 0;padding:clamp(28px,4vw,44px);border-radius:calc(var(--r) + 4px);background:#101615;color:#E8ECEA;display:grid;gap:28px}
+@media (min-width:980px){.run{grid-template-columns:300px minmax(0,1fr);gap:48px}}
+.run h2{font-family:var(--disp);font-weight:600;font-size:1.6rem;letter-spacing:-.025em;margin-top:10px}
+.run .eyebrow{color:#8FA09A}
+.run p{margin-top:12px;font-size:14px;color:#A9B6B1}
+.cmds{display:grid;gap:2px;border-radius:var(--r-sm);overflow:hidden}
+.cmd{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:14px 16px;background:#172120}
+@media (min-width:640px){.cmd{grid-template-columns:minmax(220px,300px) minmax(0,1fr);align-items:baseline;gap:20px}}
+.cmd code{color:#fff;font-size:13px;word-break:break-word}
+.cmd code::before{content:"$ ";color:#5E726B}
+.cmd span{font-size:13.5px;color:#A9B6B1}
+
+footer{padding:40px 0 56px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px;color:var(--mute)}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header><img src="assets/commnet-logo.png" alt="Commnet Systems Consultancy"></header>
+<a class="skip" href="#main">Skip to builds</a>
 
-  <span class="tag">Site builds &middot; Client review</span>
-  <h1>Four domains, five builds</h1>
-  <p class="lede">One row per domain. Each links to the build that will sit on it &mdash; complete and self-contained, so open one and scroll the whole thing. The consultancy rebuild carries three of them.</p>
+<header class="bar" id="bar">
+  <div class="wrap">
+    <a class="mark" href="#top"><i aria-hidden="true"></i>Review Hub <small>· Ethereal Design</small></a>
+    <nav class="jump" aria-label="Clients">
+      <a href="#commnetsysconsult">Commnet Consultancy</a>
+      <a href="#commnetsys">Commnet India</a>
+      <a href="#commnettech">Commnet Tech</a>
+      <a href="#teleiostec">Teleiostec</a>
+      <a href="#run">Run locally</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+    </button>
+  </div>
+</header>
 
-  <section class="also">
-    <a class="site site--consult" href="commnetsysconsult-com/index.html">
-      <div class="site__body">
-        <span class="site__n">Commnet Systems Consultancy</span>
-        <span class="site__d">commnetsysconsult.com &middot; Dubai &middot; React &middot; concept V1</span>
-        <h2>Mission&#8209;Critical Infrastructure, Delivered as One Package</h2>
-        <p>Concept V1 rebuilt as a multi-page site: services, solutions, an 18-project register, compliance, about and contact. Dubai headquarters, Chennai engineering centre behind it.</p>
-        <span class="go">View website &rarr;</span>
-      </div>
-      <div class="site__shot site__shot--consult" aria-hidden="true"></div>
-    </a>
-
-    <a class="site site--india" href="commnetsys-com/index.html">
-      <div class="site__body">
-        <span class="site__n">Commnet Systems &mdash; India</span>
-        <span class="site__d">commnetsys.com &middot; Chennai</span>
-        <h2>Engineering Mission&#8209;Critical Infrastructure</h2>
-        <p>The same site with the base location moved: Chennai leads, Dubai sits behind it. Offices, contact and framing follow.</p>
-        <span class="go">View website &rarr;</span>
-      </div>
-      <div class="site__shot site__shot--india" aria-hidden="true"></div>
-    </a>
-
-    <a class="site site--sys" href="commnettech-com/index.html">
-      <div class="site__body">
-        <span class="site__n">Commnet Technology Services</span>
-        <span class="site__d">commnettech.com</span>
-        <h2>Integration Simplified</h2>
-        <p>The newest build &mdash; the full site behind a WebGL hero. Eleven sections, projects, process and offices.</p>
-        <span class="go">View website &rarr;</span>
-      </div>
-      <div class="site__shot site__shot--sys" aria-hidden="true"></div>
-    </a>
-
-    <a class="site site--builds" href="reviews/index.html">
-      <div class="site__body">
-        <span class="site__n">Commnet Systems Consultancy &mdash; rebuilds</span>
-        <span class="site__d">commnetsysconsult.com &middot; React &middot; 3 builds</span>
-        <h2>v3 &middot; v4 &middot; v5</h2>
-        <p>The same content laid out three ways: the paper card, the stacked argument and the editorial grid. Open the set and compare them.</p>
-        <span class="go">View the three builds &rarr;</span>
-      </div>
-      <div class="site__shot site__shot--builds" aria-hidden="true"></div>
-    </a>
-
-    <a class="site" href="teleiostec-com/react/index.html">
-      <div class="site__body">
-        <span class="site__n">Teleiostec</span>
-        <span class="site__d">teleiostec.com &middot; Dubai</span>
-        <h2>Interior Fit&#8209;Out &amp; MEP</h2>
-        <p>A boutique interior fit-out and MEP studio. Full site redesign in React — seven pages, including a new team page.</p>
-        <span class="go">View website &rarr;</span>
-      </div>
-      <div class="site__shot">
-        <img src="teleiostec-com/Asset/media/great-room-800.jpg" alt="Double-height great room interior from the Teleiostec site" loading="lazy" decoding="async">
-      </div>
-    </a>
+<main id="main" class="wrap">
+  <section class="intro" id="top">
+    <div>
+      <span class="eyebrow">Client review · Not for public distribution</span>
+      <h1>Every site, every version, one place.</h1>
+      <p class="lede">Four client domains and the builds proposed for each. Every card opens a complete, self-contained site — pick one and scroll the whole thing. The first card in each group is the current recommendation.</p>
+    </div>
+    <div class="stats" role="list">
+      <div role="listitem"><b>4</b><span>Domains</span></div>
+      <div role="listitem"><b>7</b><span>Builds</span></div>
+      <div role="listitem"><b>5</b><span>With React source</span></div>
+    </div>
   </section>
 
-  <footer>Ethereal Design &middot; Client review &middot; Not for public distribution</footer>
-</div>
+  <!-- ─────────────────────────── commnetsysconsult.com -->
+  <section class="client" id="commnetsysconsult" aria-labelledby="h-consult">
+    <div class="client__meta">
+      <span class="domain" style="--dot:#2563EB">commnetsysconsult.com</span>
+      <h2 id="h-consult">Commnet Systems Consultancy</h2>
+      <p>ELV &amp; ICT systems integrator, Dubai HQ with a Chennai engineering centre. Four React concepts: the current build and three alternate directions.</p>
+      <span class="status s-info">In review</span>
+      <ul class="notes">
+        <li>Contact forms open the visitor's mail client until an endpoint is set.</li>
+      </ul>
+    </div>
+    <div class="grid">
+      <article class="card card--lead">
+        <div class="shot"><img src="assets/hub/commnetsysconsult-v1-react.jpg" alt="" loading="lazy" decoding="async"><span class="ver">V1 · React</span></div>
+        <div class="card__body">
+          <div class="card__top"><span class="kind">React · 36 pages</span><span class="status s-ok">Current build</span></div>
+          <h3>Mission-critical infrastructure, delivered as one package</h3>
+          <p>Concept V1 rebuilt as a multi-page site: five services, six solutions, an 18-project register, compliance, about and contact. Three.js hero grid and a video plate.</p>
+          <div class="card__foot">
+            <a class="card__open" href="sites/commnetsysconsult/v1-react/index.html">Open site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <code class="src">./start.sh dev v1-react</code>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="shot"><img src="assets/hub/commnetsysconsult-v3.jpg" alt="" loading="lazy" decoding="async"><span class="ver">V3</span></div>
+        <div class="card__body">
+          <div class="card__top"><span class="kind">React · Paper card</span><span class="status s-info">Alternate</span></div>
+          <h3>The page as a card of paper on ink</h3>
+          <p>Announcement strip, full-screen photo-tile menu, and a footer that works as a directory. Six sections.</p>
+          <div class="card__foot">
+            <a class="card__open" href="sites/commnetsysconsult/v3/index.html">Open site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <code class="src">./start.sh dev v3</code>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="shot"><img src="assets/hub/commnetsysconsult-v4.jpg" alt="" loading="lazy" decoding="async"><span class="ver">V4</span></div>
+        <div class="card__body">
+          <div class="card__top"><span class="kind">React · Stacked argument</span><span class="status s-info">Alternate</span></div>
+          <h3>The long-scroll case, one band at a time</h3>
+          <p>Claim, statement, systems, environments, showcase, method, repeat business, the ask and the FAQ. Nine sections.</p>
+          <div class="card__foot">
+            <a class="card__open" href="sites/commnetsysconsult/v4/index.html">Open site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <code class="src">./start.sh dev v4</code>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="shot"><img src="assets/hub/commnetsysconsult-v5.jpg" alt="" loading="lazy" decoding="async"><span class="ver">V5</span></div>
+        <div class="card__body">
+          <div class="card__top"><span class="kind">React · Editorial grid</span><span class="status s-info">Alternate</span></div>
+          <h3>Alternating grounds on a twelve-column grid</h3>
+          <p>Dot-matrix preloader, sticky contract register, mono captions and a page wipe between routes. Seven sections.</p>
+          <div class="card__foot">
+            <a class="card__open" href="sites/commnetsysconsult/v5/index.html">Open site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <code class="src">./start.sh dev v5</code>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── commnetsys.com -->
+  <section class="client" id="commnetsys" aria-labelledby="h-india">
+    <div class="client__meta">
+      <span class="domain" style="--dot:#D97706">commnetsys.com</span>
+      <h2 id="h-india">Commnet Systems — India</h2>
+      <p>The consultancy site with its base moved to Chennai: offices, calls to action, contact and framing lead with India, Dubai behind it.</p>
+      <span class="status s-ok">Ready</span>
+      <ul class="notes">
+        <li>Project evidence is still all UAE — replace with Indian projects if Commnet has them.</li>
+      </ul>
+    </div>
+    <div class="grid">
+      <article class="card card--lead">
+        <div class="shot"><img src="assets/hub/commnetsys-v1.jpg" alt="" loading="lazy" decoding="async"><span class="ver">V1</span></div>
+        <div class="card__body">
+          <div class="card__top"><span class="kind">Static HTML · one page</span><span class="status s-ok">Current build</span></div>
+          <h3>Engineering mission-critical infrastructure, from Chennai</h3>
+          <p>Built on the consultancy V2 page with seven India changes: meta, about, company lead, office order, CTA phone and email, footer.</p>
+          <div class="card__foot">
+            <a class="card__open" href="sites/commnetsys/v1/index.html">Open site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── commnettech.com -->
+  <section class="client" id="commnettech" aria-labelledby="h-tech">
+    <div class="client__meta">
+      <span class="domain" style="--dot:#0EA5E9">commnettech.com</span>
+      <h2 id="h-tech">Commnet Technology Services</h2>
+      <p>The full consultancy site behind a WebGL hero — eleven sections, projects, process and offices.</p>
+      <span class="status s-warn">Needs copy</span>
+      <ul class="notes">
+        <li>Still says Commnet Systems Consultancy throughout. The Chennai content build in <code>_unassigned/</code> is the copy source.</li>
+      </ul>
+    </div>
+    <div class="grid">
+      <article class="card card--lead">
+        <div class="shot"><img src="assets/hub/commnettech-v1.jpg" alt="" loading="lazy" decoding="async"><span class="ver">V1</span></div>
+        <div class="card__body">
+          <div class="card__top"><span class="kind">Static HTML · WebGL</span><span class="status s-ok">Current build</span></div>
+          <h3>Integration simplified</h3>
+          <p>A WebGL hero leading into the complete site. Heavy on first load — give it a few seconds on slower machines.</p>
+          <div class="card__foot">
+            <a class="card__open" href="sites/commnettech/v1/index.html">Open site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── teleiostec.com -->
+  <section class="client" id="teleiostec" aria-labelledby="h-tele">
+    <div class="client__meta">
+      <span class="domain" style="--dot:#B45309">teleiostec.com</span>
+      <h2 id="h-tele">Teleiostec</h2>
+      <p>Boutique interior fit-out and MEP studio in Dubai. A full React redesign.</p>
+      <span class="status s-info">In review</span>
+      <ul class="notes">
+        <li>The Team page is placeholder content.</li>
+        <li>Enquiries go to <code>sales@teleiostec.com</code>, matching the live site.</li>
+      </ul>
+    </div>
+    <div class="grid">
+      <article class="card card--lead">
+        <div class="shot"><img src="assets/hub/teleiostec-react.jpg" alt="" loading="lazy" decoding="async"><span class="ver">React</span></div>
+        <div class="card__body">
+          <div class="card__top"><span class="kind">React · 7 pages</span><span class="status s-ok">Current build</span></div>
+          <h3>Creating spaces with intention</h3>
+          <p>Seven pages — projects, studio, services, process, team and contact — with a video hero and a new team page.</p>
+          <div class="card__foot">
+            <a class="card__open" href="sites/teleiostec/react/index.html">Open site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <code class="src">./start.sh dev teleiostec</code>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── run locally -->
+  <section class="run" id="run" aria-labelledby="h-run">
+    <div>
+      <span class="eyebrow">For the team</span>
+      <h2 id="h-run">Run locally</h2>
+      <p>Every build above also opens straight from disk — double-click its <code>index.html</code>. To work on a React build, run its dev server from <code>source/</code>, then rebuild its copy in <code>sites/</code>.</p>
+    </div>
+    <div class="cmds">
+      <div class="cmd"><code>./start.sh</code><span>Serve this hub and every build at 127.0.0.1:8080</span></div>
+      <div class="cmd"><code>./start.sh dev v1-react</code><span>Hot-reload dev server — also v3, v4, v5, teleiostec, or all</span></div>
+      <div class="cmd"><code>./start.sh build all</code><span>Rebuild the self-contained copies in sites/ from source/</span></div>
+      <div class="cmd"><code>./start.sh status</code><span>Which servers are running, and on which port</span></div>
+      <div class="cmd"><code>./start.sh stop</code><span>Stop every server this project started</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>Ethereal Design · Client review · Not for public distribution</span>
+  <span>Layout and notes: <code>README.md</code></span>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement, key = 'hub-theme';
+  try { var t = localStorage.getItem(key); if (t) root.dataset.theme = t } catch (e) {}
+  document.getElementById('theme').addEventListener('click', function () {
+    var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem(key, root.dataset.theme) } catch (e) {}
+  });
+  var bar = document.getElementById('bar');
+  var onScroll = function () { bar.classList.toggle('stuck', scrollY > 8) };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+})();
+</script>
 </body>
 </html>

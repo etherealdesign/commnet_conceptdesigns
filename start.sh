@@ -1,143 +1,198 @@
 #!/usr/bin/env bash
-# Run the Commnet concept builds locally.
+# Run the Commnet / Teleiostec review builds locally.
 #
-# Usage: ./start.sh [target ...]
-#   ./start.sh                 # all concepts: v3 :5173, v4 :5174, v5 :5175,
-#                              #   react :5177 (default)
-#   ./start.sh all             # same, explicit
-#   ./start.sh v4              # one concept only
-#   ./start.sh v3 v5           # any subset
-#   ./start.sh react           # the React build of concept V1 (commnetsysconsult-react/)
-#   ./start.sh static [port]   # the legacy static multi-site build (vercel.json)
-#   ./start.sh teleiostec [dev|preview]   # Teleiostec React site on :5176
-#                                         # (TELEIOSTEC_PORT to override)
+#   ./start.sh                     Serve the hub and every build in sites/ (default)
+#   ./start.sh hub [port]          Same, on a chosen port (default 8080)
+#   ./start.sh dev <target...>     Vite dev server(s) with hot reload, from source/
+#   ./start.sh dev all             Every dev server at once
+#   ./start.sh build <target...>   Rebuild the review copies in sites/ from source/
+#   ./start.sh build all           Rebuild all of them
+#   ./start.sh stop                Stop anything this script started (hub + dev ports)
+#   ./start.sh status              Show which of those ports are in use
+#   ./start.sh help
 #
-# Every React build carries a small fixed "V3 · V4 · V5" pill (dev only) that
-# flips to the same path on another build, so a page can be compared in
-# place. Ports can be overridden with V3_PORT / V4_PORT / V5_PORT; the pills
-# read the resulting origins from VITE_VERSION_SWITCH_V*_URL.
-# The V1 React build (react) has no pill; override its port with REACT_PORT.
+# Dev targets and their ports (override with <TARGET>_PORT, e.g. V3_PORT=6003):
+#   v1-react    5177   source/commnetsysconsult-v1-react   → sites/commnetsysconsult/v1-react
+#   v3          5173   source/commnetsysconsult-v3         → sites/commnetsysconsult/v3
+#   v4          5174   source/commnetsysconsult-v4         → sites/commnetsysconsult/v4
+#   v5          5175   source/commnetsysconsult-v5         → sites/commnetsysconsult/v5
+#   teleiostec  5176   source/teleiostec-react             → sites/teleiostec/react
+#
+# The static builds (commnetsysconsult v1/v2, commnetsys, commnettech,
+# teleiostec v2) have no source project; they are edited in place in sites/.
+#
+# Every server binds to 127.0.0.1 explicitly. Vite's default "localhost"
+# resolves to IPv6 ::1 only on this Mac, and a browser that tries IPv4 first
+# gets "connection refused" — the page just never loads.
 set -euo pipefail
 cd "$(dirname "$0")"
+ROOT="$(pwd)"
+HOST="127.0.0.1"
 
-VERSIONS=(v3 v4 v5 react)
-V3_PORT="${V3_PORT:-5173}"
-V4_PORT="${V4_PORT:-5174}"
-V5_PORT="${V5_PORT:-5175}"
-REACT_PORT="${REACT_PORT:-5177}"
+HUB_PORT="${HUB_PORT:-8080}"
+TARGETS=(v1-react v3 v4 v5 teleiostec)
 
-if [ "${1:-}" = "teleiostec" ]; then
-  # Teleiostec React build (teleiostec-react/), separate from the Commnet set.
-  #   ./start.sh teleiostec           # dev server with hot reload
-  #   ./start.sh teleiostec preview   # production build, served as it will ship
-  DIR="teleiostec-react"
-  MODE="${2:-dev}"
-  PORT="${TELEIOSTEC_PORT:-5176}"
-  case "$MODE" in dev|preview) ;; *) echo "Unknown mode '$MODE'. Use: teleiostec [dev|preview]" >&2; exit 1 ;; esac
-  if lsof -nP -iTCP:"$PORT" -sTCP:LISTEN >/dev/null 2>&1; then
-    echo "Port $PORT is already in use:" >&2
-    lsof -nP -iTCP:"$PORT" -sTCP:LISTEN | tail -n +2 | awk '{print "  pid " $2 "  " $1}' >&2
-    echo "Stop it (kill <pid>) or set TELEIOSTEC_PORT to a free port." >&2
-    exit 1
-  fi
-  cd "$DIR"
-  if [ ! -d node_modules ]; then
-    echo "Installing dependencies for $DIR (first run)..."
-    npm install
-  fi
-  echo "  $DIR ($MODE)  ->  http://localhost:$PORT"
-  if [ "$MODE" = "preview" ]; then
-    npm run build
-    exec npx vite preview --port "$PORT" --strictPort
-  fi
-  exec npm run dev -- --port "$PORT" --strictPort
-fi
+if [ -t 1 ]; then B=$'\033[1m'; D=$'\033[2m'; R=$'\033[31m'; G=$'\033[32m'; N=$'\033[0m'; else B= D= R= G= N=; fi
+die() { echo "${R}$*${N}" >&2; exit 1; }
 
-if [ "${1:-}" = "static" ]; then
-  PORT="${2:-3000}"
-  if command -v vercel >/dev/null 2>&1; then
-    echo "Starting via 'vercel dev' on port $PORT (matches vercel.json routing)..."
-    exec vercel dev --listen "$PORT"
-  elif command -v npx >/dev/null 2>&1; then
-    echo "Vercel CLI not found — falling back to a plain static server."
-    echo "Open http://localhost:$PORT"
-    exec npx --yes serve . -l "$PORT"
-  else
-    echo "Neither vercel nor npx found. Install Node.js (https://nodejs.org) and re-run." >&2
-    exit 1
-  fi
-fi
-
-# which builds to run
-if [ $# -eq 0 ] || [ "${1:-}" = "all" ] || [ "${1:-}" = "both" ]; then
-  TARGETS=("${VERSIONS[@]}")
-else
-  TARGETS=("$@")
-fi
-for t in "${TARGETS[@]}"; do
-  case "$t" in
-    v3|v4|v5|react) ;;
-    *) echo "Unknown target '$t'. Use: all | v3 | v4 | v5 | react | static [port] | teleiostec [dev|preview]" >&2; exit 1 ;;
+dir_of() {
+  case "$1" in
+    v1-react)   echo "source/commnetsysconsult-v1-react" ;;
+    v3|v4|v5)   echo "source/commnetsysconsult-$1" ;;
+    teleiostec) echo "source/teleiostec-react" ;;
+    *) return 1 ;;
   esac
-done
-
+}
 port_of() {
   case "$1" in
-    v3) echo "$V3_PORT" ;;
-    v4) echo "$V4_PORT" ;;
-    v5) echo "$V5_PORT" ;;
-    react) echo "$REACT_PORT" ;;
+    v1-react)   echo "${V1_REACT_PORT:-5177}" ;;
+    v3)         echo "${V3_PORT:-5173}" ;;
+    v4)         echo "${V4_PORT:-5174}" ;;
+    v5)         echo "${V5_PORT:-5175}" ;;
+    teleiostec) echo "${TELEIOSTEC_PORT:-5176}" ;;
   esac
+}
+valid_target() { dir_of "$1" >/dev/null 2>&1; }
+
+need_node() {
+  command -v node >/dev/null 2>&1 || die "Node.js is required. Install it from https://nodejs.org and re-run."
+}
+
+# Refuse to start on a port something already holds, and say what holds it.
+port_free() {
+  local port="$1"
+  if lsof -nP -iTCP:"$port" -sTCP:LISTEN >/dev/null 2>&1; then
+    echo "${R}Port $port is already in use:${N}" >&2
+    lsof -nP -iTCP:"$port" -sTCP:LISTEN | tail -n +2 | awk '{print "  pid " $2 "  " $1}' >&2
+    echo "Run ${B}./start.sh stop${N}, or pick another port." >&2
+    return 1
+  fi
 }
 
 ensure_deps() {
-  if [ ! -d "$1/node_modules" ]; then
-    echo "Installing dependencies for $1 (first run)..."
-    (cd "$1" && npm install)
+  local dir="$1"
+  [ -d "$dir" ] || die "Missing $dir"
+  if [ ! -d "$dir/node_modules" ]; then
+    echo "${D}Installing dependencies for $dir (first run)...${N}"
+    (cd "$dir" && npm install --no-audit --no-fund)
   fi
 }
 
-# Refuse to start on a port something else already holds, rather than let
-# Vite fail after the fact and leave a half-started set.
-check_port() {
-  if lsof -nP -iTCP:"$1" -sTCP:LISTEN >/dev/null 2>&1; then
-    echo "Port $1 is already in use:" >&2
-    lsof -nP -iTCP:"$1" -sTCP:LISTEN | tail -n +2 | awk '{print "  pid " $2 "  " $1}' >&2
-    echo "Stop it (kill <pid>) or set ${2}_PORT to a free port." >&2
-    exit 1
+open_url() {
+  [ "${NO_OPEN:-}" = "1" ] && return 0
+  if command -v open >/dev/null 2>&1; then open "$1" >/dev/null 2>&1 || true
+  elif command -v xdg-open >/dev/null 2>&1; then xdg-open "$1" >/dev/null 2>&1 || true
   fi
+}
+
+expand_targets() {
+  if [ $# -eq 0 ]; then die "Name a target: ${TARGETS[*]} | all"; fi
+  if [ "$1" = "all" ]; then printf '%s\n' "${TARGETS[@]}"; return; fi
+  for t in "$@"; do valid_target "$t" || die "Unknown target '$t'. Use: ${TARGETS[*]} | all"; echo "$t"; done
+}
+
+cmd_hub() {
+  need_node
+  local port="${1:-$HUB_PORT}"
+  port_free "$port" || exit 1
+  echo "${B}Review hub${N}"
+  echo "  ${G}http://$HOST:$port/${N}"
+  echo "${D}  Ctrl+C to stop.${N}"
+  ( sleep 0.6; open_url "http://$HOST:$port/" ) &
+  exec node scripts/serve.mjs "$port" "$HOST"
 }
 
 PIDS=()
 cleanup() {
-  for pid in "${PIDS[@]:-}"; do
-    [ -n "$pid" ] && kill "$pid" 2>/dev/null || true
+  for pid in "${PIDS[@]:-}"; do [ -n "$pid" ] && kill "$pid" 2>/dev/null || true; done
+}
+
+cmd_dev() {
+  need_node
+  local list; list=$(expand_targets "$@")
+  for t in $list; do port_free "$(port_of "$t")" || exit 1; done
+  for t in $list; do ensure_deps "$(dir_of "$t")"; done
+
+  trap cleanup EXIT INT TERM
+  echo "${B}Dev servers${N} (hot reload)"
+  for t in $list; do
+    local dir port; dir="$(dir_of "$t")"; port="$(port_of "$t")"
+    (
+      cd "$dir"
+      # v3–v5 carry a small "V3 · V4 · V5" pill that jumps between these origins.
+      VITE_VERSION_SWITCH_V3_URL="http://$HOST:$(port_of v3)" \
+      VITE_VERSION_SWITCH_V4_URL="http://$HOST:$(port_of v4)" \
+      VITE_VERSION_SWITCH_V5_URL="http://$HOST:$(port_of v5)" \
+      exec npx vite --host "$HOST" --port "$port" --strictPort --clearScreen false --logLevel warn
+    ) &
+    PIDS+=("$!")
+    printf "  %-11s ${G}http://%s:%s/${N}  ${D}%s${N}\n" "$t" "$HOST" "$port" "$dir"
+  done
+  echo "${D}  Ctrl+C to stop.${N}"
+  local first; first=$(echo "$list" | head -1)
+  ( sleep 1.5; open_url "http://$HOST:$(port_of "$first")/" ) &
+  wait
+}
+
+cmd_build() {
+  need_node
+  local list; list=$(expand_targets "$@")
+  local reviews=()
+  for t in $list; do
+    case "$t" in
+      v3|v4|v5) ensure_deps "$(dir_of "$t")"; reviews+=("$t") ;;
+      *)
+        ensure_deps "$(dir_of "$t")"
+        echo "${B}=== $t${N}"
+        (cd "$(dir_of "$t")" && npm run build:review)
+        ;;
+    esac
+  done
+  # scripts/build-reviews.mjs always rebuilds v3, v4 and v5 together.
+  if [ ${#reviews[@]} -gt 0 ]; then
+    echo "${B}=== v3 v4 v5${N}"
+    node scripts/build-reviews.mjs
+  fi
+  echo "${G}Done.${N} Run ${B}./start.sh${N} to view them in the hub."
+}
+
+all_ports() { echo "$HUB_PORT"; for t in "${TARGETS[@]}"; do port_of "$t"; done; }
+
+cmd_stop() {
+  local any=0
+  for port in $(all_ports); do
+    for pid in $(lsof -nP -tiTCP:"$port" -sTCP:LISTEN 2>/dev/null); do
+      # Only stop processes running from this project.
+      local cwd; cwd=$(lsof -a -p "$pid" -d cwd -Fn 2>/dev/null | sed -n 's/^n//p')
+      case "$cwd" in
+        "$ROOT"*) kill "$pid" 2>/dev/null && echo "  stopped pid $pid on :$port" && any=1 ;;
+        *) echo "  :$port is held by pid $pid outside this project — left alone" ;;
+      esac
+    done
+  done
+  [ $any -eq 1 ] || echo "  nothing of ours was running"
+}
+
+cmd_status() {
+  printf "  %-11s %-6s %s\n" hub "$HUB_PORT" "$(lsof -nP -tiTCP:"$HUB_PORT" -sTCP:LISTEN >/dev/null 2>&1 && echo "${G}running${N}" || echo "${D}stopped${N}")"
+  for t in "${TARGETS[@]}"; do
+    local p; p=$(port_of "$t")
+    printf "  %-11s %-6s %s\n" "$t" "$p" "$(lsof -nP -tiTCP:"$p" -sTCP:LISTEN >/dev/null 2>&1 && echo "${G}running${N}" || echo "${D}stopped${N}")"
   done
 }
-trap cleanup EXIT INT TERM
 
-# Starts one Vite dev server in the background and records its pid.
-run_dev() {
-  local v="$1" dir="commnetsysconsult-$1" port
-  port="$(port_of "$v")"
-  ensure_deps "$dir"
-  (
-    cd "$dir"
-    VITE_VERSION_SWITCH_V3_URL="http://localhost:$V3_PORT" \
-    VITE_VERSION_SWITCH_V4_URL="http://localhost:$V4_PORT" \
-    VITE_VERSION_SWITCH_V5_URL="http://localhost:$V5_PORT" \
-    exec npm run dev -- --port "$port" --strictPort
-  ) &
-  PIDS+=("$!")
-  echo "  $dir  ->  http://localhost:$port"
-}
+cmd_help() { sed -n '2,24p' "$0" | sed 's/^# \{0,1\}//'; }
 
-for t in "${TARGETS[@]}"; do
-  check_port "$(port_of "$t")" "$(echo "$t" | tr '[:lower:]' '[:upper:]')"
-done
-for t in "${TARGETS[@]}"; do
-  run_dev "$t"
-done
-
-echo "Press Ctrl+C to stop."
-wait
+case "${1:-hub}" in
+  hub)            shift || true; cmd_hub "$@" ;;
+  dev)            shift; cmd_dev "$@" ;;
+  build)          shift; cmd_build "$@" ;;
+  stop)           cmd_stop ;;
+  status)         cmd_status ;;
+  help|-h|--help) cmd_help ;;
+  *)
+    # Shorthand: ./start.sh v3  →  ./start.sh dev v3
+    if valid_target "$1" || [ "$1" = "all" ]; then cmd_dev "$@"
+    else echo "Unknown command '$1'." >&2; cmd_help; exit 1; fi
+    ;;
+esac

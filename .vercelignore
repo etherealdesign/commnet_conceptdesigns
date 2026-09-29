@@ -1,23 +1,23 @@
 # Nothing below is referenced by any page — excluded so the deployment
 # stays a few MB rather than a few hundred.
-teleiostec-com/Interior/
-teleiostec-com/Asset/Parallax/
-teleiostec-com/_to_delete/
+sites/teleiostec/v2/Interior/
+sites/teleiostec/v2/Asset/Parallax/
+sites/teleiostec/v2/_to_delete/
 Data/
 .impeccable/
 PRODUCT.md
 _mobiletest.html
-teleiostec-com/README.md
+
 
 # Asset/photos is no longer excluded wholesale — the current Teleiostec page
 # uses three of these sets. Everything else in there is still unreferenced.
-teleiostec-com/Asset/photos/architects-reviewing-material-sa*
-teleiostec-com/Asset/photos/commercial-interior-architecture*
-teleiostec-com/Asset/photos/craftsman-installing-walnut-arch*
-teleiostec-com/Asset/photos/dubai-corporate-headquarters-int*
-teleiostec-com/Asset/photos/luxury-residence-living-room-int*
-teleiostec-com/Asset/photos/man-walking-through-luxury-interior*
-teleiostec-com/Asset/photos/workers-constructing-luxury-inte*
+sites/teleiostec/v2/Asset/photos/architects-reviewing-material-sa*
+sites/teleiostec/v2/Asset/photos/commercial-interior-architecture*
+sites/teleiostec/v2/Asset/photos/craftsman-installing-walnut-arch*
+sites/teleiostec/v2/Asset/photos/dubai-corporate-headquarters-int*
+sites/teleiostec/v2/Asset/photos/luxury-residence-living-room-int*
+sites/teleiostec/v2/Asset/photos/man-walking-through-luxury-interior*
+sites/teleiostec/v2/Asset/photos/workers-constructing-luxury-inte*
 
 # Authoring notes and READMEs — reference material, not part of any site.
 
@@ -26,3 +26,12 @@ _archive/
 
 # Builds with no domain assigned to them. Kept in git, never deployed.
 _unassigned/
+
+# Editable React sources, docs and tooling — the deployment only needs the hub
+# (index.html + assets/) and the built copies in sites/.
+source/
+docs/
+scripts/
+start.sh
+README.md
+**/node_modules/

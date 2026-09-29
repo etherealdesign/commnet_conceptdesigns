@@ -1,5 +1,5 @@
 /**
- * Builds the three React versions into reviews/<v> as folders that open by
+ * Builds the three React versions into sites/commnetsysconsult/<v> as folders that open by
  * double-clicking index.html — no server, no terminal.
  *
  * A browser opening a page from disk will not fetch a module script, so the
@@ -36,8 +36,8 @@ const walk = (dir) =>
 const safe = (code, tag) => code.replace(new RegExp(`</${tag}`, 'gi'), `<\\/${tag}`)
 
 for (const { id: v, inlineMedia } of VERSIONS) {
-  const src = join(root, `commnetsysconsult-${v}`)
-  const out = join(root, 'reviews', v)
+  const src = join(root, 'source', `commnetsysconsult-${v}`)
+  const out = join(root, 'sites', 'commnetsysconsult', v)
   console.log(`=== ${v}`)
   execFileSync('npx', ['vite', 'build', '--outDir', out, '--emptyOutDir'], {
     cwd: src,
@@ -108,4 +108,4 @@ for (const { id: v, inlineMedia } of VERSIONS) {
   const kb = Math.round(readFileSync(htmlPath).length / 1024)
   console.log(`inlined ${spent.length} file(s) — index.html is ${kb} KB; ${touched} other file(s) rewritten`)
 }
-console.log('reviews/ rebuilt — open reviews/index.html or any reviews/<v>/index.html')
+console.log('sites/commnetsysconsult/v3, v4, v5 rebuilt — open any <v>/index.html, or the hub at ./index.html')

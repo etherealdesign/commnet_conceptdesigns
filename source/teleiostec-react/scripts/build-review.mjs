@@ -1,0 +1,104 @@
+/**
+ * Builds the review copy into ../../sites/teleiostec/react/ — the folder the
+ * review index (../index.html) links to. Same approach as the Commnet
+ * builds in ../../scripts/build-reviews.mjs: it opens by double-clicking
+ * index.html as well as over HTTP.
+ *
+ * A browser opening a page from disk will not fetch a module script, so the
+ * whole app goes inside the document: one bundle (VITE_SINGLE), script and
+ * stylesheet inlined. Routing moves to the hash (VITE_HASH_ROUTER), and every
+ * root-relative /Asset, /favicon.svg and /og.jpg reference becomes
+ * folder-relative. Photographs and video stay as files.
+ *
+ *   npm run build:review
+ */
+import { execFileSync } from 'node:child_process'
+import { readdirSync, readFileSync, writeFileSync, statSync, rmSync, existsSync } from 'node:fs'
+import { join, dirname, relative } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const app = join(dirname(fileURLToPath(import.meta.url)), '..')
+const out = join(app, '..', '..', 'sites', 'teleiostec', 'react')
+const ROOTED = /(["'`(,\s])\/(Asset\/|favicon\.svg|og\.jpg)/g
+
+const walk = (dir) =>
+  readdirSync(dir).flatMap((name) => {
+    const p = join(dir, name)
+    return statSync(p).isDirectory() ? walk(p) : [p]
+  })
+/** So the bundle cannot close the tag it is sitting inside. */
+const safe = (code, tag) => code.replace(new RegExp(`</${tag}`, 'gi'), `<\\/${tag}`)
+
+// A clip is read from ../../sites/teleiostec/v2/Asset/media only when its video and
+// poster are byte-identical there; anything new or re-cut ships in this copy.
+const staticMedia = join(app, '..', '..', 'sites', 'teleiostec', 'v2', 'Asset', 'media')
+const same = (a, b) => existsSync(a) && existsSync(b) && readFileSync(a).equals(readFileSync(b))
+const sharedMedia = readdirSync(join(app, 'public', 'Asset', 'media'))
+  .filter((f) => f.endsWith('.mp4'))
+  .map((f) => f.slice(0, -4))
+  .filter((n) => {
+    const here = (x) => join(app, 'public', 'Asset', 'media', x)
+    const there = (x) => join(staticMedia, x)
+    return same(here(`${n}.mp4`), there(`${n}.mp4`)) && (!existsSync(here(`${n}-poster.jpg`)) || same(here(`${n}-poster.jpg`), there(`${n}-poster.jpg`)))
+  })
+
+execFileSync('npx', ['vite', 'build', '--outDir', out, '--emptyOutDir'], {
+  cwd: app,
+  stdio: 'inherit',
+  env: { ...process.env, VITE_BASE: './', VITE_HASH_ROUTER: '1', VITE_SINGLE: '1', VITE_SHARED_MEDIA: sharedMedia.join(',') },
+})
+
+const files = walk(out)
+const htmlPath = join(out, 'index.html')
+const find = (href) => files.find((p) => './' + relative(out, p).split('\\').join('/') === href)
+const spent = []
+let html = readFileSync(htmlPath, 'utf8')
+
+html = html.replace(/<script\b[^>]*\bsrc="([^"]+)"[^>]*><\/script>/g, (tag, href) => {
+  const f = find(href)
+  if (!f) return tag
+  spent.push(f)
+  return `<script type="module">\n${safe(readFileSync(f, 'utf8').replace(ROOTED, '$1$2'), 'script')}\n</script>`
+})
+html = html.replace(/<link\b[^>]*rel="stylesheet"[^>]*href="(\.\/[^"]+)"[^>]*>/g, (tag, href) => {
+  const f = find(href)
+  if (!f) return tag
+  spent.push(f)
+  return `<style>\n${safe(readFileSync(f, 'utf8').replace(ROOTED, '$1$2'), 'style')}\n</style>`
+})
+html = html.replace(/\s*<link\b[^>]*rel="modulepreload"[^>]*>/g, '')
+// The preload scanner fetches image preloads before the slash fix below can
+// run; the hero <img> already carries fetchpriority=high, so drop the hint.
+html = html.replace(/\s*<link\b[^>]*rel="preload"[^>]*as="image"[^>]*>/g, '')
+// Hosts with clean URLs serve this folder as `.../react` (no slash), which
+// resolves every relative path one level too high. Put the slash back before
+// anything in the head is requested — replaceState, so no reload.
+html = html.replace('<head>', `<head>\n<script>(function(l){if(l.protocol!=='file:'&&!/\\/$|\\.html$/.test(l.pathname))history.replaceState(null,'',l.pathname+'/'+l.search+l.hash)})(location)</script>`)
+// Only the HTML shell is rewritten here: the JSON-LD's absolute https URLs don't match ROOTED.
+html = html.replace(ROOTED, '$1$2')
+
+writeFileSync(htmlPath, html)
+for (const f of spent) rmSync(f, { force: true })
+
+// Files the site never requests: shared clips (read from ../v2/Asset), poster
+// avif/webp (<video poster> takes one jpg), the
+// unsized photo originals (srcsets only name -800/-1400), unused footage.
+const unused = (f) => {
+  const r = relative(out, f).split('\\').join('/')
+  const clip = r.match(/^Asset\/media\/(.+?)(?:-720)?(?:\.mp4|-poster\.(?:jpg|avif|webp))$/)
+  return (clip && sharedMedia.includes(clip[1]))
+    || /^Asset\/media\/[a-z-]+-poster\.(avif|webp)$/.test(r)
+    || /^Asset\/media\/feature/.test(r)
+    || /^Asset\/photos\/[a-z-]+[a-z]\.(jpg|avif|webp)$/.test(r)
+    || r === 'Asset/logo.svg' || r === 'Asset/favicon.svg'
+}
+let pruned = 0
+for (const f of walk(join(out, 'Asset'))) if (unused(f)) { rmSync(f); pruned += 1 }
+
+// Hosting files that mean nothing inside another deployment's folder.
+for (const f of ['vercel.json', 'robots.txt', 'sitemap.xml']) rmSync(join(out, f), { force: true })
+
+const left = (html.match(/["'`(,\s]\/Asset\//g) || []).length
+const kb = Math.round(readFileSync(htmlPath).length / 1024)
+console.log(`sites/teleiostec/react/ built — index.html is ${kb} KB, ${spent.length} file(s) inlined, shared with ../v2/Asset: ${sharedMedia.join(', ') || 'none'}, ${pruned} unused file(s) pruned, ${left} rooted /Asset reference(s) left`)
+

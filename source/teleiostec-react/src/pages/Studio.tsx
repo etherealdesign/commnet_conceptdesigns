@@ -36,7 +36,7 @@ export default function Studio() {
       </section>
 
       <div className="relative h-[85svh] overflow-hidden bg-dark">
-        <Video name="moment" label="Timelapse of an interior coming together" />
+        <Video name="moment" mobile label="Timelapse of an interior coming together" />
         <span className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" aria-hidden />
         <div className="wrap absolute inset-x-0 bottom-0 pb-10 text-ivory">
           <p className="kick mb-3 !text-ivory/70">Between the work</p>

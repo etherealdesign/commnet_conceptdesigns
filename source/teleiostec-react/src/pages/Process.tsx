@@ -5,6 +5,7 @@ import { PageHero } from '@/components/PageHero'
 import { Split } from '@/components/Split'
 import { Reveal } from '@/components/Reveal'
 import { Img } from '@/components/Img'
+import { Video } from '@/components/Video'
 import { CtaBlock } from '@/components/CtaBlock'
 import { steps, principles } from '@/data/process'
 import { gsap, useGSAP } from '@/lib/gsap'
@@ -52,7 +53,7 @@ function Stack() {
         <div className="relative col-span-6 col-start-7 h-[72vh] overflow-hidden">
           {steps.map((s, i) => (
             <div key={s.no} className={`ps-img-${i} absolute inset-0`} style={i ? { clipPath: 'inset(100% 0% 0% 0%)' } : undefined}>
-              <Img pic={s.pic} sizes="50vw" />
+              {s.film ? <Video name={s.film.name} label={s.film.label} mobile /> : <Img pic={s.pic} sizes="50vw" />}
             </div>
           ))}
         </div>
@@ -62,7 +63,7 @@ function Stack() {
       <ol className="wrap space-y-16 py-20 md:hidden">
         {steps.map((s) => (
           <li key={s.no}>
-            <div className="aspect-[4/3] overflow-hidden"><Img pic={s.pic} sizes="100vw" /></div>
+            <div className="aspect-[4/3] overflow-hidden">{s.film ? <Video name={s.film.name} label={s.film.label} mobile /> : <Img pic={s.pic} sizes="100vw" />}</div>
             <p className="mt-6 font-display text-5xl">{s.no}</p>
             <h3 className="display mt-2 text-fluid-2xl">{s.title}</h3>
             <p className="mt-3 text-ivory/70">{s.long}</p>

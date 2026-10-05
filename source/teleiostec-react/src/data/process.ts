@@ -1,6 +1,7 @@
 import type { Pic } from '@/components/Img'
 
-export const steps: { no: string; title: string; short: string; long: string; pic: Pic }[] = [
+/** `film`: a looping clip in /Asset/media (with -720 and -poster siblings) shown instead of the still. */
+export const steps: { no: string; title: string; short: string; long: string; pic: Pic; film?: { name: string; label: string } }[] = [
   {
     no: '01', title: 'Discover', short: 'Site, brief and budget mapped to the building.',
     long: 'We survey the site, listen to how the space will be lived in or worked in, and set a realistic budget and programme against the building as it really is.',
@@ -10,6 +11,7 @@ export const steps: { no: string; title: string; short: string; long: string; pi
     no: '02', title: 'Design', short: 'BIM, MEP, joinery and materials resolved together.',
     long: 'Interior, joinery and MEP are drawn in one coordinated BIM model — clashes are found on screen, not on site, and every material is chosen before work begins.',
     pic: { src: '/Asset/media/tl-reception', widths: [400, 800, 1200, 1536], w: 1536, h: 1072, alt: 'Reception lobby with perforated timber screens' },
+    film: { name: 'dining-sketch-film', label: 'A pencil sketch of a dining room filling in with colour, timber and light' },
   },
   {
     no: '03', title: 'Build', short: 'Hand-picked specialists build what was drawn.',

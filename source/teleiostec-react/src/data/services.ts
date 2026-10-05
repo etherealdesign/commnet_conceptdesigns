@@ -15,13 +15,13 @@ export const services: Service[] = [
     slug: 'interior', no: '01', title: 'Interior', tag: 'Residential · Hospitality',
     desc: 'Considered residential and hospitality interiors — material, light and proportion resolved before a single wall is set.',
     deliverables: ['Concept & spatial planning', 'Material & finish palettes', 'Lighting design', 'FF&E coordination'],
-    pic: { src: '/Asset/media/atrium', widths: [400, 800, 1087], w: 1087, h: 1447, alt: 'Atrium interior with staircase' },
+    pic: { src: '/Asset/media/tl-living', widths: [400, 800, 1200, 1536], w: 1536, h: 858, alt: 'Living room with a travertine media wall and woven pendant lights' },
   },
   {
     slug: 'fit-out', no: '02', title: 'Fit-Out', tag: 'Turnkey · Commercial',
     desc: 'Turnkey commercial and workplace fit-out — programme, procurement and site delivered under one accountable team.',
     deliverables: ['Turnkey delivery', 'Programme & procurement', 'Authority approvals', 'Snagging & handover'],
-    pic: { src: '/Asset/media/fitout', widths: [400, 800, 1200, 1536], w: 1536, h: 1024, alt: 'Commercial fit-out in progress' },
+    pic: { src: '/Asset/media/tl-office', widths: [400, 800, 1200, 1536], w: 1536, h: 1428, alt: 'Office corridor with a timber slat ceiling and perforated screen walls' },
   },
   {
     slug: 'joinery', no: '03', title: 'Joinery', tag: 'Bespoke · In-house',

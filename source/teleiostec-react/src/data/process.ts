@@ -9,17 +9,17 @@ export const steps: { no: string; title: string; short: string; long: string; pi
   {
     no: '02', title: 'Design', short: 'BIM, MEP, joinery and materials resolved together.',
     long: 'Interior, joinery and MEP are drawn in one coordinated BIM model — clashes are found on screen, not on site, and every material is chosen before work begins.',
-    pic: { src: '/Asset/media/atrium', widths: [400, 800, 1087], w: 1087, h: 1447, alt: 'Atrium interior' },
+    pic: { src: '/Asset/media/tl-reception', widths: [400, 800, 1200, 1536], w: 1536, h: 1072, alt: 'Reception lobby with perforated timber screens' },
   },
   {
     no: '03', title: 'Build', short: 'Our own craftsmen construct what was drawn.',
     long: 'Our own site teams and workshop build what was drawn. The people who detailed the joinery are the people who make it.',
-    pic: { src: '/Asset/media/hearth', widths: [400, 800, 1023], w: 1023, h: 1537, alt: 'Living room with fireplace' },
+    pic: { src: '/Asset/media/tl-lounge', widths: [400, 800, 1200, 1536], w: 1536, h: 1150, alt: 'Waiting lounge beside a planted courtyard' },
   },
   {
     no: '04', title: 'Deliver', short: 'Snagged to a boutique standard, on time.',
     long: 'Every room is snagged to a boutique standard, systems are commissioned and documented, and the space is handed over on programme.',
-    pic: { src: '/Asset/media/great-room', widths: [400, 800, 1200, 1535], w: 1535, h: 1024, alt: 'Finished great room' },
+    pic: { src: '/Asset/media/tl-dining', widths: [400, 800, 1200, 1536], w: 1536, h: 858, alt: 'Sunlit dining room, finished and handed over' },
   },
 ]
 

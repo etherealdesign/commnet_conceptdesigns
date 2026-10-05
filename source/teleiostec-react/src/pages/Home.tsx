@@ -232,7 +232,7 @@ function Film() {
   return (
     <div ref={ref} className="relative">
       <div className="film-frame relative h-[90svh] overflow-hidden bg-dark">
-        <Video name="timelapse" label="Timelapse of a space coming together" />
+        <Video name="sketch-film" label="A pencil sketch of a dining room washing into the finished space" />
         <span className="absolute inset-0 bg-black/25" aria-hidden />
         <div className="wrap absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-6 pb-10 text-ivory">
           <p className="display text-fluid-2xl italic">Built in time.</p>

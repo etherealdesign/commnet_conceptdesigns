@@ -42,7 +42,9 @@ const sharedMedia = readdirSync(join(app, 'public', 'Asset', 'media'))
     return same(here(`${n}.mp4`), there(`${n}.mp4`)) && (!existsSync(here(`${n}-poster.jpg`)) || same(here(`${n}-poster.jpg`), there(`${n}-poster.jpg`)))
   })
 
-execFileSync('npx', ['vite', 'build', '--outDir', out, '--emptyOutDir'], {
+// Vite's own entry under the current node, not `npx`: on Windows npx is a .cmd
+// that execFileSync cannot spawn, and a shell would split the spaced repo path.
+execFileSync(process.execPath, [join(app, 'node_modules', 'vite', 'bin', 'vite.js'), 'build', '--outDir', out, '--emptyOutDir'], {
   cwd: app,
   stdio: 'inherit',
   env: { ...process.env, VITE_BASE: './', VITE_HASH_ROUTER: '1', VITE_SINGLE: '1', VITE_SHARED_MEDIA: sharedMedia.join(',') },

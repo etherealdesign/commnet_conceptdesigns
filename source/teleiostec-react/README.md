@@ -42,7 +42,13 @@ so keep that folder.
 2. **Project body copy** in `src/data/projects.ts` and **service deliverables**
    in `src/data/services.ts` were written from the original captions — have
    the client confirm them.
-3. `SITE_URL` in `src/data/site.ts`, `public/sitemap.xml` and the JSON-LD in
+3. **Imagery is AI-generated, not photographs of delivered work.** The Gemini
+   sparkle and "Veo" marks were inpainted out of every still and clip
+   (2026-10-05). The `tl-*` stills and `sketch-film.mp4` come from a set made
+   for "Grosvenor": only logo-free frames or crops were used, and the clips
+   with the logo in shot were left out. Any replacement from that set needs
+   the same check.
+4. `SITE_URL` in `src/data/site.ts`, `public/sitemap.xml` and the JSON-LD in
    `index.html` assume `https://www.teleiostec.com`.
 
 ## How it's put together

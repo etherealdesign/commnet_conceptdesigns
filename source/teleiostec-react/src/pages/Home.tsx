@@ -179,7 +179,7 @@ function Work() {
               <h3 className="display text-fluid-xl">{p.title}</h3>
               <span className="text-[12px] uppercase tracking-[0.18em] text-muted">0{i + 1}</span>
             </div>
-            <p className="text-[13px] text-muted">{p.location} · {p.discipline} · {p.year}</p>
+            <p className="text-[13px] text-muted">{[p.location, p.discipline, p.year].filter(Boolean).join(' · ')}</p>
           </Link>
         ))}
         <Link to="/projects" data-cursor="Open" className="display flex shrink-0 items-center gap-4 text-fluid-2xl italic md:h-[58vh] md:w-[28vw] md:justify-center">

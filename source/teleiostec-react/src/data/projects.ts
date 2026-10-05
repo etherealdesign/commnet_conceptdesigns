@@ -6,7 +6,8 @@ export type Project = {
   location: string
   category: 'Residential' | 'Hospitality' | 'Commercial'
   discipline: string
-  year: number
+  /** Left out when unconfirmed — shown only where it is known. */
+  year?: number
   summary: string
   body: string[]
   pic: Pic
@@ -21,7 +22,6 @@ export const projects: Project[] = [
     location: 'Al Moosa Tower 2, Dubai',
     category: 'Commercial',
     discipline: 'Commercial Fit-Out',
-    year: 2026,
     summary: 'A corporate experience centre taken from floor plan to finished floor — reception, boardroom, training room and leadership cabins.',
     body: [
       'Every great space starts as a plan. The centre was resolved from a single layout into six connected zones: a branded reception, an enterprise boardroom, a digital-signage wall, a hybrid training room, glazed corridors and a leadership cabin.',

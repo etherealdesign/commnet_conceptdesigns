@@ -41,7 +41,7 @@ export default function ProjectDetail() {
         path={`/projects/${p.slug}`}
         image={`${p.pic.src}-${p.pic.widths.at(-1)}.jpg`}
         jsonLd={{
-          '@type': 'CreativeWork', name: p.title, about: p.discipline, dateCreated: String(p.year),
+          '@type': 'CreativeWork', name: p.title, about: p.discipline, ...(p.year && { dateCreated: String(p.year) }),
           locationCreated: { '@type': 'Place', name: p.location }, image: `${SITE_URL}${p.pic.src}-${p.pic.widths.at(-1)}.jpg`,
           creator: { '@id': `${SITE_URL}/#org` }, description: p.summary,
         }}
@@ -68,7 +68,7 @@ export default function ProjectDetail() {
 
         <section className="wrap section grid gap-16 md:grid-cols-12">
           <dl className="grid grid-cols-2 gap-8 self-start text-[14px] md:col-span-4 md:grid-cols-1">
-            {[['Location', p.location], ['Discipline', p.discipline], ['Sector', p.category], ['Year', String(p.year)]].map(([k, v], i) => (
+            {[['Location', p.location], ['Discipline', p.discipline], ['Sector', p.category], ...(p.year ? [['Year', String(p.year)]] : [])].map(([k, v], i) => (
               <Reveal key={k} delay={i * 0.06} className="border-t border-[var(--line)] pt-3">
                 <dt className="kick mb-1">{k}</dt>
                 <dd>{v}</dd>

@@ -47,6 +47,20 @@ export const projects: Project[] = [
     film: { name: 'grosvenor-film', label: 'Grosvenor concept film: oak joinery, stone walls and woven pendant lights' },
   },
   {
+    slug: 'council-chamber',
+    title: 'Council Chamber',
+    location: 'UAE',
+    category: 'Commercial',
+    discipline: 'Design Proposal',
+    summary: 'A council chamber built around one long table — a lit grid ceiling, timber and stone walls, and conferencing screens set into the joinery.',
+    body: [
+      'The room is planned for long sessions with many voices: a single U-shaped table with a microphone at every seat, so everyone faces the chair and each other.',
+      'A coffered light ceiling spreads even daylight-like light across the table, while timber panelling and stone frame the walls and hold the conferencing screens flush. This is a design proposal, shown here as presented to the client.',
+    ],
+    pic: { src: '/Asset/media/council-chamber', widths: [400, 618], w: 618, h: 773, alt: 'Long council table with pale leather chairs under a lit grid ceiling' },
+    film: { name: 'council-chamber-film', label: 'Council chamber design proposal: the long table, lit grid ceiling and conferencing wall' },
+  },
+  {
     slug: 'the-great-room',
     title: 'The Great Room',
     location: 'Valley Estate, Hatta',

@@ -45,7 +45,7 @@ export function Process() {
             best = i
           }
           movers[i](d < 0.5 ? 24 : 0)
-          faders[i](d < 0.5 ? 1 : 0.55)
+          faders[i](d < 0.5 ? 1 : 0.78)
         })
         if (bestD > 0.75) best = -1
         if (best !== current) {
@@ -56,7 +56,7 @@ export function Process() {
       onLeave: () => {
         els.forEach((_, i) => {
           movers[i](0)
-          faders[i](0.55)
+          faders[i](0.78)
         })
         current = -1
         setActive(null)
@@ -64,13 +64,13 @@ export function Process() {
       onLeaveBack: () => {
         els.forEach((_, i) => {
           movers[i](0)
-          faders[i](0.55)
+          faders[i](0.78)
         })
         current = -1
         setActive(null)
       },
     })
-    gsap.set(els, { opacity: 0.55 })
+    gsap.set(els, { opacity: 0.78 })
     return () => st.kill()
   }, [n, still])
 

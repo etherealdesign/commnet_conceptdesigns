@@ -31,9 +31,9 @@ export function Footer() {
         <div className="grid gap-12 text-[14px] sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="kick mb-5 !text-muted-dark">Pages</p>
-            <ul className="grid grid-cols-2 gap-2">
-              <li><Link to="/" className="link-line">Home</Link></li>
-              {nav.map((n) => <li key={n.to}><Link to={n.to} className="link-line">{n.label}</Link></li>)}
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
+              <li><Link to="/" className="link-line inline-block py-1.5">Home</Link></li>
+              {nav.map((n) => <li key={n.to}><Link to={n.to} className="link-line inline-block py-1.5">{n.label}</Link></li>)}
             </ul>
           </div>
           <div>
@@ -42,13 +42,13 @@ export function Footer() {
           </div>
           <div>
             <p className="kick mb-5 !text-muted-dark">Contact</p>
-            <a href={`mailto:${contact.email}`} className="link-line block w-fit">{contact.email}</a>
-            <a href={contact.phoneHref} className="link-line mt-2 block w-fit">{contact.phone}</a>
+            <a href={`mailto:${contact.email}`} className="link-line block w-fit py-1.5">{contact.email}</a>
+            <a href={contact.phoneHref} className="link-line block w-fit py-1.5">{contact.phone}</a>
           </div>
           <div>
             <p className="kick mb-5 !text-muted-dark">Follow</p>
-            <ul className="space-y-2">
-              {social.map((s) => <li key={s.label}><a href={s.href} target="_blank" rel="noopener" className="link-line">{s.label}</a></li>)}
+            <ul className="space-y-1">
+              {social.map((s) => <li key={s.label}><a href={s.href} target="_blank" rel="noopener" className="link-line inline-block py-1.5">{s.label}</a></li>)}
             </ul>
           </div>
         </div>
@@ -65,7 +65,7 @@ export function Footer() {
         <span>© {new Date().getFullYear()} Teleiostec — Interior Fit-Out &amp; MEP</span>
         <DubaiTime />
         <span>{contact.coords}</span>
-        <button type="button" onClick={top} className="link-line uppercase tracking-[0.16em]">Back to top ↑</button>
+        <button type="button" onClick={top} className="link-line py-2 uppercase tracking-[0.16em]">Back to top ↑</button>
       </div>
     </footer>
   )

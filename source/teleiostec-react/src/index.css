@@ -17,7 +17,7 @@
   --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
   /* fluid type scale — min at 360px, max at 1680px */
-  --text-fluid-xs: clamp(0.6875rem, 0.66rem + 0.1vw, 0.75rem);
+  --text-fluid-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
   --text-fluid-sm: clamp(0.875rem, 0.84rem + 0.15vw, 1rem);
   --text-fluid-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
   --text-fluid-lg: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);

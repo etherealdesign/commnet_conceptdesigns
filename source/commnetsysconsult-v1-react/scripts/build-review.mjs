@@ -28,8 +28,11 @@ const walk = (dir) =>
 /** So the bundle cannot close the tag it is sitting inside. */
 const safe = (code, tag) => code.replace(new RegExp(`</${tag}`, 'gi'), `<\\/${tag}`)
 
-execFileSync('npx', ['tsc', '-b'], { cwd: app, stdio: 'inherit' })
-execFileSync('npx', ['vite', 'build', '--outDir', out, '--emptyOutDir'], {
+// Tool entry points run under the current node, not `npx`: on Windows npx is a .cmd
+// that execFileSync cannot spawn, and a shell would split the spaced repo path.
+const bin = (pkg, file) => join(app, 'node_modules', pkg, 'bin', file)
+execFileSync(process.execPath, [bin('typescript', 'tsc'), '-b'], { cwd: app, stdio: 'inherit' })
+execFileSync(process.execPath, [bin('vite', 'vite.js'), 'build', '--outDir', out, '--emptyOutDir'], {
   cwd: app,
   stdio: 'inherit',
   env: { ...process.env, VITE_BASE: './', VITE_HASH_ROUTER: '1', VITE_SINGLE: '1' },

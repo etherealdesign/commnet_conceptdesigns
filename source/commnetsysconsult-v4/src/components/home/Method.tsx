@@ -55,7 +55,7 @@ export function Method({ index = 6 }: { index?: number }) {
           <div data-trace className="absolute inset-0 origin-left bg-primary" />
         </div>
 
-        <ol className="grid gap-8 md:grid-cols-6 md:gap-6 md:pt-6">
+        <ol className="grid gap-8 md:grid-cols-3 md:gap-6 md:pt-6 lg:grid-cols-6">
           {method.steps.map((s, i) => (
             <li key={s.title} data-station className="relative flex gap-4 md:block">
               <span className="mono bullet shrink-0 text-grey md:block">{String(i + 1).padStart(2, '0')}</span>

@@ -34,7 +34,7 @@ function Field({ label, ...props }: { label: string } & React.InputHTMLAttribute
   return (
     <label className="relative block">
       {multiline ? <textarea rows={4} placeholder={label} className={cls + ' resize-none'} {...rest} /> : <input placeholder={label} className={cls} {...rest} />}
-      <span className="pointer-events-none absolute left-0 top-7 text-fluid-lg text-muted transition-all duration-500 ease-out-expo peer-focus:top-0 peer-focus:text-[11px] peer-focus:uppercase peer-focus:tracking-[0.18em] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-[0.18em]">
+      <span className="pointer-events-none absolute left-0 top-7 text-fluid-lg text-muted transition-all duration-500 ease-out-expo peer-focus:top-0 peer-focus:text-[12px] peer-focus:uppercase peer-focus:tracking-[0.18em] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-[0.18em]">
         {label}
       </span>
     </label>
@@ -70,25 +70,25 @@ export default function Contact() {
       <section className="grain relative overflow-hidden bg-dark text-ivory">
         <ParticleField tone="dark" />
         <div className="wrap relative pt-[calc(var(--header-h)+clamp(60px,14vh,160px))] pb-[clamp(56px,10vh,120px)]">
-          <div className="mb-10 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-muted-dark">
+          <div className="mb-10 flex items-center justify-between text-[12px] uppercase tracking-[0.2em] text-muted-dark">
             <span>Contact</span><span>(06)</span>
           </div>
           <Split as="h1" trigger="load" by="words" className="display text-fluid-4xl">Let’s create <em>better spaces.</em></Split>
-          <div className="mt-16 grid gap-10 border-t border-[var(--line-dark)] pt-10 text-[14px] md:grid-cols-4">
-            <Reveal><p className="kick mb-3 !text-muted-dark">Email</p><a href={`mailto:${contact.email}`} className="link-line">{contact.email}</a></Reveal>
-            <Reveal delay={0.08}><p className="kick mb-3 !text-muted-dark">Phone</p><a href={contact.phoneHref} className="link-line">{contact.phone}</a></Reveal>
+          <div className="mt-16 grid gap-10 border-t border-[var(--line-dark)] pt-10 text-[14px] sm:grid-cols-2 lg:grid-cols-4">
+            <Reveal><p className="kick mb-3 !text-muted-dark">Email</p><a href={`mailto:${contact.email}`} className="link-line inline-block py-1.5">{contact.email}</a></Reveal>
+            <Reveal delay={0.08}><p className="kick mb-3 !text-muted-dark">Phone</p><a href={contact.phoneHref} className="link-line inline-block py-1.5">{contact.phone}</a></Reveal>
             <Reveal delay={0.16}><p className="kick mb-3 !text-muted-dark">Studio</p><a href={contact.mapHref} target="_blank" rel="noopener" className="link-line">{contact.address.join(', ')} ↗</a></Reveal>
-            <Reveal delay={0.24}><p className="kick mb-3 !text-muted-dark">Follow</p><span className="flex gap-4">{social.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noopener" className="link-line">{s.label}</a>)}</span></Reveal>
+            <Reveal delay={0.24}><p className="kick mb-3 !text-muted-dark">Follow</p><span className="flex flex-wrap gap-x-4 gap-y-1">{social.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noopener" className="link-line inline-block py-1.5">{s.label}</a>)}</span></Reveal>
           </div>
         </div>
       </section>
 
-      <section className="wrap section grid gap-16 md:grid-cols-12">
-        <div className="md:col-span-4">
+      <section className="wrap section grid gap-16 lg:grid-cols-12">
+        <div className="lg:col-span-4">
           <Split as="h2" className="display text-fluid-2xl">Tell us about <em>your space.</em></Split>
           <Reveal delay={0.2}><p className="mt-6 max-w-[34ch] text-muted">A few details help us come back with the right people. We reply within two working days.</p></Reveal>
         </div>
-        <form onSubmit={submit} className="space-y-12 md:col-span-7 md:col-start-6">
+        <form onSubmit={submit} className="space-y-12 lg:col-span-7 lg:col-start-6">
           <div className="grid gap-10 md:grid-cols-2">
             <Field label="Your name" name="name" required autoComplete="name" />
             <Field label="Email" name="email" type="email" required autoComplete="email" />

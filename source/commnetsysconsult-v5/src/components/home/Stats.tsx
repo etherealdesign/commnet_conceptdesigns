@@ -45,7 +45,7 @@ export function Stats() {
               ref={(el) => {
                 cards.current[i + 1] = el
               }}
-              className="grid-span-12 md:grid-span-3 flex aspect-[4/5] flex-col justify-between bg-card p-8 will-change-transform"
+              className="grid-span-12 md:grid-span-3 flex min-h-[220px] flex-col justify-between gap-10 md:aspect-[4/5] bg-card p-8 will-change-transform"
             >
               <SlotNumber value={s.value} className="t-stat" delay={0.4 + i * 0.1} />
               <p className="mono">{s.label}</p>

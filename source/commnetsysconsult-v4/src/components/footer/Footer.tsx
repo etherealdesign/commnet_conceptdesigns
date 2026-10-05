@@ -46,7 +46,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-3 md:col-span-4">
+        <div className="grid gap-8 sm:grid-cols-2 md:col-span-4 lg:grid-cols-3">
           <nav aria-label="Company" className="flex flex-col gap-2 text-14">
             <p className="mono mb-2 text-white/60">Company</p>
             {COMPANY.map((l) => (

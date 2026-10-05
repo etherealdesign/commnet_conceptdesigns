@@ -35,11 +35,13 @@ const walk = (dir) =>
 /** So the bundle cannot close the tag it is sitting inside. */
 const safe = (code, tag) => code.replace(new RegExp(`</${tag}`, 'gi'), `<\\/${tag}`)
 
+// Vite run under the current node, not `npx`: on Windows npx is a .cmd
+// that execFileSync cannot spawn, and a shell would split the spaced repo path.
 for (const { id: v, inlineMedia } of VERSIONS) {
   const src = join(root, 'source', `commnetsysconsult-${v}`)
   const out = join(root, 'sites', 'commnetsysconsult', v)
   console.log(`=== ${v}`)
-  execFileSync('npx', ['vite', 'build', '--outDir', out, '--emptyOutDir'], {
+  execFileSync(process.execPath, [join(src, 'node_modules', 'vite', 'bin', 'vite.js'), 'build', '--outDir', out, '--emptyOutDir'], {
     cwd: src,
     stdio: 'inherit',
     env: { ...process.env, VITE_BASE: './', VITE_HASH_ROUTER: '1', VITE_SINGLE: '1' },

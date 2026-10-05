@@ -18,7 +18,7 @@ export function Portrait({ person, className, sizes = '33vw', tone = 0 }: { pers
       ) : (
         <div role="img" aria-label={`${person.name}, ${person.role} — photo to follow`} className="flex h-full w-full items-center justify-center">
           <span aria-hidden className="display text-[clamp(40px,7vw,120px)] text-ink/45 transition-transform duration-1000 ease-out-expo group-hover:scale-110">{initials(person.name)}</span>
-          <span aria-hidden className="absolute bottom-3 left-3 text-[10px] uppercase tracking-[0.2em] text-ink/65">Photo to follow</span>
+          <span aria-hidden className="absolute bottom-3 left-3 text-[12px] uppercase tracking-[0.2em] text-ink/65">Photo to follow</span>
         </div>
       )}
     </div>

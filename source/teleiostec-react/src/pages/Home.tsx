@@ -51,7 +51,7 @@ function Hero() {
       <span className="hero-dim absolute inset-0 bg-black opacity-0" aria-hidden />
 
       <div className="wrap relative flex h-full flex-col justify-end pb-[clamp(28px,6vh,64px)]">
-        <p className="hero-fade mb-6 flex gap-3 text-[11px] uppercase tracking-[0.24em] text-ivory/75">
+        <p className="hero-fade mb-6 flex gap-3 text-[12px] uppercase tracking-[0.24em] text-ivory/75">
           <span>Interior</span>·<span>Fit-Out</span>·<span>Joinery</span>·<span>MEP</span>
         </p>
         <Split as="h1" trigger="load" by="words" className="hero-title display text-[clamp(56px,11.5vw,220px)] leading-[0.9]">
@@ -147,7 +147,7 @@ function Work() {
             </div>
             <div className="mt-4 flex items-baseline justify-between gap-4">
               <h3 className="display text-fluid-xl">{p.title}</h3>
-              <span className="text-[11px] uppercase tracking-[0.18em] text-muted">0{i + 1}</span>
+              <span className="text-[12px] uppercase tracking-[0.18em] text-muted">0{i + 1}</span>
             </div>
             <p className="text-[13px] text-muted">{p.location} · {p.discipline} · {p.year}</p>
           </Link>
@@ -233,7 +233,7 @@ function Film() {
     <div ref={ref} className="relative">
       <div className="film-frame relative h-[90svh] overflow-hidden bg-dark">
         <Video name="sketch-film" label="A pencil sketch of a dining room washing into the finished space" />
-        <span className="absolute inset-0 bg-black/25" aria-hidden />
+        <span className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" aria-hidden />
         <div className="wrap absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-6 pb-10 text-ivory">
           <p className="display text-fluid-2xl italic">Built in time.</p>
           <p className="max-w-[36ch] text-[14px] text-ivory/80">Months of coordination and craft, condensed — concept resolving into a finished space.</p>

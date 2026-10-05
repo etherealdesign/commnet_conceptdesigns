@@ -87,7 +87,7 @@ export default function Process() {
       />
       <PageHero index="04" kicker="Process" title={<>From concept <em>to completion.</em></>} lede="Four stages, one team. Nothing is discovered late on site because everything is resolved before it is built." />
 
-      <section className="wrap grid gap-px border-y border-[var(--line)] bg-[var(--line)] md:grid-cols-4">
+      <section className="wrap grid gap-px border-y border-[var(--line)] bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s, i) => (
           <Reveal key={s.no} delay={i * 0.08} className="bg-ivory p-8">
             <p className="text-[12px] tracking-[0.18em] text-muted">{s.no}</p>

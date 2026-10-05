@@ -64,7 +64,7 @@ export default function Projects() {
                 <Link to={`/projects/${p.slug}`} data-cursor="View" className="group block">
                   <div className="relative aspect-[4/5] overflow-hidden bg-ivory-2">
                     <Img pic={p.pic} sizes="(max-width:768px) 100vw, 46vw" imgClassName="transition-transform duration-[1.6s] ease-out-expo group-hover:scale-[1.06]" />
-                    <span className="absolute left-4 top-4 rounded-full bg-ivory/90 px-3 py-1 text-[11px] uppercase tracking-[0.16em] opacity-0 transition-opacity duration-500 group-hover:opacity-100">{p.category}</span>
+                    <span className="absolute left-4 top-4 rounded-full bg-ivory/90 px-3 py-1 text-[12px] uppercase tracking-[0.16em] opacity-0 transition-opacity duration-500 group-hover:opacity-100">{p.category}</span>
                   </div>
                   <div className="mt-5 grid grid-cols-[1fr_auto] items-baseline gap-2">
                     <h2 className="display text-fluid-xl">{p.title}</h2>

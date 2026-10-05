@@ -50,7 +50,7 @@ export function Menu({ open, onClose }: { open: boolean; onClose: () => void }) 
                       aria-current={pathname.startsWith(n.to) ? 'page' : undefined}
                       className="group flex items-baseline gap-5 py-[clamp(6px,1.1vh,14px)]"
                     >
-                      <span className="w-8 text-[11px] tracking-[0.2em] text-muted-dark">0{i + 1}</span>
+                      <span className="w-8 text-[12px] tracking-[0.2em] text-muted-dark">0{i + 1}</span>
                       <span className="display text-[clamp(40px,7.2vh,96px)] transition-[transform,font-style] duration-700 ease-out-expo group-hover:translate-x-4 group-hover:italic group-aria-[current=page]:italic">
                         {n.label}
                       </span>
@@ -78,7 +78,7 @@ export function Menu({ open, onClose }: { open: boolean; onClose: () => void }) 
                   <SimpleImg src={nav[hover]!.img} className="h-full w-full object-cover" />
                 </motion.div>
               </AnimatePresence>
-              <span className="absolute bottom-4 left-4 z-10 text-[11px] uppercase tracking-[0.2em] text-white">{nav[hover]!.label}</span>
+              <span className="absolute bottom-4 left-4 z-10 text-[12px] uppercase tracking-[0.2em] text-white">{nav[hover]!.label}</span>
             </motion.div>
 
             <motion.div

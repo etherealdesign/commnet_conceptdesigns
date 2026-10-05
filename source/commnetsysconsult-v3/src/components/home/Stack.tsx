@@ -86,7 +86,7 @@ export function Stack() {
             })}
           </ul>
 
-          <div className="pointer-events-none absolute inset-0 hidden md:grid md:grid-cols-12 md:gap-x-[var(--gutter)]">
+          <div className="pointer-events-none absolute inset-0 hidden lg:grid lg:grid-cols-12 lg:gap-x-[var(--gutter)]">
             {stack.blocks.map((b, i) => (
               <div
                 key={b.title}
@@ -103,7 +103,7 @@ export function Stack() {
           </div>
         </div>
 
-        <div className="margin-px-1 mt-10 flex flex-col gap-8 md:hidden">
+        <div className="margin-px-1 mt-10 flex flex-col gap-8 lg:hidden">
           {stack.blocks.map((b) => (
             <div key={b.title}>
               <p className="text-[0.875rem] font-bold">{b.title}</p>

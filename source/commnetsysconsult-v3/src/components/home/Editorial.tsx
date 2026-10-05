@@ -8,8 +8,8 @@ import { editorial } from '@/data/home'
 export function Editorial() {
   return (
     <Block className="margin-px-1 my-[var(--spacing-fluid-2xl)]" ariaLabel="About Commnet">
-      <SlideGroup className="flex flex-col gap-10 md:flex-row md:items-start md:gap-[var(--gutter)]">
-        <SlideItem className="flex flex-col items-start gap-10 md:w-1/4 md:pl-[8%]" index={0}>
+      <SlideGroup className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-[var(--gutter)]">
+        <SlideItem className="flex flex-col items-start gap-10 lg:w-1/4 lg:pl-[8%]" index={0}>
           <p className="text-md max-w-[28rem]">{editorial.body}</p>
           <Button to={editorial.button.to} variant="grey">
             {editorial.button.label}

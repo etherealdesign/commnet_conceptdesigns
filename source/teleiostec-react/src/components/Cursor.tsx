@@ -86,7 +86,7 @@ export function Cursor() {
               label ? 'scale-100 opacity-100' : 'scale-50 opacity-0',
             )}
           >
-            <span className="text-[11px] uppercase tracking-[0.18em]">{label}</span>
+            <span className="text-[12px] uppercase tracking-[0.18em]">{label}</span>
           </div>
         </div>
       </div>

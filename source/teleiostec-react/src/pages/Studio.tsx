@@ -37,7 +37,7 @@ export default function Studio() {
 
       <div className="relative h-[85svh] overflow-hidden bg-dark">
         <Video name="moment" label="Timelapse of an interior coming together" />
-        <span className="absolute inset-0 bg-black/30" aria-hidden />
+        <span className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" aria-hidden />
         <div className="wrap absolute inset-x-0 bottom-0 pb-10 text-ivory">
           <p className="kick mb-3 !text-ivory/70">Between the work</p>
           <p className="max-w-[40ch] text-fluid-lg">A space coming to life, frame by frame — the parts of a room you feel before you notice.</p>
@@ -72,7 +72,7 @@ export default function Studio() {
           <RevealImage className="aspect-[4/3]"><Img pic={photo('craftsman-working-on-walnut-cabinet', 'Craftsman working on a walnut cabinet in the joinery workshop')} sizes="(max-width:768px) 100vw, 46vw" /></RevealImage>
           <figcaption className="mt-3 text-[12px] text-muted">Joinery — walnut, hand-finished</figcaption>
         </figure>
-        <figure className="md:col-span-4 md:col-start-2 md:-mt-[10vh]">
+        <figure className="md:col-span-4 md:col-start-2 lg:-mt-[10vh]">
           <RevealImage className="aspect-[3/4]" from="right"><Img pic={photo('modern-interior-corridor-leading', 'Modern interior corridor with layered natural light')} sizes="(max-width:768px) 100vw, 34vw" /></RevealImage>
           <figcaption className="mt-3 text-[12px] text-muted">Light — corridor study</figcaption>
         </figure>

@@ -7,7 +7,7 @@ export function PageHero({ index, kicker, title, lede, dark }: { index: string; 
   return (
     <section className={dark ? 'bg-dark text-ivory' : ''}>
       <div className="wrap pt-[calc(var(--header-h)+clamp(60px,14vh,160px))] pb-[clamp(56px,9vh,120px)]">
-        <div className="mb-10 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-muted">
+        <div className="mb-10 flex items-center justify-between text-[12px] uppercase tracking-[0.2em] text-muted">
           <span>{kicker}</span>
           <span>({index})</span>
         </div>

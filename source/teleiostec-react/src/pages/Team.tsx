@@ -70,7 +70,7 @@ export default function Team() {
       <section className="grain relative overflow-hidden bg-dark text-ivory">
         <ParticleField tone="dark" />
         <div className="wrap relative flex min-h-[92svh] flex-col justify-end pt-[calc(var(--header-h)+80px)] pb-[clamp(48px,8vh,96px)]">
-          <div className="mb-10 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-muted-dark">
+          <div className="mb-10 flex items-center justify-between text-[12px] uppercase tracking-[0.2em] text-muted-dark">
             <span>Leadership &amp; Team</span><span>(05)</span>
           </div>
           <Split as="h1" trigger="load" by="words" className="display max-w-[12ch] text-fluid-4xl">The people <em>behind the work.</em></Split>

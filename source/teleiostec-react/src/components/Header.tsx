@@ -55,7 +55,7 @@ export function Header({ menuOpen, onMenu }: { menuOpen: boolean; onMenu: () => 
           onClick={onMenu}
           aria-expanded={menuOpen}
           aria-controls="site-menu"
-          className="ml-auto flex items-center gap-3 text-[12px] uppercase tracking-[0.16em] lg:ml-10"
+          className="-my-3 -mr-2 ml-auto flex min-h-11 items-center gap-3 px-2 py-3 text-[12px] uppercase tracking-[0.16em] lg:ml-10"
           data-cursor-hover
         >
           <span className="relative inline-block h-[1.2em] overflow-hidden">

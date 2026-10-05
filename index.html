@@ -141,6 +141,12 @@ footer{padding:40px 0 56px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-cont
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 </style>
+<style id="readability">
+/* Phone and tablet readability fixes (2026-10-05): fainter-than-legible labels,
+   sub-11px text and sub-24px tap targets found by a 390px / 820px audit. */
+@media (max-width:900px){.jump{display:none}}
+.card--lead .shot img{object-position:left top}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to builds</a>

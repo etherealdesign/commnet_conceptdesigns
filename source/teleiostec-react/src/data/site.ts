@@ -25,7 +25,7 @@ export const nav = [
   { to: '/studio', label: 'Studio', img: '/Asset/photos/craftsman-working-on-walnut-cabinet-800' },
   { to: '/services', label: 'Services', img: '/Asset/media/joinery-800' },
   { to: '/process', label: 'Process', img: '/Asset/media/kitchen-house-800' },
-  { to: '/team', label: 'Team', img: '/Asset/photos/curved-walnut-and-limestone-inte-800' },
+  { to: '/founder', label: 'Founder', img: '/Asset/photos/curved-walnut-and-limestone-inte-800' },
   { to: '/contact', label: 'Contact', img: '/Asset/media/hearth-800' },
 ] as const
 

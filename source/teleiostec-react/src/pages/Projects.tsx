@@ -21,14 +21,14 @@ export default function Projects() {
     <Page label="Projects">
       <Seo
         title="Projects"
-        description="Selected residential, hospitality and commercial interiors by Teleiostec — designed, engineered and built by one accountable team across the Emirates."
+        description="Selected residential, hospitality and commercial interiors by Teleiostec — designed and delivered under one accountable lead across the Emirates."
         path="/projects"
         jsonLd={{
           '@type': 'CollectionPage', name: 'Teleiostec Projects', url: `${SITE_URL}/projects`,
           hasPart: projects.map((p) => ({ '@type': 'CreativeWork', name: p.title, url: `${SITE_URL}/projects/${p.slug}` })),
         }}
       />
-      <PageHero index="01" kicker="Selected work" title={<>Projects, <em>built whole.</em></>} lede="Residential, hospitality and commercial environments across the Emirates — designed, engineered and built by one accountable team." />
+      <PageHero index="01" kicker="Selected work" title={<>Projects, <em>built whole.</em></>} lede="Residential, hospitality and commercial environments across the Emirates — designed and delivered under one accountable lead." />
 
       <section className="wrap pb-[var(--sec)]">
         <div role="toolbar" aria-label="Filter projects" className="mb-12 flex flex-wrap gap-2 border-b border-[var(--line)] pb-6">

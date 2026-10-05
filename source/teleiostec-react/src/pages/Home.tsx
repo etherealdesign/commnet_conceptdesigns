@@ -13,7 +13,8 @@ import { Counter } from '@/components/Counter'
 import { CtaBlock } from '@/components/CtaBlock'
 import { projects } from '@/data/projects'
 import { services } from '@/data/services'
-import { leaders, initials } from '@/data/team'
+import { founder } from '@/data/founder'
+import { Portrait } from '@/components/Portrait'
 import { stats } from '@/data/site'
 import { gsap, useGSAP, reducedMotion, finePointer } from '@/lib/gsap'
 import { introDone } from '@/lib/intro'
@@ -76,7 +77,7 @@ function Hero() {
 /* ── Statement: words brighten as you scroll ──────────── */
 function Statement() {
   const ref = useRef<HTMLDivElement>(null)
-  const text = 'Teleiostec is a boutique interior fit-out and MEP studio. We design, engineer and build considered residential, hospitality and commercial environments across the Emirates — resolved as one coordinated set, and built by our own hands.'
+  const text = 'Teleiostec is a boutique interior fit-out and MEP studio. We design, engineer and build considered residential, hospitality and commercial environments across the Emirates — resolved as one coordinated set, and seen through by its founder from brief to handover.'
   useGSAP(() => {
     if (reducedMotion()) return
     gsap.fromTo('.st-word', { color: '#8f8a80' }, {
@@ -180,7 +181,7 @@ function ServicesList() {
       <div className="wrap">
         <div className="mb-14 grid gap-6 md:grid-cols-[180px_1fr]">
           <p className="kick pt-3">(03) Services</p>
-          <Split as="h2" className="display text-fluid-2xl">Four disciplines,<br /><em>one accountable team.</em></Split>
+          <Split as="h2" className="display text-fluid-2xl">Four disciplines,<br /><em>one point of contact.</em></Split>
         </div>
         <ul className="border-t border-[var(--line)]" onPointerLeave={() => setActive(null)}>
           {services.map((s) => (
@@ -259,33 +260,27 @@ function Numbers() {
   )
 }
 
-/* ── Team teaser ───────────────────────────────────────── */
-function TeamTeaser() {
+/* ── Founder teaser ────────────────────────────────────── */
+function FounderTeaser() {
   return (
     <section className="section bg-ivory-2">
-      <div className="wrap grid gap-16 lg:grid-cols-[1fr_1.4fr] lg:items-end">
-        <div>
-          <p className="kick mb-6">(04) People</p>
-          <Split as="h2" className="display text-fluid-2xl">The hands and minds <em>behind the work.</em></Split>
-          <Reveal delay={0.2} className="mt-10">
-            <Link to="/team" className="group inline-flex items-center gap-4 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
-              <span className="link-line">Meet the team</span>
+      <div className="wrap grid gap-14 md:grid-cols-12 md:items-center lg:items-end">
+        <Reveal y={80} className="md:col-span-5">
+          <Link to="/founder" data-cursor="Meet" className="group block">
+            <Portrait person={founder} className="aspect-[4/5] w-full" sizes="(max-width:768px) 100vw, 40vw" />
+          </Link>
+        </Reveal>
+        <div className="md:col-span-6 md:col-start-7">
+          <p className="kick mb-6">(04) Founder</p>
+          <Split as="h2" className="display text-fluid-2xl">One name <em>on every project.</em></Split>
+          <Reveal delay={0.15}><p className="mt-8 max-w-[44ch] text-fluid-lg leading-[1.5] text-ink/75">“{founder.quote}”</p></Reveal>
+          <Reveal delay={0.25}><p className="mt-6 text-[14px]">{founder.name} <span className="text-muted">— {founder.role}</span></p></Reveal>
+          <Reveal delay={0.35} className="mt-10">
+            <Link to="/founder" className="group inline-flex items-center gap-4 py-2 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
+              <span className="link-line">Meet the founder</span>
               <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-2">→</span>
             </Link>
           </Reveal>
-        </div>
-        <div className="grid grid-cols-3 gap-3 md:gap-5">
-          {leaders.map((p, i) => (
-            <Reveal key={i} delay={i * 0.1} y={80}>
-              <Link to="/team" data-cursor="Meet" className="group block">
-                <div className="relative flex aspect-[4/5] items-center justify-center overflow-hidden bg-[#d9d2c4]">
-                  <span className="display text-[clamp(32px,5vw,80px)] text-ink/40 transition-transform duration-1000 ease-out-expo group-hover:scale-110">{initials(p.name)}</span>
-                </div>
-                <p className="mt-3 text-[13px]">{p.name}</p>
-                <p className="text-[12px] text-muted">{p.role}</p>
-              </Link>
-            </Reveal>
-          ))}
         </div>
       </div>
     </section>
@@ -312,16 +307,16 @@ export default function Home() {
       <Numbers />
       <section className="wrap grid gap-6 pb-[var(--sec)] md:grid-cols-12">
         <RevealImage className="aspect-[4/5] md:col-span-5">
-          <Img pic={{ src: '/Asset/photos/craftsman-working-on-walnut-cabinet', widths: [800, 1400], w: 1400, h: 1045, alt: 'Craftsman working on a walnut cabinet' }} sizes="(max-width:768px) 100vw, 40vw" />
+          <Img pic={{ src: '/Asset/photos/craftsman-working-on-walnut-cabinet', widths: [800, 1400], w: 1400, h: 1045, alt: 'Joiner working on a walnut cabinet' }} sizes="(max-width:768px) 100vw, 40vw" />
         </RevealImage>
         <div className="flex flex-col justify-end md:col-span-6 md:col-start-7">
           <Split as="h2" className="display text-fluid-3xl">Every detail <em>has a reason.</em></Split>
           <Reveal delay={0.2} className="mt-8 max-w-[44ch] text-muted">
-            <p>Veneer matching, solid timber detailing and hand-finished millwork — made in our own workshop, by the people who drew it.</p>
+            <p>Veneer matching, solid timber detailing and hand-finished millwork — detailed in the studio, made by specialist joiners chosen for each piece.</p>
           </Reveal>
         </div>
       </section>
-      <TeamTeaser />
+      <FounderTeaser />
       <CtaBlock />
     </Page>
   )

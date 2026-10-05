@@ -12,8 +12,8 @@ export const steps: { no: string; title: string; short: string; long: string; pi
     pic: { src: '/Asset/media/tl-reception', widths: [400, 800, 1200, 1536], w: 1536, h: 1072, alt: 'Reception lobby with perforated timber screens' },
   },
   {
-    no: '03', title: 'Build', short: 'Our own craftsmen construct what was drawn.',
-    long: 'Our own site teams and workshop build what was drawn. The people who detailed the joinery are the people who make it.',
+    no: '03', title: 'Build', short: 'Hand-picked specialists build what was drawn.',
+    long: 'Each trade is carried out by specialists chosen for the project and supervised on site by the founder, so what was drawn is what gets built.',
     pic: { src: '/Asset/media/tl-lounge', widths: [400, 800, 1200, 1536], w: 1536, h: 1150, alt: 'Waiting lounge beside a planted courtyard' },
   },
   {
@@ -25,6 +25,6 @@ export const steps: { no: string; title: string; short: string; long: string; pi
 
 export const principles = [
   { no: '01', title: 'Resolved before it is built.', body: 'BIM models, MEP routing, joinery details and material palettes are settled together — so nothing is discovered late on site.' },
-  { no: '02', title: 'One accountable team.', body: 'A single point of responsibility from brief to handover. On programme, within budget, with no gaps between design and delivery.' },
-  { no: '03', title: 'Made by our own hands.', body: 'Our own craftsmen and engineers build what we draw, held to a boutique standard of finish and quality assurance.' },
+  { no: '02', title: 'One point of contact.', body: 'The founder leads every project personally, from brief to handover. On programme, within budget, with no hand-offs between design and delivery.' },
+  { no: '03', title: 'Made by trusted hands.', body: 'Specialist joiners, engineers and finishers chosen for each job, briefed directly and held to one boutique standard of finish.' },
 ]

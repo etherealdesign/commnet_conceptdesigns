@@ -1,4 +1,4 @@
-import { initials, type Person } from '@/data/team'
+import { initials, type Person } from '@/data/founder'
 import { cn } from '@/lib/cn'
 
 /**

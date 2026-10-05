@@ -2,7 +2,7 @@
 
 React 19 + Vite + TypeScript + Tailwind CSS 4 rebuild of the static
 `../../sites/teleiostec/v2/` site (which is left untouched). Every menu item is its
-own route, and there is a new **Team** page.
+own route, and there is a **Founder** page.
 
 ```bash
 npm install
@@ -16,7 +16,7 @@ npm run build:review   # rebuild ../../sites/teleiostec/react/ — the copy the 
 **The review index card links to `../../sites/teleiostec/react/`, not to this
 folder.** That copy is generated, so re-run `npm run build:review` after any
 change here, or the card shows the old site. It is a single inlined page with
-hash routing (`#/team`), so it works both over HTTP and opened straight from
+hash routing (`#/founder`), so it works both over HTTP and opened straight from
 disk. Its video and posters are read from `../../sites/teleiostec/v2/Asset/media/`,
 so keep that folder.
 
@@ -24,21 +24,24 @@ so keep that folder.
 
 | Path | Page |
 |---|---|
-| `/` | Home — video hero, scroll-lit statement, pinned horizontal work gallery, services with cursor preview, film plate, numbers, team teaser |
+| `/` | Home — video hero, scroll-lit statement, pinned horizontal work gallery, services with cursor preview, film plate, numbers, founder teaser |
 | `/projects` | Filterable grid (Motion layout animations) |
 | `/projects/:slug` | Project detail with clip-reveal hero and "next project" |
 | `/studio` | Story, film, principles, craft spread, numbers |
 | `/services` | Four disciplines with sticky copy + parallax imagery; `/services#joinery` deep-links |
 | `/process` | Pinned image-stack of the four stages |
-| `/team` | **New.** Leadership spreads + team grid, bio drawer |
+| `/founder` | Founder portrait and story, what the founder handles personally, specialist trades, credentials. `/team` redirects here |
 | `/contact` | Enquiry form (opens the visitor's mail client — there is no backend) |
 
 ## ⚠️ Before going live
 
-1. **Team content is placeholder.** `src/data/team.ts` — every name, role and
-   bio is a stand-in. Add portraits to `public/Asset/team/`, run
-   `npm run images`, and set `photo: '/Asset/team/<file-without-ext>'`.
-   Cards show a monogram until a photo is set.
+1. **Founder content is placeholder.** Teleiostec is run by one person, who
+   leads every project and brings in specialist trades per job — the copy
+   says so everywhere and makes no in-house workshop or team claims.
+   `src/data/founder.ts` holds the name, story, quote and credentials; every
+   `[ ]` must come from the client. Add a portrait to `public/Asset/team/`,
+   run `npm run images`, and set `photo: '/Asset/team/<file-without-ext>'`.
+   The portrait shows a monogram until then.
 2. **Project body copy** in `src/data/projects.ts` and **service deliverables**
    in `src/data/services.ts` were written from the original captions — have
    the client confirm them.

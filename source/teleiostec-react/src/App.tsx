@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'motion/react'
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { SmoothScroll, scrollToTop, useLenis } from '@/lib/smooth'
 import { ScrollTrigger } from '@/lib/gsap'
 import { Header } from '@/components/Header'
@@ -16,7 +16,7 @@ const ProjectDetail = lazy(() => import('@/pages/ProjectDetail'))
 const Studio = lazy(() => import('@/pages/Studio'))
 const Services = lazy(() => import('@/pages/Services'))
 const Process = lazy(() => import('@/pages/Process'))
-const Team = lazy(() => import('@/pages/Team'))
+const Founder = lazy(() => import('@/pages/Founder'))
 const Contact = lazy(() => import('@/pages/Contact'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 
@@ -55,7 +55,8 @@ function Shell() {
               <Route path="/studio" element={<Studio />} />
               <Route path="/services" element={<Services />} />
               <Route path="/process" element={<Process />} />
-              <Route path="/team" element={<Team />} />
+              <Route path="/founder" element={<Founder />} />
+              <Route path="/team" element={<Navigate to="/founder" replace />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

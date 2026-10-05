@@ -19,13 +19,13 @@ export const services: Service[] = [
   },
   {
     slug: 'fit-out', no: '02', title: 'Fit-Out', tag: 'Turnkey · Commercial',
-    desc: 'Turnkey commercial and workplace fit-out — programme, procurement and site delivered under one accountable team.',
+    desc: 'Turnkey commercial and workplace fit-out — programme, procurement and site delivered under one accountable lead.',
     deliverables: ['Turnkey delivery', 'Programme & procurement', 'Authority approvals', 'Snagging & handover'],
     pic: { src: '/Asset/media/tl-office', widths: [400, 800, 1200, 1536], w: 1536, h: 1428, alt: 'Office corridor with a timber slat ceiling and perforated screen walls' },
   },
   {
-    slug: 'joinery', no: '03', title: 'Joinery', tag: 'Bespoke · In-house',
-    desc: 'Bespoke in-house joinery — veneer matching, solid timber detailing and hand-finished millwork.',
+    slug: 'joinery', no: '03', title: 'Joinery', tag: 'Bespoke · Specialist-made',
+    desc: 'Bespoke joinery detailed in the studio and made by specialist joiners — veneer matching, solid timber and hand-finished millwork.',
     deliverables: ['Shop drawings', 'Veneer matching', 'Solid timber detailing', 'Hand-finished millwork'],
     pic: { src: '/Asset/media/joinery', widths: [400, 800, 1200, 1536], w: 1536, h: 1024, alt: 'Bespoke timber joinery detail' },
   },

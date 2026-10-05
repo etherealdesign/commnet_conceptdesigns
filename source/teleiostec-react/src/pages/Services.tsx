@@ -31,11 +31,11 @@ export default function ServicesPage() {
     <Page label="Services">
       <Seo
         title="Services — Interior, Fit-Out, Joinery & MEP"
-        description="Interior design, turnkey fit-out, bespoke in-house joinery and BIM-coordinated MEP engineering — four disciplines delivered by one accountable team in Dubai."
+        description="Interior design, turnkey fit-out, bespoke joinery and BIM-coordinated MEP engineering — four disciplines led by one founder in Dubai."
         path="/services"
         jsonLd={services.map((s) => ({ '@type': 'Service', name: s.title, description: s.desc, provider: { '@id': 'https://www.teleiostec.com/#org' }, areaServed: 'United Arab Emirates' }))}
       />
-      <PageHero index="03" kicker="Services" title={<>Four disciplines, <em>one team.</em></>} lede="From the first sketch to the last commissioning certificate, design and delivery stay in the same hands." />
+      <PageHero index="03" kicker="Services" title={<>Four disciplines, <em>one point of contact.</em></>} lede="From the first sketch to the last commissioning certificate, one person carries the project — the founder." />
 
       {services.map((s, i) => (
         <section key={s.slug} id={s.slug} className="border-t border-[var(--line)]">

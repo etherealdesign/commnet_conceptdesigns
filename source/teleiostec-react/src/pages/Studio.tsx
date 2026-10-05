@@ -31,7 +31,7 @@ export default function Studio() {
         </RevealImage>
         <div className="flex flex-col justify-end gap-6 md:col-span-4 md:col-start-9">
           <Reveal><p className="text-fluid-lg leading-[1.5]">Teleiostec is a boutique interior fit-out and MEP studio. We design and deliver considered residential, hospitality and commercial environments across Dubai.</p></Reveal>
-          <Reveal delay={0.1}><p className="text-muted">Everything is resolved as one coordinated set rather than in sequence — and built by our own hands, in our own workshop.</p></Reveal>
+          <Reveal delay={0.1}><p className="text-muted">Everything is resolved as one coordinated set rather than in sequence — led by the founder, and built by specialists chosen for each project.</p></Reveal>
         </div>
       </section>
 
@@ -66,10 +66,10 @@ export default function Studio() {
       <section className="wrap section grid gap-6 md:grid-cols-12">
         <div className="md:col-span-5">
           <Split as="h2" className="display text-fluid-3xl">Every detail <em>has a reason.</em></Split>
-          <Reveal delay={0.2} className="mt-8 max-w-[40ch] text-muted"><p>Veneer matching, solid timber detailing and hand-finished millwork — made in our own workshop, by the people who drew it.</p></Reveal>
+          <Reveal delay={0.2} className="mt-8 max-w-[40ch] text-muted"><p>Veneer matching, solid timber detailing and hand-finished millwork — detailed in the studio, made by specialist joiners chosen for each piece.</p></Reveal>
         </div>
         <figure className="md:col-span-6 md:col-start-7">
-          <RevealImage className="aspect-[4/3]"><Img pic={photo('craftsman-working-on-walnut-cabinet', 'Craftsman working on a walnut cabinet in the joinery workshop')} sizes="(max-width:768px) 100vw, 46vw" /></RevealImage>
+          <RevealImage className="aspect-[4/3]"><Img pic={photo('craftsman-working-on-walnut-cabinet', 'Joiner working on a walnut cabinet')} sizes="(max-width:768px) 100vw, 46vw" /></RevealImage>
           <figcaption className="mt-3 text-[12px] text-muted">Joinery — walnut, hand-finished</figcaption>
         </figure>
         <figure className="md:col-span-4 md:col-start-2 lg:-mt-[10vh]">

@@ -37,7 +37,7 @@ export const projects: Project[] = [
     summary: 'A living room anchored by a sculpted fireplace and warm timber joinery.',
     body: [
       'A sculpted hearth sets the room’s centre of gravity; timber joinery wraps the walls to hold storage, media and lighting in one continuous line.',
-      'Every panel was drawn, veneer-matched and hand-finished in our own workshop.',
+      'Every panel was drawn in the studio, then veneer-matched and hand-finished by specialist joiners to that detailing.',
     ],
     pic: { src: '/Asset/media/hearth', widths: [400, 800, 1023], w: 1023, h: 1537, alt: 'Living room with a sculpted fireplace and timber joinery' },
   },
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     year: 2025,
     summary: 'A turnkey fit-out around a light-filled atrium, staircase and pendant lighting.',
     body: [
-      'Delivered turnkey — design, procurement and site under one accountable team — the house turns on a central atrium that carries light through every level.',
+      'Delivered turnkey — design, procurement and site under one accountable lead — the house turns on a central atrium that carries light through every level.',
       'The staircase, balustrades and pendant scheme were detailed as a single sculptural element.',
     ],
     pic: { src: '/Asset/media/atrium', widths: [400, 800, 1087], w: 1087, h: 1447, alt: 'Atrium living space with staircase and pendant lighting' },

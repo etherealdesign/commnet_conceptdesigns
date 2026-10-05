@@ -31,7 +31,8 @@ export const nav = [
 
 export const stats = [
   { value: yearsOfPractice(), suffix: '', label: 'Years of practice' },
-  { value: 240, suffix: '', label: 'Spaces delivered' },
-  { value: 98, suffix: '%', label: 'On-time handover' },
-  { value: 0, suffix: '', text: 'ISO', label: 'Certified processes' },
+  // Only figures the site can stand behind: no delivered-count, on-time rate or certification claims.
+  { value: 4, suffix: '', label: 'Disciplines' },
+  { value: 1, suffix: '', label: 'Point of contact' },
+  { value: 0, suffix: '', text: 'UAE', label: 'Across the Emirates' },
 ]

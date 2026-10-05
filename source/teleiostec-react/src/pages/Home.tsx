@@ -11,7 +11,8 @@ import { Video } from '@/components/Video'
 import { Marquee } from '@/components/Marquee'
 import { Counter } from '@/components/Counter'
 import { CtaBlock } from '@/components/CtaBlock'
-import { projects } from '@/data/projects'
+import { projects, type Project } from '@/data/projects'
+import { cn } from '@/lib/cn'
 import { services } from '@/data/services'
 import { founder } from '@/data/founder'
 import { Portrait } from '@/components/Portrait'
@@ -105,32 +106,43 @@ function Statement() {
   )
 }
 
-/* ── Featured project: vertical story film ──────────── */
+/* ── Featured projects: vertical story films ─────────── */
+// Projects with a film live here only; Work() lists the rest, so none shows twice.
+const filmed = projects.filter((x) => x.film)
+
 function Featured() {
-  const p = projects.find((x) => x.film)
-  if (!p?.film) return null
+  if (!filmed.length) return null
   return (
-    <section className="section bg-dark text-ivory" aria-label="Featured project">
-      <div className="wrap grid items-center gap-12 md:grid-cols-12">
-        <div className="md:col-span-6 lg:col-span-5">
-          <p className="kick mb-6 !text-ivory/60">Featured project</p>
-          <Split as="h2" className="display text-fluid-3xl">{p.title}</Split>
-          <Reveal delay={0.1}><p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-ivory/60">{p.location} · {p.discipline}</p></Reveal>
-          <Reveal delay={0.2}><p className="mt-8 max-w-[44ch] text-fluid-lg leading-[1.5] text-ivory/80">{p.summary}</p></Reveal>
-          <Reveal delay={0.3} className="mt-10">
-            <Link to={`/projects/${p.slug}`} className="group inline-flex items-center gap-4 py-2 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
-              <span className="link-line">View the project</span>
-              <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-2">→</span>
-            </Link>
-          </Reveal>
-        </div>
-        <Reveal y={60} className="md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-8">
-          <Link to={`/projects/${p.slug}`} data-cursor="View" className="mx-auto block aspect-[9/16] w-full max-w-[min(100%,calc(86svh*9/16))] overflow-hidden rounded-[6px] bg-black">
-            <Video name={p.film.name} label={p.film.label} mobile />
+    <section className="section bg-dark text-ivory" aria-label="Featured projects">
+      <div className="wrap flex flex-col gap-28 md:gap-40">
+        {filmed.map((p, i) => <FeaturedFilm key={p.slug} p={p} flip={i % 2 === 1} />)}
+      </div>
+    </section>
+  )
+}
+
+function FeaturedFilm({ p, flip }: { p: Project; flip: boolean }) {
+  if (!p.film) return null
+  return (
+    <div className="grid items-center gap-12 md:grid-cols-12">
+      <div className={cn('md:col-span-6 lg:col-span-5', flip && 'md:order-2 md:col-start-7 lg:col-start-8')}>
+        <p className="kick mb-6 !text-ivory/60">Featured project</p>
+        <Split as="h2" className="display text-fluid-3xl">{p.title}</Split>
+        <Reveal delay={0.1}><p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-ivory/60">{p.location} · {p.discipline}</p></Reveal>
+        <Reveal delay={0.2}><p className="mt-8 max-w-[44ch] text-fluid-lg leading-[1.5] text-ivory/80">{p.summary}</p></Reveal>
+        <Reveal delay={0.3} className="mt-10">
+          <Link to={`/projects/${p.slug}`} className="group inline-flex items-center gap-4 py-2 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
+            <span className="link-line">View the project</span>
+            <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-2">→</span>
           </Link>
         </Reveal>
       </div>
-    </section>
+      <Reveal y={60} className={cn('md:col-span-6 lg:col-span-5', flip ? 'md:order-1 md:col-start-1 lg:col-start-1' : 'md:col-start-7 lg:col-start-8')}>
+        <Link to={`/projects/${p.slug}`} data-cursor="View" className="mx-auto block aspect-[9/16] w-full max-w-[min(100%,calc(86svh*9/16))] overflow-hidden rounded-[6px] bg-black">
+          <Video name={p.film.name} label={p.film.label} mobile />
+        </Link>
+      </Reveal>
+    </div>
   )
 }
 
@@ -168,7 +180,7 @@ function Work() {
         <Link to="/projects" className="link-line hidden text-[12px] uppercase tracking-[0.18em] md:inline">All projects →</Link>
       </div>
       <div ref={track} className="flex flex-col gap-10 px-[var(--pad)] pb-16 md:w-max md:flex-row md:items-start md:gap-[4vw] md:pb-0">
-        {projects.map((p, i) => (
+        {projects.filter((x) => !x.film).map((p, i) => (
           <Link key={p.slug} to={`/projects/${p.slug}`} data-cursor="View" className="group block md:w-[clamp(320px,34vw,620px)]">
             <div className="relative aspect-[4/5] overflow-hidden bg-ivory-2 md:h-[58vh] md:aspect-auto">
               <div className="wk-img absolute inset-[-10%]">

@@ -105,6 +105,35 @@ function Statement() {
   )
 }
 
+/* ── Featured project: vertical story film ──────────── */
+function Featured() {
+  const p = projects.find((x) => x.film)
+  if (!p?.film) return null
+  return (
+    <section className="section bg-dark text-ivory" aria-label="Featured project">
+      <div className="wrap grid items-center gap-12 md:grid-cols-12">
+        <div className="md:col-span-6 lg:col-span-5">
+          <p className="kick mb-6 !text-ivory/60">Featured project</p>
+          <Split as="h2" className="display text-fluid-3xl">{p.title}</Split>
+          <Reveal delay={0.1}><p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-ivory/60">{p.location} · {p.discipline}</p></Reveal>
+          <Reveal delay={0.2}><p className="mt-8 max-w-[44ch] text-fluid-lg leading-[1.5] text-ivory/80">{p.summary}</p></Reveal>
+          <Reveal delay={0.3} className="mt-10">
+            <Link to={`/projects/${p.slug}`} className="group inline-flex items-center gap-4 py-2 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
+              <span className="link-line">View the project</span>
+              <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-2">→</span>
+            </Link>
+          </Reveal>
+        </div>
+        <Reveal y={60} className="md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-8">
+          <Link to={`/projects/${p.slug}`} data-cursor="View" className="mx-auto block aspect-[9/16] w-full max-w-[min(100%,calc(86svh*9/16))] overflow-hidden rounded-[6px] bg-black">
+            <Video name={p.film.name} label={p.film.label} mobile />
+          </Link>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
 /* ── Featured work: horizontal pinned gallery ─────────── */
 function Work() {
   const ref = useRef<HTMLElement>(null)
@@ -298,6 +327,7 @@ export default function Home() {
       />
       <Hero />
       <Statement />
+      <Featured />
       <Work />
       <div className="border-y border-[var(--line)] py-8 text-fluid-3xl">
         <Marquee items={['Interior', 'Fit-Out', 'Joinery', 'MEP Solutions']} />

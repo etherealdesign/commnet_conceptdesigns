@@ -5,6 +5,7 @@ import { Seo } from '@/components/Seo'
 import { Split } from '@/components/Split'
 import { Reveal } from '@/components/Reveal'
 import { Img } from '@/components/Img'
+import { Video } from '@/components/Video'
 import { CtaBlock } from '@/components/CtaBlock'
 import { projectBySlug, projects } from '@/data/projects'
 import { SITE_URL } from '@/data/site'
@@ -52,9 +53,17 @@ export default function ProjectDetail() {
         </section>
 
         <div className="pd-media relative h-[80svh] overflow-hidden bg-ivory-2">
-          <div className="pd-inner absolute inset-0">
-            <Img pic={p.pic} priority sizes="100vw" />
-          </div>
+          {p.film ? (
+            <div className="pd-inner absolute inset-0 flex items-center justify-center bg-dark py-6">
+              <div className="aspect-[9/16] h-full max-w-full overflow-hidden rounded-[6px] bg-black">
+                <Video name={p.film.name} label={p.film.label} mobile />
+              </div>
+            </div>
+          ) : (
+            <div className="pd-inner absolute inset-0">
+              <Img pic={p.pic} priority sizes="100vw" />
+            </div>
+          )}
         </div>
 
         <section className="wrap section grid gap-16 md:grid-cols-12">

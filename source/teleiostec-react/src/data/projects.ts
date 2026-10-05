@@ -10,9 +10,26 @@ export type Project = {
   summary: string
   body: string[]
   pic: Pic
+  /** A vertical (9:16) story film in /Asset/media, with -720 and -poster siblings. */
+  film?: { name: string; label: string }
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'peoplelink-experience-center',
+    title: 'PeopleLink Experience Center',
+    location: 'Al Moosa Tower 2, Dubai',
+    category: 'Commercial',
+    discipline: 'Commercial Fit-Out',
+    year: 2026,
+    summary: 'A corporate experience centre taken from floor plan to finished floor — reception, boardroom, training room and leadership cabins.',
+    body: [
+      'Every great space starts as a plan. The centre was resolved from a single layout into six connected zones: a branded reception, an enterprise boardroom, a digital-signage wall, a hybrid training room, glazed corridors and a leadership cabin.',
+      'Collaboration technology is built into the architecture — screens, cameras and signage sit in timber and glass rather than on top of it — so the brand story carries onto every wall.',
+    ],
+    pic: { src: '/Asset/media/peoplelink', widths: [400, 800, 1080], w: 1080, h: 1250, alt: 'Boardroom with a long timber table and a wall-mounted conferencing screen' },
+    film: { name: 'peoplelink-film', label: 'PeopleLink Experience Center, from floor plan through reception, boardroom, training room and leadership cabin' },
+  },
   {
     slug: 'the-great-room',
     title: 'The Great Room',

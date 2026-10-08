@@ -23,6 +23,8 @@ From the owner's `website corrections .docx`:
 - Grosvenor gets its own 16:9 film (client's `GROSVENOR_commercial_interior_ad…mp4`, end card trimmed) and sits in Featured; wide films are supported (`film.wide`).
 - Grosvenor tower renders removed from general sections (`tl-office`, `tl-reception`, `tl-lounge` → `fitout`, `atrium`, `hearth`, walnut photo, great room). The `tl-*` files are still on disk, unused.
 - Ellington gains the plaque image (`Images Teleiostic/…104916.jpg`) with the GROSVENOR plaque and Gemini ✦ painted out.
+- Ellington imagery removed from general sections too (Services Interior → `atrium`, Process 02 film dropped, Process 04 → `great-room`, Home "Built in time" → `timelapse`). Ellington cover is the sunlit dining render (`…104507.jpg`, Gemini ✦ removed).
+- **Prerendering:** `npm run build` now ends with `scripts/prerender.mjs`, writing `dist/<route>.html` (own content, title, description, canonical, OG, JSON-LD) for every page and project; `vercel.json` has `cleanUrls`. Checked locally with JS on and off. **Not yet verified on Vercel** (the real domain isn't deployed from here). Add new routes to `routes` in `src/entry-server.tsx` only if they are not projects (projects are picked up automatically).
 - SEO: sitemap lists every project; Projects/Studio/Process/project titles and descriptions sharpened.
 - Project pages can now show a `gallery` (first view full width, the rest in 16:10 pairs).
 
@@ -48,11 +50,9 @@ From the owner's `website corrections .docx`:
    The copy was written from the renders.
 2. **Council Chamber vs Boardroom** — the new film titles the room "Boardroom · Design Proposal";
    the site still calls the project Council Chamber. Rename if the client wants.
-3. **Ellington imagery still used as general imagery:** `tl-living` (Services → Interior Design), `tl-dining` (Process 04), `sketch-film` (Home "Built in time") and `dining-sketch-film` (Process 02) all show the Ellington apartment. Ask the client if that is fine.
-4. **Contact details differ:** the site shows +971 4 295 5299 / sales@; the Grosvenor deck shows +971 50 365 2608 / projects@. Pick one set for SEO (NAP) consistency.
-5. **SEO, bigger lever:** the site is a client-rendered SPA, so every URL serves Home's HTML until JS runs. Prerender each route at build before go-live.
-6. **Project Management** service uses the timber-workshop render (`joinery`) — a better image would help.
-7. **True HD video** — older clips are Veo 720p upscaled to 1080p.
+3. **Contact details differ:** the site shows +971 4 295 5299 / sales@; the Grosvenor deck shows +971 50 365 2608 / projects@. Pick one set for SEO (NAP) consistency.
+4. **Project Management** service uses the timber-workshop render (`joinery`) — a better image would help.
+5. **True HD video** — older clips are Veo 720p upscaled to 1080p.
 
 Older open items (testimonials, commnettech identity, "7 offices", SIRA/ADMCC
 wording) are unchanged — see `docs/SITES.md` and `docs/CONTENT-REVAMP-REVIEW.md`.

@@ -11,7 +11,6 @@ export const steps: { no: string; title: string; short: string; long: string; pi
     no: '02', title: 'Design', short: 'BIM, MEP, joinery and materials resolved together.',
     long: 'Interior, joinery and MEP are drawn in one coordinated BIM model — clashes are found on screen, not on site, and every material is chosen before work begins.',
     pic: { src: '/Asset/media/atrium', widths: [400, 800, 1087], w: 1087, h: 1447, alt: 'Atrium interior' },
-    film: { name: 'dining-sketch-film', label: 'A pencil sketch of a dining room filling in with colour, timber and light' },
   },
   {
     no: '03', title: 'Build', short: 'Hand-picked specialists build what was drawn.',
@@ -21,7 +20,7 @@ export const steps: { no: string; title: string; short: string; long: string; pi
   {
     no: '04', title: 'Deliver', short: 'Snagged to a boutique standard, on time.',
     long: 'Every room is snagged to a boutique standard, systems are commissioned and documented, and the space is handed over on programme.',
-    pic: { src: '/Asset/media/tl-dining', widths: [400, 800, 1200, 1536], w: 1536, h: 858, alt: 'Sunlit dining room, finished and handed over' },
+    pic: { src: '/Asset/media/great-room', widths: [400, 800, 1200, 1535], w: 1535, h: 1024, alt: 'Finished great room' },
   },
 ]
 

@@ -7,7 +7,7 @@ own route. (The Founder page was removed on 2026-10-08 at the owner's request.)
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm run build      # → dist/
+npm run build      # → dist/, then prerenders every route to dist/<route>.html (scripts/prerender.mjs)
 npm run preview    # serve dist/
 npm run images     # after adding/replacing any .jpg under public/Asset
 npm run build:review   # rebuild ../../sites/teleiostec/react/ — the copy the review index links to

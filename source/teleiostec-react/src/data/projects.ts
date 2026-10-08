@@ -82,11 +82,11 @@ export const projects: Project[] = [
       'The living room is organised around a single media wall: tree-patterned panels, a lit slatted oak shelf and a floating oak console with a stone top, under woven leaf pendants.',
       'The dining space sits against sheer curtains and the balcony beyond, with olive upholstered chairs, an oak table and open shelving — calm, natural materials throughout.',
     ],
-    pic: view('ellington', [400, 800, 1200, 1920], 1080, 'Living room with a tree-patterned media wall, slatted oak shelving and woven leaf pendants'),
+    pic: view('ellington-dining-sun', [400, 800, 1200, 1920], 1072, 'Sunlit dining space with olive chairs and an oak table beside sheer curtains and the balcony'),
     gallery: [
       view('ellington-media-wall', [400, 800, 1200, 1920], 1072, 'Sunlit media wall with tree-patterned panels, a slatted oak shelf and a floating oak console'),
       view('ellington-dining', [400, 800, 1199], 1050, 'Dining table with olive chairs, abstract artwork and a linear brass pendant'),
-      view('ellington-balcony', [400, 800, 1350], 1004, 'Dining space beside sheer curtains, opening onto a balcony with a hanging chair'),
+      view('ellington', [400, 800, 1200, 1920], 1080, 'Living room with a tree-patterned media wall, slatted oak shelving and woven leaf pendants'),
       view('ellington-living', [400, 800, 1200, 1920], 1080, 'Media wall with a floating oak console, curved sofa and travertine coffee table'),
     ],
   },

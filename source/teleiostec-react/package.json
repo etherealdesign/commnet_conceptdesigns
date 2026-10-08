@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "images": "node scripts/optimize-images.mjs",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "build:review": "node scripts/build-review.mjs"

@@ -18,7 +18,7 @@ export function Page({ children, label }: { children: ReactNode; label: string }
       {children}
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[90] origin-bottom bg-dark"
+        data-curtain className="pointer-events-none fixed inset-0 z-[90] origin-bottom bg-dark"
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}
@@ -26,7 +26,7 @@ export function Page({ children, label }: { children: ReactNode; label: string }
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[90] flex origin-top items-center justify-center bg-dark text-ivory"
+        data-curtain className="pointer-events-none fixed inset-0 z-[90] flex origin-top items-center justify-center bg-dark text-ivory"
         initial={{ scaleY: skipEnter ? 0 : 1 }}
         animate={{ scaleY: 0, transition: { duration: 0.9, ease, delay: 0.35 } }}
         exit={{ scaleY: 0 }}

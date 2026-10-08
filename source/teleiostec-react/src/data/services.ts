@@ -15,7 +15,7 @@ export const services: Service[] = [
     slug: 'interior', no: '01', title: 'Interior Design', tag: 'Residential · Hospitality · Commercial',
     desc: 'Thoughtfully conceived interiors shaped by space, material, light and function — creating environments with a clear identity and purpose.',
     deliverables: ['Concept & spatial planning', 'Material & finish palettes', 'Lighting design', 'FF&E coordination'],
-    pic: { src: '/Asset/media/tl-living', widths: [400, 800, 1200, 1536], w: 1536, h: 858, alt: 'Living room with a travertine media wall and woven pendant lights' },
+    pic: { src: '/Asset/media/atrium', widths: [400, 800, 1087], w: 1087, h: 1447, alt: 'Atrium interior with staircase and pendant lighting' },
   },
   {
     slug: 'project-management', no: '02', title: 'Project Management', tag: 'Programme · Procurement · Site',

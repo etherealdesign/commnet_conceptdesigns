@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'motion/react'
-import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
+import { Fragment, lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { SmoothScroll, scrollToTop, useLenis } from '@/lib/smooth'
 import { ScrollTrigger } from '@/lib/gsap'
@@ -18,6 +18,12 @@ const Services = lazy(() => import('@/pages/Services'))
 const Process = lazy(() => import('@/pages/Process'))
 const Contact = lazy(() => import('@/pages/Contact'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
+
+// The prerender (src/entry-server.tsx) renders without a boundary: React writes a large
+// Suspense boundary out of line, behind a swap script, and the page should be plain HTML.
+const RouteBoundary = import.meta.env.SSR
+  ? ({ children }: { children: React.ReactNode }) => <Fragment>{children}</Fragment>
+  : ({ children }: { children: React.ReactNode }) => <Suspense fallback={<div className="min-h-svh bg-dark" />}>{children}</Suspense>
 
 function Shell() {
   const location = useLocation()
@@ -46,7 +52,7 @@ function Shell() {
       <Menu open={menu} onClose={() => setMenu(false)} />
       <main id="main">
         <AnimatePresence mode="wait" onExitComplete={onExit}>
-          <Suspense key={location.pathname} fallback={<div className="min-h-svh bg-dark" />}>
+          <RouteBoundary key={location.pathname}>
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
@@ -62,7 +68,7 @@ function Shell() {
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </Suspense>
+          </RouteBoundary>
         </AnimatePresence>
       </main>
       <Footer />

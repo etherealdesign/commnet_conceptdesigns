@@ -27,7 +27,7 @@ export function Preloader() {
 
   if (gone) return null
   return (
-    <div ref={root} aria-hidden className="grain fixed inset-0 z-[200] flex flex-col justify-between bg-dark p-[var(--pad)] text-ivory" style={{ clipPath: 'inset(0% 0% 0% 0%)' }}>
+    <div ref={root} aria-hidden data-preloader className="grain fixed inset-0 z-[200] flex flex-col justify-between bg-dark p-[var(--pad)] text-ivory" style={{ clipPath: 'inset(0% 0% 0% 0%)' }}>
       <span className="kick !text-muted-dark">Interior · Project Management · MEP · Fit-Out</span>
       <div className="flex items-end justify-between gap-6">
         <span className="display flex overflow-hidden text-[clamp(44px,10vw,160px)]">

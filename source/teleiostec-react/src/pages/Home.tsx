@@ -51,7 +51,7 @@ function Hero() {
       <span className="hero-dim absolute inset-0 bg-black opacity-0" aria-hidden />
 
       <div className="wrap relative flex h-full flex-col justify-end pb-[clamp(28px,6vh,64px)]">
-        <p className="hero-fade mb-6 flex gap-3 text-[12px] uppercase tracking-[0.24em] text-ivory/75">
+        <p className="hero-fade mb-6 flex flex-wrap gap-x-3 gap-y-1 text-[13px] font-medium uppercase tracking-[0.22em] text-ivory [text-shadow:0_1px_12px_rgba(0,0,0,.55)] md:text-[15px]">
           <span>Interior</span>·<span>Project Management</span>·<span>MEP</span>·<span>Fit-Out</span>
         </p>
         <Split as="h1" trigger="load" by="words" className="hero-title display text-[clamp(56px,11.5vw,220px)] leading-[0.9]">

@@ -86,7 +86,8 @@
   .display em { font-style: italic; font-weight: 200; }
 
   /* SplitText line masks */
-  .split-line { overflow: clip; padding-bottom: .08em; margin-bottom: -.08em; }
+  /* Bottom room clears descenders (g, p, y) at tight leading; the negative margin keeps spacing unchanged. */
+  .split-line { overflow: clip; padding-bottom: .2em; margin-bottom: -.2em; }
 
   .link-line { position: relative; }
   .link-line::after {

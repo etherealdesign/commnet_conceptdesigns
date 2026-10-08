@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Keep in step with src/data/projects.ts: every project slug needs a line here. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.teleiostec.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://www.teleiostec.com/projects</loc><priority>0.9</priority></url>
-  <url><loc>https://www.teleiostec.com/projects/the-great-room</loc></url>
-  <url><loc>https://www.teleiostec.com/projects/hearth-residence</loc></url>
-  <url><loc>https://www.teleiostec.com/projects/atrium-house</loc></url>
-  <url><loc>https://www.teleiostec.com/projects/performance-club</loc></url>
-  <url><loc>https://www.teleiostec.com/studio</loc><priority>0.8</priority></url>
-  <url><loc>https://www.teleiostec.com/services</loc><priority>0.8</priority></url>
-  <url><loc>https://www.teleiostec.com/process</loc><priority>0.7</priority></url>
-  <url><loc>https://www.teleiostec.com/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://www.teleiostec.com/</loc><lastmod>2026-10-08</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.teleiostec.com/projects</loc><lastmod>2026-10-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.teleiostec.com/projects/peoplelink-experience-center</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/projects/council-chamber</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/projects/grosvenor-business-tower</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/projects/ellington</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/projects/the-great-room</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/projects/hearth-residence</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/projects/atrium-house</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/projects/performance-club</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.teleiostec.com/studio</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.teleiostec.com/services</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.teleiostec.com/process</loc><lastmod>2026-10-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.teleiostec.com/contact</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
 </urlset>

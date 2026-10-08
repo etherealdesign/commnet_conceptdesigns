@@ -18,7 +18,7 @@ export default function Studio() {
   return (
     <Page label="Studio">
       <Seo
-        title="Studio"
+        title="About the Studio — Interior Fit-Out & MEP, UAE"
         description={`Teleiostec has designed, engineered and delivered interiors across the UAE since ${FOUNDED}. One integrated studio for interior design, project management, MEP and fit-out.`}
         path="/studio"
         jsonLd={{ '@type': 'AboutPage', name: 'About Teleiostec', about: { '@id': 'https://www.teleiostec.com/#org' } }}
@@ -70,10 +70,10 @@ export default function Studio() {
           <Reveal delay={0.2} className="mt-8 max-w-[40ch] text-muted"><p>{APPROACH}</p></Reveal>
         </div>
         <figure className="md:col-span-6 md:col-start-7">
-          <RevealImage className="aspect-[4/3]"><Img pic={{ src: '/Asset/media/tl-reception', widths: [400, 800, 1200, 1536], w: 1536, h: 1072, alt: 'Reception lobby with perforated stone screens casting patterned daylight' }} sizes="(max-width:768px) 100vw, 46vw" /></RevealImage>
-          <figcaption className="mt-3 text-[12px] text-muted">Material — perforated stone in daylight</figcaption>
+          <RevealImage className="aspect-[4/3]"><Img pic={{ src: '/Asset/media/great-room', widths: [400, 800, 1200, 1535], w: 1535, h: 1024, alt: 'Double-height great room with a circular oculus and valley view' }} sizes="(max-width:768px) 100vw, 46vw" /></RevealImage>
+          <figcaption className="mt-3 text-[12px] text-muted">Light — an oculus over the great room</figcaption>
         </figure>
-        <figure className="md:col-span-4 md:col-start-2 lg:-mt-[10vh]">
+        <figure className="md:col-span-4 md:col-start-8 md:mt-6">
           <RevealImage className="aspect-[3/4]" from="right"><Img pic={photo('modern-interior-corridor-leading', 'Modern interior corridor with layered natural light')} sizes="(max-width:768px) 100vw, 34vw" /></RevealImage>
           <figcaption className="mt-3 text-[12px] text-muted">Light — corridor study</figcaption>
         </figure>

@@ -79,7 +79,7 @@ export default function Process() {
     <Page label="Process">
       <Seo
         title="Process — From Concept to Completion"
-        description="Discover, design, build, deliver. How Teleiostec resolves interiors, joinery and MEP in one coordinated BIM model before anything is built."
+        description="Discover, design, build, deliver. How Teleiostec coordinates interior design, engineering and fit-out at every stage, from initial concept to final delivery."
         path="/process"
         jsonLd={{
           '@type': 'HowTo', name: 'How Teleiostec delivers a space',

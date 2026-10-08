@@ -104,7 +104,7 @@ function Statement() {
   )
 }
 
-/* ── Featured projects: vertical story films ─────────── */
+/* ── Featured projects: story films ───────────────────── */
 // Projects with a film live here only; Work() lists the rest, so none shows twice.
 const filmed = projects.filter((x) => x.film)
 
@@ -121,9 +121,11 @@ function Featured() {
 
 function FeaturedFilm({ p, flip }: { p: Project; flip: boolean }) {
   if (!p.film) return null
+  // A wide (16:9) film takes the larger share of the row; a vertical one sits in a phone-shaped frame.
+  const wide = p.film.wide
   return (
     <div className="grid items-center gap-12 md:grid-cols-12">
-      <div className={cn('md:col-span-6 lg:col-span-5', flip && 'md:order-2 md:col-start-7 lg:col-start-8')}>
+      <div className={cn(wide ? 'md:col-span-5 lg:col-span-4' : 'md:col-span-6 lg:col-span-5', flip && (wide ? 'md:order-2 md:col-start-8 lg:col-start-9' : 'md:order-2 md:col-start-7 lg:col-start-8'))}>
         <p className="kick mb-6 !text-ivory/60">Featured project</p>
         <Split as="h2" className="display text-fluid-3xl">{p.title}</Split>
         <Reveal delay={0.1}><p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-ivory/60">{p.location} · {p.discipline}</p></Reveal>
@@ -135,8 +137,10 @@ function FeaturedFilm({ p, flip }: { p: Project; flip: boolean }) {
           </Link>
         </Reveal>
       </div>
-      <Reveal y={60} className={cn('md:col-span-6 lg:col-span-5', flip ? 'md:order-1 md:col-start-1 lg:col-start-1' : 'md:col-start-7 lg:col-start-8')}>
-        <Link to={`/projects/${p.slug}`} data-cursor="View" className="mx-auto block aspect-[9/16] w-full max-w-[min(100%,calc(86svh*9/16))] overflow-hidden rounded-[6px] bg-black">
+      <Reveal y={60} className={wide
+        ? cn('md:col-span-7', flip ? 'md:order-1 md:col-start-1' : 'md:col-start-6 lg:col-start-6')
+        : cn('md:col-span-6 lg:col-span-5', flip ? 'md:order-1 md:col-start-1 lg:col-start-1' : 'md:col-start-7 lg:col-start-8')}>
+        <Link to={`/projects/${p.slug}`} data-cursor="View" className={cn('mx-auto block w-full overflow-hidden rounded-[6px] bg-black', wide ? 'aspect-video' : 'aspect-[9/16] max-w-[min(100%,calc(86svh*9/16))]')}>
           <Video name={p.film.name} label={p.film.label} mobile />
         </Link>
       </Reveal>
@@ -320,7 +324,7 @@ export default function Home() {
       <Numbers />
       <section className="wrap grid gap-6 pb-[var(--sec)] md:grid-cols-12">
         <RevealImage className="aspect-[4/5] md:col-span-5">
-          <Img pic={{ src: '/Asset/media/tl-reception', widths: [400, 800, 1200, 1536], w: 1536, h: 1072, alt: 'Reception lobby with perforated stone screens casting patterned daylight' }} sizes="(max-width:768px) 100vw, 40vw" />
+          <Img pic={{ src: '/Asset/photos/curved-walnut-and-limestone-inte', widths: [800, 1400], w: 1400, h: 1045, alt: 'Curved walnut and limestone joinery with a brass edge, lit from below' }} sizes="(max-width:768px) 100vw, 40vw" />
         </RevealImage>
         <div className="flex flex-col justify-end md:col-span-6 md:col-start-7">
           <Split as="h2" className="display text-fluid-3xl">Every detail <em>begins with intent.</em></Split>

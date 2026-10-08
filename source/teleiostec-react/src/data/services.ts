@@ -33,6 +33,6 @@ export const services: Service[] = [
     slug: 'fit-out', no: '04', title: 'Fit-Out', tag: 'Turnkey · Execution',
     desc: 'Complete fit-out execution, translating approved designs into built environments through carefully managed coordination, workmanship and delivery.',
     deliverables: ['Turnkey delivery', 'Authority approvals', 'Workmanship & finishes', 'Snagging & handover'],
-    pic: { src: '/Asset/media/tl-office', widths: [400, 800, 1200, 1536], w: 1536, h: 1428, alt: 'Office corridor with a timber slat ceiling and perforated screen walls' },
+    pic: { src: '/Asset/media/fitout', widths: [400, 800, 1200, 1536], w: 1536, h: 1024, alt: 'Open-plan workplace fit-out with a lounge, reception desk and glazed meeting rooms' },
   },
 ]

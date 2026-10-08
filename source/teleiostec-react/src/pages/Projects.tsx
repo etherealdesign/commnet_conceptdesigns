@@ -20,8 +20,8 @@ export default function Projects() {
   return (
     <Page label="Projects">
       <Seo
-        title="Projects"
-        description="Selected residential, hospitality and commercial interiors by Teleiostec — designed and delivered under one accountable lead across the Emirates."
+        title="Interior & Fit-Out Projects in Dubai and the UAE"
+        description="Selected residential, hospitality and commercial interiors by Teleiostec — interior design, MEP and fit-out delivered by one integrated team across Dubai and the UAE."
         path="/projects"
         jsonLd={{
           '@type': 'CollectionPage', name: 'Teleiostec Projects', url: `${SITE_URL}/projects`,

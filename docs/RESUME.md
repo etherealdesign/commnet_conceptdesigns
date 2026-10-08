@@ -20,6 +20,10 @@ From the owner's `website corrections .docx`:
 - **Founder page removed** (page, nav, Home teaser, sitemap); `/founder` and `/team` redirect to `/studio`. Copy no longer says "founder-led".
 - **Council Chamber film replaced** with the client's `Teleiostec_Boardroom_LightsOn_clean_9x16.mp4` (18 s; no watermark or logo; ends on a Teleiostec card).
 - **Grosvenor vs Ellington untangled.** The 9 s "Grosvenor" clip actually showed the *Ellington* apartment with GROSVENOR lettering added, so it is **removed**. **Grosvenor Business Tower** (Barsha Heights, reception & lobby concept) is back with its original copy and six renders from `_GROSVENOR BUSINESS TOWER- Annotated.pdf` (24 Jul 2026). **Ellington** (residential, Dubai) is new, with the client's four renders (`Downloads/Image6/8/9/1_001.png`). `/projects/grosvenor` redirects to `/projects/grosvenor-business-tower`.
+- Grosvenor gets its own 16:9 film (client's `GROSVENOR_commercial_interior_ad…mp4`, end card trimmed) and sits in Featured; wide films are supported (`film.wide`).
+- Grosvenor tower renders removed from general sections (`tl-office`, `tl-reception`, `tl-lounge` → `fitout`, `atrium`, `hearth`, walnut photo, great room). The `tl-*` files are still on disk, unused.
+- Ellington gains the plaque image (`Images Teleiostic/…104916.jpg`) with the GROSVENOR plaque and Gemini ✦ painted out.
+- SEO: sitemap lists every project; Projects/Studio/Process/project titles and descriptions sharpened.
 - Project pages can now show a `gallery` (first view full width, the rest in 16:10 pairs).
 
 ## Done on 2026-10-05
@@ -44,8 +48,11 @@ From the owner's `website corrections .docx`:
    The copy was written from the renders.
 2. **Council Chamber vs Boardroom** — the new film titles the room "Boardroom · Design Proposal";
    the site still calls the project Council Chamber. Rename if the client wants.
-3. **Project Management** service uses the timber-workshop render (`joinery`) — a better image would help.
-4. **True HD video** — older clips are Veo 720p upscaled to 1080p.
+3. **Ellington imagery still used as general imagery:** `tl-living` (Services → Interior Design), `tl-dining` (Process 04), `sketch-film` (Home "Built in time") and `dining-sketch-film` (Process 02) all show the Ellington apartment. Ask the client if that is fine.
+4. **Contact details differ:** the site shows +971 4 295 5299 / sales@; the Grosvenor deck shows +971 50 365 2608 / projects@. Pick one set for SEO (NAP) consistency.
+5. **SEO, bigger lever:** the site is a client-rendered SPA, so every URL serves Home's HTML until JS runs. Prerender each route at build before go-live.
+6. **Project Management** service uses the timber-workshop render (`joinery`) — a better image would help.
+7. **True HD video** — older clips are Veo 720p upscaled to 1080p.
 
 Older open items (testimonials, commnettech identity, "7 offices", SIRA/ADMCC
 wording) are unchanged — see `docs/SITES.md` and `docs/CONTENT-REVAMP-REVIEW.md`.

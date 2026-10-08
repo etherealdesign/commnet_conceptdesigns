@@ -37,7 +37,7 @@ export default function ProjectDetail() {
   return (
     <Page label={p.title}>
       <Seo
-        title={`${p.title} — ${p.location}`}
+        title={`${p.title} — ${p.discipline}, ${p.location}`}
         description={p.summary}
         path={`/projects/${p.slug}`}
         image={`${p.pic.src}-${p.pic.widths.at(-1)}.jpg`}
@@ -54,7 +54,11 @@ export default function ProjectDetail() {
         </section>
 
         <div className="pd-media relative h-[80svh] overflow-hidden bg-ivory-2">
-          {p.film ? (
+          {p.film?.wide ? (
+            <div className="pd-inner absolute inset-0 bg-dark">
+              <Video name={p.film.name} label={p.film.label} mobile />
+            </div>
+          ) : p.film ? (
             <div className="pd-inner absolute inset-0 flex items-center justify-center bg-dark py-6">
               <div className="aspect-[9/16] h-full max-w-full overflow-hidden rounded-[6px] bg-black">
                 <Video name={p.film.name} label={p.film.label} mobile />

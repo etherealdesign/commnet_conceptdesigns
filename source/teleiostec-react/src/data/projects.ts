@@ -11,8 +11,8 @@ export type Project = {
   summary: string
   body: string[]
   pic: Pic
-  /** A vertical (9:16) story film in /Asset/media, with -720 and -poster siblings. */
-  film?: { name: string; label: string }
+  /** A story film in /Asset/media, with -720 and -poster siblings. Vertical (9:16) unless `wide` (16:9). */
+  film?: { name: string; label: string; wide?: boolean }
   /** Further views shown below the write-up on the project page. */
   gallery?: Pic[]
 }
@@ -62,6 +62,7 @@ export const projects: Project[] = [
       'Clean geometry and understated detailing keep the spaces calm and lasting. This is a design concept presented to the client, to be refined with them before anything is built.',
     ],
     pic: view('grosvenor-tower', [400, 800, 1200, 1694], 932, 'Limestone reception desk in front of a backlit oak screen carrying the Grosvenor name'),
+    film: { name: 'grosvenor-tower-film', label: 'Grosvenor Business Tower concept film: corridor, waiting lounge and the reception', wide: true },
     gallery: [
       view('grosvenor-tower-entrance', [400, 800, 1200, 1765], 892, 'Entrance lobby with perforated stone walls and glazed doors'),
       view('grosvenor-tower-waiting', [400, 800, 1200, 1672], 942, 'Waiting alcove with a built-in bench, a tree planter and a lit oak screen'),
@@ -83,9 +84,10 @@ export const projects: Project[] = [
     ],
     pic: view('ellington', [400, 800, 1200, 1920], 1080, 'Living room with a tree-patterned media wall, slatted oak shelving and woven leaf pendants'),
     gallery: [
-      view('ellington-living', [400, 800, 1200, 1920], 1080, 'Media wall with a floating oak console, curved sofa and travertine coffee table'),
+      view('ellington-media-wall', [400, 800, 1200, 1920], 1072, 'Sunlit media wall with tree-patterned panels, a slatted oak shelf and a floating oak console'),
       view('ellington-dining', [400, 800, 1199], 1050, 'Dining table with olive chairs, abstract artwork and a linear brass pendant'),
       view('ellington-balcony', [400, 800, 1350], 1004, 'Dining space beside sheer curtains, opening onto a balcony with a hanging chair'),
+      view('ellington-living', [400, 800, 1200, 1920], 1080, 'Media wall with a floating oak console, curved sofa and travertine coffee table'),
     ],
   },
   {

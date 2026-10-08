@@ -13,7 +13,11 @@ export type Project = {
   pic: Pic
   /** A vertical (9:16) story film in /Asset/media, with -720 and -poster siblings. */
   film?: { name: string; label: string }
+  /** Further views shown below the write-up on the project page. */
+  gallery?: Pic[]
 }
+
+const view = (name: string, widths: number[], h: number, alt: string): Pic => ({ src: `/Asset/media/${name}`, widths, w: widths.at(-1)!, h, alt })
 
 export const projects: Project[] = [
   {
@@ -32,21 +36,6 @@ export const projects: Project[] = [
     film: { name: 'peoplelink-film', label: 'PeopleLink Experience Center, from floor plan through reception, boardroom, training room and leadership cabin' },
   },
   {
-    slug: 'grosvenor',
-    title: 'Grosvenor',
-    location: 'Dubai',
-    category: 'Residential',
-    discipline: 'Residential Interior Concept',
-    year: 2026,
-    summary: 'A residential interior concept in warm oak, natural stone and soft daylight — living, dining and a balcony that opens the home to the trees.',
-    body: [
-      'The concept is built from a calm, natural palette: oak joinery, a stone feature wall and woven pendant lights, with sheer curtains that soften the daylight across the living and dining spaces.',
-      'Clean lines and understated detailing keep the home quiet and lasting, while the balcony carries the interior out into the open air. This is a design concept, presented to the client before anything is built.',
-    ],
-    pic: { src: '/Asset/media/grosvenor', widths: [400, 720], w: 720, h: 834, alt: 'Warm living space with oak joinery, a stone feature wall and woven pendant lights' },
-    film: { name: 'grosvenor-film', label: 'Grosvenor concept film: oak joinery, stone walls, woven pendant lights and a sheer-curtained balcony' },
-  },
-  {
     slug: 'council-chamber',
     title: 'Council Chamber',
     location: 'UAE',
@@ -59,6 +48,45 @@ export const projects: Project[] = [
     ],
     pic: { src: '/Asset/media/council-chamber', widths: [400, 618], w: 618, h: 773, alt: 'Long council table with pale leather chairs under a lit grid ceiling' },
     film: { name: 'council-chamber-film', label: 'Council chamber design proposal: the lights come on over the U-shaped table, studded feature wall, fluted slats and backlit coffered ceiling' },
+  },
+  {
+    slug: 'grosvenor-business-tower',
+    title: 'Grosvenor Business Tower',
+    location: 'Barsha Heights, Dubai',
+    category: 'Commercial',
+    discipline: 'Reception & Lobby Concept',
+    year: 2026,
+    summary: 'A concept for the tower’s arrival spaces — reception, waiting areas, corridors and lift lobby — in contemporary Japanese minimalism.',
+    body: [
+      'The reception is the first thing a visitor meets in the building, so the concept starts there. A restrained palette of natural limestone, warm oak and soft architectural lighting carries from the entrance through the waiting areas, corridors and lift lobby.',
+      'Clean geometry and understated detailing keep the spaces calm and lasting. This is a design concept presented to the client, to be refined with them before anything is built.',
+    ],
+    pic: view('grosvenor-tower', [400, 800, 1200, 1694], 932, 'Limestone reception desk in front of a backlit oak screen carrying the Grosvenor name'),
+    gallery: [
+      view('grosvenor-tower-entrance', [400, 800, 1200, 1765], 892, 'Entrance lobby with perforated stone walls and glazed doors'),
+      view('grosvenor-tower-waiting', [400, 800, 1200, 1672], 942, 'Waiting alcove with a built-in bench, a tree planter and a lit oak screen'),
+      view('grosvenor-tower-lounge', [400, 800, 1200, 1672], 942, 'Waiting area with a stone bench, bamboo planter and backlit oak screen'),
+      view('grosvenor-tower-corridor', [400, 800, 1200, 1672], 942, 'Long corridor with a timber slat ceiling edge and perforated stone panels'),
+      view('grosvenor-tower-lift-lobby', [400, 800, 1200, 1555], 1012, 'Lift lobby lined with perforated stone panels and a lit oak screen at the end'),
+    ],
+  },
+  {
+    slug: 'ellington',
+    title: 'Ellington',
+    location: 'Dubai',
+    category: 'Residential',
+    discipline: 'Residential Interior',
+    summary: 'A home in warm oak, soft stone and filtered daylight — a living room built around one long media wall, and a dining space that opens to the balcony.',
+    body: [
+      'The living room is organised around a single media wall: tree-patterned panels, a lit slatted oak shelf and a floating oak console with a stone top, under woven leaf pendants.',
+      'The dining space sits against sheer curtains and the balcony beyond, with olive upholstered chairs, an oak table and open shelving — calm, natural materials throughout.',
+    ],
+    pic: view('ellington', [400, 800, 1200, 1920], 1080, 'Living room with a tree-patterned media wall, slatted oak shelving and woven leaf pendants'),
+    gallery: [
+      view('ellington-living', [400, 800, 1200, 1920], 1080, 'Media wall with a floating oak console, curved sofa and travertine coffee table'),
+      view('ellington-dining', [400, 800, 1199], 1050, 'Dining table with olive chairs, abstract artwork and a linear brass pendant'),
+      view('ellington-balcony', [400, 800, 1350], 1004, 'Dining space beside sheer curtains, opening onto a balcony with a hanging chair'),
+    ],
   },
   {
     slug: 'the-great-room',

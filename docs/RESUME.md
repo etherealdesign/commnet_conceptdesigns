@@ -7,7 +7,7 @@ https://commnet-conceptdesigns.vercel.app/ (demo link, `noindex`, no real domain
 
 | Area | State |
 |---|---|
-| Teleiostec site (`sites/teleiostec/react/`) | Owner's copy corrections applied (integrated studio, one integrated team). Founder page removed. Home **Featured** holds three film projects: PeopleLink, Grosvenor (residential), Council Chamber (boardroom film) |
+| Teleiostec site (`sites/teleiostec/react/`) | Owner's copy corrections applied (integrated studio, one integrated team). Founder page removed. Home **Featured** holds two film projects: PeopleLink, Council Chamber (boardroom film). Grosvenor Business Tower and Ellington are photo projects with galleries |
 | Commnet sites (consultancy v1-react/v3/v4/v5, commnetsys, commnettech) | Watermarks removed, mobile/tablet checked |
 | Hub (`index.html`) | Tablet nav and lead thumbnail fixed |
 
@@ -19,7 +19,8 @@ From the owner's `website corrections .docx`:
 - "Every detail *begins with intent*" + "Space, material, light — in conversation" + approach paragraph on Home and Studio; image swapped from the craftsman to `tl-reception`.
 - **Founder page removed** (page, nav, Home teaser, sitemap); `/founder` and `/team` redirect to `/studio`. Copy no longer says "founder-led".
 - **Council Chamber film replaced** with the client's `Teleiostec_Boardroom_LightsOn_clean_9x16.mp4` (18 s; no watermark or logo; ends on a Teleiostec card).
-- **Grosvenor** is a *residential* concept (the clip shows an apartment with GROSVENOR lettering). The old "Business Tower, Barsha Heights, Reception & Lobby" text belonged to a different project, **Ellington**; old slug `grosvenor-business-tower` redirects to `/projects/grosvenor`.
+- **Grosvenor vs Ellington untangled.** The 9 s "Grosvenor" clip actually showed the *Ellington* apartment with GROSVENOR lettering added, so it is **removed**. **Grosvenor Business Tower** (Barsha Heights, reception & lobby concept) is back with its original copy and six renders from `_GROSVENOR BUSINESS TOWER- Annotated.pdf` (24 Jul 2026). **Ellington** (residential, Dubai) is new, with the client's four renders (`Downloads/Image6/8/9/1_001.png`). `/projects/grosvenor` redirects to `/projects/grosvenor-business-tower`.
+- Project pages can now show a `gallery` (first view full width, the rest in 16:10 pairs).
 
 ## Done on 2026-10-05
 
@@ -39,10 +40,8 @@ From the owner's `website corrections .docx`:
 
 ## Waiting on the client (Teleiostec)
 
-1. **Ellington** (Barsha Heights reception & lobby concept) — not on the site. The image
-   offered for it (`Downloads/Images Teleiostic/…/Interior_architecture_photograph_2K_20261002105132.jpg`)
-   looks like the *Grosvenor* living room (same panels, slatted shelf, pendants) and has a faint
-   Gemini ✦ bottom-right. The user is confirming with the client which project it is.
+1. **Ellington** — location shown as just "Dubai" and no year; get the community and year from the client.
+   The copy was written from the renders.
 2. **Council Chamber vs Boardroom** — the new film titles the room "Boardroom · Design Proposal";
    the site still calls the project Council Chamber. Rename if the client wants.
 3. **Project Management** service uses the timber-workshop render (`joinery`) — a better image would help.

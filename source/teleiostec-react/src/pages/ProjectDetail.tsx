@@ -5,6 +5,7 @@ import { Seo } from '@/components/Seo'
 import { Split } from '@/components/Split'
 import { Reveal } from '@/components/Reveal'
 import { Img } from '@/components/Img'
+import { RevealImage } from '@/components/RevealImage'
 import { Video } from '@/components/Video'
 import { CtaBlock } from '@/components/CtaBlock'
 import { projectBySlug, projects } from '@/data/projects'
@@ -82,6 +83,22 @@ export default function ProjectDetail() {
             ))}
           </div>
         </section>
+
+        {p.gallery && (
+          <section className="wrap grid gap-6 pb-[var(--sec)] md:grid-cols-2">
+            {p.gallery.map((g, i, all) => {
+              // First view runs full width, the rest pair up in matching 16:10 frames; an odd one out at the end runs full width too.
+              const wide = i === 0 || (i === all.length - 1 && all.length % 2 === 0)
+              return (
+              <RevealImage key={g.src} className={wide ? 'md:col-span-2' : ''} from={i % 2 ? 'right' : 'left'} parallax={0}>
+                <div style={{ aspectRatio: wide ? `${g.w} / ${g.h}` : '16 / 10' }}>
+                  <Img pic={g} sizes={wide ? '100vw' : '(max-width:768px) 100vw, 50vw'} />
+                </div>
+              </RevealImage>
+              )
+            })}
+          </section>
+        )}
 
         <Link to={`/projects/${next.slug}`} data-cursor="Next" className="group relative block h-[70svh] overflow-hidden bg-dark text-ivory">
           <div className="absolute inset-0 opacity-50 transition-[opacity,transform] duration-[1.4s] ease-out-expo group-hover:scale-105 group-hover:opacity-70">

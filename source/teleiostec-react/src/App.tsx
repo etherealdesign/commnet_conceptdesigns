@@ -50,8 +50,8 @@ function Shell() {
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
-              {/* Grosvenor was mislabelled as a business tower until 2026-10-08; its old slug still lands on it. */}
-              <Route path="/projects/grosvenor-business-tower" element={<Navigate to="/projects/grosvenor" replace />} />
+              {/* Briefly live on 2026-10-08 as /projects/grosvenor. */}
+              <Route path="/projects/grosvenor" element={<Navigate to="/projects/grosvenor-business-tower" replace />} />
               <Route path="/projects/:slug" element={<ProjectDetail />} />
               <Route path="/studio" element={<Studio />} />
               <Route path="/services" element={<Services />} />

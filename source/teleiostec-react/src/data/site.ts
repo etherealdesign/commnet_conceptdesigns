@@ -4,6 +4,9 @@ export const SITE_URL = 'https://www.teleiostec.com'
 export const FOUNDED = 2012
 export const yearsOfPractice = () => new Date().getFullYear() - FOUNDED
 
+/** The owner's approach statement — shown on Home and Studio under "Every detail begins with intent." */
+export const APPROACH = 'Our approach begins with understanding how a space should function, feel and be experienced. Architecture, materiality, light and proportion are considered together, allowing each decision to inform the next and creating spaces that are purposeful, cohesive and enduring.'
+
 export const contact = {
   email: 'sales@teleiostec.com',
   phone: '+971 4 295 5299',
@@ -25,7 +28,6 @@ export const nav = [
   { to: '/studio', label: 'Studio', img: '/Asset/photos/craftsman-working-on-walnut-cabinet-800' },
   { to: '/services', label: 'Services', img: '/Asset/media/joinery-800' },
   { to: '/process', label: 'Process', img: '/Asset/media/kitchen-house-800' },
-  { to: '/founder', label: 'Founder', img: '/Asset/photos/curved-walnut-and-limestone-inte-800' },
   { to: '/contact', label: 'Contact', img: '/Asset/media/hearth-800' },
 ] as const
 
@@ -33,6 +35,6 @@ export const stats = [
   { value: yearsOfPractice(), suffix: '', label: 'Years of practice' },
   // Only figures the site can stand behind: no delivered-count, on-time rate or certification claims.
   { value: 4, suffix: '', label: 'Disciplines' },
-  { value: 1, suffix: '', label: 'Point of contact' },
+  { value: 1, suffix: '', label: 'Integrated team' },
   { value: 0, suffix: '', text: 'UAE', label: 'Across the Emirates' },
 ]

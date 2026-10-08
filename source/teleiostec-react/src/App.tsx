@@ -16,7 +16,6 @@ const ProjectDetail = lazy(() => import('@/pages/ProjectDetail'))
 const Studio = lazy(() => import('@/pages/Studio'))
 const Services = lazy(() => import('@/pages/Services'))
 const Process = lazy(() => import('@/pages/Process'))
-const Founder = lazy(() => import('@/pages/Founder'))
 const Contact = lazy(() => import('@/pages/Contact'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 
@@ -51,12 +50,15 @@ function Shell() {
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
+              {/* Grosvenor was mislabelled as a business tower until 2026-10-08; its old slug still lands on it. */}
+              <Route path="/projects/grosvenor-business-tower" element={<Navigate to="/projects/grosvenor" replace />} />
               <Route path="/projects/:slug" element={<ProjectDetail />} />
               <Route path="/studio" element={<Studio />} />
               <Route path="/services" element={<Services />} />
               <Route path="/process" element={<Process />} />
-              <Route path="/founder" element={<Founder />} />
-              <Route path="/team" element={<Navigate to="/founder" replace />} />
+              {/* The Founder page was removed (2026-10-08); old links land on Studio. */}
+              <Route path="/founder" element={<Navigate to="/studio" replace />} />
+              <Route path="/team" element={<Navigate to="/studio" replace />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

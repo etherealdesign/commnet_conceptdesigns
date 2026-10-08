@@ -10,7 +10,7 @@ import { Counter } from '@/components/Counter'
 import { Marquee } from '@/components/Marquee'
 import { CtaBlock } from '@/components/CtaBlock'
 import { principles } from '@/data/process'
-import { FOUNDED, stats } from '@/data/site'
+import { APPROACH, FOUNDED, stats } from '@/data/site'
 
 const photo = (name: string, alt: string): Pic => ({ src: `/Asset/photos/${name}`, widths: [800, 1400], w: 1400, h: 1045, alt })
 
@@ -19,7 +19,7 @@ export default function Studio() {
     <Page label="Studio">
       <Seo
         title="Studio"
-        description={`Teleiostec has designed, engineered and built interiors in Dubai since ${FOUNDED}. One studio for interior design, fit-out, bespoke joinery and MEP.`}
+        description={`Teleiostec has designed, engineered and delivered interiors across the UAE since ${FOUNDED}. One integrated studio for interior design, project management, MEP and fit-out.`}
         path="/studio"
         jsonLd={{ '@type': 'AboutPage', name: 'About Teleiostec', about: { '@id': 'https://www.teleiostec.com/#org' } }}
       />
@@ -30,8 +30,8 @@ export default function Studio() {
           <Img pic={photo('curved-walnut-and-limestone-inte', 'Curved walnut and limestone interior detail')} sizes="(max-width:768px) 100vw, 58vw" />
         </RevealImage>
         <div className="flex flex-col justify-end gap-6 md:col-span-4 md:col-start-9">
-          <Reveal><p className="text-fluid-lg leading-[1.5]">Teleiostec is a boutique interior fit-out and MEP studio. We design and deliver considered residential, hospitality and commercial environments across Dubai.</p></Reveal>
-          <Reveal delay={0.1}><p className="text-muted">Everything is resolved as one coordinated set rather than in sequence — led by the founder, and built by specialists chosen for each project.</p></Reveal>
+          <Reveal><p className="text-fluid-lg leading-[1.5]">Teleiostec is an integrated interior fit-out and MEP studio providing design, engineering, and turnkey execution across the UAE.</p></Reveal>
+          <Reveal delay={0.1}><p className="text-muted">We deliver residential, hospitality, and commercial environments through a coordinated approach that brings together technical expertise, considered design, and meticulous execution under one roof.</p></Reveal>
         </div>
       </section>
 
@@ -65,12 +65,13 @@ export default function Studio() {
 
       <section className="wrap section grid gap-6 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Split as="h2" className="display text-fluid-3xl">Every detail <em>has a reason.</em></Split>
-          <Reveal delay={0.2} className="mt-8 max-w-[40ch] text-muted"><p>Veneer matching, solid timber detailing and hand-finished millwork — detailed in the studio, made by specialist joiners chosen for each piece.</p></Reveal>
+          <Split as="h2" className="display text-fluid-3xl">Every detail <em>begins with intent.</em></Split>
+          <Reveal delay={0.15} className="mt-6"><p className="display text-fluid-lg italic">Space, material, light — in conversation.</p></Reveal>
+          <Reveal delay={0.2} className="mt-8 max-w-[40ch] text-muted"><p>{APPROACH}</p></Reveal>
         </div>
         <figure className="md:col-span-6 md:col-start-7">
-          <RevealImage className="aspect-[4/3]"><Img pic={photo('craftsman-working-on-walnut-cabinet', 'Joiner working on a walnut cabinet')} sizes="(max-width:768px) 100vw, 46vw" /></RevealImage>
-          <figcaption className="mt-3 text-[12px] text-muted">Joinery — walnut, hand-finished</figcaption>
+          <RevealImage className="aspect-[4/3]"><Img pic={{ src: '/Asset/media/tl-reception', widths: [400, 800, 1200, 1536], w: 1536, h: 1072, alt: 'Reception lobby with perforated stone screens casting patterned daylight' }} sizes="(max-width:768px) 100vw, 46vw" /></RevealImage>
+          <figcaption className="mt-3 text-[12px] text-muted">Material — perforated stone in daylight</figcaption>
         </figure>
         <figure className="md:col-span-4 md:col-start-2 lg:-mt-[10vh]">
           <RevealImage className="aspect-[3/4]" from="right"><Img pic={photo('modern-interior-corridor-leading', 'Modern interior corridor with layered natural light')} sizes="(max-width:768px) 100vw, 34vw" /></RevealImage>

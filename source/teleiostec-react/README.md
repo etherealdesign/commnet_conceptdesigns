@@ -2,7 +2,7 @@
 
 React 19 + Vite + TypeScript + Tailwind CSS 4 rebuild of the static
 `../../sites/teleiostec/v2/` site (which is left untouched). Every menu item is its
-own route, and there is a **Founder** page.
+own route. (The Founder page was removed on 2026-10-08 at the owner's request.)
 
 ```bash
 npm install
@@ -16,7 +16,7 @@ npm run build:review   # rebuild ../../sites/teleiostec/react/ — the copy the 
 **The review index card links to `../../sites/teleiostec/react/`, not to this
 folder.** That copy is generated, so re-run `npm run build:review` after any
 change here, or the card shows the old site. It is a single inlined page with
-hash routing (`#/founder`), so it works both over HTTP and opened straight from
+hash routing (`#/studio`), so it works both over HTTP and opened straight from
 disk. Its video and posters are read from `../../sites/teleiostec/v2/Asset/media/`,
 so keep that folder.
 
@@ -24,24 +24,21 @@ so keep that folder.
 
 | Path | Page |
 |---|---|
-| `/` | Home — video hero, scroll-lit statement, pinned horizontal work gallery, services with cursor preview, film plate, numbers, founder teaser |
+| `/` | Home — video hero, scroll-lit statement, pinned horizontal work gallery, services with cursor preview, film plate, numbers, "Every detail begins with intent" |
 | `/projects` | Filterable grid (Motion layout animations) |
 | `/projects/:slug` | Project detail with clip-reveal hero and "next project" |
 | `/studio` | Story, film, principles, craft spread, numbers |
-| `/services` | Four disciplines with sticky copy + parallax imagery; `/services#joinery` deep-links |
+| `/services` | Four disciplines with sticky copy + parallax imagery; `/services#mep` deep-links |
 | `/process` | Pinned image-stack of the four stages |
-| `/founder` | Founder portrait and story, what the founder handles personally, specialist trades, credentials. `/team` redirects here |
+| `/founder`, `/team` | Redirect to `/studio` (Founder page removed) |
 | `/contact` | Enquiry form (opens the visitor's mail client — there is no backend) |
 
 ## ⚠️ Before going live
 
-1. **Founder content is placeholder.** Teleiostec is run by one person, who
-   leads every project and brings in specialist trades per job — the copy
-   says so everywhere and makes no in-house workshop or team claims.
-   `src/data/founder.ts` holds the name, story, quote and credentials; every
-   `[ ]` must come from the client. Add a portrait to `public/Asset/team/`,
-   run `npm run images`, and set `photo: '/Asset/team/<file-without-ext>'`.
-   The portrait shows a monogram until then.
+1. **Copy follows the owner's corrections (2026-10-08):** an integrated studio
+   with "one integrated team", four disciplines — Interior Design, Project
+   Management, MEP Solutions, Fit-Out. Joinery is no longer a discipline and no
+   founder is named anywhere.
 2. **Project body copy** in `src/data/projects.ts` and **service deliverables**
    in `src/data/services.ts` were written from the original captions — have
    the client confirm them.

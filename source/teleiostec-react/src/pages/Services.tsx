@@ -15,7 +15,7 @@ export default function ServicesPage() {
   const { hash } = useLocation()
   const lenis = useLenis()
 
-  // Deep links from the home page (/services#joinery) land after the curtain lifts.
+  // Deep links from the home page (/services#mep) land after the curtain lifts.
   useEffect(() => {
     if (!hash) return
     const id = setTimeout(() => {
@@ -30,12 +30,12 @@ export default function ServicesPage() {
   return (
     <Page label="Services">
       <Seo
-        title="Services — Interior, Fit-Out, Joinery & MEP"
-        description="Interior design, turnkey fit-out, bespoke joinery and BIM-coordinated MEP engineering — four disciplines led by one founder in Dubai."
+        title="Services — Interior Design, Project Management, MEP & Fit-Out"
+        description="Interior design, project management, MEP solutions and fit-out — four disciplines delivered by one integrated team across the UAE."
         path="/services"
         jsonLd={services.map((s) => ({ '@type': 'Service', name: s.title, description: s.desc, provider: { '@id': 'https://www.teleiostec.com/#org' }, areaServed: 'United Arab Emirates' }))}
       />
-      <PageHero index="03" kicker="Services" title={<>Four disciplines, <em>one point of contact.</em></>} lede="From the first sketch to the last commissioning certificate, one person carries the project — the founder." />
+      <PageHero index="03" kicker="Services" title={<>Four disciplines, <em>one integrated team.</em></>} lede="Design, engineering and turnkey execution under one roof — from initial concept to final delivery." />
 
       {services.map((s, i) => (
         <section key={s.slug} id={s.slug} className="border-t border-[var(--line)]">

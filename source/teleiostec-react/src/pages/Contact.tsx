@@ -9,7 +9,7 @@ import { ParticleField } from '@/components/ParticleField'
 import { contact, social } from '@/data/site'
 import { cn } from '@/lib/cn'
 
-const types = ['Residential', 'Hospitality', 'Commercial', 'Joinery only', 'MEP only']
+const types = ['Residential', 'Hospitality', 'Commercial', 'Project management', 'MEP only']
 const budgets = ['< AED 500k', 'AED 500k – 2M', 'AED 2M – 5M', 'AED 5M +']
 
 function Chips({ name, options, value, onChange }: { name: string; options: string[]; value: string; onChange: (v: string) => void }) {

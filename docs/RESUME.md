@@ -1,15 +1,25 @@
 # Resume here
 
-Last session: 2026-10-05 (evening). Everything below is pushed to `main` and live at
+Last session: 2026-10-08. Everything below is pushed to `main` and live at
 https://commnet-conceptdesigns.vercel.app/ (demo link, `noindex`, no real domain).
 
 ## Current state
 
 | Area | State |
 |---|---|
-| Teleiostec site (`sites/teleiostec/react/`) | Founder-led copy, new renders placed, HD video, mobile/tablet checked. Home **Featured** now holds three film projects: PeopleLink, Grosvenor, Council Chamber |
+| Teleiostec site (`sites/teleiostec/react/`) | Owner's copy corrections applied (integrated studio, one integrated team). Founder page removed. Home **Featured** holds three film projects: PeopleLink, Grosvenor (residential), Council Chamber (boardroom film) |
 | Commnet sites (consultancy v1-react/v3/v4/v5, commnetsys, commnettech) | Watermarks removed, mobile/tablet checked |
 | Hub (`index.html`) | Tablet nav and lead thumbnail fixed |
+
+## Done on 2026-10-08
+
+From the owner's `website corrections .docx`:
+- Studio intro, the four disciplines (**Interior Design, Project Management, MEP Solutions, Fit-Out**, owner's wording) and "Four disciplines, *one integrated team*". Joinery is no longer a discipline anywhere.
+- Process lede is the owner's "A fully integrated process…" line.
+- "Every detail *begins with intent*" + "Space, material, light — in conversation" + approach paragraph on Home and Studio; image swapped from the craftsman to `tl-reception`.
+- **Founder page removed** (page, nav, Home teaser, sitemap); `/founder` and `/team` redirect to `/studio`. Copy no longer says "founder-led".
+- **Council Chamber film replaced** with the client's `Teleiostec_Boardroom_LightsOn_clean_9x16.mp4` (18 s; no watermark or logo; ends on a Teleiostec card).
+- **Grosvenor** is a *residential* concept (the clip shows an apartment with GROSVENOR lettering). The old "Business Tower, Barsha Heights, Reception & Lobby" text belonged to a different project, **Ellington**; old slug `grosvenor-business-tower` redirects to `/projects/grosvenor`.
 
 ## Done on 2026-10-05
 
@@ -29,21 +39,14 @@ https://commnet-conceptdesigns.vercel.app/ (demo link, `noindex`, no real domain
 
 ## Waiting on the client (Teleiostec)
 
-1. **Founder details** — name, 2–3 line story, portrait, real credentials.
-   Fill every `[ ]` in `source/teleiostec-react/src/data/founder.ts`; photo goes in
-   `public/Asset/team/` then `npm run images`. Page shows a monogram until then.
-2. ~~Stats~~ — done in `5f51685`. Only re-add numbers the client can back up.
-3. **Grosvenor material** — Grosvenor turned out to be a client project, not a stray
-   logo, so the held-back Oct-drop stills (`Downloads/Images Teleiostic/`) could now go
-   on the Grosvenor page. Caveat: the clip used shows an *apartment-style* room while the
-   PDF is a business-tower reception/lobby; the client chose it anyway (2026-10-05).
-   The PDF's own renders (reception, lift lobby, corridor) would match better if they
-   want a second pass.
-4. **True HD video** — clips are Veo 720p upscaled to 1080p. Real detail needs
-   them regenerated at 1080p.
-
-5. **Council Chamber** — confirm the generic wording is final, and whether a year
-   can be shown. Source deck: `Downloads/SHJ RTA DESIGN TELEIOS .pdf`.
+1. **Ellington** (Barsha Heights reception & lobby concept) — not on the site. The image
+   offered for it (`Downloads/Images Teleiostic/…/Interior_architecture_photograph_2K_20261002105132.jpg`)
+   looks like the *Grosvenor* living room (same panels, slatted shelf, pendants) and has a faint
+   Gemini ✦ bottom-right. The user is confirming with the client which project it is.
+2. **Council Chamber vs Boardroom** — the new film titles the room "Boardroom · Design Proposal";
+   the site still calls the project Council Chamber. Rename if the client wants.
+3. **Project Management** service uses the timber-workshop render (`joinery`) — a better image would help.
+4. **True HD video** — older clips are Veo 720p upscaled to 1080p.
 
 Older open items (testimonials, commnettech identity, "7 offices", SIRA/ADMCC
 wording) are unchanged — see `docs/SITES.md` and `docs/CONTENT-REVAMP-REVIEW.md`.

@@ -14,9 +14,7 @@ import { CtaBlock } from '@/components/CtaBlock'
 import { projects, type Project } from '@/data/projects'
 import { cn } from '@/lib/cn'
 import { services } from '@/data/services'
-import { founder } from '@/data/founder'
-import { Portrait } from '@/components/Portrait'
-import { stats } from '@/data/site'
+import { APPROACH, stats } from '@/data/site'
 import { gsap, useGSAP, reducedMotion, finePointer } from '@/lib/gsap'
 import { introDone } from '@/lib/intro'
 import { idleAfter } from '@/lib/interaction'
@@ -54,13 +52,13 @@ function Hero() {
 
       <div className="wrap relative flex h-full flex-col justify-end pb-[clamp(28px,6vh,64px)]">
         <p className="hero-fade mb-6 flex gap-3 text-[12px] uppercase tracking-[0.24em] text-ivory/75">
-          <span>Interior</span>·<span>Fit-Out</span>·<span>Joinery</span>·<span>MEP</span>
+          <span>Interior</span>·<span>Project Management</span>·<span>MEP</span>·<span>Fit-Out</span>
         </p>
         <Split as="h1" trigger="load" by="words" className="hero-title display text-[clamp(56px,11.5vw,220px)] leading-[0.9]">
           Creating spaces <em>with intention.</em>
         </Split>
         <div className="hero-fade mt-10 flex flex-wrap items-end justify-between gap-6 border-t border-white/20 pt-5 text-[12px] uppercase tracking-[0.16em] text-ivory/80">
-          <span>Boutique fit-out &amp; MEP studio — Dubai</span>
+          <span>Integrated fit-out &amp; MEP studio — UAE</span>
           <span className="hidden sm:inline">Commercial fit-out — shell to handover</span>
           <span className="flex items-center gap-3">
             Scroll
@@ -78,7 +76,7 @@ function Hero() {
 /* ── Statement: words brighten as you scroll ──────────── */
 function Statement() {
   const ref = useRef<HTMLDivElement>(null)
-  const text = 'Teleiostec is a boutique interior fit-out and MEP studio. We design, engineer and build considered residential, hospitality and commercial environments across the Emirates — resolved as one coordinated set, and seen through by its founder from brief to handover.'
+  const text = 'Teleiostec is an integrated interior fit-out and MEP studio providing design, engineering and turnkey execution across the UAE — residential, hospitality and commercial environments, delivered under one roof.'
   useGSAP(() => {
     if (reducedMotion()) return
     gsap.fromTo('.st-word', { color: '#8f8a80' }, {
@@ -222,7 +220,7 @@ function ServicesList() {
       <div className="wrap">
         <div className="mb-14 grid gap-6 md:grid-cols-[180px_1fr]">
           <p className="kick pt-3">(03) Services</p>
-          <Split as="h2" className="display text-fluid-2xl">Four disciplines,<br /><em>one point of contact.</em></Split>
+          <Split as="h2" className="display text-fluid-2xl">Four disciplines,<br /><em>one integrated team.</em></Split>
         </div>
         <ul className="border-t border-[var(--line)]" onPointerLeave={() => setActive(null)}>
           {services.map((s) => (
@@ -301,39 +299,12 @@ function Numbers() {
   )
 }
 
-/* ── Founder teaser ────────────────────────────────────── */
-function FounderTeaser() {
-  return (
-    <section className="section bg-ivory-2">
-      <div className="wrap grid gap-14 md:grid-cols-12 md:items-center lg:items-end">
-        <Reveal y={80} className="md:col-span-5">
-          <Link to="/founder" data-cursor="Meet" className="group block">
-            <Portrait person={founder} className="aspect-[4/5] w-full" sizes="(max-width:768px) 100vw, 40vw" />
-          </Link>
-        </Reveal>
-        <div className="md:col-span-6 md:col-start-7">
-          <p className="kick mb-6">(04) Founder</p>
-          <Split as="h2" className="display text-fluid-2xl">One name <em>on every project.</em></Split>
-          <Reveal delay={0.15}><p className="mt-8 max-w-[44ch] text-fluid-lg leading-[1.5] text-ink/75">“{founder.quote}”</p></Reveal>
-          <Reveal delay={0.25}><p className="mt-6 text-[14px]">{founder.name} <span className="text-muted">— {founder.role}</span></p></Reveal>
-          <Reveal delay={0.35} className="mt-10">
-            <Link to="/founder" className="group inline-flex items-center gap-4 py-2 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
-              <span className="link-line">Meet the founder</span>
-              <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-2">→</span>
-            </Link>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export default function Home() {
   return (
     <Page label="Teleiostec">
       <Seo
         title="Teleiostec — Interior Fit-Out & MEP Studio, Dubai"
-        description="Teleiostec is a boutique interior fit-out and MEP studio in Dubai. We design and build considered environments where craftsmanship, engineering and restraint meet."
+        description="Teleiostec is an integrated interior fit-out and MEP studio providing design, engineering and turnkey execution across the UAE."
         path="/"
         jsonLd={{ '@type': 'WebSite', name: 'Teleiostec', url: 'https://www.teleiostec.com/', publisher: { '@id': 'https://www.teleiostec.com/#org' } }}
       />
@@ -342,23 +313,23 @@ export default function Home() {
       <Featured />
       <Work />
       <div className="border-y border-[var(--line)] py-8 text-fluid-3xl">
-        <Marquee items={['Interior', 'Fit-Out', 'Joinery', 'MEP Solutions']} />
+        <Marquee items={['Interior Design', 'Project Management', 'MEP Solutions', 'Fit-Out']} />
       </div>
       <ServicesList />
       <Film />
       <Numbers />
       <section className="wrap grid gap-6 pb-[var(--sec)] md:grid-cols-12">
         <RevealImage className="aspect-[4/5] md:col-span-5">
-          <Img pic={{ src: '/Asset/photos/craftsman-working-on-walnut-cabinet', widths: [800, 1400], w: 1400, h: 1045, alt: 'Joiner working on a walnut cabinet' }} sizes="(max-width:768px) 100vw, 40vw" />
+          <Img pic={{ src: '/Asset/media/tl-reception', widths: [400, 800, 1200, 1536], w: 1536, h: 1072, alt: 'Reception lobby with perforated stone screens casting patterned daylight' }} sizes="(max-width:768px) 100vw, 40vw" />
         </RevealImage>
         <div className="flex flex-col justify-end md:col-span-6 md:col-start-7">
-          <Split as="h2" className="display text-fluid-3xl">Every detail <em>has a reason.</em></Split>
+          <Split as="h2" className="display text-fluid-3xl">Every detail <em>begins with intent.</em></Split>
+          <Reveal delay={0.15} className="mt-6"><p className="display text-fluid-lg italic">Space, material, light — in conversation.</p></Reveal>
           <Reveal delay={0.2} className="mt-8 max-w-[44ch] text-muted">
-            <p>Veneer matching, solid timber detailing and hand-finished millwork — detailed in the studio, made by specialist joiners chosen for each piece.</p>
+            <p>{APPROACH}</p>
           </Reveal>
         </div>
       </section>
-      <FounderTeaser />
       <CtaBlock />
     </Page>
   )

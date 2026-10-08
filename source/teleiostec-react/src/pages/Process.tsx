@@ -86,7 +86,7 @@ export default function Process() {
           step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.long })),
         }}
       />
-      <PageHero index="04" kicker="Process" title={<>From concept <em>to completion.</em></>} lede="Four stages, one lead. Nothing is discovered late on site because everything is resolved before it is built." />
+      <PageHero index="04" kicker="Process" title={<>From concept <em>to completion.</em></>} lede="A fully integrated process in which design, engineering and execution are meticulously coordinated at every stage — from initial concept to final delivery." />
 
       <section className="wrap grid gap-px border-y border-[var(--line)] bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s, i) => (

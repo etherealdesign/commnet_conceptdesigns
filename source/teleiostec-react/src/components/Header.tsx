@@ -39,7 +39,7 @@ export function Header({ menuOpen, onMenu }: { menuOpen: boolean; onMenu: () => 
     >
       <div className="wrap pointer-events-auto flex h-[var(--header-h)] items-center gap-8">
         <Link to="/" className="shrink-0" aria-label="Teleios — home">
-          <img src="/Asset/wordmark-light.png" alt="Teleios" width={1079} height={335} className="block h-[clamp(26px,2.4vw,36px)] w-auto" />
+          <img src="/Asset/wordmark-mono.svg" alt="Teleios" width={1079} height={335} className="block h-[clamp(26px,2.4vw,36px)] w-auto" />
         </Link>
 
         <nav aria-label="Primary" className="ml-auto hidden gap-[clamp(20px,2.4vw,40px)] lg:flex">

@@ -56,7 +56,7 @@ export function Footer() {
 
       <div className="ft-word wrap overflow-hidden">
         <p className="flex justify-center overflow-hidden">
-          <img src="/Asset/wordmark-light.png" alt="Teleios" width={1079} height={335} loading="lazy" className="ft-letter block h-auto w-full max-w-[1100px]" />
+          <img src="/Asset/wordmark-light.svg" alt="Teleios" width={1079} height={335} loading="lazy" className="ft-letter block h-auto w-full max-w-[1100px]" />
         </p>
       </div>
 

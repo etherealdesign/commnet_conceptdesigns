@@ -31,7 +31,7 @@ export function Preloader() {
       <span className="kick !text-muted-dark">Interior · Project Management · MEP · Fit-Out</span>
       <div className="flex items-end justify-between gap-6">
         <span className="flex min-w-0 overflow-hidden">
-          <img src="/Asset/wordmark-light.png" alt="" width={1079} height={335} className="pl-letter block h-auto w-[clamp(200px,46vw,640px)] max-w-full" />
+          <img src="/Asset/wordmark-light.svg" alt="" width={1079} height={335} className="pl-letter block h-auto w-[clamp(200px,46vw,640px)] max-w-full" />
         </span>
         <span ref={num} className="font-display text-[clamp(20px,2.4vw,36px)] tabular-nums text-muted-dark">000</span>
       </div>

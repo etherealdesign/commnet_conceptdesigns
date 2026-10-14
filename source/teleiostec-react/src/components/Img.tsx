@@ -8,6 +8,18 @@ export type Pic = { src: string; widths: number[]; w: number; h: number; alt: st
 
 const set = (p: Pic, ext: string) => p.widths.map((w) => `${p.src}-${w}.${ext} ${w}w`).join(', ')
 
+/**
+ * `sizes` states the box width, but object-cover into a taller box needs more
+ * pixels than that (a 4:3 photo in a 3:4 card is scaled by the *height*). So
+ * every width except a plain 100vw is grown by COVER before the browser picks
+ * a candidate; otherwise cropped cards were stretched up to 1.9x and went soft.
+ */
+const COVER = 1.6
+const grow = (sizes: string) =>
+  sizes.trim() === '100vw'
+    ? sizes
+    : sizes.split(',').map((part) => part.replace(/(\)\s*|^\s*)(\d+(?:\.\d+)?)(vw|px)\s*$/, (_, lead, n, u) => `${lead}${Math.round(+n * COVER * 10) / 10}${u}`)).join(',')
+
 type Props = {
   pic: Pic
   sizes?: string
@@ -17,7 +29,8 @@ type Props = {
   alt?: string
 }
 
-export function Img({ pic, sizes = '100vw', priority, className, imgClassName, alt }: Props) {
+export function Img({ pic, sizes: layout = '100vw', priority, className, imgClassName, alt }: Props) {
+  const sizes = grow(layout)
   const largest = pic.widths[pic.widths.length - 1]
   return (
     <picture className={cn('block h-full w-full', className)}>

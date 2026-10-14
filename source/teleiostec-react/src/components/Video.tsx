@@ -55,6 +55,8 @@ export function Video({ name, label, className, after, noPoster, mobile }: Props
       aria-label={label}
       onPlaying={() => setPlaying(true)}
     >
+      {/* AV1 10-bit: roughly half the bytes of the H.264 file at equal or better fidelity, and no banding in the gradients. Browsers without AV1 skip to the H.264 sources below. */}
+      <source src={`${base(name)}.av1.mp4`} type='video/mp4; codecs="av01.0.08M.10"' media={mobile ? '(min-width: 769px)' : undefined} />
       {mobile && <source src={`${base(name)}-720.mp4`} type="video/mp4" media="(max-width: 768px)" />}
       <source src={`${base(name)}.mp4`} type="video/mp4" />
     </video>

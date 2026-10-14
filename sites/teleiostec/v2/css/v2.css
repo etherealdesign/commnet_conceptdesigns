@@ -133,6 +133,7 @@ em{font-style:italic}
   border-bottom-color:var(--line-soft);
 }
 .hd.is-stuck .hd__in{padding-top:clamp(13px,1.5vw,18px);padding-bottom:clamp(13px,1.5vw,18px)}
+.hd.is-stuck .hd__mark img{filter:brightness(0)}
 .hd.is-stuck .hd__mark{color:var(--ink);font-size:clamp(16px,1.15vw,18px)}
 .hd.is-stuck .hd__nav a{color:var(--muted)}
 .hd.is-stuck .hd__nav a:hover{color:var(--ink)}

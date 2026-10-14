@@ -21,10 +21,10 @@ export default function Projects() {
     <Page label="Projects">
       <Seo
         title="Interior & Fit-Out Projects in Dubai and the UAE"
-        description="Selected residential, hospitality and commercial interiors by Teleiostec — interior design, MEP and fit-out delivered by one integrated team across Dubai and the UAE."
+        description="Selected residential, hospitality and commercial interiors by Teleios — interior design, MEP and fit-out delivered by one integrated team across Dubai and the UAE."
         path="/projects"
         jsonLd={{
-          '@type': 'CollectionPage', name: 'Teleiostec Projects', url: `${SITE_URL}/projects`,
+          '@type': 'CollectionPage', name: 'Teleios Projects', url: `${SITE_URL}/projects`,
           hasPart: projects.map((p) => ({ '@type': 'CreativeWork', name: p.title, url: `${SITE_URL}/projects/${p.slug}` })),
         }}
       />

@@ -19,9 +19,9 @@ export default function Studio() {
     <Page label="Studio">
       <Seo
         title="About the Studio — Interior Fit-Out & MEP, UAE"
-        description={`Teleiostec has designed, engineered and delivered interiors across the UAE since ${FOUNDED}. One integrated studio for interior design, project management, MEP and fit-out.`}
+        description={`Teleios has designed, engineered and delivered interiors across the UAE since ${FOUNDED}. One integrated studio for interior design, project management, MEP and fit-out.`}
         path="/studio"
-        jsonLd={{ '@type': 'AboutPage', name: 'About Teleiostec', about: { '@id': 'https://www.teleiostec.com/#org' } }}
+        jsonLd={{ '@type': 'AboutPage', name: 'About Teleios', about: { '@id': 'https://www.teleiostec.com/#org' } }}
       />
       <PageHero index="02" kicker={`Est. ${FOUNDED} — Dubai`} title={<>We build the quiet <em>details</em> people remember.</>} />
 
@@ -30,7 +30,7 @@ export default function Studio() {
           <Img pic={photo('curved-walnut-and-limestone-inte', 'Curved walnut and limestone interior detail')} sizes="(max-width:768px) 100vw, 58vw" />
         </RevealImage>
         <div className="flex flex-col justify-end gap-6 md:col-span-4 md:col-start-9">
-          <Reveal><p className="text-fluid-lg leading-[1.5]">Teleiostec is an integrated interior fit-out and MEP studio providing design, engineering, and turnkey execution across the UAE.</p></Reveal>
+          <Reveal><p className="text-fluid-lg leading-[1.5]">Teleios is an integrated interior fit-out and MEP studio providing design, engineering, and turnkey execution across the UAE.</p></Reveal>
           <Reveal delay={0.1}><p className="text-muted">We deliver residential, hospitality, and commercial environments through a coordinated approach that brings together technical expertise, considered design, and meticulous execution under one roof.</p></Reveal>
         </div>
       </section>
@@ -46,7 +46,7 @@ export default function Studio() {
 
       <section className="section">
         <div className="wrap">
-          <p className="kick mb-6">Why Teleiostec</p>
+          <p className="kick mb-6">Why Teleios</p>
           <ol className="border-t border-[var(--line)]">
             {principles.map((p, i) => (
               <li key={p.no} className="grid gap-4 border-b border-[var(--line)] py-12 md:grid-cols-[180px_1fr_1fr] md:gap-10">

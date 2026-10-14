@@ -35,7 +35,7 @@ export function headFor({ title, description, path, image = '/og.jpg', jsonLd }:
     ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []),
   ]
   return {
-    title: path === '/' ? title : `${title} — Teleiostec`,
+    title: path === '/' ? title : `${title} — Teleios`,
     description,
     url: SITE_URL + path,
     image: image.startsWith('http') ? image : SITE_URL + image,

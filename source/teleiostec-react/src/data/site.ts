@@ -8,7 +8,7 @@ export const yearsOfPractice = () => new Date().getFullYear() - FOUNDED
 export const APPROACH = 'Our approach begins with understanding how a space should function, feel and be experienced. Architecture, materiality, light and proportion are considered together, allowing each decision to inform the next and creating spaces that are purposeful, cohesive and enduring.'
 
 export const contact = {
-  email: 'sales@teleiostec.com',
+  email: 'projects@teleiostec.com',
   phone: '+971 4 295 5299',
   phoneHref: 'tel:+97142955299',
   address: ['Office 301, Centurion Star Tower A', 'Port Saeed, Dubai, U.A.E.'],

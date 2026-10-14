@@ -76,7 +76,7 @@ function Hero() {
 /* ── Statement: words brighten as you scroll ──────────── */
 function Statement() {
   const ref = useRef<HTMLDivElement>(null)
-  const text = 'Teleiostec is an integrated interior fit-out and MEP studio providing design, engineering and turnkey execution across the UAE — residential, hospitality and commercial environments, delivered under one roof.'
+  const text = 'Teleios is an integrated interior fit-out and MEP studio providing design, engineering and turnkey execution across the UAE — residential, hospitality and commercial environments, delivered under one roof.'
   useGSAP(() => {
     if (reducedMotion()) return
     gsap.fromTo('.st-word', { color: '#8f8a80' }, {
@@ -305,12 +305,12 @@ function Numbers() {
 
 export default function Home() {
   return (
-    <Page label="Teleiostec">
+    <Page label="Teleios">
       <Seo
-        title="Teleiostec — Interior Fit-Out & MEP Studio, Dubai"
-        description="Teleiostec is an integrated interior fit-out and MEP studio providing design, engineering and turnkey execution across the UAE."
+        title="Teleios — Interior Fit-Out & MEP Studio, Dubai"
+        description="Teleios is an integrated interior fit-out and MEP studio providing design, engineering and turnkey execution across the UAE."
         path="/"
-        jsonLd={{ '@type': 'WebSite', name: 'Teleiostec', url: 'https://www.teleiostec.com/', publisher: { '@id': 'https://www.teleiostec.com/#org' } }}
+        jsonLd={{ '@type': 'WebSite', name: 'Teleios', url: 'https://www.teleiostec.com/', publisher: { '@id': 'https://www.teleiostec.com/#org' } }}
       />
       <Hero />
       <Statement />

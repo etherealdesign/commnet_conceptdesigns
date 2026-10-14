@@ -55,14 +55,13 @@ export function Footer() {
       </div>
 
       <div className="ft-word wrap overflow-hidden">
-        <p className="display flex justify-between text-[clamp(56px,16.4vw,300px)] leading-[0.85] tracking-[-0.04em]">
-          <span className="sr-only">Teleiostec</span>
-          {'Teleiostec'.split('').map((c, i) => <span key={i} aria-hidden className="ft-letter inline-block">{c}</span>)}
+        <p className="flex justify-center overflow-hidden">
+          <img src="/Asset/wordmark-light.png" alt="Teleios" width={1079} height={335} loading="lazy" className="ft-letter block h-auto w-full max-w-[1100px]" />
         </p>
       </div>
 
       <div className="wrap flex flex-wrap items-center justify-between gap-4 py-6 text-[12px] text-muted-dark">
-        <span>© {new Date().getFullYear()} Teleiostec — Interior Fit-Out &amp; MEP</span>
+        <span>© {new Date().getFullYear()} Teleios — Interior Fit-Out &amp; MEP</span>
         <DubaiTime />
         <span>{contact.coords}</span>
         <button type="button" onClick={top} className="link-line py-2 uppercase tracking-[0.16em]">Back to top ↑</button>

@@ -1,4 +1,4 @@
-# Teleiostec
+# Teleios
 
 Static one-page site. No build step, no dependencies — `index.html`,
 `css/v2.css`, `js/v2.js` and `Asset/`. Open `index.html` over any local
@@ -49,7 +49,7 @@ disk before writing a `srcset`.
 ## Going live
 
 This site currently ships inside the Commnet concept-review deployment at
-`/Teleiostec/`, which is **not for public distribution**. The repository root
+`/Teleios/`, which is **not for public distribution**. The repository root
 `vercel.json` sends `X-Robots-Tag: noindex, nofollow` for every path, so
 nothing here is indexed — correct while it is a review link, and correct for
 a client site being previewed on someone else's domain.

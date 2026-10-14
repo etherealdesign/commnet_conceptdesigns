@@ -17,6 +17,7 @@ async function* walk(dir) {
 }
 
 async function fresh(src, out) {
+  if (process.env.FORCE) return false // FORCE=1 npm run images — re-encode after changing quality
   try { return (await stat(out)).mtimeMs >= (await stat(src)).mtimeMs } catch { return false }
 }
 
@@ -24,8 +25,8 @@ let n = 0
 for await (const src of walk(root)) {
   const base = src.replace(/\.jpe?g$/i, '')
   const jobs = []
-  if (!(await fresh(src, base + '.avif'))) jobs.push(sharp(src).avif({ quality: 52, effort: 5 }).toFile(base + '.avif'))
-  if (!(await fresh(src, base + '.webp'))) jobs.push(sharp(src).webp({ quality: 74 }).toFile(base + '.webp'))
+  if (!(await fresh(src, base + '.avif'))) jobs.push(sharp(src).avif({ quality: 60, effort: 6 }).toFile(base + '.avif'))
+  if (!(await fresh(src, base + '.webp'))) jobs.push(sharp(src).webp({ quality: 80, effort: 5 }).toFile(base + '.webp'))
   await Promise.all(jobs)
   n += jobs.length
 }

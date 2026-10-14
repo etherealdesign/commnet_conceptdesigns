@@ -62,9 +62,9 @@ export default function Contact() {
     <Page label="Contact">
       <Seo
         title="Contact — Start a Project"
-        description={`Start a project with Teleiostec. Studio at ${contact.address.join(', ')}. Email ${contact.email} or call ${contact.phone}.`}
+        description={`Start a project with Teleios. Studio at ${contact.address.join(', ')}. Email ${contact.email} or call ${contact.phone}.`}
         path="/contact"
-        jsonLd={{ '@type': 'ContactPage', name: 'Contact Teleiostec', mainEntity: { '@id': 'https://www.teleiostec.com/#org' } }}
+        jsonLd={{ '@type': 'ContactPage', name: 'Contact Teleios', mainEntity: { '@id': 'https://www.teleiostec.com/#org' } }}
       />
 
       <section className="grain relative overflow-hidden bg-dark text-ivory">

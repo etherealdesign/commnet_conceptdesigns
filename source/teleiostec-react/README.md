@@ -1,4 +1,4 @@
-# Teleiostec — React build
+# Teleios — React build
 
 React 19 + Vite + TypeScript + Tailwind CSS 4 rebuild of the static
 `../../sites/teleiostec/v2/` site (which is left untouched). Every menu item is its

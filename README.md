@@ -80,4 +80,4 @@ through this table.
 - Remove the V1/V2 switcher pill from the static consultancy pages.
 - Set a form endpoint (`VITE_FORM_ENDPOINT` / `CX_FORM_ENDPOINT`) — forms fall back to `mailto:` until then.
 - commnettech: repoint the copy to Commnet Technology Services (`_unassigned/commnettech-chennai-content-build/`).
-- Teleiostec: replace the placeholder Team page.
+- Teleios: replace the placeholder Team page.

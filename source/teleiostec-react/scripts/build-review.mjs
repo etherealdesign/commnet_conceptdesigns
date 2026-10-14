@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url'
 
 const app = join(dirname(fileURLToPath(import.meta.url)), '..')
 const out = join(app, '..', '..', 'sites', 'teleiostec', 'react')
-const ROOTED = /(["'`(,\s])\/(Asset\/|favicon\.svg|og\.jpg)/g
+const ROOTED = /(["'`(,\s])\/(Asset\/|favicon[\w.-]*\.(?:ico|png|svg)|apple-touch-icon\.png|og\.jpg)/g
 
 const walk = (dir) =>
   readdirSync(dir).flatMap((name) => {
@@ -87,7 +87,7 @@ for (const f of spent) rmSync(f, { force: true })
 // unsized photo originals (srcsets only name -800/-1400), unused footage.
 const unused = (f) => {
   const r = relative(out, f).split('\\').join('/')
-  const clip = r.match(/^Asset\/media\/(.+?)(?:-720)?(?:\.mp4|-poster\.(?:jpg|avif|webp))$/)
+  const clip = r.match(/^Asset\/media\/(.+?)(?:-720)?(?:\.av1)?(?:\.mp4|-poster\.(?:jpg|avif|webp))$/)
   return (clip && sharedMedia.includes(clip[1]))
     || /^Asset\/media\/[a-z-]+-poster\.(avif|webp)$/.test(r)
     || /^Asset\/media\/feature/.test(r)

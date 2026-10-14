@@ -151,7 +151,7 @@ the forms should be replaced with the email address.
 region". These builds show two — Dubai and Chennai. If there are five more,
 they belong in the offices section.
 
-## Teleiostec, checked against teleiostec.com
+## Teleios, checked against teleiostec.com
 
 The live site corrected one thing and supplied three.
 

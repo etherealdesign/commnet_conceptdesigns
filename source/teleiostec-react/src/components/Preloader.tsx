@@ -30,8 +30,8 @@ export function Preloader() {
     <div ref={root} aria-hidden data-preloader className="grain fixed inset-0 z-[200] flex flex-col justify-between bg-dark p-[var(--pad)] text-ivory" style={{ clipPath: 'inset(0% 0% 0% 0%)' }}>
       <span className="kick !text-muted-dark">Interior · Project Management · MEP · Fit-Out</span>
       <div className="flex items-end justify-between gap-6">
-        <span className="display flex overflow-hidden text-[clamp(44px,10vw,160px)]">
-          {'Teleiostec'.split('').map((c, i) => <span key={i} className="pl-letter inline-block">{c}</span>)}
+        <span className="flex min-w-0 overflow-hidden">
+          <img src="/Asset/wordmark-light.png" alt="" width={1079} height={335} className="pl-letter block h-auto w-[clamp(200px,46vw,640px)] max-w-full" />
         </span>
         <span ref={num} className="font-display text-[clamp(20px,2.4vw,36px)] tabular-nums text-muted-dark">000</span>
       </div>

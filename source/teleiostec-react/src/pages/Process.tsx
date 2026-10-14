@@ -79,10 +79,10 @@ export default function Process() {
     <Page label="Process">
       <Seo
         title="Process — From Concept to Completion"
-        description="Discover, design, build, deliver. How Teleiostec coordinates interior design, engineering and fit-out at every stage, from initial concept to final delivery."
+        description="Discover, design, build, deliver. How Teleios coordinates interior design, engineering and fit-out at every stage, from initial concept to final delivery."
         path="/process"
         jsonLd={{
-          '@type': 'HowTo', name: 'How Teleiostec delivers a space',
+          '@type': 'HowTo', name: 'How Teleios delivers a space',
           step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.long })),
         }}
       />

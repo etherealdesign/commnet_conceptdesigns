@@ -32,8 +32,8 @@ export function Footer() {
           <div>
             <p className="kick mb-5 !text-muted-dark">Pages</p>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
-              <li><Link to="/" className="link-line inline-block py-1.5">Home</Link></li>
-              {nav.map((n) => <li key={n.to}><Link to={n.to} className="link-line inline-block py-1.5">{n.label}</Link></li>)}
+              <li><Link to="/" className="link-line inline-block py-3 md:py-1.5">Home</Link></li>
+              {nav.map((n) => <li key={n.to}><Link to={n.to} className="link-line inline-block py-3 md:py-1.5">{n.label}</Link></li>)}
             </ul>
           </div>
           <div>
@@ -42,13 +42,13 @@ export function Footer() {
           </div>
           <div>
             <p className="kick mb-5 !text-muted-dark">Contact</p>
-            <a href={`mailto:${contact.email}`} className="link-line block w-fit py-1.5">{contact.email}</a>
-            <a href={contact.phoneHref} className="link-line block w-fit py-1.5">{contact.phone}</a>
+            <a href={`mailto:${contact.email}`} className="link-line block w-fit py-3 md:py-1.5">{contact.email}</a>
+            <a href={contact.phoneHref} className="link-line block w-fit py-3 md:py-1.5">{contact.phone}</a>
           </div>
           <div>
             <p className="kick mb-5 !text-muted-dark">Follow</p>
             <ul className="space-y-1">
-              {social.map((s) => <li key={s.label}><a href={s.href} target="_blank" rel="noopener" className="link-line inline-block py-1.5">{s.label}</a></li>)}
+              {social.map((s) => <li key={s.label}><a href={s.href} target="_blank" rel="noopener" className="link-line inline-block py-3 md:py-1.5">{s.label}</a></li>)}
             </ul>
           </div>
         </div>

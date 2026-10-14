@@ -93,7 +93,7 @@ function Statement() {
             {text.split(' ').map((w, i) => <span key={i} className="st-word">{w} </span>)}
           </p>
           <Reveal className="mt-12">
-            <Link to="/studio" className="group inline-flex items-center gap-4 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
+            <Link to="/studio" className="group inline-flex min-h-11 items-center gap-4 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
               <span className="link-line">About the studio</span>
               <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-2">→</span>
             </Link>
@@ -131,7 +131,7 @@ function FeaturedFilm({ p, flip }: { p: Project; flip: boolean }) {
         <Reveal delay={0.1}><p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-ivory/60">{p.location} · {p.discipline}</p></Reveal>
         <Reveal delay={0.2}><p className="mt-8 max-w-[44ch] text-fluid-lg leading-[1.5] text-ivory/80">{p.summary}</p></Reveal>
         <Reveal delay={0.3} className="mt-10">
-          <Link to={`/projects/${p.slug}`} className="group inline-flex items-center gap-4 py-2 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
+          <Link to={`/projects/${p.slug}`} className="group inline-flex min-h-11 items-center gap-4 py-2 text-[12px] uppercase tracking-[0.18em]" data-cursor-hover>
             <span className="link-line">View the project</span>
             <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-2">→</span>
           </Link>
